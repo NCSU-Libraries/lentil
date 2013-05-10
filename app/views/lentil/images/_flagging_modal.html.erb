@@ -1,0 +1,14 @@
+<!-- Flagging Modal -->
+<div id="myModal-<%= image.id %>" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <h3 id="myModalLabel"><%= t 'lentil.flagging_modal.header' %></h3>
+  </div>
+  <div class="modal-body">
+    <p><%= t 'lentil.flagging_modal.header' %></p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true"><%= t 'lentil.flagging_modal.cancel' %></button>
+    <button href="<%= tally_flag_path(image.id) %>" method="post" type="submit" class="btn btn-danger flag-confirm" data-image-id="<%= image.id %>">
+    <%= t 'lentil.flagging_modal.yes_report_title' %></button>
+</div>
+</div>

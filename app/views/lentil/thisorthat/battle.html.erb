@@ -1,0 +1,13 @@
+<%= title @title %>
+<%= render :partial => "/layouts/lentil/top_navigation" %>
+<div class="wrapper desktop-leaderboard-wrapper clearfix">
+  <%= link_to t('lentil.battle.leaders'), {:action => :battle_leaders, :controller => :thisorthat}, {:class => "btn desktop-leaderboard"} %>
+  <span class="alert alert-info pull-right">Pick a winner below!</span>
+</div>
+<div class="wrapper battle-wrapper">
+  <%= render :partial => "battle_form" %>
+</div>
+<div class="wrapper battle-wrapper" style="display:none">
+  <div class="grid battle-inner"></div>
+</div>
+<div id="spinner-overlay" style="display:none;"></div>

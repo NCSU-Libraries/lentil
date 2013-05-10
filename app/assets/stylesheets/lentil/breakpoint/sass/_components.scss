@@ -1,0 +1,315 @@
+// Import components
+// =============================================================================
+body {
+    background-size: 1500px;
+    color: $lentil_yellow;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4em;
+}
+
+section#contribute ul {
+    list-style: disc;
+}
+
+a {
+    text-decoration: none;
+}
+
+div.header {
+    display: none;
+}
+
+div.grid {
+    word-spacing: normal;
+}
+
+.modal {
+    z-index: 10000;
+}
+
+.modal-backdrop {
+    z-index: 9000;
+}
+
+.modal-body p {
+    color: $gray_text;
+    font-size: 1.5em;
+}
+
+.btn-toolbar button {
+    margin: 0 0 0 5px;
+}
+
+.navbar-inner {
+    background: gray;
+}
+
+.navbar-fixed-top {
+    margin: 0 0 0 0;
+}
+
+.navbar-fixed-top, .navbar-fixed-bottom {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    margin-bottom: 0;
+}
+
+.navbar .btn-navbar {
+    float: left;
+}
+
+.navbar .brand {
+    float: right;
+    color: $lentil_yellow;
+    text-shadow: none;
+}
+
+.navbar .nav > li > a {
+    color: $lentil_blue;
+    text-shadow: none;
+}
+
+.navbar .nav > li > a:hover {
+    color: $lentil_blue;
+    text-decoration: underline;
+}
+
+.navbar .library-brand {
+    display: none;
+}
+
+div.images {
+    display:inline;
+   // word-spacing: normal;
+}
+
+.wrapper {
+    margin-top: 80px;
+}
+
+.images_show .wrapper {
+    margin-top: 65px;
+}
+
+.image-tile {
+    position: relative;
+    padding: 2px 4px 2px 4px;
+    margin: 0;
+}
+
+.text-overlay {
+    display: none;
+    background-color: #FFF;
+    padding: 10px 5px 0 5px;
+    font-size: 1.4em;
+    color: gray;
+}
+
+.lentil-images_show .text-overlay {
+    display: block;
+}
+
+.flag-btn, .flag-btn-disabled {
+    float: right;
+}
+
+.btn-text {
+    display: none;
+}
+
+.fancybox {
+    cursor: -webkit-zoom-in;
+    cursor: -moz-zoom-in;
+    cursor: zoom-in;
+}
+
+.fancybox-title .vote {
+    background-color: gray;
+    padding: 0px;
+    height: 30px;
+    width: auto;
+    border-radius: 3px;
+}
+
+.pagination .disabled, .pagination .current {
+    color: #000;
+}
+
+.pagination .current {
+    font-weight: bold;
+}
+
+#infscr-loading {
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-rendering: auto;
+    color: #000;
+    padding: 5px;
+}
+
+.solo-image {
+    padding: 15px 15px 15px 15px;
+    background: #FFF;
+    border-radius: 4px;
+}
+
+.solo-image img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+}
+
+.icon-twitter {
+    background-image: image-url("lentil/icons/twitter-bird-light-bgs.png");
+    background-position: center center;
+    background-size: 14px 14px;
+}
+
+.icon-facebook {
+    background-image: image-url("lentil/icons/f_logo.png");
+    background-position: center center;
+    background-size: 14px 14px;
+}
+
+.dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a {
+    background-image: none;
+    background-color: $lentil_yellow;
+}
+.dropdown-menu li > a:hover .icon-facebook, .dropdown-menu li .icon-facebook > a:focus .icon-facebook, .dropdown-submenu:hover > a .icon-facebook {
+    background-image: image-url("lentil/icons/f_logo.png");
+    background-size: 14px 14px;
+}
+
+.dropdown-menu li > a:hover .icon-twitter, .dropdown-menu li .icon-twitter > a:focus .icon-twitter, .dropdown-submenu:hover > a .icon-twitter {
+    background-image: image-url("lentil/icons/twitter-bird-light-bgs.png");
+    background-size: 14px 14px;
+}
+
+section#about .well {
+    padding: 10px 10px 10px 15px;
+    margin: 10px;
+}
+
+section#about h1 {
+    font-size: 2em;
+    color: $lentil_yellow;
+    line-height: 1.2em;
+}
+
+section#about p {
+    color: grey;
+}
+
+section#about li {
+    color: black;
+    font-size: 1.3em;
+    line-height: 1.2em;
+    font-weight: bold;
+    padding: 3px 0 10px 0;
+}
+
+section#about ul li {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+section#about img {
+    display:none;
+}
+
+span.tag-line {
+    font-size: 1.3em;
+    //font-weight: bold;
+}
+
+#desktop-secondary-navigation {
+    display: none;
+}
+
+#secondary-navigation {
+    width: 100%;
+    min-height: 25px;
+    height: auto;
+    font-size: 1.3em;
+    background-color: #000;
+    opacity: .8;
+}
+
+#secondary-navigation a {
+    float: right;
+    padding: 2px 15px 0 0;
+}
+
+#secondary-navigation img {
+    display: none;
+    height: 33px;
+}
+
+// Leaderboard
+a.leaderboard {
+    float: left !important;
+    padding: 2px 0 0 15px !important;
+}
+
+.desktop-leaderboard-wrapper {
+    display:none;
+    padding-top: 20px;
+}
+
+.desktop-leaderboard-wrapper .btn {
+  margin-left: -5px;
+  background-color: hsl(200, 100%, 29%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00a6f9", endColorstr="#006293");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#00a6f9), to(#006293));
+  background-image: -moz-linear-gradient(top, #00a6f9, #006293);
+  background-image: -ms-linear-gradient(top, #00a6f9, #006293);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00a6f9), color-stop(100%, #006293));
+  background-image: -webkit-linear-gradient(top, #00a6f9, #006293);
+  background-image: -o-linear-gradient(top, #00a6f9, #006293);
+  background-image: linear-gradient(#00a6f9, #006293);
+  border-color: #006293 #006293 hsl(200, 100%, 24%);
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.33);
+  -webkit-font-smoothing: antialiased;
+}
+
+// Photographer Info
+
+div.photographer-info {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+}
+
+.photographer-info h1 {
+    font-size: 1.7em;
+}
+
+.photographer-info h2 {
+    font-size: 1.2em;
+}
+
+// IE Specialness
+
+body.lt-ie9 div.header {
+    display: none;
+}
+
+body.lt-ie8 {
+    padding-left: 40px;
+}
+
+body.lt-ie8 div.image-tile {
+    width: 300px;
+}

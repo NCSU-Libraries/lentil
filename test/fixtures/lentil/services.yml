@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: services
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  url        :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+instagram:
+  name: Instagram
+  url: "http://www.instagram.com/"
+
+flickr:
+  name: Flickr
+  url: "http://www.flickr.com/"

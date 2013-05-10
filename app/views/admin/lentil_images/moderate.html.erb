@@ -1,0 +1,9 @@
+<%= semantic_form_for :moderation, :url => do_moderation_admin_lentil_images_path do |form| %>
+  <% if @images.length > 0 %>
+    <%= render :partial => "/admin/lentil_images/moderation_form_body", :locals => {:form => form}%>
+  <% else %>
+    <div class="blank_slate_container">
+      <span class="blank_slate">No Images Found</span>
+    </div>
+  <% end -%>
+<% end -%>

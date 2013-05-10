@@ -1,0 +1,19 @@
+# == Schema Information
+#
+# Table name: like_votes
+#
+#  id         :integer          not null, primary key
+#  image_id   :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  image: two
+
+two:
+  image: two
+
+

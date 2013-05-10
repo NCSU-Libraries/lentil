@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: licensings
+#
+#  id         :integer          not null, primary key
+#  image_id   :integer
+#  license_id :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  image: one
+  license: one
+
+two:
+  image: two
+  license: two

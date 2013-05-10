@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: head
+    uri: http://distilleryimage6.ak.instagram.com/ef3c7ff0b71d11e2b1b722000a1d0aba_7.jpg
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      X-Amz-Request-Id:
+      - 52E51507874A9C25
+      X-Amz-Id-2:
+      - zE1zxJ8h4WYKZsmCICf8B7KePTwHWctio4K98XJdb1xYqg2pqBkngnGXvvb/YfKO
+      Content-Type:
+      - application/xml
+      Server:
+      - AmazonS3
+      Cache-Control:
+      - max-age=129600
+      Expires:
+      - Thu, 09 May 2013 02:57:00 GMT
+      Content-Length:
+      - '1'
+      Date:
+      - Tue, 07 May 2013 14:57:00 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Tue, 07 May 2013 14:57:00 GMT
+recorded_with: VCR 2.4.0

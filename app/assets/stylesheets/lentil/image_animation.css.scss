@@ -1,0 +1,23 @@
+// This file concerns the styling of the animate views for the gem-included simplified styling of those views
+
+
+// animate view default colors
+$animate_background_color: gray !default;
+$animate_branding_background_color: black !default;
+$animate_branding_font_color: white !default;
+
+.lentil-images_animate {
+  background: $animate_background_color;
+}
+
+.animated-images-branding {
+  background: $animate_branding_background_color;
+  width: 100%;
+  h1 {
+    color: $animate_branding_font_color;
+    a {
+      color: $animate_branding_font_color;
+    }
+  }
+}
+

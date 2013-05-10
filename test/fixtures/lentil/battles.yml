@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: battles
+#
+#  id         :integer          not null, primary key
+#  image_id   :integer
+#  loser_id   :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  image_id: 1
+  loser_id: 1
+
+two:
+  image_id: 1
+  loser_id: 1

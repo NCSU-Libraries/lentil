@@ -1,0 +1,5 @@
+<% if params[:controller] == "lentil/thisorthat" %>
+    <div id="secondary-navigation">
+    <%= link_to battle_link_name, {:action => battle_link_action, :controller => 'lentil/thisorthat'}, {:class => "leaderboard"} %>
+    </div>
+<% end -%>

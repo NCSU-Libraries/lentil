@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: tagsets
+#
+#  id          :integer          not null, primary key
+#  title       :string(255)
+#  description :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  harvest     :boolean          default(FALSE)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: Hunt Library
+  description: Tags about Hunt Library
+
+two:
+  title: D. H. Hill Library
+  description: Tags about D. H. Hill Library
+
+testing:
+  title: Testing tagset
+  description: Tags for testing
+  harvest: true
+

@@ -1,0 +1,28 @@
+# == Schema Information
+#
+# Table name: tagset_assignments
+#
+#  id         :integer          not null, primary key
+#  tag_id     :integer
+#  tagset_id  :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  tag: one
+  tagset: one
+
+two:
+  tag: two
+  tagset: two
+
+three:
+  tag: three
+  tagset: two
+
+testing: 
+  tag: testing
+  tagset: testing

@@ -1,0 +1,37 @@
+// ==========================================================================
+// normalize config (uncomment variables to activate reset sections)
+// ==========================================================================
+
+$normalize-html5: true;
+$normalize-base: true;
+
+// $normalize-links: true;
+// $normalize-typography: true;
+// $normalize-lists: true;
+// $normalize-embedded: true;
+// $normalize-forms: true;
+// $normalize-tables: true;
+
+// other resets
+// ==========================================================================
+
+// $print-styles: true;
+
+// Grid Variables
+// =============================================================================
+
+$grid-column: 40px;
+$grid-gutter: 10px;
+$grid-overlay: false; // generate visual grid overlay
+$ie-support: 18; // fallback breakpoint
+$base-font-size: 14px;
+
+// ==========================================================================
+// project specific variables and mixins
+// ==========================================================================
+
+
+$gray_text: gray !default;
+$lentil_yellow: yellow !default;
+$lentil_blue: blue !default;
+

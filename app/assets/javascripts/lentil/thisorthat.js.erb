@@ -1,0 +1,129 @@
+// Place all the behaviors and hooks related to the matching controller here.
+// All this logic will automatically be available in application.js.
+//= require imagesloaded/jquery.imagesloaded.min.js
+//= require spin/spin.js
+(function() {
+    var BATTLE_SPINNER,
+        ERROR_TEXT;
+
+    ERROR_TEXT = '<div class="wrapper battle-wrapper">' +
+                 '<div class="alert alert-error" style="margin-top:70px;">' +
+                 '<h4 style="padding-bottom:20px;">Error.</h4>' +
+                 '<p>Sorry, there was a problem loading images. Please reload the page.</p></div></div>';
+
+    // Set AJAX timeout
+    $.rails.ajax = function(options) {
+      if (!options.timeout) {
+        options.timeout = 20000;
+      }
+      return $.ajax(options);
+    };
+
+    $(document).ready(function() {
+        $('.battle-inner:eq(0)').imagesLoaded(function($images, $proper, $broken) {
+            if ($broken.length > 0) {
+                $('.battle-wrapper:eq(0)').replaceWith(ERROR_TEXT);
+            }
+        });
+    });
+
+    $(document).on('ajax:beforeSend', function (evt, xhr, settings) {
+        var img,
+            opts,
+            submitButton,
+            target;
+
+        // Disable Buttons
+        submitButton = $(this).find('button[name="vote"]');
+        submitButton.attr('disabled', 'disabled');
+
+        // Show Spinner
+        $('#spinner-overlay').show();
+        opts = {
+            lines: 13, // The number of lines to draw
+            length: 7, // The length of each line
+            width: 4, // The line thickness
+            radius: 10, // The radius of the inner circle
+            corners: 1, // Corner roundness (0..1)
+            rotate: 0, // The rotation offset
+            color: '#fff', // #rgb or #rrggbb
+            speed: 1, // Rounds per second
+            trail: 60, // Afterglow percentage
+            shadow: false, // Whether to render a shadow
+            hwaccel: false, // Whether to use hardware acceleration
+            className: 'spinner', // The CSS class to assign to the spinner
+            zIndex: 2e9, // The z-index (defaults to 2000000000)
+            top: 'auto', // Top position relative to parent in px
+            left: 'auto' // Left position relative to parent in px
+        };
+        target = document.getElementById('spinner-overlay');
+        BATTLE_SPINNER = new Spinner(opts).spin(target);
+
+    }).on('ajax:success', function (evt, data, status, xhr) {
+        // Insert new images into hidden div
+        $('.battle-inner:eq(1)').replaceWith(data);
+
+        // Once images are loaded, execute callback
+        $('.battle-inner:eq(1)').imagesLoaded(function($images, $proper, $broken) {
+            var wrap;
+
+            if ($broken.length > 0) {
+                // Insert error text into DOM
+                $('.battle-wrapper:eq(0)').replaceWith(ERROR_TEXT);
+                $('.battle-wrapper:eq(0)').show();
+
+                // Hide Spinner
+                $('#spinner-overlay').hide();
+                BATTLE_SPINNER.stop();
+            } else {
+                 // Remove old images
+                $('.battle-wrapper:eq(0)').remove();
+
+                // Div with new images moves up in DOM, display
+                $('.battle-wrapper:eq(0)').show();
+
+                // Hide Spinner
+                $('#spinner-overlay').hide();
+                BATTLE_SPINNER.stop();
+
+                // Insert placeholder div for next set of images
+                wrap = '<div class="wrapper battle-wrapper" style="display:none">' +
+                       '<div class="grid battle-inner"></div></div>';
+                $(wrap).insertAfter('.battle-wrapper:eq(0)');
+            }
+        });
+    }).on('ajax:error', function (evt, xhr, status) {
+        var error,
+            errors,
+            ajaxError;
+
+        // Hide Spinner
+        $('#spinner-overlay').hide();
+        BATTLE_SPINNER.stop();
+
+        if (status === 'timeout') {
+            errors = {Message: "Request timed out. Please reload the page and try again."};
+        } else {
+             try {
+                // Populate ajaxError with the comment errors
+                errors = $.parseJSON(xhr.responseText);
+            } catch (err) {
+                // If the responseText is not valid JSON, populate errors with a generic error message.
+                errors = {Message: "Please reload the page and try again."};
+            }
+        }
+
+        // Build an unordered list from the list of errors
+        ajaxError = '<div class="wrapper battle-wrapper">' +
+                    '<div class="alert alert-error" style="margin-top:70px;">' +
+                    '<h4 style="padding-bottom:20px;">Error</h4><p><ul>';
+
+        for (error in errors) {
+            ajaxError += "<li>" + error + ': ' + errors[error] + "</li> ";
+        }
+
+        ajaxError += "</ul></p></div></div>";
+
+        $('.battle-wrapper:eq(0)').replaceWith(ajaxError);
+    });
+})();

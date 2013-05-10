@@ -1,0 +1,10 @@
+<% unless already_flagged?(image) %>
+  <% if content_for? :flag_button %>
+    <%= yield  :flag_button %>
+  <% else -%>
+    <button type="submit" class="btn btn-danger flag-btn initial-state" data-target="#myModal-<%= image.id %>" data-toggle="modal" data-remote="false" data-image-id="<%= image.id %>"><i class="icon-flag icon-white"></i> <span class="btn-text"><%= t 'lentil.image_modal.report' %></span></button>
+<% end -%>
+    <button class="btn btn-danger flag-btn disabled already-clicked secondary-state" style="display: none;" data-image-id="<%= image.id %>"> <i class="icon-flag icon-white"></i> <span class="btn-text"><%= t 'lentil.image_modal.reported' %></span></button>
+<% else -%>
+  <button class="btn btn-danger flag-btn already-clicked disabled" disabled data-toggle="button" data-image-id="<%= image.id %>"><i class="icon-flag icon-white"></i> <span class="btn-text"><%= t 'lentil.image_modal.reported' %></span></button>
+<% end -%>

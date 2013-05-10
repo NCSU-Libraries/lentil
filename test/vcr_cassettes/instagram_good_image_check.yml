@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: head
+    uri: http://distilleryimage7.s3.amazonaws.com/7deb2d9ea6ae11e28a1a22000aa81ffa_7.jpg
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - hiR58BJMvdeqfKmJtv8lpl8pXKa6bbi+/x+HEfCaF34ZNR2YuYy2/GdBnlW8ss4v
+      X-Amz-Request-Id:
+      - DA42F7F8AA97AEBB
+      Date:
+      - Tue, 07 May 2013 14:56:55 GMT
+      Expires:
+      - Thu, 15 Apr 2020 20:00:00 GMT
+      Last-Modified:
+      - Tue, 16 Apr 2013 15:58:35 GMT
+      Etag:
+      - ! '"2b4e035b520a465d18472ce01dfb6dfd"'
+      Accept-Ranges:
+      - bytes
+      Content-Type:
+      - image/jpeg
+      Content-Length:
+      - '87726'
+      Server:
+      - AmazonS3
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Tue, 07 May 2013 14:56:54 GMT
+recorded_with: VCR 2.4.0

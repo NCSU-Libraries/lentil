@@ -1,0 +1,65 @@
+@import "chosen";
+
+body.admin_namespace {
+    .moderation_thumbnail {
+        width: 250px;
+        height: 250px;
+    }
+
+    .dash_thumbnail {
+        width: 100px;
+        height: 100px;
+    }
+
+    .moderation td {
+        min-width: 100px
+    }
+
+    li.boolean {
+        list-style: none;
+    }
+
+    li.radio, li.select, li.string, li.text {
+        list-style: none;
+    }
+
+    // These selectors are nasty. Used to format radio buttons.
+    form li.moderation_radio fieldset ol > li label {
+        width: 100px;
+    }
+
+    li.moderation_radio fieldset ol > li label input {
+        margin-right:10px;
+    }
+
+    // Format Staff Like checkbox. Need to adjust selector to avoid !important
+    li.moderation_checkbox {
+        margin-top: 20px !important;
+    }
+
+    li.moderation_checkbox label input {
+        margin-right:10px;
+    }
+
+    li.moderation_checkbox label {
+        color: #5e6469;
+        font-weight: bold;
+    }
+
+    .remove-tagset {
+        padding-top: 25px;
+    }
+
+    .remove-tagset input{
+        margin-right: 5px;
+    }
+
+    .submit_wrapper {
+        width: 25%;
+        float:left;
+    }
+
+    .pagination_information {
+        font-size: 10px;
+    }
+}

@@ -1,0 +1,50 @@
+function hideOverlayDestroySpinner() {
+    $('#spinner-overlay').hide();
+    FANCYBOX_SPINNER.stop();
+}
+
+
+function addinfinitescroll() {
+
+    if ($("div#paging a").length > 0) {
+        $('div.images').infinitescroll({
+            loading: {
+                msgText: "Loading more photos...",
+                img: "<%= asset_path('lentil/loadingsquares.gif') %>",
+                finishedMsg: "No more photos to load."
+            },
+            state : {
+                isDone : false
+            },
+            navSelector  : "div#paging",
+
+            // selector for the paged navigation (it will be hidden)
+            nextSelector : "div#paging a:first",
+
+            // selector for the NEXT link (to page 2)
+            itemSelector : "div.image-tile",
+
+            // selector for all items you'll retrieve
+            animate: true,
+            extraScrollPx: 30,
+            appendCallback: true,
+            errorCallback: function() {
+                hideOverlayDestroySpinner()
+            }
+        },
+        function () {
+            addfancybox();
+            addimageerrors();
+            // on callback, if fancybox is open
+            // then close it and reopen at the same spot
+            // this fakes dynamic loading of new images
+            if ($.fancybox.isOpen) {
+                start = $.fancybox.current.index;
+                FancyBoxCloseFunctionState.fancyboxvisible = false;
+                $.fancybox.close();
+                $(".fancybox").eq(start).trigger('click');
+                hideOverlayDestroySpinner();
+            }
+        });
+    }
+}

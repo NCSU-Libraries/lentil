@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: taggings
+#
+#  id         :integer          not null, primary key
+#  image_id   :integer
+#  tag_id     :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  staff_tag  :boolean          default(FALSE)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  image: uno
+  tag: uno
+
+two:
+  image: dos
+  tag: dos
+
+three:
+  image: uno
+  tag: dos
+
+number_one: 
+  image: one
+  tag: hunttesting

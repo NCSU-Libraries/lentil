@@ -1,0 +1,284 @@
+# == Schema Information
+#
+# Table name: images
+#
+#  id                             :integer          not null, primary key
+#  description                    :text
+#  created_at                     :datetime         not null
+#  updated_at                     :datetime         not null
+#  like_votes_count               :integer          default(0)
+#  url                            :string(255)
+#  user_id                        :integer
+#  state                          :integer          default(0)
+#  external_identifier            :string(255)
+#  long_url                       :string(255)
+#  original_metadata              :text
+#  original_datetime              :datetime
+#  staff_like                     :boolean          default(FALSE)
+#  moderator_id                   :integer
+#  moderated_at                   :datetime
+#  second_moderation              :boolean          default(FALSE)
+#  wins_count                     :integer          default(0)
+#  losses_count                   :integer          default(0)
+#  win_pct                        :float
+#  popular_score                  :integer          default(0)
+#  file_harvested_date            :datetime
+#  file_harvest_failed            :integer          default(0)
+#  donor_agreement_submitted_date :datetime
+#  donor_agreement_failed         :integer          default(0)
+#  failed_file_checks             :integer          default(0)
+#  file_last_checked              :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+uno:
+  description: "A taste of #HuntLibrary. Our #microtiles prototype wall in #MiniHunt #venus #NASA #4k #videowall"
+  like_votes_count: 0
+  url: "http://instagram.com/p/R0NyCsK_xf/"
+  long_url: "http://distilleryimage7.s3.amazonaws.com/55dcf0ba2a8c11e29cc822000a1f96e3_7.jpg"
+  external_identifier: "320942086917192799_244467814"
+  user: jc
+  state: 1
+  staff_like: false
+  wins_count: 5
+  losses_count: 5
+  win_pct: 50
+
+dos:
+  description: "Love the new @snohetta_design #HuntLibrary at #NCState @CentCampus  #nofilter"
+  like_votes_count: 0
+  url: "http://instagram.com/p/R82ycNoNfn/"
+  long_url: "http://distilleryimage3.s3.amazonaws.com/644f52a02d2f11e2b55e22000a9f09fb_7.jpg"
+  external_identifier: "323374234042685415_31727100"
+  user: cl
+  state: 1
+  staff_like: false
+
+tres:
+  description: "This is a bad image"
+  like_votes_count: 0
+  url: "http://instagram.com/p/ZA1L0nINXi/"
+  long_url: "http://distilleryimage6.ak.instagram.com/ef3c7ff0b71d11e2b1b722000a1d0aba_7.jpg"
+  external_identifier: "450593871607420386_31727100"
+  user: jc
+  state: 1
+  staff_like: false
+  wins_count: 5
+  losses_count: 5
+  win_pct: 50
+
+one:
+  description: 'one #hunttesting'
+  created_at: 2013-04-16 16:16:16.273698000 Z
+  updated_at: 2013-04-16 16:16:16.481430000 Z
+  like_votes_count: 0
+  url: http://instagram.com/p/YK-cpswMOn/
+  user: jr 
+  state: 1
+  external_identifier: '435434961797956519_228379143'
+  long_url: http://distilleryimage7.s3.amazonaws.com/7deb2d9ea6ae11e28a1a22000aa81ffa_7.jpg
+  original_datetime: 2013-04-16 15:58:34.000000000 Z
+  staff_like: true
+  moderator_id: 
+  moderated_at: 
+  second_moderation: false
+  wins_count: 5
+  losses_count: 5
+  win_pct: 50
+  popular_score: 0
+  file_harvested_date: 
+  file_harvest_failed: 0
+  donor_agreement_submitted_date: 
+  donor_agreement_failed: 0
+  failed_file_checks: 0
+  file_last_checked: 
+  original_metadata:
+    attribution: 
+    tags:
+    - hunttesting
+    location: 
+    comments:
+      count: 0
+      data: []
+    filter: Inkwell
+    created_time: '1366127914'
+    link: http://instagram.com/p/YK-cpswMOn/
+    likes:
+      count: 0
+      data: []
+    images:
+      low_resolution:
+        url: http://distilleryimage7.s3.amazonaws.com/7deb2d9ea6ae11e28a1a22000aa81ffa_6.jpg
+        width: 306
+        height: 306
+      thumbnail:
+        url: http://distilleryimage7.s3.amazonaws.com/7deb2d9ea6ae11e28a1a22000aa81ffa_5.jpg
+        width: 150
+        height: 150
+      standard_resolution:
+        url: http://distilleryimage7.s3.amazonaws.com/7deb2d9ea6ae11e28a1a22000aa81ffa_7.jpg
+        width: 612
+        height: 612
+    caption:
+      created_time: '1366127959'
+      text: ! 'one #hunttesting'
+      from:
+        username: jronallo
+        profile_picture: http://images.ak.instagram.com/profiles/anonymousUser.jpg
+        id: '228379143'
+        full_name: jronallo
+      id: '435435338345791571'
+    type: image
+    id: '435434961797956519_228379143'
+    user:
+      username: jronallo
+      website: ''
+      profile_picture: http://images.ak.instagram.com/profiles/anonymousUser.jpg
+      full_name: jronallo
+      bio: ''
+      id: '228379143'
+  
+
+two:
+  description: 'two #hunttesting'
+  created_at: 2013-04-16 16:16:15.890972000 Z
+  updated_at: 2013-04-16 16:16:16.097712000 Z
+  like_votes_count: 0
+  url: http://instagram.com/p/YK-nyDwMO1/
+  user: jr
+  state: 0
+  external_identifier: '435435726688011189_228379143'
+  long_url: http://distilleryimage9.s3.amazonaws.com/b443124ea6ae11e286b422000a9d0dd8_7.jpg
+  original_metadata:
+    attribution: 
+    tags:
+    - hunttesting
+    location: 
+    comments:
+      count: 0
+      data: []
+    filter: Normal
+    created_time: '1366128005'
+    link: http://instagram.com/p/YK-nyDwMO1/
+    likes:
+      count: 0
+      data: []
+    images:
+      low_resolution:
+        url: http://distilleryimage9.s3.amazonaws.com/b443124ea6ae11e286b422000a9d0dd8_6.jpg
+        width: 306
+        height: 306
+      thumbnail:
+        url: http://distilleryimage9.s3.amazonaws.com/b443124ea6ae11e286b422000a9d0dd8_5.jpg
+        width: 150
+        height: 150
+      standard_resolution:
+        url: http://distilleryimage9.s3.amazonaws.com/b443124ea6ae11e286b422000a9d0dd8_7.jpg
+        width: 612
+        height: 612
+    caption:
+      created_time: '1366128020'
+      text: ! 'two #hunttesting'
+      from:
+        username: jronallo
+        profile_picture: http://images.ak.instagram.com/profiles/anonymousUser.jpg
+        id: '228379143'
+        full_name: jronallo
+      id: '435435854178074722'
+    type: image
+    id: '435435726688011189_228379143'
+    user:
+      username: jronallo
+      website: ''
+      profile_picture: http://images.ak.instagram.com/profiles/anonymousUser.jpg
+      full_name: jronallo
+      bio: ''
+      id: '228379143'
+  original_datetime: 2013-04-16 16:00:05.000000000 Z
+  staff_like: false
+  moderator_id: 
+  moderated_at: 
+  second_moderation: false
+  wins_count: 0
+  losses_count: 0
+  win_pct: 
+  popular_score: 0
+  file_harvested_date: 
+  file_harvest_failed: 0
+  donor_agreement_submitted_date: 
+  donor_agreement_failed: 0
+  failed_file_checks: 0
+  file_last_checked: 
+
+
+three:
+  description: "three #hunttesting"
+  created_at: 2013-04-16 16:16:15.526680000 Z
+  updated_at: 2013-04-16 16:16:15.739221000 Z
+  like_votes_count: 0
+  url: http://instagram.com/p/YK-tp6QMO9/
+  user: jr
+  state: 0
+  external_identifier: '435436130255553469_228379143'
+  long_url: http://distilleryimage1.s3.amazonaws.com/d0f10e82a6ae11e28bc322000a9d0dcb_7.jpg
+  original_metadata:
+    attribution: 
+    tags:
+    - hunttesting
+    location: 
+    comments:
+      count: 0
+      data: []
+    filter: Normal
+    created_time: '1366128053'
+    link: http://instagram.com/p/YK-tp6QMO9/
+    likes:
+      count: 0
+      data: []
+    images:
+      low_resolution:
+        url: http://distilleryimage1.s3.amazonaws.com/d0f10e82a6ae11e28bc322000a9d0dcb_6.jpg
+        width: 306
+        height: 306
+      thumbnail:
+        url: http://distilleryimage1.s3.amazonaws.com/d0f10e82a6ae11e28bc322000a9d0dcb_5.jpg
+        width: 150
+        height: 150
+      standard_resolution:
+        url: http://distilleryimage1.s3.amazonaws.com/d0f10e82a6ae11e28bc322000a9d0dcb_7.jpg
+        width: 612
+        height: 612
+    caption:
+      created_time: '1366128072'
+      text: ! 'three #hunttesting'
+      from:
+        username: jronallo
+        profile_picture: http://images.ak.instagram.com/profiles/anonymousUser.jpg
+        id: '228379143'
+        full_name: jronallo
+      id: '435436286333993072'
+    type: image
+    id: '435436130255553469_228379143'
+    user:
+      username: jronallo
+      website: ''
+      profile_picture: http://images.ak.instagram.com/profiles/anonymousUser.jpg
+      full_name: jronallo
+      bio: ''
+      id: '228379143'
+  original_datetime: 2013-04-16 16:00:53.000000000 Z
+  staff_like: false
+  moderator_id: 
+  moderated_at: 
+  second_moderation: false
+  wins_count: 0
+  losses_count: 0
+  win_pct: 
+  popular_score: 0
+  file_harvested_date: 
+  file_harvest_failed: 0
+  donor_agreement_submitted_date: 
+  donor_agreement_failed: 0
+  failed_file_checks: 0
+  file_last_checked: 

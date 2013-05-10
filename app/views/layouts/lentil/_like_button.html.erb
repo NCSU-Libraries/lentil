@@ -1,0 +1,18 @@
+<%# FIXME: Why are all these different buttons and states necessary and sometimes coming from yielded content? %>
+<% unless already_like_voted?(image) %>
+  <% if content_for? :like_button %>
+      <%= yield  :like_button %>
+  <% else -%>
+    <button href="<%= tally_like_vote_path(image.id) %>" method="post" type="submit" class="btn like-btn initial-state" data-image-id="<%= image.id %>">
+    <i class="icon-thumbs-up"></i>
+    <%= t 'lentil.image_modal.like', :count => image.like_votes.size %></button>
+  <% end -%>
+  <button class="btn like-btn already-clicked secondary-state" rel="nofollow" title="Like this image" style="display:none;" data-image-id="<%= image.id %>">
+  <i class="icon-thumbs-up"></i>
+  <%= t 'lentil.image_modal.like', :count => (image.like_votes.size + 1) %></button>
+<% else -%>
+  <button class="btn already-clicked" disabled data-toggle="button" data-image-id="<%= image.id %>">
+    <i class="icon-thumbs-up"></i>
+    <%= t 'lentil.image_modal.like', :count => image.like_votes.size %>
+  </button>
+<% end -%>

@@ -1,0 +1,34 @@
+<div class="text-overlay">
+  <p class="description"><%= image.description %></p>
+  <p class="username"><%= link_to image.user.user_name, :action => :show, :controller => 'lentil/photographers', :id => image.user_id %></p>
+  <div class="btn-toolbar">
+
+    <!-- Social Media Sharing -->
+    <div class="btn-group dropup">
+      <a class="btn dropdown-toggle share" data-image-id="<%= image.id %>" data-toggle="dropdown" href=""><span class="caret"></span> <%= t 'lentil.sharing.share' %></a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="http://www.facebook.com/sharer.php?u=<%= image_url(image) %>" class="facebook" data-image-id="<%= image.id %>" target="_blank">
+          <i class="icon-facebook"></i> <%= t 'lentil.sharing.facebook' %>
+          </a>
+        </li>
+        <li>
+          <a href="http://twitter.com/share?text=Check+out+this+photo+of+the+Hunt+Library&amp;url=<%= image_url(image) %>" target="_blank" class="twitter" data-image-id="<%= image.id %>">
+          <i class="icon-twitter"></i> <%= t 'lentil.sharing.twitter' %>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:?body=<%= image_url(image) %>&amp;subject=Check%20out%20this%20photo%20of%20the%20Hunt%20Library" target="_blank" class="email" data-image-id="<%= image.id %>">
+          <i class="icon-envelope"></i> <%= t 'lentil.sharing.email' %>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- Like Voting -->
+    <%= render "/layouts/lentil/like_button", :image => image %>
+    <!-- Flagging - Modal -->
+    <!-- Button to trigger modal -->
+    <%= render "layouts/lentil/flag_button", :image => image %>
+  </div>
+</div>
+<%=  render "/lentil/images/flagging_modal", :image => image %>

@@ -1,0 +1,80 @@
+$(function () {
+
+	Lentil = {
+		// For any event that will load a new page use this pause to allow the event time to
+		// be tracked before going to new page.
+		tracking_pause: function(wait_time){
+		    var date = new Date();
+			var curDate = null;
+			do {
+				curDate = new Date();
+			} while(curDate-date < wait_time);
+		},
+		// In production it tracks the event to Google. It expects an array of everything that
+		// should be sent to Google.
+		ga_track: function(values){
+			<% if Rails.env == 'production' %>
+                <% if !google_analytics_tracker.nil? %>
+				    _gaq.push(values);
+                <% end %>
+			<% else %>
+				console.log(values);
+			<% end %>
+		}
+	}
+
+    // FIXME: All of these event handlers could probably be DRY'd up at some point, but doing it this way
+    // makes it easier to see the patterns first.
+
+	// click on image
+	$(document.body).on('click', '.images .fancybox', function(){
+		var image_id = $(this).parent().attr('id');
+		Lentil.ga_track(['_trackEvent', 'image', 'click', image_id]);
+	});
+
+	// share button
+	$(document.body).on('click', '.share', function(){
+		var image_id = $(this).data('imageId');
+		Lentil.ga_track(['_trackEvent', 'image_view', 'share', image_id]);
+	});
+    // facebook
+    $(document.body).on('click', '.facebook', function(){
+        var image_id = $(this).data('imageId');
+        Lentil.ga_track(['_trackEvent', 'image_view', 'facebook', image_id]);
+    });
+    // twitter
+    $(document.body).on('click', '.twitter', function(){
+        var image_id = $(this).data('imageId');
+        Lentil.ga_track(['_trackEvent', 'image_view', 'twitter', image_id]);
+    });
+    // email
+    $(document).on('click', '.email', function(){
+        var image_id = $(this).data('imageId');
+        Lentil.ga_track(['_trackEvent', 'image_view', 'email', image_id]);
+    });
+
+    // like
+    $(document.body).on('click', '.like-btn', function(){
+        var image_id = $(this).data('imageId');
+        var like_state;
+        if ($(this).hasClass('already-clicked')) {
+            like_state = 'unlike';
+        } else {
+            like_state = 'like';
+        }
+
+        Lentil.ga_track(['_trackEvent', 'image_view', like_state, image_id]);
+    });
+
+    // flag
+    $(document.body).on('click', '.flag-btn', function(){
+        var image_id = $(this).data('imageId');
+        Lentil.ga_track(['_trackEvent', 'image_view', 'flag', image_id]);
+    });
+
+    // picking a battle image
+    $(document.body).on('click', '.battle-form', function(){
+        var image_id = $(this).attr('value');
+        Lentil.ga_track(['_trackEvent', 'battle_view', 'pick', image_id]);
+    });
+});

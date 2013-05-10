@@ -1,0 +1,40 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id           :integer          not null, primary key
+#  user_name    :string(255)
+#  full_name    :string(255)
+#  banned       :boolean
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  service_id   :integer
+#  bio          :text
+#  images_count :integer          default(0)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+cl:
+  user_name: corylown
+  full_name: "Cory Lown"
+  banned: false
+  service: instagram
+
+bd:
+  user_name: bddavids
+  full_name: "Bret Davidson"
+  banned: false
+  service: instagram
+
+jc:
+  user_name: jmcasden
+  full_name: "Jason Casden"
+  banned: false
+  service: instagram
+
+jr: 
+  user_name: jronallo
+  full_name: "Jason Ronallo"
+  banned: false
+  service: instagram

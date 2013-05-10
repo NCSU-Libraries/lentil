@@ -1,0 +1,39 @@
+en:
+  lentil:
+    nav:
+      battle: Battle
+      about: About
+      recent: Recent
+      popular: Popular
+      staff_picks: Staff Picks
+    sharing:
+      share: Share
+      facebook: Facebook
+      twitter: Twitter
+      email: Email
+    image_modal:
+      like:
+        one: 1 Like
+        other: "%{count} Likes"
+      report: Report
+      reported: Reported
+    flagging_modal:
+      header: Report this image as inappropriate?
+      body: This image will remain on the site but will be reviewed by the site administrators.
+      cancel: Cancel
+      yes_report: "Yes, report this image"
+      yes_report_title: Report image as inappropriate
+    error: Error
+    error_email: "If the problem persists, please e-mail"
+    error_message:
+      image_loading: "Sorry, there was a problem loading images. Please reload the page."
+    battle:
+      leaders: Battle Leaders
+      pick_me: "Pick Me!"
+      win_pct: Win Pct
+      you_picked: You Picked
+    photographer:
+      photo:
+        one: 1 Photo
+        other: "%{count} Photos"
+      service_link: "%{username} on %{service}"

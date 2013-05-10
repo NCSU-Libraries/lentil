@@ -1,0 +1,9 @@
+<div class="wrapper battle-wrapper">
+    <div class="alert alert-error" style="margin-top:70px;">
+        <h4 style="padding-bottom:20px;"><%= t 'lentil.error' %>.</h4>
+        <p><%= error_message %></p>
+        <p><%= t 'lentil.error_email' %>
+          <%= link_to application_name, "mailto:#{contact_email}?Subject=[#{application_name} ERROR]", :class => :mailto, :target => '_blank' %>.
+        <p>
+    </div>
+</div>

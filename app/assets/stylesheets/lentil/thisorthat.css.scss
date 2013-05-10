@@ -1,0 +1,91 @@
+// Place all the styles related to the Thisorthat controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* THIS IS A COMMENT */
+
+// Battle
+.battle-submit-tile .button_action {
+    list-style: none;
+}
+
+.battle-result-tile {
+    color: #333;
+    text-align: center;
+}
+
+.battle-result-arrow-wrap {
+    margin-top: 40px;
+}
+
+.battle-image-wrap {
+    background: #FFF;
+    border-radius: 4px;
+    position: relative;
+    padding: 10px;
+}
+
+.battle-img {
+    margin-bottom: 0px;
+}
+
+.battle-image-desc {
+    color: #08C;
+    width: 100%;
+    padding-top:10px;
+    clear:both;
+    height:20px;
+    white-space: nowrap;
+}
+.battle-image-inner-desc {
+    position: absolute;
+}
+.trunc-medium {
+    display: none;
+}
+
+.trunc-large {
+    display: none;
+}
+
+.image-loader {
+    display:none;
+}
+
+#spinner-overlay {
+    height:100%;
+    width:100%;
+    position:fixed;
+    left:0;
+    top:0;
+    z-index:1;
+    background-color:black;
+    filter: alpha(opacity=75); /* internet explorer */
+    -khtml-opacity: 0.75;      /* khtml, old safari */
+    -moz-opacity: 0.75;       /* mozilla, netscape */
+    opacity: 0.75;           /* fx, safari, opera */
+}
+
+.winner-right {
+    display: none;
+}
+
+.winner-left {
+    display: inline-block;
+}
+
+// Battle Leaders
+.battle-leader-overlay {
+    box-sizing: border-box;
+    opacity: 0.9;
+    position:absolute;
+    pointer-events: none;
+    z-index: 500;
+    background: black;
+    bottom: 6px;
+    font-size: 1.3em;
+    text-rendering: optimizeLegibility;
+    letter-spacing: 0.15em;
+    text-align: center;
+    padding: 0.25em;
+}

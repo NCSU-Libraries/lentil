@@ -1,0 +1,24 @@
+<%= title @title %>
+<% content_for :like_button do %>
+  <form method="post" action="<%= tally_like_vote_path(@image.id) %>" style="display:inline;">
+    <button href="<%= tally_like_vote_path(@image.id) %>" type="submit" class="btn like-btn initial-state" data-image-id="<%= @image.id %>">
+    <i class="icon-thumbs-up"></i>
+    <%= t 'lentil.image_modal.like', :count => @image.like_votes.size %></button>
+  </form>
+<% end -%>
+<% content_for :flag_button do %>
+  <form method="post" action="<%= tally_flag_path(@image.id) %>" style="display:inline;">
+    <button type="submit" class="btn btn-danger flag-btn initial-state" data-target="#myModal-<%= @image.id %>" data-toggle="modal" data-remote="false" data-image-id="<%= @image.id %>">
+    <i class="icon-flag icon-white"></i>
+    <span class="btn-text"><%= t 'lentil.image_modal.report' %></span></button>
+  </form>
+<% end -%>
+<%= render :partial => "/layouts/lentil/top_navigation" %>
+<div class="wrapper">
+    <div class="grid-cell side-filler"></div>
+    <div id="image_<%= @image.id %>" class="image-show grid-cell solo-image">
+        <a href="<%= @image.url %>"><%= image_tag(@image.jpeg, :class => "instagram-img") %></a>
+        <%= render "/layouts/lentil/image_popup", :image => @image  %>
+    </div>
+    <div class="grid-cell side-filler"></div>
+</div>

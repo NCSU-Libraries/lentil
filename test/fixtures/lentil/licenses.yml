@@ -1,0 +1,25 @@
+# == Schema Information
+#
+# Table name: licenses
+#
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  description :text
+#  url         :string(255)
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  short_name  :string(255)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  short_name: CC-BY-SA-2.0
+  name: CC BY-SA 2.0
+  description: Attribution — You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+  url: http://creativecommons.org/licenses/by-sa/2.0/ 
+
+two:
+  short_name: ARR
+  name: All Rights Reserved
+  description: Default Instagram license.

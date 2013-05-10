@@ -1,0 +1,47 @@
+<div>
+  <table class="index_table">
+    <thead>
+      <tr>
+        <th>Thumbnail</th>
+        <th>Description</th>
+        <th>Username</th>
+        <th>Service Tags</th>
+        <th>Staff Tags</th>
+        <th>Staff Like</th>
+        <th>DNR</th>
+        <% if action?("moderate_passed")%>
+          <th>Moderator</th>
+        <% end %>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <% @images.each do |image| %>
+      <tr class="moderation">
+        <%= semantic_fields_for "image[#{image.id}]", image do |f| %>
+            <td><%= link_to_large_admin_image(image) %></td>
+            <td><%= image.description %></td>
+            <td><%= image.user.user_name %></td>
+            <td><%= image.service_tags.map{|tag| tag.name}.join(' | ') %>
+              <%= f.input "service_tags", :as => :hidden, :collection => image.service_tags, :wrapper_html => {:style => "list-style: none"} %>
+            </td>
+            <td class="moderation_tag">
+              <%= f.input :tags, :label => false, :as => :select, :collection => image.available_staff_tags, :input_html => {:multiple => true, :class => "chzn-select", :'data-placeholder' => 'Select Tag', :style => "width:190px" }%>
+            </td>
+            <td><%= f.input :staff_like, :label => "Staff Like", :wrapper_html => { :class => "moderation_checkbox" } %></td>
+            <td><%= f.input :do_not_request_donation, :label => "Don't request donation", :wrapper_html => { :class => "moderation_checkbox" } %></td>
+            <% if action?("moderate_passed")%>
+              <td><%= image.moderator.email %></td>
+            <% end %>
+            <td><%= f.input :state, :label => false, :as => :radio, :collection => Lentil::Image::States, :wrapper_html => { :class => "moderation_radio" } %></td>
+        <% end -%>
+      </tr>
+    <% end -%>
+  </table>
+  <%= form.input "second_moderation", :as => :hidden, :input_html => {:value => @second_moderation}, :wrapper_html => {:style => "list-style: none"} %>
+</div>
+<div>
+  <div class="submit_wrapper"><%= form.actions %></div>
+  <% if params[:action] != "update_image" %>
+    <div class="pagination"><%= paginate @images %></div>
+  <% end %>
+</div>

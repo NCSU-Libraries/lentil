@@ -1,0 +1,33 @@
+<% if @images.length > 0 %>
+  <table class="index_table">
+    <thead>
+      <tr>
+        <th>Thumbnail</th>
+        <th>Flags</th>
+        <th>Description</th>
+        <th>Username</th>
+        <th>All Tags</th>
+        <th>Moderator</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <% @images.each do |image| %>
+      <tr class="flagged">
+        <%= semantic_fields_for "image[#{image.id}]", image do |f| %>
+            <td><%= link_to_large_admin_image(image) %></td>
+            <td><%= image.flags.size %></td>
+            <td><%= image.description %></td>
+            <td><%= image.user.user_name %></td>
+            <td><%= image.tags.map{|tag| tag.name}.join(' | ') %></td>
+            <td><%= image.moderator.email if image.moderator %></td>
+            <td><%= image.state_name %></td>
+        <% end -%>
+      </tr>
+    <% end -%>
+  </table>
+  <div class="pagination"><%= paginate @images %></div>
+<% else %>
+  <div class="blank_slate_container">
+    <span class="blank_slate">No Flagging History Found</span>
+  </div>
+<% end -%>
