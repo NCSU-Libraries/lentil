@@ -2,6 +2,8 @@
 
 lentil is a Ruby on Rails Engine that supports the harvesting of images from Instagram and provides several browsing views, mechanisms for sharing, tools for users to select their favorite images, an administrative interface for moderating images, and a system for harvesting images and submitting donor agreements in preparation of ingest into external repositories. Built according to the principles of “responsive design,” lentil is designed for use on mobile devices, tablets, desktops, and larger screens.
 
+[![Build Status](https://travis-ci.org/NCSU-Libraries/lentil.png)](https://travis-ci.org/NCSU-Libraries/lentil)
+
 ## History
 
 lentil is extracted from the [My #HuntLibrary project](http://www.lib.ncsu.edu/dli/projects/MHL) at [NCSU Libraries](http://www.lib.ncsu.edu/). My #HuntLibrary was created as a platform to foster student and community engagement with the new building via social media imagery and to preserve and archive these images as part of the record of the [Hunt Library](http://www.lib.ncsu.edu/huntlibrary) launch. Images from this crowdsourced documentation effort will be selected to become part of our permanent digital collections, allowing the NCSU community to contribute to the historical record of the Hunt Library through image submissions as well as the use of voting tools.
