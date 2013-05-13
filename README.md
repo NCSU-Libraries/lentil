@@ -6,7 +6,7 @@ lentil is a Ruby on Rails Engine that supports the harvesting of images from Ins
 
 ## History
 
-lentil is extracted from the [My #HuntLibrary project](http://www.lib.ncsu.edu/dli/projects/MHL) at [NCSU Libraries](http://www.lib.ncsu.edu/). My #HuntLibrary was created as a platform to foster student and community engagement with the new building via social media imagery and to preserve and archive these images as part of the record of the [Hunt Library](http://www.lib.ncsu.edu/huntlibrary) launch. Images from this crowdsourced documentation effort will be selected to become part of our permanent digital collections, allowing the NCSU community to contribute to the historical record of the Hunt Library through image submissions as well as the use of voting tools.
+lentil is extracted from the [My #HuntLibrary project](http://www.lib.ncsu.edu/dli/projects/MHL) at [NCSU Libraries](http://www.lib.ncsu.edu/). My #HuntLibrary was created as a platform to foster student and community engagement with the new [James B. Hunt Jr. Library](http://www.lib.ncsu.edu/huntlibrary) via social media imagery and to preserve and archive these images as part of the record of the Hunt Library launch. Images from this crowdsourced documentation effort will be selected to become part of our permanent digital collections, allowing the NCSU community to contribute to the historical record of the Hunt Library through image submissions as well as the use of voting tools.
 
 ## Project Maturity
 
