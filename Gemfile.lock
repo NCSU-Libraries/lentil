@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lentil (0.0.1.pre)
+    lentil (0.0.3.pre)
       activeadmin (= 0.5.1)
       bootstrap-sass
       chosen-rails
