@@ -17,11 +17,11 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - mG1Y0dc7mUhu7y3eY1Tf4X0LdBQuqe6ZrmfiYurqF1N9nJJSS8kg1eUL4Z5mnazV
+      - JwH+KE6hIc16AYg6Rdc9zLnvbOd5F/73PjaQ/6sBuxoRzzHBlfL1aosmb/dQDcEO
       X-Amz-Request-Id:
-      - 9DADD0B7B22F986B
+      - 97485AB7F1FDCF2D
       Date:
-      - Tue, 07 May 2013 14:57:14 GMT
+      - Fri, 14 Jun 2013 13:27:11 GMT
       Expires:
       - Thu, 15 Apr 2020 20:00:00 GMT
       Last-Modified:
@@ -40,89 +40,7 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Tue, 07 May 2013 14:57:13 GMT
-- request:
-    method: head
-    uri: http://distilleryimage7.s3.amazonaws.com/55dcf0ba2a8c11e29cc822000a1f96e3_7.jpg
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      X-Amz-Id-2:
-      - alwrUBXzzFM1pp99J1xEQswKpllB470J+Vl2MMDXuL3aArpw2TC8CUMSs/jJ8r+T
-      X-Amz-Request-Id:
-      - 3012C0BAAC493544
-      Date:
-      - Tue, 07 May 2013 14:57:14 GMT
-      Expires:
-      - Thu, 15 Apr 2020 20:00:00 GMT
-      Last-Modified:
-      - Fri, 09 Nov 2012 16:41:40 GMT
-      Etag:
-      - ! '"ec1196c1b6349e7e25ef2aa1d462b4e1"'
-      Accept-Ranges:
-      - bytes
-      Content-Type:
-      - image/jpeg
-      Content-Length:
-      - '84579'
-      Server:
-      - AmazonS3
-    body:
-      encoding: US-ASCII
-      string: ''
-    http_version: 
-  recorded_at: Tue, 07 May 2013 14:57:13 GMT
-- request:
-    method: head
-    uri: http://distilleryimage3.s3.amazonaws.com/644f52a02d2f11e2b55e22000a9f09fb_7.jpg
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      X-Amz-Id-2:
-      - gVWcr6zkfD8HxGHS+ZXPT2VHHd6HutnqkJLcVejKqQxXCXzMns0I9djNxbJT9uzV
-      X-Amz-Request-Id:
-      - 42590F70D22BFB91
-      Date:
-      - Tue, 07 May 2013 14:57:15 GMT
-      Expires:
-      - Thu, 15 Apr 2020 20:00:00 GMT
-      Last-Modified:
-      - Tue, 13 Nov 2012 01:13:55 GMT
-      Etag:
-      - ! '"c4f4b4b37c4e33c16c31092bd8ebf05d"'
-      Accept-Ranges:
-      - bytes
-      Content-Type:
-      - image/jpeg
-      Content-Length:
-      - '87450'
-      Server:
-      - AmazonS3
-    body:
-      encoding: US-ASCII
-      string: ''
-    http_version: 
-  recorded_at: Tue, 07 May 2013 14:57:14 GMT
+  recorded_at: Fri, 14 Jun 2013 13:27:10 GMT
 - request:
     method: head
     uri: http://distilleryimage6.ak.instagram.com/ef3c7ff0b71d11e2b1b722000a1d0aba_7.jpg
@@ -140,9 +58,9 @@ http_interactions:
       message: Forbidden
     headers:
       X-Amz-Request-Id:
-      - 9A371BF4FBC8753B
+      - 1C0A63C530A96810
       X-Amz-Id-2:
-      - xh7UBU2lFMapwG64CYxikcr8p6urHeEvpzBnwIksObIkKsA2RqHI03lD22xtKfaL
+      - qqqAHWxOI+FZ3YvtjN3GgUHV2hmlUot0PG6p9qB4ijKz0RLcRoGWxnvURVX7GfAP
       Content-Type:
       - application/xml
       Server:
@@ -150,18 +68,18 @@ http_interactions:
       Cache-Control:
       - max-age=129600
       Expires:
-      - Thu, 09 May 2013 02:57:15 GMT
+      - Sun, 16 Jun 2013 01:27:10 GMT
       Content-Length:
       - '1'
       Date:
-      - Tue, 07 May 2013 14:57:15 GMT
+      - Fri, 14 Jun 2013 13:27:10 GMT
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Tue, 07 May 2013 14:57:15 GMT
+  recorded_at: Fri, 14 Jun 2013 13:27:10 GMT
 - request:
     method: head
     uri: http://distilleryimage7.s3.amazonaws.com/7deb2d9ea6ae11e28a1a22000aa81ffa_7.jpg
@@ -179,11 +97,11 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - 8e2mfE19IOkTJ6D/Mp0hxrpStcxl5vJM/4rngzrTuhphBxyf9Rf88F15qFiZfmm+
+      - 5Z1LF+PUYGkO5g6PdfC3f5xHwSHmqxOuWQlc43tNHmX0mDHsObrcAU9G3ZqyRsnZ
       X-Amz-Request-Id:
-      - 20007692A165D1B2
+      - 4F4CE608ADC4B8FA
       Date:
-      - Tue, 07 May 2013 14:57:16 GMT
+      - Fri, 14 Jun 2013 13:27:11 GMT
       Expires:
       - Thu, 15 Apr 2020 20:00:00 GMT
       Last-Modified:
@@ -202,5 +120,126 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Tue, 07 May 2013 14:57:15 GMT
-recorded_with: VCR 2.4.0
+  recorded_at: Fri, 14 Jun 2013 13:27:11 GMT
+- request:
+    method: head
+    uri: http://distilleryimage3.s3.amazonaws.com/644f52a02d2f11e2b55e22000a9f09fb_7.jpg
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - vIOpy5/UB32qDc9omlHTGsV20hfVN/D1UYf34zRbrh5pKrfy3sR/8+E491Kxdtmz
+      X-Amz-Request-Id:
+      - 4EDED6B66C034010
+      Date:
+      - Fri, 14 Jun 2013 13:27:13 GMT
+      Expires:
+      - Thu, 15 Apr 2020 20:00:00 GMT
+      Last-Modified:
+      - Tue, 13 Nov 2012 01:13:55 GMT
+      Etag:
+      - ! '"c4f4b4b37c4e33c16c31092bd8ebf05d"'
+      Accept-Ranges:
+      - bytes
+      Content-Type:
+      - image/jpeg
+      Content-Length:
+      - '87450'
+      Server:
+      - AmazonS3
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Fri, 14 Jun 2013 13:27:12 GMT
+- request:
+    method: head
+    uri: http://distilleryimage7.s3.amazonaws.com/55dcf0ba2a8c11e29cc822000a1f96e3_7.jpg
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - MqYxaNNYX2BBTHhaw68FYROi1znnxeTBedzcr3QIXKLZx5iXB/cKbGOxF0PwAcK5
+      X-Amz-Request-Id:
+      - 5946F294ECD0392D
+      Date:
+      - Fri, 14 Jun 2013 13:27:13 GMT
+      Expires:
+      - Thu, 15 Apr 2020 20:00:00 GMT
+      Last-Modified:
+      - Fri, 09 Nov 2012 16:41:40 GMT
+      Etag:
+      - ! '"ec1196c1b6349e7e25ef2aa1d462b4e1"'
+      Accept-Ranges:
+      - bytes
+      Content-Type:
+      - image/jpeg
+      Content-Length:
+      - '84579'
+      Server:
+      - AmazonS3
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Fri, 14 Jun 2013 13:27:12 GMT
+- request:
+    method: head
+    uri: http://distilleryimage6.ak.instagram.com/ef3c7ff0b71d11e2b1b722000a1d0aba_7.jpg
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      X-Amz-Request-Id:
+      - 896683F5AD6CB1C5
+      X-Amz-Id-2:
+      - sqwnjosq+dn192vxq/Tprp/ySeU9VLGpIc2/fVVdv0+/Azm9Ovp2gpIZ7N5DqICX
+      Content-Type:
+      - application/xml
+      Server:
+      - AmazonS3
+      Cache-Control:
+      - max-age=129600
+      Expires:
+      - Sun, 16 Jun 2013 01:38:53 GMT
+      Content-Length:
+      - '1'
+      Date:
+      - Fri, 14 Jun 2013 13:38:53 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Fri, 14 Jun 2013 13:38:53 GMT
+recorded_with: VCR 2.5.0
