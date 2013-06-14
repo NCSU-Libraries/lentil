@@ -27,13 +27,13 @@ $(function () {
     // makes it easier to see the patterns first.
 
 	// click on image
-	$(document.body).on('click', '.images .fancybox', function(){
+    $(document.body).on('click', '.images .fancybox', function(){
 		var image_id = $(this).parent().attr('id');
 		Lentil.ga_track(['_trackEvent', 'image', 'click', image_id]);
 	});
 
 	// share button
-	$(document.body).on('click', '.share', function(){
+    $(document.body).on('click', '.share', function(){
 		var image_id = $(this).data('imageId');
 		Lentil.ga_track(['_trackEvent', 'image_view', 'share', image_id]);
 	});
@@ -48,7 +48,7 @@ $(function () {
         Lentil.ga_track(['_trackEvent', 'image_view', 'twitter', image_id]);
     });
     // email
-    $(document).on('click', '.email', function(){
+    $(document.body).on('click', '.email', function(){
         var image_id = $(this).data('imageId');
         Lentil.ga_track(['_trackEvent', 'image_view', 'email', image_id]);
     });
