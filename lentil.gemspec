@@ -39,7 +39,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'typhoeus' # for checking and harvesting image files
 
   s.add_development_dependency "sqlite3"
-  s.add_development_dependency "capybara", "~> 2.0.2"
+  s.add_development_dependency "capybara", "~> 2.1.0"
   s.add_development_dependency "database_cleaner"
   s.add_development_dependency "launchy"
   s.add_development_dependency "vcr"

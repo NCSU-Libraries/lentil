@@ -24,19 +24,22 @@ class EventTrackingTest < ActionDispatch::IntegrationTest
 
   test "should trigger an event for clicking on the facebook share link" do
     visit(lentil.image_path(@image))
+    find('.share').click
     find('.facebook').click
     assert_equal("_trackEvent,image_view,facebook,#{@image.id}", console_message)
   end
 
   test "should trigger an event for clicking on the twitter share link" do
     visit(lentil.image_path(@image))
+    find('.share').click
     find('.twitter').click
     assert_equal("_trackEvent,image_view,twitter,#{@image.id}", console_message)
   end
 
-  # FIXME: This fails for an unknown reason.
+  # FIXME: This fails due to the mailto link.
   # test "should trigger an event for clicking on the email share link" do
   #   visit(lentil.image_path(@image))
+  #   find('.share').click
   #   find('.email').click
   #   assert_equal("_trackEvent,image_view,email,#{@image.id}", console_message)
   # end
