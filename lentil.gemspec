@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 3.2.13"
+  s.add_dependency 'jquery-rails', '~> 2.3.0'
   s.add_dependency "activeadmin", "0.5.1"
   s.add_dependency "meta_search" # for search within admin interface
   s.add_dependency "formtastic" # simplifies form creation
