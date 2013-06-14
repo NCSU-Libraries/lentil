@@ -49,14 +49,15 @@ class EventTrackingTest < ActionDispatch::IntegrationTest
     assert_equal("_trackEvent,image_view,unlike,#{@image.id}", console_message)
   end
 
-  test "should trigger an event for unliking an image that was previously liked" do
-    visit lentil.image_path(@image)
-    find('.like-btn.initial-state').click
-    visit lentil.images_path
-    visit lentil.image_path(@image)
-    find('.like-btn.already-clicked').click
-    assert_equal("_trackEvent,image_view,unlike,#{@image.id}", console_message)
-  end
+  # TODO: Not currently implemented
+  # test "should trigger an event for unliking an image that was previously liked" do
+  #   visit lentil.image_path(@image)
+  #   find('.like-btn.initial-state').click
+  #   visit lentil.images_path
+  #   visit lentil.image_path(@image)
+  #   find('.like-btn.already-clicked').click
+  #   assert_equal("_trackEvent,image_view,unlike,#{@image.id}", console_message)
+  # end
 
   test "clicking the flag button" do
     visit lentil.image_path(@image)
