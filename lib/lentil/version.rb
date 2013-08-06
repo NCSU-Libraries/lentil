@@ -1,3 +1,3 @@
 module Lentil
-  VERSION = "0.0.3.pre"
+  VERSION = "0.1.0"
 end
