@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", "~> 3.2.13"
+  s.add_dependency "rails", "~> 3.2.14"
   s.add_dependency 'jquery-rails', '~> 2.3.0'
   s.add_dependency "activeadmin", "0.5.1"
   s.add_dependency "meta_search" # for search within admin interface
@@ -40,7 +40,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "capybara", "~> 2.1.0"
-  s.add_development_dependency "database_cleaner"
+  s.add_development_dependency "database_cleaner", "~> 1.0.0"
   s.add_development_dependency "launchy"
   s.add_development_dependency "vcr"
   s.add_development_dependency "webmock", "~> 1.11.0"
