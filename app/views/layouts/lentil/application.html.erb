@@ -12,7 +12,7 @@
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= yield :javascript_includes %>
-  <%= analytics_init if (Rails.env.production? && !google_analytics_tracker.nil?) %>
+  <%= analytics_init(:tracker => google_analytics_tracker()) if (Rails.env.production? && !google_analytics_tracker.nil?) %>
   <% if content_for? :feed_auto_discovery %>
     <%= yield  :feed_auto_discovery %>
   <% end -%>

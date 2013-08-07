@@ -1,4 +1,3 @@
-<% environment.context_class.instance_eval { include Lentil::ApplicationHelper } %>
 $(function () {
 
 	Lentil = {
@@ -15,9 +14,9 @@ $(function () {
 		// should be sent to Google.
 		ga_track: function(values){
 			<% if Rails.env == 'production' %>
-                <% if !google_analytics_tracker.nil? %>
-				    _gaq.push(values);
-                <% end %>
+                if (typeof _gaq !== "undefined") {
+                    _gaq.push(values);
+                }
 			<% else %>
 				console.log(values);
 			<% end %>

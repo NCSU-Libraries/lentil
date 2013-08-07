@@ -48,9 +48,7 @@ function pushimageurl() {
     // push the url for the displayed image to the browser
     window.history.pushState(null, null, replacementUrl);
 
-    if (typeof _gaq !== "undefined") {
-        _gaq.push(['_trackPageview', replacementUrl]);
-    }
+    Lentil.ga_track(['_trackPageview', replacementUrl]);
 
     // listen for popstate (back/forward button)
     window.onpopstate = function(){
