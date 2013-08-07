@@ -85,7 +85,7 @@ GEM
     capybara-webkit (1.0.0)
       capybara (~> 2.0, >= 2.0.2)
       json
-    chosen-rails (0.13.2)
+    chosen-rails (1.0.0)
       coffee-rails (>= 3.2)
       compass-rails (>= 1.0)
       railties (>= 3.0)
@@ -239,7 +239,7 @@ GEM
     responders (1.0.0.rc)
       railties (>= 3.2, < 5)
     ruby-oembed (0.8.8)
-    safe_yaml (0.9.4)
+    safe_yaml (0.9.5)
     sass (3.2.10)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
