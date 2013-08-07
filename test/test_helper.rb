@@ -59,6 +59,10 @@ class ActionDispatch::IntegrationTest
     page.driver.console_messages.last[:message]
   end
 
+  def console_messages
+    page.driver.console_messages
+  end
+
   teardown do
     DatabaseCleaner.clean       # Truncate the database
     Capybara.reset_sessions!    # Forget the (simulated) browser state
