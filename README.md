@@ -23,7 +23,7 @@ gem 'lentil'
 gem 'therubyracer'
 ```
 
-> If you would like to work directly from the master branch, use `gem 'git://github.com/NCSU-Libraries/lentil.git'` instead.
+> If you would like to work directly from the master branch, use `gem 'lentil', :git => 'git://github.com/NCSU-Libraries/lentil.git'` instead.
 
 ### Run the generator
 
