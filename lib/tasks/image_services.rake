@@ -105,7 +105,7 @@ namespace :lentil do
       args.with_defaults(:number_of_images => 1, :image_service => 'Instagram')
       num_to_harvest = args[:number_of_images].to_i
 
-      Lentil::Service.where(:name => args[:image_service]).first.images.approved.where("images.created_at < :week", {:week => 1.week.ago}).
+      Lentil::Service.where(:name => args[:image_service]).first.images.approved.where("lentil_images.created_at < :week", {:week => 1.week.ago}).
               where(:do_not_request_donation => false).
               where(:donor_agreement_submitted_date => nil).order("donor_agreement_failed ASC").
               limit(num_to_harvest).each do |image|
