@@ -30,10 +30,11 @@ namespace :lentil do
       args.with_defaults(:number_of_images => 50, :image_service => 'Instagram')
 
       base_dir = args[:base_directory] || Lentil::Engine::APP_CONFIG["base_image_file_dir"] || nil
-
       raise "Base directory is required" unless base_dir
 
       num_to_harvest = args[:number_of_images].to_i
+
+      harvester = Lentil::InstagramHarvester.new
 
       Lentil::Service.where(:name => args[:image_service]).first.images.where(:file_harvested_date => nil).
         order("file_harvest_failed ASC").limit(num_to_harvest).each do |image|
@@ -53,7 +54,6 @@ namespace :lentil do
         end
 
         begin
-          harvester = Lentil::InstagramHarvester.new
           image_data = harvester.harvest_image_data(image)
           # TODO: Currently expects JPEG
           image_file_path += "/#{image.external_identifier}.jpg"
@@ -80,12 +80,12 @@ namespace :lentil do
       args.with_defaults(:number_of_images => 10, :image_service => 'Instagram')
 
       num_to_check = args[:number_of_images].to_i
+      harvester = Lentil::InstagramHarvester.new
 
       Lentil::Service.unscoped.where(:name => args[:image_service]).first.images.
         where("(file_last_checked IS NULL) OR (file_last_checked < :day)", {:day => 1.day.ago}).
         where("failed_file_checks < 10").
         order("file_last_checked ASC").limit(num_to_check).each do |image|
-          harvester = Lentil::InstagramHarvester.new
           image_check = harvester.test_remote_image(image)
 
           if image_check
@@ -105,6 +105,10 @@ namespace :lentil do
       args.with_defaults(:number_of_images => 1, :image_service => 'Instagram')
       num_to_harvest = args[:number_of_images].to_i
 
+      harvester = Lentil::InstagramHarvester.new
+
+      # If you are running the test_image_files task regularly,
+      # deleted images will eventually be ignored by this task.
       Lentil::Service.where(:name => args[:image_service]).first.images.approved.where("lentil_images.created_at < :week", {:week => 1.week.ago}).
               where(:do_not_request_donation => false).
               where(:donor_agreement_submitted_date => nil).order("donor_agreement_failed ASC").
@@ -112,7 +116,6 @@ namespace :lentil do
         begin
           donor_agreement = Lentil::Engine::APP_CONFIG["donor_agreement_text"] || nil
           raise "donor_agreement_text must be defined in application config" unless donor_agreement
-          harvester = Lentil::InstagramHarvester.new
           harvester.leave_image_comment(image, donor_agreement)
           image.donor_agreement_submitted_date = DateTime.now
           image.save

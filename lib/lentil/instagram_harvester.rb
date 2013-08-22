@@ -160,7 +160,7 @@ module Lentil
     def save_instagram_load(instagram_load, raise_dupes=false)
       # Handle collections of images and individual images
       images = instagram_load
-      
+
       if !images.kind_of?(Array)
         images = [images]
       end
