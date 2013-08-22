@@ -125,6 +125,7 @@ namespace :lentil do
           image.save
           Rails.logger.error e.message
           puts e.message
+          raise e
         end
       end
     end
