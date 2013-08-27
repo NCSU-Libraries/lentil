@@ -10,7 +10,7 @@ lentil is extracted from the [My #HuntLibrary project](http://www.lib.ncsu.edu/d
 
 ## Project Maturity
 
-Although a version of this code is being used in production, **this gem should be considered an early release**. This gem has been used to replace our production instance, but has not yet been deployed.
+Although we are using this gem in production, **this gem should be considered an early release**.
 
 ## Installation
 
