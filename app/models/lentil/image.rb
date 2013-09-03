@@ -87,7 +87,7 @@ class Lentil::Image < ActiveRecord::Base
   end
 
   def self.blend
-    (popular.limit(150) + recent.limit(50) + staff_picks.limit(100)).uniq.shuffle
+    (popular.limit(50) + recent.limit(100) + staff_picks.limit(150)).uniq.shuffle
   end
 
   def service_tags
