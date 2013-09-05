@@ -27,7 +27,7 @@ module Lentil
       # if an image has fewer than 5 battle rounds this is 0
       # 5 or more and the points awarded is the win_pct/2
       if image.win_pct and image.wins_count + image.losses_count > 4
-        battle_points = (image.win_pct/2).round
+        battle_points = (image.win_pct/1.5).round
       else
         battle_points = 0
       end
