@@ -19,7 +19,7 @@ module Lentil
       # 10 likes is 13 points
       # 100 likes is 25 points
       if image.like_votes_count > 0
-        like_vote_points = Math::log(image.like_votes_count, 1.2).round
+        like_vote_points = Math::log(image.like_votes_count, 1.5).round
       else
         like_vote_points = 0
       end
