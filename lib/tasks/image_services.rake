@@ -105,6 +105,9 @@ namespace :lentil do
       args.with_defaults(:number_of_images => 1, :image_service => 'Instagram')
       num_to_harvest = args[:number_of_images].to_i
 
+      donor_agreement = Lentil::Engine::APP_CONFIG["donor_agreement_text"] || nil
+      raise "donor_agreement_text must be defined in application config" unless donor_agreement
+
       harvester = Lentil::InstagramHarvester.new
 
       # If you are running the test_image_files task regularly,
@@ -113,9 +116,8 @@ namespace :lentil do
               where(:do_not_request_donation => false).
               where(:donor_agreement_submitted_date => nil).order("donor_agreement_failed ASC").
               limit(num_to_harvest).each do |image|
+
         begin
-          donor_agreement = Lentil::Engine::APP_CONFIG["donor_agreement_text"] || nil
-          raise "donor_agreement_text must be defined in application config" unless donor_agreement
           harvester.leave_image_comment(image, donor_agreement)
           image.donor_agreement_submitted_date = DateTime.now
           image.save
