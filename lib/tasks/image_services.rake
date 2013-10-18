@@ -54,10 +54,11 @@ namespace :lentil do
         end
 
         begin
-          image_data = harvester.harvest_image_data(image)
           # TODO: Currently expects JPEG
           image_file_path += "/#{image.external_identifier}.jpg"
-          raise "Image file already exists, will not overwrite" if File.exist?(image_file_path)
+          raise "Image file already exists, will not overwrite: #{image_file_path}" if File.exist?(image_file_path)
+
+          image_data = harvester.harvest_image_data(image)
 
           File.open(image_file_path, "wb") do |f|
             f.write image_data
@@ -65,7 +66,7 @@ namespace :lentil do
 
           image.file_harvested_date = DateTime.now
           image.save
-          puts "Harvested image #{image.id}"
+          puts "Harvested image #{image.id}, #{image_file_path}"
         rescue => e
           image.file_harvest_failed += 1
           image.save
