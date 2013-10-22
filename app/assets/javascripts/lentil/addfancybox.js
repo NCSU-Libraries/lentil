@@ -90,7 +90,7 @@ function addfancybox() {
         beforeShow  : function() {
             this.title = $(this.element).next(".text-overlay").html();
             imageId = $(this.element).parents("div").attr("id");
-            $(".fancybox-overlay, .fancybox-mobile").attr('id', imageId);
+            $(".fancybox-wrap").attr('id', imageId);
             pushimageurl(imageId);
         },
         afterShow : function() {
