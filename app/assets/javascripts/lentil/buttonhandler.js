@@ -2,7 +2,7 @@ function buttonhandler() {
 
     $(".like-btn, .flag-confirm").click(function(e) {
         button = $(this);
-        imageId = $(".fancybox-wrap").attr("id");
+        imageId = $(".fancybox-wrap, .image-show").attr("id");
         if (!$(button).is(".already-clicked")) {
             url = $(button).attr("href");
             $.post(url, function() {
