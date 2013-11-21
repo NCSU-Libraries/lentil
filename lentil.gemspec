@@ -19,37 +19,36 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 3.2.14"
   s.add_dependency 'jquery-rails', '~> 2.3.0'
-  s.add_dependency "activeadmin", "0.5.1"
-  s.add_dependency "meta_search" # for search within admin interface
-  s.add_dependency "formtastic" # simplifies form creation
+  s.add_dependency "activeadmin", '~> 0.5.1'
+  s.add_dependency "meta_search", '~> 1.1.3' # for search within admin interface
+  s.add_dependency "formtastic", '~> 2.2.1' # simplifies form creation
   s.add_dependency "instagram", "~> 0.10.0" # Interact with the Instagram API
-  s.add_dependency "modernizr-rails" # browser feature detection, used by breakpoint
+  s.add_dependency "modernizr-rails", "~> 2.7.0" # browser feature detection, used by breakpoint
   s.add_dependency 'fancybox2-rails', '~> 0.2.1' # for image interface overlays
   s.add_dependency 'whenever', '>=0.8.0' # for defining cron jobs
-  s.add_dependency 'bootstrap-sass' # sass version of twitter bootstrap
-  s.add_dependency 'will_paginate', '~>3.0' # adds paging feature to rails models
-  s.add_dependency 'state_machine' # adds state machine for moderation
-  s.add_dependency 'ruby-oembed' # Retrieve OEmbed data
-  s.add_dependency 'chosen-rails' # improved form select box
-  s.add_dependency 'randumb' # pull random records from Active Record
-  s.add_dependency 'lazing' # Lazy equivalents for many of the methods defined in Ruby's Enumerable module
-  s.add_dependency 'sitemap_generator' # Generate sitemaps on deployment
-  s.add_dependency 'compass-rails'
-  s.add_dependency 'google-analytics-rails'
-  s.add_dependency 'typhoeus' # for checking and harvesting image files
+  s.add_dependency 'bootstrap-sass', '~> 2.3.0' # sass version of twitter bootstrap
+  s.add_dependency 'will_paginate', '~> 3.0' # adds paging feature to rails models
+  s.add_dependency 'state_machine', "~> 1.2.0" # adds state machine for moderation
+  s.add_dependency 'ruby-oembed', "~> 0.8.9" # Retrieve OEmbed data
+  s.add_dependency 'chosen-rails', "~> 1.0.1" # improved form select box
+  s.add_dependency 'randumb', "~> 0.4.1" # pull random records from Active Record
+  s.add_dependency 'lazing', "~> 0.1.1" # Lazy equivalents for many of the methods defined in Ruby's Enumerable module
+  s.add_dependency 'sitemap_generator', "~> 4.3.0" # Generate sitemaps on deployment
+  s.add_dependency 'compass-rails', "~> 1.0.3"
+  s.add_dependency 'google-analytics-rails', "~> 0.0.4"
+  s.add_dependency 'typhoeus', "~> 0.6.6" # for checking and harvesting image files
 
-  s.add_development_dependency "sqlite3"
+  s.add_development_dependency "sqlite3", "~> 1.3.8"
   s.add_development_dependency "capybara", "~> 2.1.0"
   s.add_development_dependency "database_cleaner", "~> 1.0.0"
-  s.add_development_dependency "launchy"
-  s.add_development_dependency "vcr"
-  s.add_development_dependency "webmock", "~> 1.11.0"
-  s.add_development_dependency "simplecov"
-  s.add_development_dependency "pry-rails"
-  s.add_development_dependency "test-unit"
-  s.add_development_dependency "mocha"
-  s.add_development_dependency "pry-rails"
-  s.add_development_dependency "single_test"
-  s.add_development_dependency "capybara-webkit"
-  s.add_development_dependency "yard"
+  s.add_development_dependency "launchy", "~> 2.4.0"
+  s.add_development_dependency "vcr", "~> 2.7.0"
+  s.add_development_dependency "webmock", "< 1.16"
+  s.add_development_dependency "simplecov", "~> 0.8.2"
+  s.add_development_dependency "pry-rails", "~> 0.3.2"
+  s.add_development_dependency "test-unit", "~> 2.5.5"
+  s.add_development_dependency "mocha", "~> 0.14.0"
+  s.add_development_dependency "single_test", "~> 0.6.0"
+  s.add_development_dependency "capybara-webkit", "~> 1.0.0"
+  s.add_development_dependency "yard", "~> 0.8.7"
 end

@@ -39,5 +39,4 @@ end
 
 task :default => :test
 
-require 'single_test'
-SingleTest.load_tasks
+require 'single_test/tasks'

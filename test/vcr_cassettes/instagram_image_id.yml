@@ -16,82 +16,58 @@ http_interactions:
   response:
     status:
       code: 200
-      message: !binary |-
-        T0s=
+      message: OK
     headers:
-      !binary "Q29udGVudC1FbmNvZGluZw==":
-      - !binary |-
-        Z3ppcA==
-      !binary "Q29udGVudC1MYW5ndWFnZQ==":
-      - !binary |-
-        ZW4=
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        YXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA==
-      !binary "RGF0ZQ==":
-      - !binary |-
-        VHVlLCAwNyBNYXkgMjAxMyAxNDo1Njo1NiBHTVQ=
-      !binary "U2VydmVy":
-      - !binary |-
-        bmdpbng=
-      !binary "U2V0LUNvb2tpZQ==":
-      - !binary |-
-        Y3NyZnRva2VuPTM2YjZlZWM2MmI3OWZmOTk5YmRkMjMwNjM5MmRiZTczOyBl
-        eHBpcmVzPVR1ZSwgMDYtTWF5LTIwMTQgMTQ6NTY6NTYgR01UOyBNYXgtQWdl
-        PTMxNDQ5NjAwOyBQYXRoPS8=
-      !binary "VmFyeQ==":
-      - !binary |-
-        Q29va2llLCBBY2NlcHQtTGFuZ3VhZ2UsIEFjY2VwdC1FbmNvZGluZw==
-      !binary "WC1SYXRlbGltaXQtTGltaXQ=":
-      - !binary |-
-        NTAwMA==
-      !binary "WC1SYXRlbGltaXQtUmVtYWluaW5n":
-      - !binary |-
-        NDk3OQ==
-      !binary "Q29udGVudC1MZW5ndGg=":
-      - !binary |-
-        MTU1MA==
-      !binary "Q29ubmVjdGlvbg==":
-      - !binary |-
-        a2VlcC1hbGl2ZQ==
+      Content-Language:
+      - en
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 21 Nov 2013 15:43:32 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - csrftoken=8a2adc6ab5f1786048091007222be06e; expires=Thu, 20-Nov-2014 15:43:32
+        GMT; Max-Age=31449600; Path=/
+      Vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4980'
+      Content-Length:
+      - '1549'
+      Connection:
+      - keep-alive
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        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
-        G2nyko93kYeHh78Ay96GZpcOAAA=
-    http_version: 
-  recorded_at: Tue, 07 May 2013 14:56:56 GMT
-recorded_with: VCR 2.4.0
+      encoding: UTF-8
+      string: '{"meta":{"code":200},"data":{"attribution":null,"tags":[],"location":null,"comments":{"count":3,"data":[{"created_time":"1353016068","text":"This
+        is a test comment. Lorem ipsum dolor sit amet, risus parturient illo quaerat
+        euismod integer, bibendum tempus, ligula fringilla leo purus, sed cursus nibh
+        vestibulum donec, suscipit amet morbi. Lectus ultrices cursus leo justo elit
+        lorem, gravida aliquam non dis posuere luctus ut, accumsan in mauris auctor.
+        Iaculis amet, ornare dolor sed sit, lectus neque pede laoreet. Diam dignissim
+        amet eu, lectus quis fringilla nulla in, elit quis dis sollicitudin vel. Quam
+        tempor ut, arcu ante sagittis ipsam non sed diam, nunc non erat luctus amet
+        sem. Euismod ultrices nibh bibendum accumsan, dapibus suspendisse, turpis
+        quam cum sed sed in, quam vel sit a conubia.\nBibendum aliquam condimentum
+        urna dis, faucibus aliquam. Suscipit cupidatat faucibus vestibulum erat, sodales
+        rem cursus feugiat odio id nec, id aliqua. Amet libero diam aliquet tincidunt
+        nullam purus, montes wisi ut, orci vitae wisi elit, nunc fringilla vel adipiscing
+        arcu laoreet purus. Eget metus ante congue. Ac nec consequat. Convallis vivamus
+        non lacus, vestibulum dolor sit molestie purus sed, sed non pellentesque sodales
+        tellus, mus vehicula ut, eu curabitur mauris laoreet.\nAdipiscing donec pellentesque
+        eget aenean eu amet, maecenas dui, lacus diam pellentesque eget, morbi enim,
+        leo posuere velit eu posuere mollis. Repellendus rhoncus ut, donec quisque
+        fringilla faucibus maecenas, imperdiet nunc dolor congue sapien nunc cras,
+        nobis nec. Neque ut vel hendrerit fugiat enim in, suscipit egestas eu ut,
+        nec semper a sed lacus, purus amet, massa lacus imperdiet. Fringilla eu. Aenean
+        etiam nunc.","from":{"username":"cazzerson","profile_picture":"http:\/\/images.ak.instagram.com\/profiles\/profile_31727100_75sq_1376601604.jpg","id":"31727100","full_name":"cazzerson"},"id":"325444824656303850"},{"created_time":"1355615098","text":"Wow!
+        Didn''t read it at all cuz I didn''t \u00fc\u00f1d\u00ear\u00dft\u00e6\u0144d
+        it @crayzay34  is my sis","from":{"username":"poteo84","profile_picture":"http:\/\/images.ak.instagram.com\/profiles\/profile_252683448_75sq_1371850088.jpg","id":"252683448","full_name":"\ud83d\ude0fMatteo\ud83d\udc4d\ud83c\uddfa\ud83c\uddf8\ud83c\uddea\ud83c\uddf8"},"id":"347247075569751123"},{"created_time":"1355624206","text":"Ha,
+        yeah, this is just filler lorem ipsum text I was using to figure out the maximum
+        allowable length for comments. I''m working on an Instagram project at work.","from":{"username":"cazzerson","profile_picture":"http:\/\/images.ak.instagram.com\/profiles\/profile_31727100_75sq_1376601604.jpg","id":"31727100","full_name":"cazzerson"},"id":"347323476863931818"}]},"filter":"Lord
+        Kelvin","created_time":"1348790551","link":"http:\/\/instagram.com\/p\/QGSDYvINdE\/","likes":{"count":1,"data":[{"username":"poteo84","profile_picture":"http:\/\/images.ak.instagram.com\/profiles\/profile_252683448_75sq_1371850088.jpg","id":"252683448","full_name":"\ud83d\ude0fMatteo\ud83d\udc4d\ud83c\uddfa\ud83c\uddf8\ud83c\uddea\ud83c\uddf8"}]},"images":{"low_resolution":{"url":"http:\/\/distilleryimage0.s3.amazonaws.com\/cc8bd9a008ff11e2a9d822000a1de77b_6.jpg","width":306,"height":306},"thumbnail":{"url":"http:\/\/distilleryimage0.s3.amazonaws.com\/cc8bd9a008ff11e2a9d822000a1de77b_5.jpg","width":150,"height":150},"standard_resolution":{"url":"http:\/\/distilleryimage0.s3.amazonaws.com\/cc8bd9a008ff11e2a9d822000a1de77b_7.jpg","width":612,"height":612}},"users_in_photo":[],"caption":null,"type":"image","id":"289998623568090948_31727100","user":{"username":"cazzerson","website":"","profile_picture":"http:\/\/images.ak.instagram.com\/profiles\/profile_31727100_75sq_1376601604.jpg","full_name":"cazzerson","bio":"","id":"31727100"}}}'
+    http_version:
+  recorded_at: Thu, 21 Nov 2013 15:43:34 GMT
+recorded_with: VCR 2.7.0
