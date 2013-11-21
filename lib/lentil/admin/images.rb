@@ -14,6 +14,7 @@ if defined?(ActiveAdmin)
     filter :popular_score, :label => "Score"
     filter :description
     filter :updated_at
+    filter :tags_name, :as => :string
     filter :url, :label => "Service URL"
     filter :id
 
