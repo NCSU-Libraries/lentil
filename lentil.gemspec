@@ -37,6 +37,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'compass-rails', "~> 1.0.3"
   s.add_dependency 'google-analytics-rails', "~> 0.0.4"
   s.add_dependency 'typhoeus', "~> 0.6.6" # for checking and harvesting image files
+  s.add_dependency 'kaminari', "~> 0.14.1" # for checking and harvesting image files
 
   s.add_development_dependency "sqlite3", "~> 1.3.8"
   s.add_development_dependency "capybara", "~> 2.1.0"
