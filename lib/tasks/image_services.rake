@@ -115,7 +115,9 @@ namespace :lentil do
       # deleted images will eventually be ignored by this task.
       Lentil::Service.where(:name => args[:image_service]).first.images.approved.where("lentil_images.created_at < :week", {:week => 1.week.ago}).
               where(:do_not_request_donation => false).
-              where(:donor_agreement_submitted_date => nil).order("donor_agreement_failed ASC").
+              where(:donor_agreement_submitted_date => nil).
+              where("lentil_images.last_donor_agreement_failure_date < :week OR lentil_images.last_donor_agreement_failure_date IS NULL", {:week => 1.week.ago}).
+              order("donor_agreement_failed ASC").
               limit(num_to_harvest).each do |image|
 
         begin
@@ -125,6 +127,7 @@ namespace :lentil do
           puts "Left donor agreement on image #{image.id}"
         rescue => e
           image.donor_agreement_failed += 1
+          image.last_donor_agreement_failure_date = DateTime.now
           image.save
           Rails.logger.error e.message
           puts e.message
