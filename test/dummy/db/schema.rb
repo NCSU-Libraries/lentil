@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130506205348) do
+ActiveRecord::Schema.define(:version => 20131205181204) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -63,32 +63,33 @@ ActiveRecord::Schema.define(:version => 20130506205348) do
 
   create_table "lentil_images", :force => true do |t|
     t.text     "description"
-    t.datetime "created_at",                                        :null => false
-    t.datetime "updated_at",                                        :null => false
-    t.integer  "like_votes_count",               :default => 0
+    t.datetime "created_at",                                           :null => false
+    t.datetime "updated_at",                                           :null => false
+    t.integer  "like_votes_count",                  :default => 0
     t.string   "url"
     t.integer  "user_id"
-    t.integer  "state",                          :default => 0
+    t.integer  "state",                             :default => 0
     t.string   "external_identifier"
     t.string   "long_url"
     t.text     "original_metadata"
     t.datetime "original_datetime"
-    t.boolean  "staff_like",                     :default => false
+    t.boolean  "staff_like",                        :default => false
     t.integer  "moderator_id"
     t.datetime "moderated_at"
-    t.boolean  "second_moderation",              :default => false
-    t.integer  "wins_count",                     :default => 0
-    t.integer  "losses_count",                   :default => 0
+    t.boolean  "second_moderation",                 :default => false
+    t.integer  "wins_count",                        :default => 0
+    t.integer  "losses_count",                      :default => 0
     t.float    "win_pct"
-    t.integer  "popular_score",                  :default => 0
+    t.integer  "popular_score",                     :default => 0
     t.datetime "file_harvested_date"
-    t.integer  "file_harvest_failed",            :default => 0
+    t.integer  "file_harvest_failed",               :default => 0
     t.datetime "donor_agreement_submitted_date"
-    t.integer  "donor_agreement_failed",         :default => 0
-    t.integer  "failed_file_checks",             :default => 0
+    t.integer  "donor_agreement_failed",            :default => 0
+    t.integer  "failed_file_checks",                :default => 0
     t.datetime "file_last_checked"
     t.datetime "donor_agreement_rejected"
-    t.boolean  "do_not_request_donation",        :default => false
+    t.boolean  "do_not_request_donation",           :default => false
+    t.datetime "last_donor_agreement_failure_date"
   end
 
   add_index "lentil_images", ["external_identifier"], :name => "index_images_on_external_identifier"
