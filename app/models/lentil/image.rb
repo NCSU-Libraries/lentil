@@ -138,16 +138,26 @@ class Lentil::Image < ActiveRecord::Base
     self.wins_count + self.losses_count
   end
 
+  # legacy
   def image_url
-    if long_url.blank?
-      url + 'media/?size=l'
-    else
-      long_url
-    end
+    large_url
   end
 
+  # legacy
   def jpeg
-    image_url
+    large_url
+  end
+
+  def large_url
+    url + 'media/?size=l'
+  end
+
+  def medium_url
+    url + 'media/?size=m'
+  end
+
+  def thumbnail_url
+    url + 'media/?size=t'
   end
 
   States = {
