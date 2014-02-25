@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = `git ls-files -- test/*`.split("\n")
 
-  s.add_dependency "rails", "~> 3.2.16"
+  s.add_dependency "rails", "~> 3.2.17"
   s.add_dependency 'jquery-rails', '~> 2.3.0'
   s.add_dependency "activeadmin", '~> 0.5.1'
   s.add_dependency "meta_search", '~> 1.1.3' # for search within admin interface
