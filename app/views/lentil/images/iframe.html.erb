@@ -1,0 +1,9 @@
+<%= link_to main_app.root_path, :target => "_parent" do %>
+  <div id="iframe-wrapper">
+    <% @images.each do |image| %>
+      <div class="iframe-tile">
+        <%= image_tag(image.thumbnail_url, :class => "instagram-img " + image.id.to_s, :alt => image.description) %>
+      </div>
+    <% end -%>
+  </div>
+<% end %>

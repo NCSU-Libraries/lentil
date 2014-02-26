@@ -57,5 +57,9 @@ module Lentil
       render 'animate'
     end
 
+    def iframe
+      @images = Image.includes(:user).approved.recent.limit(125)
+      render :action => "iframe", :layout => "lentil/iframe"
+    end
   end
 end

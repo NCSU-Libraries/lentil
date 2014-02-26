@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) %></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="apple-mobile-web-app-title" content="<% application_name %>">
+
+  <%= render '/layouts/lentil/apple_touch_icons' %>
+
+  <%= meta_description_tag %>
+  <%= stylesheet_link_tag "lentil/iframe", :media => "all" %>
+  <%= javascript_include_tag "lentil/iframe" %>
+  <%= yield :javascript_includes %>
+
+  <%= analytics_init(:tracker => google_analytics_tracker()) if (Rails.env.production? && !google_analytics_tracker.nil?) %>
+  <% if content_for? :feed_auto_discovery %>
+    <%= yield  :feed_auto_discovery %>
+  <% end -%>
+
+  <%= csrf_meta_tags %>
+</head>
+<!--[if IE 7]> <body class="lt-ie9 lt-ie8 <%= body_class %>"> <![endif]-->
+<!--[if IE 8]> <body class="lt-ie9 <%= body_class %>"> <![endif]-->
+<!--[if gt IE 8]><!--> <body class="<%= body_class %>"> <!--<![endif]-->
+
+  <%= yield %>
+
+</body>
+</html>

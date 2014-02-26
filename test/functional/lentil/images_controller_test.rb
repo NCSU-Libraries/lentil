@@ -48,4 +48,9 @@ class Lentil::ImagesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get a tiled view for iframe" do
+    get :iframe, :use_route => :lentil
+    assert_response :success
+  end
+
 end

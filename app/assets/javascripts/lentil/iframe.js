@@ -1,0 +1,117 @@
+(function () {
+  var Iframe = {
+    init: function () {
+      this.buildFrame();
+      this.attachEvents();
+    },
+    attachEvents: function () {
+      var self = this,
+          images;
+
+      // Remove images that error out
+      images = document.getElementsByClassName('instagram-img');
+      for (var i = 1; i < images.length; i++) {
+        images[i].addEventListener('error', function (e) {
+          e.srcElement.parentNode.remove();
+        }, false);
+      }
+
+      // Respond to viewport changes
+      window.onresize = function (event) {
+        self.buildFrame();
+      };
+    },
+    // Sorting utility based on diff
+    compare: function (a,b) {
+      if (a.diff < b.diff) {
+        return -1;
+      }
+
+      if (a.diff > b.diff) {
+        return 1;
+      }
+
+      return 0;
+    },
+    // Get the range of possible number of columns based on image size
+    calcColumns: function(least, most) {
+      var possibleColumns = [];
+
+      for (var i = least; i < most; i++) {
+        if (possibleColumns.indexOf(i) === -1) {
+          possibleColumns.push(i);
+        }
+      }
+
+      return possibleColumns;
+    },
+    // Using columns, determine maximum floored height based on
+    // the size of the square image. Value represents the difference
+    // between the floored height of rows and the total available height
+    calcOptimumLayout: function (possibleColumns, width, height) {
+      var self = this,
+          layouts = [];
+
+      possibleColumns.forEach(function (columns) {
+        var imageSide,
+            rows;
+
+        imageSide = width/columns;
+        rows = Math.floor(height/imageSide);
+
+        layouts.push({
+          columns: columns,
+          rows: rows,
+          diff: height - (imageSide * rows),
+          visibleHeight: rows * Math.floor(imageSide)
+        });
+      });
+
+      return layouts.sort(self.compare)[0];
+    },
+    buildFrame: function () {
+      var self = this,
+          height,
+          images,
+          largestImage,
+          layout,
+          leastColumns,
+          mostColumns,
+          percent,
+          possibleColumns,
+          smallestImage,
+          width;
+
+      // Width and height of iFrame
+      width = window.innerWidth;
+      height = window.innerHeight;
+
+      // Acceptable image sizes
+      smallestImage = 64;
+      largestImage = 97;
+
+      mostColumns = Math.ceil(width/smallestImage);
+      leastColumns = Math.ceil(width/largestImage);
+      possibleColumns = self.calcColumns(leastColumns, mostColumns);
+      layout = self.calcOptimumLayout(possibleColumns, width, height);
+
+      // Calculate the percent based on the number of columns
+      percent = 100 / layout.columns;
+
+      // Set width of images to build layout
+      images = document.getElementsByClassName('iframe-tile');
+      for (var i = 0; i < images.length; i++) {
+        images[i].style.width = String(percent) + '%';
+      }
+
+      // Set height of wrapper div for overflow
+      document.getElementById('iframe-wrapper').style.height = layout.visibleHeight + 'px';
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (document.readyState == "interactive") {
+      Iframe.init();
+    }
+  };
+}());
