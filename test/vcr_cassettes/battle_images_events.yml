@@ -1,14 +1,16 @@
 ---
 http_interactions:
 - request:
-    method: head
-    uri: http://distilleryimage3.s3.amazonaws.com/644f52a02d2f11e2b55e22000a9f09fb_7.jpg
+    method: get
+    uri: http://api.instagram.com/oembed?format=json&url=http://instagram.com/p/R82ycNoNfn/
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
+      - '*/*'
       User-Agent:
       - Ruby
   response:
@@ -16,79 +18,49 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      X-Amz-Id-2:
-      - JwH+KE6hIc16AYg6Rdc9zLnvbOd5F/73PjaQ/6sBuxoRzzHBlfL1aosmb/dQDcEO
-      X-Amz-Request-Id:
-      - 97485AB7F1FDCF2D
-      Date:
-      - Fri, 14 Jun 2013 13:27:11 GMT
-      Expires:
-      - Thu, 15 Apr 2020 20:00:00 GMT
-      Last-Modified:
-      - Tue, 13 Nov 2012 01:13:55 GMT
-      Etag:
-      - ! '"c4f4b4b37c4e33c16c31092bd8ebf05d"'
-      Accept-Ranges:
-      - bytes
-      Content-Type:
-      - image/jpeg
-      Content-Length:
-      - '87450'
-      Server:
-      - AmazonS3
-    body:
-      encoding: US-ASCII
-      string: ''
-    http_version: 
-  recorded_at: Fri, 14 Jun 2013 13:27:10 GMT
-- request:
-    method: head
-    uri: http://distilleryimage6.ak.instagram.com/ef3c7ff0b71d11e2b1b722000a1d0aba_7.jpg
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 403
-      message: Forbidden
-    headers:
-      X-Amz-Request-Id:
-      - 1C0A63C530A96810
-      X-Amz-Id-2:
-      - qqqAHWxOI+FZ3YvtjN3GgUHV2hmlUot0PG6p9qB4ijKz0RLcRoGWxnvURVX7GfAP
-      Content-Type:
-      - application/xml
-      Server:
-      - AmazonS3
       Cache-Control:
-      - max-age=129600
-      Expires:
-      - Sun, 16 Jun 2013 01:27:10 GMT
-      Content-Length:
-      - '1'
+      - private, no-cache, no-store, must-revalidate
+      Content-Language:
+      - en
+      Content-Type:
+      - application/json
       Date:
-      - Fri, 14 Jun 2013 13:27:10 GMT
+      - Thu, 27 Feb 2014 18:56:24 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - ccode=US; Path=/
+      - csrftoken=b3540b8d1cf6c1db61201edd98f96c27; expires=Thu, 26-Feb-2015 18:56:24
+        GMT; Max-Age=31449600; Path=/
+      - mid=Uw-KWAAEAAGYrOoRcwXrli4KCdSg; expires=Wed, 22-Feb-2034 18:56:24 GMT; Max-Age=630720000;
+        Path=/
+      Vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      Content-Length:
+      - '249'
       Connection:
       - keep-alive
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: '{"provider_url":"http:\/\/instagram.com\/","media_id":"323374234042685415_31727100","title":"Bubble
+        bubble...","url":"http:\/\/distilleryimage3.ak.instagram.com\/644f52a02d2f11e2b55e22000a9f09fb_7.jpg","author_name":"cazzerson","height":612,"width":612,"version":"1.0","author_url":"http:\/\/instagram.com\/cazzerson","author_id":31727100,"type":"photo","provider_name":"Instagram"}'
     http_version: 
-  recorded_at: Fri, 14 Jun 2013 13:27:10 GMT
+  recorded_at: Thu, 27 Feb 2014 18:56:24 GMT
 - request:
-    method: head
-    uri: http://distilleryimage7.s3.amazonaws.com/7deb2d9ea6ae11e28a1a22000aa81ffa_7.jpg
+    method: get
+    uri: http://api.instagram.com/oembed?format=json&url=http://instagram.com/p/R0NyCsK_xf/
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
+      - '*/*'
       User-Agent:
       - Ruby
   response:
@@ -96,150 +68,134 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      X-Amz-Id-2:
-      - 5Z1LF+PUYGkO5g6PdfC3f5xHwSHmqxOuWQlc43tNHmX0mDHsObrcAU9G3ZqyRsnZ
-      X-Amz-Request-Id:
-      - 4F4CE608ADC4B8FA
-      Date:
-      - Fri, 14 Jun 2013 13:27:11 GMT
-      Expires:
-      - Thu, 15 Apr 2020 20:00:00 GMT
-      Last-Modified:
-      - Tue, 16 Apr 2013 15:58:35 GMT
-      Etag:
-      - ! '"2b4e035b520a465d18472ce01dfb6dfd"'
-      Accept-Ranges:
-      - bytes
-      Content-Type:
-      - image/jpeg
-      Content-Length:
-      - '87726'
-      Server:
-      - AmazonS3
-    body:
-      encoding: US-ASCII
-      string: ''
-    http_version: 
-  recorded_at: Fri, 14 Jun 2013 13:27:11 GMT
-- request:
-    method: head
-    uri: http://distilleryimage3.s3.amazonaws.com/644f52a02d2f11e2b55e22000a9f09fb_7.jpg
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      X-Amz-Id-2:
-      - vIOpy5/UB32qDc9omlHTGsV20hfVN/D1UYf34zRbrh5pKrfy3sR/8+E491Kxdtmz
-      X-Amz-Request-Id:
-      - 4EDED6B66C034010
-      Date:
-      - Fri, 14 Jun 2013 13:27:13 GMT
-      Expires:
-      - Thu, 15 Apr 2020 20:00:00 GMT
-      Last-Modified:
-      - Tue, 13 Nov 2012 01:13:55 GMT
-      Etag:
-      - ! '"c4f4b4b37c4e33c16c31092bd8ebf05d"'
-      Accept-Ranges:
-      - bytes
-      Content-Type:
-      - image/jpeg
-      Content-Length:
-      - '87450'
-      Server:
-      - AmazonS3
-    body:
-      encoding: US-ASCII
-      string: ''
-    http_version: 
-  recorded_at: Fri, 14 Jun 2013 13:27:12 GMT
-- request:
-    method: head
-    uri: http://distilleryimage7.s3.amazonaws.com/55dcf0ba2a8c11e29cc822000a1f96e3_7.jpg
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      X-Amz-Id-2:
-      - MqYxaNNYX2BBTHhaw68FYROi1znnxeTBedzcr3QIXKLZx5iXB/cKbGOxF0PwAcK5
-      X-Amz-Request-Id:
-      - 5946F294ECD0392D
-      Date:
-      - Fri, 14 Jun 2013 13:27:13 GMT
-      Expires:
-      - Thu, 15 Apr 2020 20:00:00 GMT
-      Last-Modified:
-      - Fri, 09 Nov 2012 16:41:40 GMT
-      Etag:
-      - ! '"ec1196c1b6349e7e25ef2aa1d462b4e1"'
-      Accept-Ranges:
-      - bytes
-      Content-Type:
-      - image/jpeg
-      Content-Length:
-      - '84579'
-      Server:
-      - AmazonS3
-    body:
-      encoding: US-ASCII
-      string: ''
-    http_version: 
-  recorded_at: Fri, 14 Jun 2013 13:27:12 GMT
-- request:
-    method: head
-    uri: http://distilleryimage6.ak.instagram.com/ef3c7ff0b71d11e2b1b722000a1d0aba_7.jpg
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 403
-      message: Forbidden
-    headers:
-      X-Amz-Request-Id:
-      - 896683F5AD6CB1C5
-      X-Amz-Id-2:
-      - sqwnjosq+dn192vxq/Tprp/ySeU9VLGpIc2/fVVdv0+/Azm9Ovp2gpIZ7N5DqICX
-      Content-Type:
-      - application/xml
-      Server:
-      - AmazonS3
       Cache-Control:
-      - max-age=129600
-      Expires:
-      - Sun, 16 Jun 2013 01:38:53 GMT
-      Content-Length:
-      - '1'
+      - private, no-cache, no-store, must-revalidate
+      Content-Language:
+      - en
+      Content-Type:
+      - application/json
       Date:
-      - Fri, 14 Jun 2013 13:38:53 GMT
+      - Thu, 27 Feb 2014 18:56:24 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - ccode=US; Path=/
+      - csrftoken=6ccf5a35e816f212ca45bfdbe01c67db; expires=Thu, 26-Feb-2015 18:56:24
+        GMT; Max-Age=31449600; Path=/
+      - mid=Uw-KWAAEAAHSx4aSllVPCtPKIS47; expires=Wed, 22-Feb-2034 18:56:24 GMT; Max-Age=630720000;
+        Path=/
+      Vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      Content-Length:
+      - '243'
       Connection:
       - keep-alive
     body:
+      encoding: UTF-8
+      string: '{"provider_url":"http:\/\/instagram.com\/","media_id":"320942086917192799_244467814","title":"Tethered","url":"http:\/\/distilleryimage7.ak.instagram.com\/55dcf0ba2a8c11e29cc822000a1f96e3_7.jpg","author_name":"corylown","height":612,"width":612,"version":"1.0","author_url":"http:\/\/instagram.com\/corylown","author_id":244467814,"type":"photo","provider_name":"Instagram"}'
+    http_version: 
+  recorded_at: Thu, 27 Feb 2014 18:56:24 GMT
+- request:
+    method: get
+    uri: http://api.instagram.com/oembed?format=json&url=http://instagram.com/p/R82ycNoNfn/
+    body:
       encoding: US-ASCII
       string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Language:
+      - en
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 27 Feb 2014 18:56:25 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - ccode=US; Path=/
+      - csrftoken=a4cc9023e4ec72b7c3ce336d47c6df07; expires=Thu, 26-Feb-2015 18:56:25
+        GMT; Max-Age=31449600; Path=/
+      - mid=Uw-KWQAEAAF9ng6uQ4CZyll6rTxd; expires=Wed, 22-Feb-2034 18:56:25 GMT; Max-Age=630720000;
+        Path=/
+      Vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      Content-Length:
+      - '249'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"provider_url":"http:\/\/instagram.com\/","media_id":"323374234042685415_31727100","title":"Bubble
+        bubble...","url":"http:\/\/distilleryimage3.ak.instagram.com\/644f52a02d2f11e2b55e22000a9f09fb_7.jpg","author_name":"cazzerson","height":612,"width":612,"version":"1.0","author_url":"http:\/\/instagram.com\/cazzerson","author_id":31727100,"type":"photo","provider_name":"Instagram"}'
     http_version: 
-  recorded_at: Fri, 14 Jun 2013 13:38:53 GMT
-recorded_with: VCR 2.5.0
+  recorded_at: Thu, 27 Feb 2014 18:56:25 GMT
+- request:
+    method: get
+    uri: http://api.instagram.com/oembed?format=json&url=http://instagram.com/p/ZA1L0nINXi/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: NOT FOUND
+    headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Language:
+      - en
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Thu, 27 Feb 2014 18:56:25 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - ccode=US; Path=/
+      - csrftoken=29dee5cbc0c274d91a52e87caee94c69; expires=Thu, 26-Feb-2015 18:56:25
+        GMT; Max-Age=31449600; Path=/
+      - mid=Uw-KWQAEAAGLCNS9nKkylV4Zf4wr; expires=Wed, 22-Feb-2034 18:56:25 GMT; Max-Age=630720000;
+        Path=/
+      Vary:
+      - Cookie, Accept-Language
+      Content-Length:
+      - '34'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: No Media Match
+    http_version: 
+  recorded_at: Thu, 27 Feb 2014 18:56:25 GMT
+recorded_with: VCR 2.7.0

@@ -13,12 +13,11 @@ class ImagesIndexTest < ActionDispatch::IntegrationTest
   end
 
   test "should have the titles of the images on the index page" do
-    assert page.has_content?('Love the new @snohetta_design')
-    assert page.has_content?('one')
+    assert page.has_content?('six #hunttesting')
   end
 
   test "should have usernames of image contributors" do
-    assert page.has_content?('jronallo')
+    assert page.has_content?('bd')
   end
 
   # test "should be able to like vote for an image on the index page and see vote counts" do

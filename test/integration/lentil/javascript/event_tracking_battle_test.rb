@@ -1,11 +1,10 @@
 require 'test_helper'
 
 class EventTrackingBattleTest < ActionDispatch::IntegrationTest
-
   test "battle pick image" do
     VCR.use_cassette('battle_images_events') do
       browser_start
-      Lentil::ThisorthatController.stubs(:get_images).returns([lentil_images(:one), lentil_images(:uno)])
+      Lentil::ThisorthatController.any_instance.stubs(:get_images).returns([lentil_images(:dos), lentil_images(:one)])
       visit lentil.thisorthat_battle_path
       first_image = all('.battle-form').first()
       image_id = first_image['value']

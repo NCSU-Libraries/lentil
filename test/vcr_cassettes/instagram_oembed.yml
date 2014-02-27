@@ -7,8 +7,10 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
+      - '*/*'
       User-Agent:
       - Ruby
   response:
@@ -16,28 +18,35 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
       Content-Language:
       - en
       Content-Type:
       - application/json
       Date:
-      - Tue, 07 May 2013 14:57:01 GMT
+      - Wed, 26 Feb 2014 21:56:54 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
       Server:
       - nginx
       Set-Cookie:
-      - csrftoken=95bc58c1d88b6896fd172ee6911e6185; expires=Tue, 06-May-2014 14:57:01
+      - ccode=US; Path=/
+      - csrftoken=e2b7546b8f6205ce3b63f01ddd5ed9e8; expires=Wed, 25-Feb-2015 21:56:54
         GMT; Max-Age=31449600; Path=/
-      - mid=UYkWPf__AAFMPwkpgIbGJoOAfJlJ; expires=Mon, 02-May-2033 14:57:01 GMT; Max-Age=630720000;
+      - mid=Uw5jJgAEAAGFSpf5tlLPwEjb_CCP; expires=Tue, 21-Feb-2034 21:56:54 GMT; Max-Age=630720000;
         Path=/
       Vary:
       - Cookie, Accept-Language, Accept-Encoding
       Content-Length:
-      - '374'
+      - '243'
       Connection:
       - keep-alive
     body:
-      encoding: US-ASCII
-      string: ! '{"provider_url":"http:\/\/instagram.com\/","media_id":"320942086917192799_244467814","title":"Tethered","url":"http:\/\/distilleryimage7.ak.instagram.com\/55dcf0ba2a8c11e29cc822000a1f96e3_7.jpg","author_name":"corylown","height":612,"width":612,"version":"1.0","author_url":"http:\/\/instagram.com\/corylown","author_id":244467814,"type":"photo","provider_name":"Instagram"}'
+      encoding: UTF-8
+      string: '{"provider_url":"http:\/\/instagram.com\/","media_id":"320942086917192799_244467814","title":"Tethered","url":"http:\/\/distilleryimage7.ak.instagram.com\/55dcf0ba2a8c11e29cc822000a1f96e3_7.jpg","author_name":"corylown","height":612,"width":612,"version":"1.0","author_url":"http:\/\/instagram.com\/corylown","author_id":244467814,"type":"photo","provider_name":"Instagram"}'
     http_version: 
-  recorded_at: Tue, 07 May 2013 14:57:01 GMT
-recorded_with: VCR 2.4.0
+  recorded_at: Wed, 26 Feb 2014 21:56:54 GMT
+recorded_with: VCR 2.7.0

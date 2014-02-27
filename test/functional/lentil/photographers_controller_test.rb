@@ -7,7 +7,7 @@ class Lentil::PhotographersControllerTest < ActionController::TestCase
   end
 
   test "should get show view" do
-    get :show, :id => lentil_users(:jr).id, :use_route => :lentil
+    get :show, :id => lentil_users(:bd).id, :use_route => :lentil
     assert_response :success
   end
 

@@ -1,8 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: head
-    uri: http://distilleryimage6.ak.instagram.com/ef3c7ff0b71d11e2b1b722000a1d0aba_7.jpg
+    method: get
+    uri: http://instagram.com/p/ZA1L0nINXi/media/?size=t
     body:
       encoding: US-ASCII
       string: ''
@@ -11,30 +11,33 @@ http_interactions:
       - Typhoeus - https://github.com/typhoeus/typhoeus
   response:
     status:
-      code: 403
-      message: Forbidden
+      code: 404
+      message: Not Found
     headers:
-      X-Amz-Request-Id:
-      - 52E51507874A9C25
-      X-Amz-Id-2:
-      - zE1zxJ8h4WYKZsmCICf8B7KePTwHWctio4K98XJdb1xYqg2pqBkngnGXvvb/YfKO
       Content-Type:
-      - application/xml
-      Server:
-      - AmazonS3
-      Cache-Control:
-      - max-age=129600
-      Expires:
-      - Thu, 09 May 2013 02:57:00 GMT
-      Content-Length:
-      - '1'
+      - text/html
       Date:
-      - Tue, 07 May 2013 14:57:00 GMT
+      - Wed, 26 Feb 2014 17:18:41 GMT
+      Etag:
+      - '"527ab950-2d6"'
+      Server:
+      - nginx
+      Content-Length:
+      - '726'
       Connection:
       - keep-alive
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\n
+        \  \"http://www.w3.org/TR/html4/loose.dtd\"> \n \n<html lang=\"en\"> \n<head>
+        \n\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">
+        \n\t<title>Instagram</title> \n        <meta name = \"viewport\" content =
+        \"width = 320px\">\n        <link rel=\"stylesheet\" href=\"/static/styles/master-new.css?1\"
+        type=\"text/css\" media=\"screen\" title=\"no title\" charset=\"utf-8\"> \n</head>
+        \n<body> \n    \n    <div id=\"wrap\" class=\"grid-all group\"> \n        \n<div
+        style=\"width: 100%; margin: 0 auto;\"> \n    <img style=\"margin-left: 0em;
+        margin-top: 1.0em;\" src=\"/static/images/headerWithTitle.png\"><br/> \nSorry,
+        this page could not be found.\n</div> \n \n    </div> \n</body> \n</html>\n\n\n"
     http_version: 
-  recorded_at: Tue, 07 May 2013 14:57:00 GMT
-recorded_with: VCR 2.4.0
+  recorded_at: Wed, 26 Feb 2014 17:18:41 GMT
+recorded_with: VCR 2.7.0
