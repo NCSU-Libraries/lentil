@@ -78,6 +78,7 @@ function addfancybox() {
         prevEffect  : 'none',
         loop : false,
         minWidth : '250px',
+        type: 'image',
         helpers     : {
             title   : { type : 'inside' }
         },
