@@ -20,11 +20,12 @@
     };
 
     $(document).ready(function() {
-        $('.battle-inner:eq(0)').imagesLoaded(function($images, $proper, $broken) {
-            if ($broken.length > 0) {
-                $('.battle-wrapper:eq(0)').replaceWith(ERROR_TEXT);
-            }
-        });
+        $('.battle-inner:eq(0)').imagesLoaded()
+            .fail(function (instance) {
+                if (instance.hasAnyBroken) {
+                    $('.battle-wrapper:eq(0)').replaceWith(ERROR_TEXT);
+                }
+            })
     });
 
     $(document).on('ajax:beforeSend', function (evt, xhr, settings) {
@@ -63,19 +64,8 @@
         // Insert new images into hidden div
         $('.battle-inner:eq(1)').replaceWith(data);
 
-        // Once images are loaded, execute callback
-        $('.battle-inner:eq(1)').imagesLoaded(function($images, $proper, $broken) {
-            var wrap;
-
-            if ($broken.length > 0) {
-                // Insert error text into DOM
-                $('.battle-wrapper:eq(0)').replaceWith(ERROR_TEXT);
-                $('.battle-wrapper:eq(0)').show();
-
-                // Hide Spinner
-                $('#spinner-overlay').hide();
-                BATTLE_SPINNER.stop();
-            } else {
+        $('.battle-inner:eq(1)').imagesLoaded()
+            .done(function () {
                  // Remove old images
                 $('.battle-wrapper:eq(0)').remove();
 
@@ -90,8 +80,16 @@
                 wrap = '<div class="wrapper battle-wrapper" style="display:none">' +
                        '<div class="grid battle-inner"></div></div>';
                 $(wrap).insertAfter('.battle-wrapper:eq(0)');
-            }
-        });
+            }).fail(function () {
+                // Insert error text into DOM
+                $('.battle-wrapper:eq(0)').replaceWith(ERROR_TEXT);
+                $('.battle-wrapper:eq(0)').show();
+
+                // Hide Spinner
+                $('#spinner-overlay').hide();
+                BATTLE_SPINNER.stop();
+            })
+
     }).on('ajax:error', function (evt, xhr, status) {
         var error,
             errors,
