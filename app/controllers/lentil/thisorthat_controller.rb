@@ -6,10 +6,12 @@ module Lentil
 
     def test_urls(images, quantity)
       image = images.selecting{ |i|
-        url = URI.parse(i.jpeg)
-        req = Net::HTTP.new(url.host, url.port)
-        res = req.request_head(url.path)
-        res.code == '200'
+        begin
+          res = OEmbed::Providers::Instagram.get(i.url)
+          true
+        rescue
+          false
+        end
       }.first(quantity)
     end
 
