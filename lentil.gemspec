@@ -50,6 +50,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "test-unit", "~> 2.5.5"
   s.add_development_dependency "mocha", "~> 0.14.0"
   s.add_development_dependency "single_test", "~> 0.6.0"
-  s.add_development_dependency "capybara-webkit", "~> 1.0.0"
+  s.add_development_dependency "capybara-webkit", "~> 1.1.0"
   s.add_development_dependency "yard", "~> 0.8.7"
 end
