@@ -64,6 +64,11 @@ ROUTES
         gsub_file('app/assets/javascripts/application.js', '//= require_tree .', '//= require lentil')
       end
 
+      desc 'precompile additional assets'
+      def precompile_assets
+        insert_into_file "config/application.rb", "    config.assets.precompile += %w( lentil/iframe.js lentil/iframe.css )\n\n", :after => "class Application < Rails::Application\n"
+      end
+
       desc 'add a dummy admin user to the development database?'
       def dummy_admin_user
         if yes?("Do you want to create an admin user in development now?")
