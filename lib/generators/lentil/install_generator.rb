@@ -8,6 +8,16 @@ module Lentil
         remove_file('public/index.html')
       end
 
+      desc 'insert lentil config comments'
+      def lentil_config_comments
+        insert_into_file "config/application.rb", "\n    # Inserted by lentil\n    # End of lentil changes\n\n", :after => "class Application < Rails::Application\n"
+      end
+
+      desc 'precompile additional assets'
+      def precompile_assets
+        insert_into_file "config/application.rb", "    config.assets.precompile += %w( lentil/iframe.js lentil/iframe.css )\n", :after => "# Inserted by lentil\n"
+      end
+
       desc 'install migrations'
       def install_migrations
         rake "lentil:install:migrations"
@@ -62,11 +72,6 @@ ROUTES
       desc 'add javascript'
       def add_javascript
         gsub_file('app/assets/javascripts/application.js', '//= require_tree .', '//= require lentil')
-      end
-
-      desc 'precompile additional assets'
-      def precompile_assets
-        insert_into_file "config/application.rb", "    config.assets.precompile += %w( lentil/iframe.js lentil/iframe.css )\n\n", :after => "class Application < Rails::Application\n"
       end
 
       desc 'add a dummy admin user to the development database?'
