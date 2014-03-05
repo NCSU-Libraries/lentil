@@ -20,9 +20,9 @@ module Lentil
         rake "db:seed"
       end
 
-      desc 'create devise initializer'
-      def create_devise_initializer
-        copy_file 'devise.rb', 'config/initializers/devise.rb'
+      desc 'install_devise_files'
+      def install_devise_files
+        generate 'devise:install'
       end
 
       desc 'install active_admin'
