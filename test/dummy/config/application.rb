@@ -7,6 +7,12 @@ require "lentil"
 
 module Dummy
   class Application < Rails::Application
+
+    # Inserted by lentil
+    I18n.enforce_available_locales = true
+    config.assets.precompile += %w( lentil/iframe.js lentil/iframe.css )
+    # End of lentil changes
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
