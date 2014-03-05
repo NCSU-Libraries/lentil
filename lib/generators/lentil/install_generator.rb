@@ -18,6 +18,11 @@ module Lentil
         insert_into_file "config/application.rb", "    config.assets.precompile += %w( lentil/iframe.js lentil/iframe.css )\n", :after => "# Inserted by lentil\n"
       end
 
+      desc 'do not enforce available locales'
+      def set_enforce_available_locales
+        insert_into_file "config/application.rb", "    I18n.enforce_available_locales = true\n", :after => "# Inserted by lentil\n"
+      end
+
       desc 'install migrations'
       def install_migrations
         rake "lentil:install:migrations"
