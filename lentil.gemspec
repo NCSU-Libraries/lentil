@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency "formtastic", '~> 2.2.1' # simplifies form creation
   s.add_dependency "instagram", "~> 0.10.0" # Interact with the Instagram API
   s.add_dependency "modernizr-rails", "~> 2.7.0" # browser feature detection, used by breakpoint
-  s.add_dependency 'fancybox2-rails', '~> 0.2.1' # for image interface overlays
+  s.add_dependency 'fancybox2-rails', '~> 0.2.8' # for image interface overlays
   s.add_dependency 'whenever', '>=0.8.0' # for defining cron jobs
   s.add_dependency 'bootstrap-sass', '~> 2.3.0' # sass version of twitter bootstrap
   s.add_dependency 'will_paginate', '~> 3.0' # adds paging feature to rails models
