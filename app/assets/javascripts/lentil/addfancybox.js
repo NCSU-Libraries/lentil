@@ -80,7 +80,8 @@ function addfancybox() {
         minWidth : '250px',
         type: 'image',
         helpers     : {
-            title   : { type : 'inside' }
+            title   : { type : 'inside' },
+            overlay : { locked : false }
         },
         afterLoad: function(current, previous) {
 
