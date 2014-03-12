@@ -135,6 +135,16 @@ div.header {
 }
 ```
 
+## Special displays
+
+### Embeddable iframe view
+
+This is a simple responsive non-interactive image grid that is intended to be embedded as an iframe. You can find this at `http://YOUR_HOST/images/iframe`.
+
+### Large animated view
+
+This is an example of an animated image grid that is designed for non-interactive displays. We have used customized versions of this on e-boards as well as very large video walls. This view will require some customization based on your project and target display. You can find this at `http://YOUR_HOST/images/animate`.
+
 ## Testing
 
 - Install all of the dependencies:
