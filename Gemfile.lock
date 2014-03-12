@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lentil (0.1.7)
+    lentil (0.1.8)
       activeadmin (~> 0.6.3)
       bootstrap-sass (~> 2.3.0)
       chosen-rails (~> 1.0.1)
@@ -281,7 +281,7 @@ GEM
       polyglot (>= 0.3.1)
     typhoeus (0.6.7)
       ethon (~> 0.6.2)
-    tzinfo (0.3.38)
+    tzinfo (0.3.39)
     vcr (2.7.0)
     warden (1.2.3)
       rack (>= 1.0)
