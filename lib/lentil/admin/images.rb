@@ -14,6 +14,8 @@ if defined?(ActiveAdmin)
     filter :popular_score, :label => "Score"
     filter :description
     filter :updated_at
+    filter :donor_agreement_submitted_date
+    filter :file_harvested_date
     filter :tags_name, :as => :string
     filter :url, :label => "Service URL"
     filter :id
@@ -83,6 +85,8 @@ if defined?(ActiveAdmin)
         end
         row :staff_like
         row :do_not_request_donation
+        row :donor_agreement_submitted_date
+        row :file_harvested_date
         row :state do
           image.state_name
         end
