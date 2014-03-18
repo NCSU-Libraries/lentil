@@ -2,6 +2,7 @@
 require 'instagram'
 require 'date'
 require 'oembed'
+require 'pp'
 
 class DuplicateImageError < StandardError
 end
@@ -122,7 +123,6 @@ module Lentil
       raise DuplicateImageError, "Duplicate image identifier" unless user_record.
         images.where(:external_identifier => image_data[:external_id]).first.nil?
 
-      # TODO: Reject duplicates
       image_record = user_record.images.build({
         :external_identifier => image_data[:external_id],
         :description => image_data[:name],
@@ -170,6 +170,11 @@ module Lentil
           save_image(extract_image_data(image))
         rescue DuplicateImageError => e
           raise e if raise_dupes
+          next
+        rescue => e
+          Rails.logger.error e.message
+          puts e.message
+          pp image
           next
         end
       }.compact
