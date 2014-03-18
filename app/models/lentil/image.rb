@@ -61,6 +61,7 @@ class Lentil::Image < ActiveRecord::Base
   default_scope where("failed_file_checks < 3")
 
   validates_uniqueness_of :external_identifier, :scope => :user_id
+  validates :url, :format => URI::regexp(%w(http https))
 
   def self.search(page, number_to_show = nil)
     unless number_to_show.nil?
