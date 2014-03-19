@@ -49,4 +49,29 @@ class ImageTest < ActiveSupport::TestCase
 
     assert_equal license.name, image.licenses.first.name
   end
+
+  test "Image should have valid urls" do
+    image = lentil_images(:one)
+
+    invalid_urls = [
+      'instagram.com',
+      '',
+      nil
+    ]
+
+    valid_urls = [
+      'http://',
+      'https://'
+    ]
+
+    invalid_urls.each do |new_url|
+      image.url = new_url
+      assert_equal image.valid?, false
+    end
+
+    valid_urls.each do |new_url|
+      image.url = new_url
+      assert_equal image.valid?, true
+    end
+  end
 end
