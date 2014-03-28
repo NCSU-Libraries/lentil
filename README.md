@@ -3,6 +3,7 @@
 lentil is a Ruby on Rails Engine that supports the harvesting of images from Instagram and provides several browsing views, mechanisms for sharing, tools for users to select their favorite images, an administrative interface for moderating images, and a system for harvesting images and submitting donor agreements in preparation of ingest into external repositories. Built according to the principles of responsive design, lentil is designed for use on mobile devices, tablets, desktops, and larger screens.
 
 [![Build Status](https://travis-ci.org/NCSU-Libraries/lentil.png)](https://travis-ci.org/NCSU-Libraries/lentil)
+[![Gem Version](https://badge.fury.io/rb/lentil.png)](http://badge.fury.io/rb/lentil)
 
 ## History
 
