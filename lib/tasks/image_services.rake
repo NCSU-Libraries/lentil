@@ -39,7 +39,7 @@ namespace :lentil do
       Lentil::Service.where(:name => args[:image_service]).first.images.where(:file_harvested_date => nil).
         order("file_harvest_failed ASC").limit(num_to_harvest).each do |image|
         begin
-          raise "Desination directory does not exist or is not a directory: #{base_dir}" unless File.directory?(base_dir)
+          raise "Destination directory does not exist or is not a directory: #{base_dir}" unless File.directory?(base_dir)
 
           image_file_path = "#{base_dir}/#{image.service.name}"
 
