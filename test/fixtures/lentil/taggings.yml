@@ -15,15 +15,24 @@
 one:
   image: uno
   tag: uno
+  staff_tag: false
 
 two:
   image: dos
   tag: dos
+  staff_tag: false
 
 three:
   image: uno
   tag: dos
+  staff_tag: false
 
-number_one: 
+number_one:
   image: one
   tag: hunttesting
+  staff_tag: false
+
+staff_number_one:
+  image: one
+  tag: hunttesting_staff
+  staff_tag: true

@@ -94,7 +94,7 @@ class Lentil::Image < ActiveRecord::Base
   def service_tags
     begin
       tag_ids = self.taggings.where(:staff_tag => false).pluck(:tag_id)
-      tags = Tag.find(tag_ids).sort_by(&:name)
+      tags = Lentil::Tag.find(tag_ids).sort_by(&:name)
     rescue
       Rails.logger.error "Error retrieving service_tags"
       tags = []
@@ -104,7 +104,7 @@ class Lentil::Image < ActiveRecord::Base
   def staff_tags
     begin
       tag_ids = self.taggings.where(:staff_tag => true).pluck(:tag_id)
-      tags = Tag.find(tag_ids).sort_by(&:name)
+      tags = Lentil::Tag.find(tag_ids).sort_by(&:name)
     rescue
       Rails.logger.error "Error retrieving staff_tags"
       tags = []

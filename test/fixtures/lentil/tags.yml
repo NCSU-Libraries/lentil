@@ -27,3 +27,6 @@ five:
 
 hunttesting:
   name: "hunttesting"
+
+hunttesting_staff:
+  name: "hunttesting_staff"

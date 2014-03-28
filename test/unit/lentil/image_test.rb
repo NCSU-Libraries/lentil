@@ -36,11 +36,28 @@ require 'test_helper'
 
 class ImageTest < ActiveSupport::TestCase
 
-  test "Image should have a tag" do
+  test "Image should have tags" do
+    image = lentil_images(:one)
+
+    assert image.tags.size > 0, "Expected at least one tag"
+  end
+
+  test "Image should have a service tag" do
     image = lentil_images(:one)
     tag = lentil_tags(:hunttesting)
+    service_tags = image.service_tags
 
-    assert_equal tag.name, image.tags.first.name
+    assert service_tags.size > 0, "Expected at least one service tag"
+    assert_equal tag.name, service_tags.first.name
+  end
+
+  test "Image should have a staff tag" do
+    image = lentil_images(:one)
+    tag = lentil_tags(:hunttesting_staff)
+    staff_tags = image.staff_tags
+
+    assert staff_tags.size > 0, "Expected at least one staff tag"
+    assert_equal tag.name, staff_tags.first.name
   end
 
   test "Image should have a license" do
