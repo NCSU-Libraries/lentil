@@ -149,16 +149,20 @@ class Lentil::Image < ActiveRecord::Base
     large_url
   end
 
+  def protocol_relative_url
+    url.sub(/^http:/, '')
+  end
+
   def large_url
-    url + 'media/?size=l'
+    protocol_relative_url + 'media/?size=l'
   end
 
   def medium_url
-    url + 'media/?size=m'
+    protocol_relative_url + 'media/?size=m'
   end
 
   def thumbnail_url
-    url + 'media/?size=t'
+    protocol_relative_url + 'media/?size=t'
   end
 
   States = {
