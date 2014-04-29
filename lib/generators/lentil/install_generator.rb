@@ -15,7 +15,7 @@ module Lentil
 
       desc 'precompile additional assets'
       def precompile_assets
-        insert_into_file "config/application.rb", "    config.assets.precompile += %w( lentil/iframe.js lentil/iframe.css )\n", :after => "# Inserted by lentil\n"
+        insert_into_file "config/application.rb", "    config.assets.precompile += %w( lentil/iframe.js lentil/iframe.css addanimatedimages.js animatedimages/css/style.css )\n", :after => "# Inserted by lentil\n"
       end
 
       desc 'do not enforce available locales'
