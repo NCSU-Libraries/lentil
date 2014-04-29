@@ -150,7 +150,8 @@ class Lentil::Image < ActiveRecord::Base
   end
 
   def protocol_relative_url
-    url.sub(/^http:/, '')
+    # instagr.am returns 301 to instagram.com and invalid SSL certificate
+    url.sub(/^http:/, '').sub(/\/\/instagr\.am/, '//instagram.com')
   end
 
   def large_url
