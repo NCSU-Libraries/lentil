@@ -154,16 +154,28 @@ class Lentil::Image < ActiveRecord::Base
     url.sub(/^http:/, '').sub(/\/\/instagr\.am/, '//instagram.com')
   end
 
-  def large_url
-    protocol_relative_url + 'media/?size=l'
+  def large_url(protocol_relative = true)
+    if protocol_relative
+      protocol_relative_url + 'media/?size=l'
+    else
+      url + 'media/?size=l'
+    end
   end
 
-  def medium_url
-    protocol_relative_url + 'media/?size=m'
+  def medium_url(protocol_relative = true)
+    if protocol_relative
+      protocol_relative_url + 'media/?size=m'
+    else
+      url + 'media/?size=m'
+    end
   end
 
-  def thumbnail_url
-    protocol_relative_url + 'media/?size=t'
+  def thumbnail_url(protocol_relative = true)
+    if protocol_relative
+      protocol_relative_url + 'media/?size=t'
+    else
+      url + 'media/?size=t'
+    end
   end
 
   States = {

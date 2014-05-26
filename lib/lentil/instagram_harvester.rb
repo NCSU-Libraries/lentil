@@ -202,7 +202,7 @@ module Lentil
     #
     # @return [String] Binary image data
     def harvest_image_data(image)
-      response = Typhoeus.get(image.large_url, followlocation: true)
+      response = Typhoeus.get(image.large_url(false), followlocation: true)
 
       if response.success?
         raise "Invalid content type: " + response.headers['Content-Type'] unless (response.headers['Content-Type'] == 'image/jpeg')
@@ -226,7 +226,7 @@ module Lentil
     #
     # @return [Boolean] Whether the image request was successful
     def test_remote_image(image)
-      response = Typhoeus.get(image.thumbnail_url, followlocation: true)
+      response = Typhoeus.get(image.thumbnail_url(false), followlocation: true)
 
       if response.success?
         true
