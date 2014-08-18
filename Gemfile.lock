@@ -6,6 +6,7 @@ PATH
       bootstrap-sass (~> 2.3.0)
       chosen-rails (~> 1.0.1)
       compass-rails (~> 1.0.3)
+      devise (~> 3.2.0)
       fancybox2-rails (~> 0.2.8)
       formtastic (~> 2.2.1)
       google-analytics-rails (~> 0.0.4)
