@@ -11,3 +11,5 @@ before_script:
 notifications:
   email:
     - jmcasden@ncsu.edu
+slack:
+  secure: TZ+ysJCJtpO/92dvJanZhBrV41z3Ec45o73OqKyfxE9jdjOziI6axXWRNMYUoDh0O0CvFYtS5q7usXrj0fo9sPCxQovLZICdAfmOaKPwzWAmFIBpcBQuz1JPMpOSBsBi19zfzgutcIyE4Ov2VaNlQKnqjlFU/2HWO92PUV7SNmg=
