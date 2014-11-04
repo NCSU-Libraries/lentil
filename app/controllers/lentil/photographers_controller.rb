@@ -1,7 +1,7 @@
 module Lentil
   class PhotographersController < Lentil::ApplicationController
     def index
-      @photographers = User.joins(:images).where("state = 1").group(:id).order(:user_name)
+      @photographers = User.joins(:images).where("state = 1").group('lentil_users.id').order(:user_name)
       @title = "Photographers"
     end
 
