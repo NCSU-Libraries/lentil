@@ -20,4 +20,9 @@ class Lentil::Tag < ActiveRecord::Base
   validates_presence_of :name
 
   scope :harvestable, where(:lentil_tagsets => {:harvest => true}).includes(:tagsets)
+  
+  #Stripping tags on write
+  def name=(new_name)
+    write_attribute(:name, new_name.sub(/^#/, ''))
+  end
 end
