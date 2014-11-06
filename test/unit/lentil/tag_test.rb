@@ -18,4 +18,9 @@ class TagTest < ActiveSupport::TestCase
   test "Tag should have an image" do
     assert lentil_tags(:hunttesting).images.count > 0
   end
+  
+  test "Hashtags should be stripped" do
+    tag = Lentil::Tag.new(name: '#hashtagTest')
+    assert_equal "hashtagTest", tag.name
+  end
 end
