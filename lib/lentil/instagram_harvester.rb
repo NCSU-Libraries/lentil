@@ -101,7 +101,8 @@ module Lentil
         user: instagram_metadata.user,
         original_datetime: Time.at(instagram_metadata.created_time.to_i).to_datetime,
         original_metadata: instagram_metadata,
-        type: instagram_metadata.type
+        type: instagram_metadata.type,
+        video_url: instagram_metadata.videos && instagram_metadata.videos.standard_resolution.url
       }
     end
 
@@ -129,6 +130,7 @@ module Lentil
         :description => image_data[:name],
         :url => image_data[:url],
         :long_url => image_data[:large_url],
+        :video_url => image_data[:video_url],
         :original_datetime => image_data[:original_datetime],
         :type => image_data[:type]
       })
