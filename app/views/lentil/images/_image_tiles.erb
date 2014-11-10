@@ -1,6 +1,6 @@
     <div class="images">
       <% @images.each do |image| %>
-        <div id="image_<%= image.id %>" class="grid-cell image-tile">
+        <div id="image_<%= image.id %>" class="grid__cell image-tile">
           <%= link_to url_for(image), 'data-fancybox-href' => image.jpeg, 'data-fancybox-group' => "image-tile-gallery",  :class => :fancybox  do %>
             <%= image_tag(image.jpeg, :class => "instagram-img " + image.id.to_s, :alt => image.description, :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count}) %>
           <% end %>

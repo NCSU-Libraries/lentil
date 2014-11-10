@@ -2,7 +2,7 @@
 <%= render :partial => "/layouts/lentil/top_navigation" %>
 <section class="wrapper">
   <div class="grid">
-    <div class="grid-cell well">
+    <div class="grid__cell well">
         <ul>
             <% @photographers.each do |photographer| %>
             <li><%= link_to photographer.user_name, photographer_path(photographer.id) %></li>

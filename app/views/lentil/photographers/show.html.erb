@@ -2,7 +2,7 @@
 <%= render :partial => "/layouts/lentil/top_navigation" %>
 <section class="wrapper">
   <div class="grid">
-    <div class="grid-cell well photographer-info">
+    <div class="grid__cell well photographer-info">
       <h1><%= @photographer.user_name %> (<%= t 'lentil.photographer.photo', :count => @images.total_entries %>)</h1>
       <%# FIXME: Is there a better way to be recording the photographer URL? %>
       <h2><%= link_to t('lentil.photographer.service_link', username: @photographer.user_name , service: @photographer.service.name), @photographer.service.url + "/" + @photographer.user_name %></h2>
