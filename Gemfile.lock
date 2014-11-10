@@ -4,7 +4,7 @@ PATH
     lentil (0.2.3)
       activeadmin (~> 0.6.3)
       bootstrap-sass (~> 2.3.0)
-      chosen-rails (~> 1.1.0)
+      chosen-rails (~> 1.2.0)
       compass-rails (~> 2.0.0)
       devise (~> 3.2.0)
       fancybox2-rails (~> 0.2.8)
@@ -88,7 +88,7 @@ GEM
       json
     celluloid (0.16.0)
       timers (~> 4.0.0)
-    chosen-rails (1.1.1)
+    chosen-rails (1.2.0)
       coffee-rails (>= 3.2)
       compass-rails (>= 1.1.2)
       railties (>= 3.0)
