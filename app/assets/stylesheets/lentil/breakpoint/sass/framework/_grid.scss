@@ -49,7 +49,7 @@ img { max-width: 100%; }
 
 // Grid units
 // No explicit width by default
-.grid__cell {
+.grid__cell, .grid-cell {
     width: 100%;
 
     display: -moz-inline-stack;
