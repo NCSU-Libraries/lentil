@@ -91,7 +91,11 @@ if defined?(ActiveAdmin)
           image.state_name
         end
         row :image do
-          link_to(image_tag(image.image_url), admin_lentil_image_path(image))
+					unless image.media_type == "video"
+          	link_to(image_tag(image.image_url), admin_lentil_image_path(image))
+					else
+						video_tag(image.video_url, controls: true, size: "640x640")
+					end
         end
       end
       active_admin_comments

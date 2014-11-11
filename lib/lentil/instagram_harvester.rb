@@ -101,7 +101,7 @@ module Lentil
         user: instagram_metadata.user,
         original_datetime: Time.at(instagram_metadata.created_time.to_i).to_datetime,
         original_metadata: instagram_metadata,
-        type: instagram_metadata.type,
+        media_type: instagram_metadata.type,
         video_url: instagram_metadata.videos && instagram_metadata.videos.standard_resolution.url
       }
     end
@@ -132,7 +132,7 @@ module Lentil
         :long_url => image_data[:large_url],
         :video_url => image_data[:video_url],
         :original_datetime => image_data[:original_datetime],
-        :type => image_data[:type]
+        :media_type => image_data[:media_type]
       })
 
       # This is a temporary fix for a bug in the Hashie to_hash method.
