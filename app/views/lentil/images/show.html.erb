@@ -15,10 +15,10 @@
 <% end -%>
 <%= render :partial => "/layouts/lentil/top_navigation" %>
 <div class="wrapper">
-    <div class="grid-cell side-filler"></div>
-    <div id="image_<%= @image.id %>" class="image-show grid-cell solo-image">
+    <div class="grid__cell side-filler"></div>
+    <div id="image_<%= @image.id %>" class="image-show grid__cell solo-image">
         <a href="<%= @image.url %>"><%= image_tag(@image.jpeg, :class => "instagram-img") %></a>
         <%= render "/layouts/lentil/image_popup", :image => @image  %>
     </div>
-    <div class="grid-cell side-filler"></div>
+    <div class="grid__cell side-filler"></div>
 </div>

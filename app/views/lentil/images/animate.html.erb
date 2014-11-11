@@ -4,14 +4,14 @@
 </script>
 <div class="wrapper">
   <div class="grid">
-    <div id="ri-grid" class="ri-grid ri-grid-size-2 grid-cell animated-images staff-picks-animated" style="padding:0; margin:0;">
+    <div id="ri-grid" class="ri-grid ri-grid-size-2 grid__cell animated-images staff-picks-animated" style="padding:0; margin:0;">
       <ul>
       <% @images.each do |image| %>
         <li class="image-animate-tile"><a href="#"><%= image_tag(image.jpeg, :class => "instagram-img") %></a></li>
       <% end -%>
       </ul>
     </div>
-    <div class="grid-cell animated-images-branding">
+    <div class="grid__cell animated-images-branding">
       <h1 class="name"><%= application_name %></h1>
       <h1 class="url"><%= link_to main_app.root_url, main_app.root_url %></h2>
     </div>

@@ -1,25 +1,23 @@
-/* Grid based on https://github.com/necolas/griddle by Nicolas Gallagher (@necolas) */
-
-// Grid Core
-// =============================================================================
+/*! Grid based on https://github.com/necolas/griddle by Nicolas Gallagher (@necolas) */
 
 // establish base font size in config so that media queries can be resized if the base context chagnes
-body { font-size: $base-font-size; }
+body { font-size: em($base-font-size, 16px); }
 
 // wrapper defaults to 100% fluid with side gutters
 // when triggering a breakpoint wrapper becomes fixed width and centered
 .wrapper {
-	margin-left: em($grid-gutter);
-	margin-right: em($grid-gutter);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: em($grid-gutter);
+    padding-right: em($grid-gutter);
 }
 
 // for responsive images
-img { max-width: 100%; margin-bottom:5px;}
+img { max-width: 100%; }
 .no-js .responsive-image { display: none; }
 
 // Grid container
-// Must only contain `.grid` or `.grid-cell` components as children.
-
+// Must only contain `.grid` or `.grid__cell` components as children.
 .grid {
     display: block;
     padding: 0;
@@ -29,16 +27,19 @@ img { max-width: 100%; margin-bottom:5px;}
     // Remove inter-unit whitespace for all non-monospace font-families
     // If you're using a monospace base font, you will need to set the `grid`
     // font-family to `sans-serif` and then redeclare the monospace font on
-    // the `grid-cell` objects.
+    // the `grid__cell` objects.
     letter-spacing: -0.31em;
-    word-spacing: -0.43em;
     // Protect against WebKit bug with optimizelegibility
     text-rendering: optimizespeed;
 }
 
+.opera:-o-prefocus,
+.grid {
+    word-spacing: -0.43em;
+}
+
 // Child `grid` object adjustments
 // Used for more complex fixed-fluid hybrid grids
-
 .grid > .grid {
     overflow: hidden;
     margin-right: 0;
@@ -48,17 +49,28 @@ img { max-width: 100%; margin-bottom:5px;}
 
 // Grid units
 // No explicit width by default
-
-.grid-cell {
+.grid__cell, .grid-cell {
     width: 100%;
-    @include inline-block;
-    @include border-box;
-    margin: 5px 0 0 0;
+
+    display: -moz-inline-stack;
+    display: inline-block;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    margin: 0;
     padding: 0 0.5 * em($grid-gutter);
+
     /* controls vertical positioning of units */
     vertical-align: top;
+
     /* keeps unit content correctly aligned */
     text-align: $grid-direction;
+
     /* reset text defaults */
     letter-spacing: normal;
     word-spacing: normal;
@@ -66,18 +78,12 @@ img { max-width: 100%; margin-bottom:5px;}
 }
 
 // Modifier: horizontally center all grid units
-// Allows for automatic unit centering irrespective of the number of
-// units in the grid.
-
-.grid-center {
+.grid--center {
     text-align: center;
 }
 
 // Modifier: horizontally center one unit
-// Set a specific unit to be horizontally centered. Doesn't affect
-// any other units. Can still contain a child `grid` object.
-
-.grid-cell-center {
+.grid__cell--center {
     display: block;
     margin: 0 auto;
 }
