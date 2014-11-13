@@ -95,10 +95,9 @@ function addfancybox() {
 			if($(img).attr("data-media-type") === "video") {
 				var video_url = $(img).attr("src");
 				//this.content = "<video src='" + video_url + "' height='320' width='320' controls='controls'></video>";
-				$(".fancybox-inner").html('<video controls="controls" height="100%"  width="100%" src="' + video_url + '"></video>');
+				$(".fancybox-inner").html('<video controls="controls" height="100%"  width="90%" src="' + video_url + '"></video>');
 				var vid = $(".fancybox-inner").children("video")[0];
 				vid.oncanplay = function() {
-					console.log("Ready!");
 					$.fancybox.reposition();
 				}
 				//return;
@@ -107,7 +106,7 @@ function addfancybox() {
 				var image_url = $(img).attr("src");
 				$(".fancybox-inner").html('<img class="fancybox-image" src="' + image_url + '" />');
 			}
-			
+            
             this.title = $(this.element).next(".text-overlay").html();
             imageId = $(this.element).parents("div").attr("id");
             $(".fancybox-wrap").attr('id', imageId);
