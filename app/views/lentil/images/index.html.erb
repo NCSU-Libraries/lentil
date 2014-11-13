@@ -5,6 +5,25 @@
 <% end -%>
 <% title @title %>
 <%= render :partial => "/layouts/lentil/top_navigation" %>
+<style>
+  .fancybox-prev {
+    width : 5%;
+  }
+  .fancybox-prev > span {
+    left : 0;
+    visibility: visible;
+  }
+  .fancybox-next {
+    width : 5%;
+  }
+  .fancybox-next > span {
+    right : 0;
+    visibility: visible;
+  }
+  .fancybox-inner {
+    text-align: center;
+  }
+</style>
 <section class="wrapper">
   <div class="grid">
     <div class="grid__cell header">
