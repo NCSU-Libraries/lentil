@@ -96,6 +96,11 @@ function addfancybox() {
 				var video_url = $(img).attr("src");
 				//this.content = "<video src='" + video_url + "' height='320' width='320' controls='controls'></video>";
 				$(".fancybox-inner").html('<video controls="controls" height="100%"  width="100%" src="' + video_url + '"></video>');
+				var vid = $(".fancybox-inner").children("video")[0];
+				vid.oncanplay = function() {
+					console.log("Ready!");
+					$.fancybox.reposition();
+				}
 				//return;
 			}
 			else {
