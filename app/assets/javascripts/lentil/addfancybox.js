@@ -78,7 +78,7 @@ function addfancybox() {
         prevEffect  : 'none',
         loop : false,
         minWidth : '250px',
-        type: 'image',
+        type: 'html',
         helpers     : {
             title   : { type : 'inside' },
             overlay : { locked : false }
@@ -90,6 +90,19 @@ function addfancybox() {
           window.history.pushState(null,null,FancyBoxCloseFunctionState.pathname);
         },
         beforeShow  : function() {
+			
+			var img = $(this.element).children(".instagram-img");
+			if($(img).attr("data-media-type") === "video") {
+				var video_url = $(img).attr("src");
+				//this.content = "<video src='" + video_url + "' height='320' width='320' controls='controls'></video>";
+				$(".fancybox-inner").html('<video controls="controls" height="100%"  width="100%" src="' + video_url + '"></video>');
+				//return;
+			}
+			else {
+				var image_url = $(img).attr("src");
+				$(".fancybox-inner").html('<img class="fancybox-image" src="' + image_url + '" />');
+			}
+			
             this.title = $(this.element).next(".text-overlay").html();
             imageId = $(this.element).parents("div").attr("id");
             $(".fancybox-wrap").attr('id', imageId);
