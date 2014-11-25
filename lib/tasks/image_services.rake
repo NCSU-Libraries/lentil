@@ -135,5 +135,32 @@ namespace :lentil do
         end
       end
     end
+    
+    desc "Get video urls from videos previously harvested"
+    task :restore_videos, [:image_service] => :environment do |t, args|
+      args.with_defaults(:image_service => 'Instagram')
+
+      harvester = Lentil::InstagramHarvester.new
+
+      lentilService = Lentil::Service.unscoped.where(:name => args[:image_service]).first
+      numUpdated = 0;
+      lentilService.images.unscoped.each do |image|
+        #Skip if media type already known i.e. was properly harvested
+        next if !image.media_type.blank?
+        
+        meta = image.original_metadata
+        obj = YAML.load(meta)
+        type = obj["type"]
+        video_url = image.video_url
+        if(type == "video")
+          video_url = obj["videos"]["standard_resolution"]["url"]
+          image.video_url = video_url
+          image.media_type = 'video'
+          image.save
+          numUpdated += 1
+        end
+      end
+      puts numUpdated.to_s + " record(s) updated"
+    end
   end
 end
