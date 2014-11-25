@@ -158,6 +158,10 @@ namespace :lentil do
           image.media_type = 'video'
           image.save
           numUpdated += 1
+        else
+          image.media_type = 'image'
+          image.save
+          numUpdated += 1
         end
       end
       puts numUpdated.to_s + " record(s) updated"
