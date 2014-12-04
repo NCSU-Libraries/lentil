@@ -643,6 +643,10 @@
 					}
 					
 					$el.next().remove();
+                    var videos = $el.find("video");
+                    if(videos.length !== 0) {
+                        videos[0].play();
+                    }
 					$el.parent().data( 'active', false );
 
 				}, t );
