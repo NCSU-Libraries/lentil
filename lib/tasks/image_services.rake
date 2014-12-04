@@ -55,15 +55,24 @@ namespace :lentil do
 
         begin
           # TODO: Currently expects JPEG
+          video_file_path = image_file_path + "/#{image.external_identifier}.mp4"
           image_file_path += "/#{image.external_identifier}.jpg"
           raise "Image file already exists, will not overwrite: #{image_file_path}" if File.exist?(image_file_path)
 
           image_data = harvester.harvest_image_data(image)
-
+          
           File.open(image_file_path, "wb") do |f|
             f.write image_data
           end
 
+          if image.media_type == "video"
+            raise "Video file already exists, will not overwrite: #{video_file_path}" if File.exist?(video_file_path)
+            video_data = harvester.harvest_video_data(image)
+            File.open(video_file_path, "wb") do |f|
+              f.write video_data
+            end
+          end
+          
           image.file_harvested_date = DateTime.now
           image.save
           puts "Harvested image #{image.id}, #{image_file_path}"

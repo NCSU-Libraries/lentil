@@ -220,6 +220,31 @@ module Lentil
 
       response.body
     end
+    
+    #
+    # Retrieve the binary video data for a given Image object
+    #
+    # @param [Image] image An Image model object from the Instagram service
+    #
+    # @raise [Exception] If there are request problems
+    #
+    # @return [String] Binary video data
+    def harvest_video_data(image)
+      puts image.video_url
+      response = Typhoeus.get(image.video_url, followlocation: true)
+
+      if response.success?
+        raise "Invalid content type: " + response.headers['Content-Type'] unless (response.headers['Content-Type'] == 'video/mp4')
+      elsif response.timed_out?
+        raise "Request timed out"
+      elsif response.code == 0
+        raise "Could not get an HTTP response"
+      else
+        raise "HTTP request failed: " + response.code.to_s
+      end
+
+      response.body
+    end
 
     #
     # Test if an image is still avaiable
