@@ -18,7 +18,13 @@
     <% @images.each do |image| %>
       <tr class="moderation">
         <%= semantic_fields_for "image[#{image.id}]", image do |f| %>
-            <td><%= link_to_large_admin_image(image) %></td>
+            <td>
+              <% unless image.media_type == "video" %>
+                  <%= link_to_large_admin_image(image) %>
+              <% else %>
+                  <%= link_to(video_tag(image.video_url, controls: true, size: "250x250"),  admin_lentil_image_path(image)) %>
+              <% end %>
+            </td>
             <td><%= image.description %></td>
             <td><%= image.user.user_name %></td>
             <td><%= image.service_tags.map{|tag| tag.name}.join(' | ') %>

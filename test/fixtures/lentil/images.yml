@@ -282,3 +282,76 @@ three:
   donor_agreement_failed: 0
   failed_file_checks: 0
   file_last_checked:
+
+video:
+  description: 'six #hunttesting'
+  created_at: 2013-04-16 16:16:16.273698000 Z
+  updated_at: 2013-04-16 16:16:16.481430000 Z
+  like_votes_count: 0
+  url: http://instagram.com/p/k5LhuktiSC/
+  user: bd
+  state: 1
+  external_identifier: '853651752801735775_3292244'
+  long_url: http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/915706_724481087621112_1586087020_n.jpg
+  original_datetime: 2013-04-16 15:58:34.000000000 Z
+  staff_like: true
+  moderator_id:
+  moderated_at:
+  second_moderation: false
+  wins_count: 5
+  losses_count: 5
+  win_pct: 50
+  popular_score: 0
+  file_harvested_date:
+  file_harvest_failed: 0
+  donor_agreement_submitted_date:
+  donor_agreement_failed: 0
+  failed_file_checks: 0
+  file_last_checked:
+  original_metadata:
+    attribution:
+    tags:
+    - hunttesting
+    location:
+    comments:
+      count: 0
+      data: []
+    filter: Amaro
+    created_time: '1393448079'
+    link: http://instagram.com/p/k5LhuktiSC/
+    likes:
+      count: 0
+      data: []
+    images:
+      low_resolution:
+        url: http://distilleryimage8.s3.amazonaws.com/28b09b209f2811e38e831293e346cce0_6.jpg
+        width: 306
+        height: 306
+      thumbnail:
+        url: http://distilleryimage8.s3.amazonaws.com/28b09b209f2811e38e831293e346cce0_5.jpg
+        width: 150
+        height: 150
+      standard_resolution:
+        url: http://distilleryimage8.s3.amazonaws.com/28b09b209f2811e38e831293e346cce0_8.jpg
+        width: 612
+        height: 612
+    caption:
+      created_time: '1393448079'
+      text: ! 'six #hunttesting'
+      from:
+        username: bddnc
+        profile_picture: http://images.ak.instagram.com/profiles/anonymousUser.jpg
+        id: '1128023464'
+        full_name: bddnc
+      id: '664613117098338265'
+    type: image
+    id: '853651752801735775_3292244'
+    user:
+      username: bddnc
+      website: ''
+      profile_picture: http://images.ak.instagram.com/profiles/anonymousUser.jpg
+      full_name: bddnc
+      bio: ''
+      id: '1128023464'
+  video_url: 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t50.2886-16/10814479_740198139394848_641606265_n.mp4'
+  media_type: 'video'

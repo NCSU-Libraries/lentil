@@ -35,8 +35,10 @@
 class Lentil::Image < ActiveRecord::Base
   attr_accessible :description, :title, :user_id, :state, :staff_like, :url, :long_url, :external_identifier,
                   :original_datetime, :popular_score, :taggings, :tag_id, :moderator, :moderated_at, :second_moderation,
-                  :do_not_request_donation, :donor_agreement_rejected
-
+                  :do_not_request_donation, :donor_agreement_rejected, :media_type, :video_url
+  
+  attr_protected  :original_metadata
+  
   has_many :won_battles, :class_name => "Battle"
   has_many :losers, :through => :battles
   has_many :lost_battles, :class_name => "Battle", :foreign_key => "loser_id"
@@ -53,8 +55,6 @@ class Lentil::Image < ActiveRecord::Base
 
   has_many :licensings
   has_many :licenses, :through=>:licensings
-
-  serialize :original_metadata, Hash
 
   belongs_to :moderator, :class_name => Lentil::AdminUser
 
@@ -198,5 +198,9 @@ class Lentil::Image < ActiveRecord::Base
       transition all => :rejected
     end
 
+  end
+  
+  def original_metadata=(meta)
+    write_attribute(:original_metadata, meta.to_hash)
   end
 end

@@ -72,6 +72,19 @@ You ought to see a message like: "15 new images added"
 - Go to <http://localhost:3000/admin/lentil_images> and click on "Moderate New." Approve or reject some images. Once you've approved some, go to <http://localhost:3000> to see your approved images.
 - Congratulations! You're now up and running!
 
+## Harvest Videos
+Video harvesting is builtin to the image harvesting feature. Only once a single task has to be run to migrate the existing data to accomodate for schema.
+After updating lentil to the latest release run
+```sh
+bundle exec rails generate lentil:install
+bundle exec rake lentil:image_services:restore_videos
+```
+
+You ought to see a message like: "x record(s) updated"
+
+Videos can be moderated like images.
+In the home page and animate views videos will autoplay, muted and looped
+
 ## Scheduling tasks
 
 There are several rake tasks that you should schedule to run on a recurring basis:

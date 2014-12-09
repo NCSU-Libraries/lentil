@@ -17,7 +17,13 @@
 <div class="wrapper">
     <div class="grid__cell side-filler"></div>
     <div id="image_<%= @image.id %>" class="image-show grid__cell solo-image">
-        <a href="<%= @image.url %>"><%= image_tag(@image.jpeg, :class => "instagram-img") %></a>
+      <a href="<%= @image.url %>">
+        <% unless @image.media_type == "video" %>
+          <%= image_tag(@image.jpeg, :class => "instagram-img") %>
+		<% else %>
+		  <video src="<%= @image.video_url %>" poster="<%= @image.jpeg %>" controls='controls' class="instagram-img <%= @image.id.to_s %>" height="100%" width="100%" data-media-type="<%= @image.media_type %>" ></video>
+		<% end %>
+       </a>
         <%= render "/layouts/lentil/image_popup", :image => @image  %>
     </div>
     <div class="grid__cell side-filler"></div>

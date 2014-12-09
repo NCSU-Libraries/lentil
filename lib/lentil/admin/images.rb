@@ -31,7 +31,11 @@ if defined?(ActiveAdmin)
 
     index do
       column "Image" do |image|
-        link_to(image_tag(image.image_url, :class => "moderation_thumbnail"), admin_lentil_image_path(image))
+        unless image.media_type == "video"
+            link_to(image_tag(image.image_url, :class => "moderation_thumbnail"), admin_lentil_image_path(image))
+        else
+            link_to(video_tag(image.video_url, controls: true, size: "250x250"),  admin_lentil_image_path(image))
+        end
       end
       column :id
       column :description
@@ -91,7 +95,11 @@ if defined?(ActiveAdmin)
           image.state_name
         end
         row :image do
-          link_to(image_tag(image.image_url), admin_lentil_image_path(image))
+			unless image.media_type == "video"
+				link_to(image_tag(image.image_url), admin_lentil_image_path(image))
+			else
+				video_tag(image.video_url, controls: true, size: "640x640")
+			end
         end
       end
       active_admin_comments

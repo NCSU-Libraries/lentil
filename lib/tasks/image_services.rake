@@ -55,15 +55,24 @@ namespace :lentil do
 
         begin
           # TODO: Currently expects JPEG
+          video_file_path = image_file_path + "/#{image.external_identifier}.mp4"
           image_file_path += "/#{image.external_identifier}.jpg"
           raise "Image file already exists, will not overwrite: #{image_file_path}" if File.exist?(image_file_path)
 
           image_data = harvester.harvest_image_data(image)
-
+          
           File.open(image_file_path, "wb") do |f|
             f.write image_data
           end
 
+          if image.media_type == "video"
+            raise "Video file already exists, will not overwrite: #{video_file_path}" if File.exist?(video_file_path)
+            video_data = harvester.harvest_video_data(image)
+            File.open(video_file_path, "wb") do |f|
+              f.write video_data
+            end
+          end
+          
           image.file_harvested_date = DateTime.now
           image.save
           puts "Harvested image #{image.id}, #{image_file_path}"
@@ -134,6 +143,37 @@ namespace :lentil do
           raise e
         end
       end
+    end
+    
+    desc "Get video urls from videos previously harvested"
+    task :restore_videos, [:image_service] => :environment do |t, args|
+      args.with_defaults(:image_service => 'Instagram')
+
+      harvester = Lentil::InstagramHarvester.new
+
+      lentilService = Lentil::Service.unscoped.where(:name => args[:image_service]).first
+      numUpdated = 0;
+      lentilService.images.unscoped.each do |image|
+        #Skip if media type already known i.e. was properly harvested
+        next if !image.media_type.blank?
+        
+        meta = image.original_metadata
+        obj = YAML.load(meta)
+        type = obj["type"]
+        video_url = image.video_url
+        if(type == "video")
+          video_url = obj["videos"]["standard_resolution"]["url"]
+          image.video_url = video_url
+          image.media_type = 'video'
+          image.save
+          numUpdated += 1
+        else
+          image.media_type = 'image'
+          image.save
+          numUpdated += 1
+        end
+      end
+      puts numUpdated.to_s + " record(s) updated"
     end
   end
 end

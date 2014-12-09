@@ -100,7 +100,9 @@ module Lentil
         tags: instagram_metadata.tags,
         user: instagram_metadata.user,
         original_datetime: Time.at(instagram_metadata.created_time.to_i).to_datetime,
-        original_metadata: instagram_metadata
+        original_metadata: instagram_metadata,
+        media_type: instagram_metadata.type,
+        video_url: instagram_metadata.videos && instagram_metadata.videos.standard_resolution.url
       }
     end
 
@@ -128,7 +130,9 @@ module Lentil
         :description => image_data[:name],
         :url => image_data[:url],
         :long_url => image_data[:large_url],
-        :original_datetime => image_data[:original_datetime]
+        :video_url => image_data[:video_url],
+        :original_datetime => image_data[:original_datetime],
+        :media_type => image_data[:media_type]
       })
 
       # This is a temporary fix for a bug in the Hashie to_hash method.
@@ -206,6 +210,30 @@ module Lentil
 
       if response.success?
         raise "Invalid content type: " + response.headers['Content-Type'] unless (response.headers['Content-Type'] == 'image/jpeg')
+      elsif response.timed_out?
+        raise "Request timed out"
+      elsif response.code == 0
+        raise "Could not get an HTTP response"
+      else
+        raise "HTTP request failed: " + response.code.to_s
+      end
+
+      response.body
+    end
+    
+    #
+    # Retrieve the binary video data for a given Image object
+    #
+    # @param [Image] image An Image model object from the Instagram service
+    #
+    # @raise [Exception] If there are request problems
+    #
+    # @return [String] Binary video data
+    def harvest_video_data(image)
+      response = Typhoeus.get(image.video_url, followlocation: true)
+
+      if response.success?
+        raise "Invalid content type: " + response.headers['Content-Type'] unless (response.headers['Content-Type'] == 'video/mp4')
       elsif response.timed_out?
         raise "Request timed out"
       elsif response.code == 0
