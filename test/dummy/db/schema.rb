@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131205181204) do
+ActiveRecord::Schema.define(:version => 20141106172834) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -90,6 +90,8 @@ ActiveRecord::Schema.define(:version => 20131205181204) do
     t.datetime "donor_agreement_rejected"
     t.boolean  "do_not_request_donation",           :default => false
     t.datetime "last_donor_agreement_failure_date"
+    t.string   "media_type"
+    t.string   "video_url"
   end
 
   add_index "lentil_images", ["external_identifier"], :name => "index_images_on_external_identifier"
