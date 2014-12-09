@@ -15,7 +15,7 @@ PATH
       lazing (~> 0.1.1)
       meta_search (~> 1.1.3)
       modernizr-rails (~> 2.7.0)
-      rails (~> 3.2.20)
+      rails (~> 3.2.21)
       randumb (~> 0.4.1)
       ruby-oembed (~> 0.8.9)
       sitemap_generator (~> 5.0.5)
