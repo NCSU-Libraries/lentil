@@ -230,7 +230,6 @@ module Lentil
     #
     # @return [String] Binary video data
     def harvest_video_data(image)
-      puts image.video_url
       response = Typhoeus.get(image.video_url, followlocation: true)
 
       if response.success?
