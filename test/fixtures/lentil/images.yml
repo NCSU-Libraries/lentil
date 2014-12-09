@@ -291,8 +291,8 @@ video:
   url: http://instagram.com/p/k5LhuktiSC/
   user: bd
   state: 1
-  external_identifier: '664613116276253826_1128023464'
-  long_url: http://distilleryimage8.s3.amazonaws.com/28b09b209f2811e38e831293e346cce0_8.jpg
+  external_identifier: '853651752801735775_3292244'
+  long_url: http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/915706_724481087621112_1586087020_n.jpg
   original_datetime: 2013-04-16 15:58:34.000000000 Z
   staff_like: true
   moderator_id:
@@ -345,7 +345,7 @@ video:
         full_name: bddnc
       id: '664613117098338265'
     type: image
-    id: '664613116276253826_1128023464'
+    id: '853651752801735775_3292244'
     user:
       username: bddnc
       website: ''
@@ -353,5 +353,5 @@ video:
       full_name: bddnc
       bio: ''
       id: '1128023464'
-  video_url: 'http://distilleryvesper9-13.ak.instagram.com/090d06dad9cd11e2aa0912313817975d_101.mp4'
+  video_url: 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t50.2886-16/10814479_740198139394848_641606265_n.mp4'
   media_type: 'video'
