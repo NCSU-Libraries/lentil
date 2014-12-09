@@ -3,9 +3,9 @@
         <div id="image_<%= image.id %>" class="grid__cell image-tile">
           <%= link_to url_for(image), 'data-fancybox-href' => image.video_url, 'data-fancybox-group' => "image-tile-gallery", :class => :fancybox  do %>
            <% unless image.media_type == "video" %>
-            	<%= image_tag(image.jpeg, :class => "instagram-img " + image.id.to_s, :alt => image.description, :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type, :video_url => image.video_url}) %>
+            	<%= image_tag(image.jpeg, :class => "instagram-img " + image.id.to_s, :alt => image.description, :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
             <% else %>
-            	<%= video_tag(image.video_url, :autoplay => "true", :muted => "true", :loop => "true", :class => "instagram-img " + image.id.to_s, :height => "100%", :width => "100%", :data => {:media_type => image.media_type}) %>
+            	<%= video_tag(image.video_url, :autoplay => "true", :muted => "true", :loop => "true", :class => "instagram-img " + image.id.to_s, :height => "100%", :width => "100%", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
             <% end %>
           <% end %>
 
