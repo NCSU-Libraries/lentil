@@ -233,32 +233,40 @@
 					$img.parent().css( 'background-image', 'url(' + src + ')' );
 
 					if( loaded === count ) {
-
-						$imgs.remove();
-						self.$el.removeClass( 'ri-grid-loading' );
-						// the items
-						self.$items = self.$list.children( 'li' );
-						// make a copy of the items
-						self.$itemsCache = self.$items.clone();
-						// total number of items
-						self.itemsTotal = self.$items.length;
-						// the items that will be out of the grid
-						// actually the item's child (anchor element)
-						self.outItems= [];
-						self._layout( function() {
-							self._initEvents();
-						} );
-						// replace [options.step] items after [options.interval] time
-						// the items that go out are randomly chosen, while the ones that get in
-						// follow a "First In First Out" logic
-						self._start();
-
+						self._loadingComplete($imgs);
 					}
 
-				} ).attr( 'src', src )
-				 
+				} ).bind('error', function() {
+					count--;
+
+					if( loaded === count ) {
+						self._loadingComplete($imgs);
+					}
+				}).attr( 'src', src );
+
 			} );
 
+		},
+		_loadingComplete : function($imgs) {
+			var self = this;
+			$imgs.remove();
+			self.$el.removeClass( 'ri-grid-loading' );
+			// the items
+			self.$items = self.$list.children( 'li' );
+			// make a copy of the items
+			self.$itemsCache = self.$items.clone();
+			// total number of items
+			self.itemsTotal = self.$items.length;
+			// the items that will be out of the grid
+			// actually the item's child (anchor element)
+			self.outItems= [];
+			self._layout( function() {
+				self._initEvents();
+			} );
+			// replace [options.step] items after [options.interval] time
+			// the items that go out are randomly chosen, while the ones that get in
+			// follow a "First In First Out" logic
+			self._start();
 		},
 		_layout : function( callback ) {
 
