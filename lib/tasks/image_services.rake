@@ -175,5 +175,37 @@ namespace :lentil do
       end
       puts numUpdated.to_s + " record(s) updated"
     end
+    
+    desc "Dump image metadata for archiving"
+    task :dump_metadata, [:image_service] => :environment do |t, args|
+      args.with_defaults(:image_service => 'Instagram')
+
+      harvester = Lentil::InstagramHarvester.new
+
+      lentilService = Lentil::Service.unscoped.where(:name => args[:image_service]).first
+      numUpdated = 0;
+      lentilService.images.unscoped.limit(1).each do |image|
+        
+        @jsonobj = JSON.parse(image.to_json)
+        @jsonobj["tags"] = JSON.parse(image.tags.to_json)
+        @jsonobj["licenses"] = JSON.parse(image.licenses.to_json)
+        
+        @jsonobj["like_votes"] = JSON.parse(image.like_votes.to_json)
+        @jsonobj["flags"] = JSON.parse(image.flags.to_json)
+        
+        @jsonobj["won_battles"] = JSON.parse(image.won_battles.to_json)
+        @jsonobj["lost_battles"] = JSON.parse(image.lost_battles.to_json)
+        @jsonobj["winners"] = JSON.parse(image.winners.to_json)
+        
+        #Model problem?
+        #@jsonobj["losers"] = JSON.parse(image.losers.to_json)
+        
+        @jsonobj["service"] = JSON.parse(image.service.to_json)
+        
+        File.open("./dump.json", "w") do |f|
+          f.write @jsonobj.to_json
+        end
+      end
+    end
   end
 end
