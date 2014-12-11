@@ -187,8 +187,12 @@ namespace :lentil do
       lentilService.images.unscoped.limit(1).each do |image|
         
         @jsonobj = JSON.parse(image.to_json)
+        @jsonobj.delete("id")
         @jsonobj["tags"] = JSON.parse(image.tags.to_json)
         @jsonobj["licenses"] = JSON.parse(image.licenses.to_json)
+        @jsonobj["licenses"].each do |lic|
+          lic.delete("id")
+        end
         
         @jsonobj["like_votes"] = JSON.parse(image.like_votes.to_json)
         @jsonobj["flags"] = JSON.parse(image.flags.to_json)
@@ -200,7 +204,8 @@ namespace :lentil do
         #Model problem?
         #@jsonobj["losers"] = JSON.parse(image.losers.to_json)
         
-        @jsonobj["service"] = JSON.parse(image.service.to_json)
+        @jsonobj["service"] = JSON.parse(image.service.to_json).except("id")
+        @jsonobj["user"] = JSON.parse(image.user.to_json).except("id", "service_id")
         
         File.open("./dump.json", "w") do |f|
           f.write @jsonobj.to_json
