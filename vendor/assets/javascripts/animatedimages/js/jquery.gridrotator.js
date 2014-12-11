@@ -651,11 +651,11 @@
 					}
 					
 					$el.next().remove();
-                    var videos = $el.find("video");
-                    if(videos.length !== 0) {
-                        //Since it's a clone, have to start the event manually
-                        videos[0].play();
-                    }
+					var videos = $el.find("video");
+					if(videos.length !== 0) {
+					//Since it's a clone, have to start the event manually
+						videos[0].play();
+					}
 					$el.parent().data( 'active', false );
 
 				}, t );
