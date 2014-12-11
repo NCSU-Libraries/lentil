@@ -185,8 +185,8 @@ namespace :lentil do
       harvester = Lentil::InstagramHarvester.new
 
       lentilService = Lentil::Service.unscoped.where(:name => args[:image_service]).first
-      numUpdated = 0;
-      lentilService.images.unscoped.limit(1).each do |image|
+      numArchived = 0;
+      lentilService.images.unscoped.each do |image|
         begin
           raise "Destination directory does not exist or is not a directory: #{base_dir}" unless File.directory?(base_dir)
 
@@ -226,8 +226,10 @@ namespace :lentil do
         image_file_path += "/#{image.external_identifier}.json"
         File.open(image_file_path, "w") do |f|
           f.write @jsonobj.to_json
+          numArchived += 1
         end
       end
+      puts "#{numArchived} image(s) metadata extracted"
     end
   end
 end
