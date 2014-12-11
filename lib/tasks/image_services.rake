@@ -177,15 +177,31 @@ namespace :lentil do
     end
     
     desc "Dump image metadata for archiving"
-    task :dump_metadata, [:image_service] => :environment do |t, args|
+    task :dump_metadata, [:image_service, :base_directory] => :environment do |t, args|
       args.with_defaults(:image_service => 'Instagram')
+      base_dir = args[:base_directory] || Lentil::Engine::APP_CONFIG["base_image_file_dir"] || nil
+      raise "Base directory is required" unless base_dir
 
       harvester = Lentil::InstagramHarvester.new
 
       lentilService = Lentil::Service.unscoped.where(:name => args[:image_service]).first
       numUpdated = 0;
       lentilService.images.unscoped.limit(1).each do |image|
-        
+        begin
+          raise "Destination directory does not exist or is not a directory: #{base_dir}" unless File.directory?(base_dir)
+
+          image_file_path = "#{base_dir}/#{image.service.name}"
+
+          if !File.exist?(image_file_path)
+            Dir.mkdir(image_file_path)
+          else
+            raise "Service directory is not a directory: #{image_file_path}" unless File.directory?(image_file_path)
+          end
+        rescue => e
+          Rails.logger.error e.message
+          raise e
+        end
+      
         @jsonobj = JSON.parse(image.to_json)
         @jsonobj.delete("id")
         @jsonobj["tags"] = JSON.parse(image.tags.to_json)
@@ -207,7 +223,8 @@ namespace :lentil do
         @jsonobj["service"] = JSON.parse(image.service.to_json).except("id")
         @jsonobj["user"] = JSON.parse(image.user.to_json).except("id", "service_id")
         
-        File.open("./dump.json", "w") do |f|
+        image_file_path += "/#{image.external_identifier}.json"
+        File.open(image_file_path, "w") do |f|
           f.write @jsonobj.to_json
         end
       end
