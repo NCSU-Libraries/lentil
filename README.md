@@ -93,9 +93,10 @@ There are several rake tasks that you should schedule to run on a recurring basi
 - `rake lentil:image_services:test_image_files[number_of_images,image_service]` checks that the image content for approved images is still available. After 3 failures, Lentil will stop displaying the images. After 10 failures, Lentil will stop checking. Defaults to checking 10 Instagram images. Images will not be checked more than once per day.
 - `rake lentil:popularity:update_score` recalculates the popularity score based on "likes" and "battles."
 
-Additionally, there are two optional rake tasks that support image file harvesting for longer-term retention:
+Additionally, there are three optional rake tasks that support image file harvesting for longer-term retention:
 
 - `rake lentil:image_services:save_image_files[number_of_images,image_service,base_directory]` Lentil normally only stores image metadata, but this task will save the image file to a specified directory. This file will still not be used by Lentil, but the file retrieval will be noted in the Image model. Defaults to 50 Instagram images, saving to the path specified by the `base_image_file_dir` option from `config/lentil_config.yml`.
+- `rake lentil:image_services:dump_metadata[image_service,base_directory]` Extracts all image metadata from the database and writes them as json files. Defaults to saving to the path specified by the `base_image_file_dir` option from `config/lentil_config.yml`.
 - `rake lentil:image_services:submit_donor_agreements[number_of_images,image_service]` will submit a donor agreement (using the `donor_agreement_text` option from `config/lentil_config.yml`) as a comment on approved Instagram images that have been in the system for at least a week. Currently defaults to one image.
 
 > In order to submit comments, you will need to generate an access token for the user that will submit the comments. See the [Instagram documentation](http://instagram.com/developer/authentication/) and a [discussion of access token expiration](https://groups.google.com/forum/?fromgroups=#!searchin/instagram-api-developers/access$20token%7Csort:date/instagram-api-developers/OBOTwIh3FSw/9hTccUX1Jq4J).
