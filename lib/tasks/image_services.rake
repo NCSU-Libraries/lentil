@@ -213,13 +213,6 @@ namespace :lentil do
         @jsonobj["like_votes"] = JSON.parse(image.like_votes.to_json)
         @jsonobj["flags"] = JSON.parse(image.flags.to_json)
         
-        @jsonobj["won_battles"] = JSON.parse(image.won_battles.to_json)
-        @jsonobj["lost_battles"] = JSON.parse(image.lost_battles.to_json)
-        @jsonobj["winners"] = JSON.parse(image.winners.to_json)
-        
-        #Model problem?
-        #@jsonobj["losers"] = JSON.parse(image.losers.to_json)
-        
         @jsonobj["service"] = JSON.parse(image.service.to_json).except("id")
         @jsonobj["user"] = JSON.parse(image.user.to_json).except("id", "service_id")
         
