@@ -76,6 +76,7 @@ function addfancybox() {
         closeEffect : 'none',
         nextEffect  : 'none',
         prevEffect  : 'none',
+        live : true,
         loop : false,
         minWidth : '250px',
         type: 'html',
@@ -90,7 +91,6 @@ function addfancybox() {
           window.history.pushState(null,null,FancyBoxCloseFunctionState.pathname);
         },
         beforeShow  : function() {
-			
 			var img = $(this.element).children(".instagram-img");
 			if($(img).attr("data-media-type") === "video") {
 				var video_url = $(img).attr("src");
@@ -100,13 +100,12 @@ function addfancybox() {
 				vid.oncanplay = function() {
 					$.fancybox.reposition();
 				}
-				//return;
 			}
 			else {
 				var image_url = $(img).attr("src");
 				$(".fancybox-inner").html('<img class="fancybox-image" src="' + image_url + '" />');
 			}
-            
+
             this.title = $(this.element).next(".text-overlay").html();
             imageId = $(this.element).parents("div").attr("id");
             $(".fancybox-wrap").attr('id', imageId);

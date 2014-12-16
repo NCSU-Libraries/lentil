@@ -13,11 +13,12 @@ Gem::Specification.new do |s|
   s.license     = "MIT"
   s.summary     = "lentil supports the harvesting of images from Instagram."
   s.description = "lentil supports the harvesting of images from Instagram and provides several browsing views, mechanisms for sharing, tools for users to select their favorite images, an administrative interface for moderating images, and a system for harvesting images and submitting donor agreements in preparation of ingest into external repositories. Built according to the principles of 'responsive design, lentil is designed for use on mobile devices, tablets, desktops, and larger screens. This project is extracted from the My #HuntLibrary project at NCSU Libraries."
+  s.post_install_message = "You may need to run 'bundle exec rake lentil:install:migrations' to incorporate any new database migration files."
 
   s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = `git ls-files -- test/*`.split("\n")
 
-  s.add_dependency "rails", "~> 3.2.20"
+  s.add_dependency "rails", "~> 3.2.21"
   s.add_dependency 'jquery-rails', '~> 2.3.0'
   s.add_dependency "activeadmin", '~> 0.6.3'
   s.add_dependency 'devise', "~> 3.2.0"
