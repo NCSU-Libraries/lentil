@@ -182,8 +182,6 @@ namespace :lentil do
       base_dir = args[:base_directory] || Lentil::Engine::APP_CONFIG["base_image_file_dir"] || nil
       raise "Base directory is required" unless base_dir
 
-      harvester = Lentil::InstagramHarvester.new
-
       lentilService = Lentil::Service.unscoped.where(:name => args[:image_service]).first
       numArchived = 0;
       lentilService.images.unscoped.each do |image|
