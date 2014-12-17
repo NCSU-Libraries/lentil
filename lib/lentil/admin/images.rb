@@ -6,6 +6,7 @@ if defined?(ActiveAdmin)
     config.per_page = 10
 
     filter :state, :as => :select, :collection => proc { Lentil::Image::States }
+    filter :media_type, :as => :select
     filter :user_user_name, :as => :string, :label => "Username"
     filter :user_full_name, :as => :string, :label => "Full Name"
     filter :staff_like, :as => :select
