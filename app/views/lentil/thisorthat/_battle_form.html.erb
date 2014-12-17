@@ -4,7 +4,12 @@
       <div class="battle-image-wrap grid__cell">
         <%= semantic_fields_for "image[#{image.id}]", image do |f| %>
           <div id="image_<%= image.id %>" class="battle-image-tile">
-            <a href="<%= url_for(image) %>" data-fancybox-href= "<%= image.jpeg %>" class="fancybox"><%= image_tag(image.jpeg, :class => "battle-img instagram-img", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count}) %>
+            <a href="<%= url_for(image) %>" data-fancybox-href= "<%= image.jpeg %>" class="fancybox">
+              <% unless image.media_type == "video" %>
+                <%= image_tag(image.jpeg, :class => "battle-img instagram-img", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
+              <% else %>
+                <%= video_tag(image.video_url, :class => "instagram-img " + image.id.to_s, :height => "100%", :width => "100%", :poster => image.jpeg, :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
+              <% end %>
               <div class="battle-image-desc trunc-small"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 35) %></div></div>
               <div class="battle-image-desc trunc-medium"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 50) %></div></div>
               <div class="battle-image-desc trunc-large"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 70) %></div></div>
@@ -23,7 +28,12 @@
   <% @prev_images.each do |image| %>
       <div class="battle-image-wrap grid__cell" style="background:#e6e6e6">
           <div id="image_<%= image.id %>" class="battle-image-tile">
-            <a href="<%= url_for(image) %>" data-fancybox-href= "<%= image.jpeg %>" class="fancybox"><%= image_tag(image.jpeg, :class => "battle-img instagram-img", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count}) %>
+            <a href="<%= url_for(image) %>" data-fancybox-href= "<%= image.jpeg %>" class="fancybox">
+              <% unless image.media_type == "video" %>
+                <%= image_tag(image.jpeg, :class => "battle-img instagram-img", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
+              <% else %>
+                <%= video_tag(image.video_url, :class => "instagram-img " + image.id.to_s, :height => "100%", :width => "100%", :poster => image.jpeg, :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
+              <% end %>
               <div class="battle-image-desc trunc-small"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 35) %></div></div>
               <div class="battle-image-desc trunc-medium"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 50) %></div></div>
               <div class="battle-image-desc trunc-large"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 70) %></div></div>
