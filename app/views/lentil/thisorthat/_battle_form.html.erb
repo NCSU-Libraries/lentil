@@ -8,7 +8,7 @@
               <% unless image.media_type == "video" %>
                 <%= image_tag(image.jpeg, :class => "battle-img instagram-img", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
               <% else %>
-                <%= video_tag(image.video_url, :class => "instagram-img " + image.id.to_s, :height => "100%", :width => "100%", :poster => image.jpeg, :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
+                <%= video_tag(image.video_url, :class => "instagram-img " + image.id.to_s, :height => "100%", :width => "100%", :poster => image.jpeg, :controls => "controls", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
               <% end %>
               <div class="battle-image-desc trunc-small"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 35) %></div></div>
               <div class="battle-image-desc trunc-medium"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 50) %></div></div>
@@ -32,7 +32,7 @@
               <% unless image.media_type == "video" %>
                 <%= image_tag(image.jpeg, :class => "battle-img instagram-img", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
               <% else %>
-                <%= video_tag(image.video_url, :class => "instagram-img " + image.id.to_s, :height => "100%", :width => "100%", :poster => image.jpeg, :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
+                <%= video_tag(image.video_url, :class => "instagram-img " + image.id.to_s, :height => "100%", :width => "100%", :poster => image.jpeg, :controls => "controls", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
               <% end %>
               <div class="battle-image-desc trunc-small"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 35) %></div></div>
               <div class="battle-image-desc trunc-medium"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 50) %></div></div>
