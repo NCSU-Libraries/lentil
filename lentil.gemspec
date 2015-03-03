@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 3.2.21"
   s.add_dependency 'jquery-rails', '~> 2.3.0'
   s.add_dependency "activeadmin", '~> 0.6.3'
-  s.add_dependency 'devise', "~> 3.2.0"
+  s.add_dependency 'devise', "~> 3.4.1"
   s.add_dependency "meta_search", '~> 1.1.3' # for search within admin interface
   s.add_dependency "formtastic", '~> 2.0' # simplifies form creation
   s.add_dependency "instagram", "~> 1.1.2" # Interact with the Instagram API
