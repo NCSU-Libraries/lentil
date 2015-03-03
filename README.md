@@ -15,7 +15,7 @@ Although we are using this gem in production, **this gem should be considered an
 
 ## Installation
 
-lentil has been tested under Ruby 1.9.3 and 2.1.5. *Ruby 2.2.0 is not currently supported.*
+lentil has been tested under Ruby 1.9.3 and 2.1.5. **Ruby 2.2.0 is not currently supported.**
 
 ### Create a new Rails app with Rails 3.2.x
 
