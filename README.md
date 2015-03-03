@@ -15,7 +15,14 @@ Although we are using this gem in production, **this gem should be considered an
 
 ## Installation
 
-lentil has been tested under Ruby 1.9.3 and 2.1.0.
+lentil has been tested under Ruby 1.9.3 and 2.1.5. *Ruby 2.2.0 is not currently supported.*
+
+### Create a new Rails app with Rails 3.2.x
+
+```sh
+rails new your_app_name
+cd your_app_name
+```
 
 ### Add lentil and therubyracer (or another ExecJS runtime) to your Gemfile and `bundle`
 
