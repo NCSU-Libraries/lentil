@@ -44,7 +44,7 @@ class ActionDispatch::IntegrationTest
     visit admin_root_path
     fill_in 'Email', with: 'admin@example.com'
     fill_in 'Password', with: 'password'
-    click_on 'Sign in'
+    click_on 'Log in'
   end
 
   def browser_start
