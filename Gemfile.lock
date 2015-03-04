@@ -20,7 +20,7 @@ PATH
       ruby-oembed (~> 0.8.9)
       sitemap_generator (~> 5.0.5)
       state_machine (~> 1.2.0)
-      typhoeus (~> 0.6.6)
+      typhoeus (~> 0.7.1)
       whenever (>= 0.8.0)
       will_paginate (~> 3.0.5)
 
@@ -203,7 +203,7 @@ GEM
     mocha (1.1.0)
       metaclass (~> 0.0.1)
     modernizr-rails (2.7.1)
-    multi_json (1.10.1)
+    multi_json (1.11.0)
     multipart-post (2.0.0)
     nenv (0.2.0)
     nokogiri (1.6.6.2)
@@ -292,7 +292,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    typhoeus (0.6.9)
+    typhoeus (0.7.1)
       ethon (>= 0.7.1)
     tzinfo (0.3.43)
     vcr (2.9.3)

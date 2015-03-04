@@ -39,7 +39,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'lazing', "~> 0.1.1" # Lazy equivalents for many of the methods defined in Ruby's Enumerable module
   s.add_dependency 'sitemap_generator', "~> 5.0.5" # Generate sitemaps on deployment
   s.add_dependency 'google-analytics-rails', "~> 0.0.4"
-  s.add_dependency 'typhoeus', "~> 0.6.6" # for checking and harvesting image files
+  s.add_dependency 'typhoeus', "~> 0.7.1" # for checking and harvesting image files
   s.add_dependency 'kaminari', "~> 0.16.1" # for checking and harvesting image files
 
   s.add_development_dependency "sqlite3", "~> 1.3.8"
