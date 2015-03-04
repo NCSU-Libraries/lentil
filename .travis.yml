@@ -1,8 +1,8 @@
 language: ruby
 rvm:
-  - 1.9.3
-  - 2.1.5
-  - 2.2.0
+  - 1.9
+  - 2.1
+  - 2.2
 script: "bundle exec rake test"
 before_install:
   - "export DISPLAY=:99.0"
@@ -14,4 +14,4 @@ notifications:
     - jmcasden@ncsu.edu
 matrix:
   allow_failures:
-    - rvm: 2.2.0
+    - rvm: 2.2
