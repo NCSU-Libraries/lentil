@@ -25,7 +25,7 @@ module Lentil
     end
 
     def get_images
-      images = Image.approved.random(20).sort_by{|i| i.battles_count}
+      images = Image.approved.order_by_rand.limit(20).sort_by{|i| i.battles_count}
       images = test_urls(images, 2).sort_by{ |i| i.id }
 
       session[:battle_images] = []
