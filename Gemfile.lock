@@ -134,7 +134,7 @@ GEM
       sprockets (< 2.13)
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
-    database_cleaner (1.4.0)
+    database_cleaner (1.4.1)
     devise (3.4.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -353,6 +353,7 @@ DEPENDENCIES
   lentil!
   minitest-rails (~> 2.1.1)
   mocha (~> 1.1.0)
+  protected_attributes (~> 1.0.8)
   pry-rails (~> 0.3.2)
   rb-fsevent
   rb-inotify
