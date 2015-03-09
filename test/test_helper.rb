@@ -54,7 +54,7 @@ class ActionDispatch::IntegrationTest
 
   def browser_start
     Capybara.current_driver = :webkit #_with_long_timeout
-    page.driver.block_unknown_urls
+    # page.driver.block_unknown_urls
   end
 
   def browser_end
