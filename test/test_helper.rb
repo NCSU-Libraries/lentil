@@ -48,7 +48,7 @@ class ActionDispatch::IntegrationTest
     visit admin_root_path
     fill_in 'Email', with: 'admin@example.com'
     fill_in 'Password', with: 'password'
-    click_on 'Log in'
+    click_on 'Login'
     true
   end
 
