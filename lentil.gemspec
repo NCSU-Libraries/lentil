@@ -20,12 +20,11 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = `git ls-files -- test/*`.split("\n")
 
-  s.add_dependency "rails", "~> 3.2.21"
+  s.add_dependency "rails", "~> 4.2.0"
   s.add_dependency 'jquery-rails', '~> 2.3.0'
-  s.add_dependency "activeadmin", '~> 0.6.3'
+  #s.add_dependency "activeadmin", '~> 0.6.3'
   s.add_dependency 'devise', "~> 3.4.1"
-  s.add_dependency "meta_search", '~> 1.1.3' # for search within admin interface
-  s.add_dependency "formtastic", '~> 2.0' # simplifies form creation
+  s.add_dependency "formtastic", '~> 3.1.0' # simplifies form creation
   s.add_dependency "instagram", "~> 1.1.2" # Interact with the Instagram API
   s.add_dependency "modernizr-rails", "~> 2.7.0" # browser feature detection, used by breakpoint
   s.add_dependency 'fancybox2-rails', '~> 0.2.8' # for image interface overlays
@@ -35,24 +34,25 @@ Gem::Specification.new do |s|
   s.add_dependency 'state_machine', "~> 1.2.0" # adds state machine for moderation
   s.add_dependency 'ruby-oembed', "~> 0.8.9" # Retrieve OEmbed data
   s.add_dependency 'chosen-rails', "~> 1.2.0" # improved form select box
-  s.add_dependency 'randumb', "~> 0.4.1" # pull random records from Active Record
+  s.add_dependency 'randumb', "~> 0.5.0" # pull random records from Active Record
   s.add_dependency 'lazing', "~> 0.1.1" # Lazy equivalents for many of the methods defined in Ruby's Enumerable module
   s.add_dependency 'sitemap_generator', "~> 5.0.5" # Generate sitemaps on deployment
   s.add_dependency 'google-analytics-rails', "~> 0.0.4"
   s.add_dependency 'typhoeus', "~> 0.7.1" # for checking and harvesting image files
   s.add_dependency 'kaminari', "~> 0.16.1" # for checking and harvesting image files
+  s.add_dependency 'protected_attributes', '~> 1.0.8'
 
   s.add_development_dependency "sqlite3", "~> 1.3.8"
   s.add_development_dependency "capybara", "~> 2.4.1"
-  s.add_development_dependency "database_cleaner", "~> 1.3.0"
+  s.add_development_dependency "database_cleaner", "~> 1.4.0"
   s.add_development_dependency "launchy", "~> 2.4.0"
   s.add_development_dependency "vcr", "~> 2.9.3"
-  s.add_development_dependency "webmock", "~> 1.18.0"
+  s.add_development_dependency "webmock", "~> 1.20.4"
   s.add_development_dependency "simplecov", "~> 0.9.0"
   s.add_development_dependency "pry-rails", "~> 0.3.2"
-  s.add_development_dependency "test-unit", "~> 3.0.1"
+  s.add_development_dependency "minitest-rails", "~> 2.1.1"
   s.add_development_dependency "mocha", "~> 1.1.0"
   s.add_development_dependency "single_test", "~> 0.6.0"
-  s.add_development_dependency "capybara-webkit", "~> 1.3.0"
+  s.add_development_dependency "capybara-webkit", "~> 1.4.1"
   s.add_development_dependency "yard", "~> 0.8.7"
 end

@@ -58,7 +58,7 @@ class Lentil::Image < ActiveRecord::Base
 
   belongs_to :moderator, :class_name => Lentil::AdminUser
 
-  default_scope where("failed_file_checks < 3")
+  default_scope { where("failed_file_checks < 3") }
 
   validates_uniqueness_of :external_identifier, :scope => :user_id
   validates :url, :format => URI::regexp(%w(http https))

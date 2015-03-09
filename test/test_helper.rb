@@ -3,25 +3,22 @@ SimpleCov.start 'rails'
 
 ENV["RAILS_ENV"] = "test"
 
-require File.expand_path("../dummy/config/environment.rb",  __FILE__)
-require "rails/test_help"
+require File.expand_path("../../test/dummy/config/environment.rb",  __FILE__)
+require 'rails/test_help'
 require 'capybara/rails'
 require 'pry'
 require 'mocha/setup'
-require 'webmock/test_unit'
+require 'webmock/minitest'
 require 'database_cleaner'
 require 'capybara-webkit'
 
 Rails.backtrace_cleaner.remove_silencers!
+ActiveRecord::Migrator.migrations_paths << File.expand_path('../../db/migrate', __FILE__)
 
 # Load support files
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
-# Load fixtures from the engine
-if ActiveSupport::TestCase.method_defined?(:fixture_path=)
-  ActiveSupport::TestCase.fixture_path = File.expand_path("../fixtures", __FILE__)
-end
-ActiveSupport::TestCase.fixtures :all
+Minitest.backtrace_filter = Minitest::BacktraceFilter.new
 
 # Transactional fixtures do not work with Selenium tests, because Capybara
 # uses a separate server thread, which the transactions would be hidden
@@ -31,7 +28,14 @@ DatabaseCleaner.strategy = :truncation
 if ActionDispatch::IntegrationTest.method_defined?(:fixture_path=)
   ActionDispatch::IntegrationTest.fixture_path = File.expand_path("../fixtures", __FILE__)
 end
+
+# Load fixtures from the engine
+if ActiveSupport::TestCase.respond_to?(:fixture_path=)
+  ActiveSupport::TestCase.fixture_path = File.expand_path("../fixtures", __FILE__)
+end
+
 class ActionDispatch::IntegrationTest
+  fixtures :all
 
   # Make the Capybara DSL available in all integration tests
   include Capybara::DSL
@@ -45,10 +49,12 @@ class ActionDispatch::IntegrationTest
     fill_in 'Email', with: 'admin@example.com'
     fill_in 'Password', with: 'password'
     click_on 'Log in'
+    true
   end
 
   def browser_start
     Capybara.current_driver = :webkit #_with_long_timeout
+    page.driver.block_unknown_urls
   end
 
   def browser_end
@@ -73,6 +79,13 @@ end
 # For functional tests that require authentication
 class ActionController::TestCase
   include Devise::TestHelpers
+#  @routes = Lentil::Engine.routes
+  fixtures :all
+end
+
+class ActiveSupport::TestCase
+  #include Devise::TestHelpers
+  fixtures :all
 end
 
 require 'vcr'

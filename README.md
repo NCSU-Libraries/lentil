@@ -179,7 +179,6 @@ bundle install
 
 ```sh
 RAILS_ENV=test bundle exec rake app:db:migrate
-RAILS_ENV=test bundle exec rake app:db:test:prepare
 ```
 
 - Run the tests

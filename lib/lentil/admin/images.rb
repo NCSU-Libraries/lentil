@@ -21,14 +21,14 @@ if defined?(ActiveAdmin)
     filter :url, :label => "Service URL"
     filter :id
 
-    action_item :only => :show do
+    action_item(:update_image, {:only => :show}) do
       link_to('Update Image', update_image_admin_lentil_image_path(lentil_image))
     end
-    action_item { link_to "Moderate New", moderate_admin_lentil_images_path }
-    action_item { link_to "Moderate Skipped", moderate_skipped_admin_lentil_images_path }
-    action_item { link_to "Moderate Flagged", moderate_flagged_admin_lentil_images_path }
-    action_item { link_to "Flagging History", flagging_history_admin_lentil_images_path }
-    action_item { link_to "Add Instagram Image", manual_input_admin_lentil_images_path }
+    action_item(:mod_new) { link_to "Moderate New", moderate_admin_lentil_images_path }
+    action_item(:mod_skipped) { link_to "Moderate Skipped", moderate_skipped_admin_lentil_images_path }
+    action_item(:mod_flagged) { link_to "Moderate Flagged", moderate_flagged_admin_lentil_images_path }
+    action_item(:flag_history) { link_to "Flagging History", flagging_history_admin_lentil_images_path }
+    action_item(:add_inst_img) { link_to "Add Instagram Image", manual_input_admin_lentil_images_path }
 
     index do
       column "Image" do |image|

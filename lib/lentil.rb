@@ -1,8 +1,9 @@
 require "lentil/engine"
 require 'lentil/instagram_harvester'
 require 'lentil/popularity_calculator'
+require 'devise'
 require 'activeadmin'
-require 'meta_search'
+require 'ransack'
 require 'formtastic'
 require 'instagram'
 require 'modernizr-rails'

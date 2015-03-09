@@ -9,7 +9,7 @@ class AdminTagsControllerTest < ActionController::TestCase
   end
 
   test "should get to images index" do
-    get :index, :use_route => :lentil
+    get :index
     assert_response :success
   end
 

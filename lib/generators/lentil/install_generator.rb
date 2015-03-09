@@ -23,6 +23,11 @@ module Lentil
         insert_into_file "config/application.rb", "    I18n.enforce_available_locales = true\n", :after => "# Inserted by lentil\n"
       end
 
+      desc 'patch state machine gem'
+      def patch_state_machine
+        copy_file 'state_machine_patch.rb', 'config/initializers/state_machine_patch.rb'
+      end
+
       desc 'install migrations'
       def install_migrations
         rake "lentil:install:migrations"
@@ -50,8 +55,8 @@ module Lentil
         routes = <<-ROUTES
 
   root :to => 'lentil/images#index'
-  ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config.merge(:class_name => 'Lentil::AdminUser')
+  ActiveAdmin.routes(self)
   mount Lentil::Engine => "/"
 
 ROUTES
@@ -76,7 +81,9 @@ ROUTES
 
       desc 'add javascript'
       def add_javascript
-        gsub_file('app/assets/javascripts/application.js', '//= require_tree .', '//= require lentil')
+        gsub_file('app/assets/javascripts/application.js', '//= require_tree .',
+                 '//= require jquery', '//= require jquery_ujs', 
+                 '//= require lentil')
       end
 
       desc 'add a dummy admin user to the development database?'
