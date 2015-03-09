@@ -54,7 +54,6 @@ class ActionDispatch::IntegrationTest
 
   def browser_start
     Capybara.current_driver = :webkit #_with_long_timeout
-    # page.driver.block_unknown_urls
   end
 
   def browser_end
@@ -79,12 +78,10 @@ end
 # For functional tests that require authentication
 class ActionController::TestCase
   include Devise::TestHelpers
-#  @routes = Lentil::Engine.routes
   fixtures :all
 end
 
 class ActiveSupport::TestCase
-  #include Devise::TestHelpers
   fixtures :all
 end
 
