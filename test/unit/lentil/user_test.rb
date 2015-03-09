@@ -23,7 +23,7 @@ class UserTest < ActiveSupport::TestCase
   test "username should be unique for a given service" do
     user = lentil_users(:jr)
 
-    assert_false user.service.users.build(:user_name => user.user_name).valid?,
+    assert !user.service.users.build(:user_name => user.user_name).valid?,
       "username and service should collectively unique"
     assert lentil_services(:flickr).users.build(:user_name => user.user_name).valid?,
       "duplicate usernames are allowed if they are associated with different services"
