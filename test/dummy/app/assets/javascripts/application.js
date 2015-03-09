@@ -10,7 +10,4 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//TODO: Add jquery to installer
-//= require jquery
-//= require jquery_ujs
 //= require lentil

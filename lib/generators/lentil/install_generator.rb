@@ -82,7 +82,6 @@ ROUTES
       desc 'add javascript'
       def add_javascript
         gsub_file('app/assets/javascripts/application.js', '//= require_tree .',
-                 '//= require jquery', '//= require jquery_ujs', 
                  '//= require lentil')
       end
 
