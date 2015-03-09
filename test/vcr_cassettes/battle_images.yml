@@ -10,95 +10,63 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - '*/*'
+      - "*/*"
       User-Agent:
-      - Ruby
+      - Mozilla/5.0 (compatible; ruby-oembed/0.8.12)
   response:
     status:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
-      Content-Language:
-      - en
+      Server:
+      - nginx
+      Date:
+      - Mon, 09 Mar 2015 18:53:58 GMT
       Content-Type:
       - application/json
-      Date:
-      - Thu, 27 Feb 2014 19:42:54 GMT
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Pragma:
-      - no-cache
-      Server:
-      - nginx
-      Set-Cookie:
-      - ccode=US; Path=/
-      - csrftoken=e081cc0702791acd6a3fa8ff8b1a5513; expires=Thu, 26-Feb-2015 19:42:54
-        GMT; Max-Age=31449600; Path=/
-      - mid=Uw-VPgAEAAFy8J-uIsSZp_EdCnnn; expires=Wed, 22-Feb-2034 19:42:54 GMT; Max-Age=630720000;
-        Path=/
-      Vary:
-      - Cookie, Accept-Language, Accept-Encoding
-      Content-Length:
-      - '249'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"provider_url":"http:\/\/instagram.com\/","media_id":"323374234042685415_31727100","title":"Bubble
-        bubble...","url":"http:\/\/distilleryimage3.ak.instagram.com\/644f52a02d2f11e2b55e22000a9f09fb_7.jpg","author_name":"cazzerson","height":612,"width":612,"version":"1.0","author_url":"http:\/\/instagram.com\/cazzerson","author_id":31727100,"type":"photo","provider_name":"Instagram"}'
-    http_version: 
-  recorded_at: Thu, 27 Feb 2014 19:42:54 GMT
-- request:
-    method: get
-    uri: http://api.instagram.com/oembed?format=json&url=http://instagram.com/p/ZA1L0nINXi/
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 404
-      message: NOT FOUND
-    headers:
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
       Content-Language:
       - en
-      Content-Type:
-      - text/html; charset=utf-8
-      Date:
-      - Thu, 27 Feb 2014 19:42:54 GMT
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
+      Vary:
+      - Cookie, Accept-Language, Accept-Encoding
       Pragma:
       - no-cache
-      Server:
-      - nginx
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
       Set-Cookie:
-      - ccode=US; Path=/
-      - csrftoken=c9d44bf3281ffa60168cf219fece1006; expires=Thu, 26-Feb-2015 19:42:54
+      - csrftoken=cae4c7949996812875d37bde94d7ec66; expires=Mon, 07-Mar-2016 18:53:58
         GMT; Max-Age=31449600; Path=/
-      - mid=Uw-VPgAEAAE6MIQcBg24mIuWY8fR; expires=Wed, 22-Feb-2034 19:42:54 GMT; Max-Age=630720000;
+      - mid=VP3sRgAEAAH4PJ6IUFH1sjduadUF; expires=Sun, 04-Mar-2035 18:53:58 GMT; Max-Age=630720000;
         Path=/
-      Vary:
-      - Cookie, Accept-Language
-      Content-Length:
-      - '34'
       Connection:
       - keep-alive
+      Content-Length:
+      - '1351'
     body:
       encoding: UTF-8
-      string: No Media Match
+      string: '{"provider_url":"http:\/\/instagram.com\/","media_id":"323374234042685415_31727100","author_name":"cazzerson","height":null,"thumbnail_url":"http:\/\/distilleryimage3.ak.instagram.com\/644f52a02d2f11e2b55e22000a9f09fb_7.jpg","thumbnail_width":612,"thumbnail_height":612,"provider_name":"Instagram","title":"Bubble
+        bubble...","html":"\u003cblockquote class=\"instagram-media\" data-instgrm-captioned
+        data-instgrm-version=\"4\" style=\" background:#FFF; border:0; border-radius:3px;
+        box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:
+        1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% -
+        2px); width:calc(100% - 2px);\"\u003e\u003cdiv style=\"padding:8px;\"\u003e
+        \u003cdiv style=\" background:#F8F8F8; line-height:0; margin-top:40px; padding:50%
+        0; text-align:center; width:100%;\"\u003e \u003cdiv style=\" background:url(data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf\/\/42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB\/lQPb79drWOyJVa\/DAvg9B\/rLB4cC+Nqgdz\/TvBbBnr6GBReqn\/nRmDgaQEej7WhonozjF+Y2I\/fZou\/qAAAAAElFTkSuQmCC);
+        display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px;
+        width:44px;\"\u003e\u003c\/div\u003e\u003c\/div\u003e \u003cp style=\" margin:8px
+        0 0 0; padding:0 4px;\"\u003e \u003ca href=\"https:\/\/instagram.com\/p\/R82ycNoNfn\/\"
+        style=\" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal;
+        font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;\"
+        target=\"_top\"\u003eBubble bubble...\u003c\/a\u003e\u003c\/p\u003e \u003cp
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px;
+        margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center;
+        text-overflow:ellipsis; white-space:nowrap;\"\u003eA photo posted by @cazzerson
+        on \u003ctime style=\" font-family:Arial,sans-serif; font-size:14px; line-height:17px;\"
+        datetime=\"2012-11-13T01:13:54+00:00\"\u003eNov 12, 2012 at 5:13pm PST\u003c\/time\u003e\u003c\/p\u003e\u003c\/div\u003e\u003c\/blockquote\u003e\n\u003cscript
+        async defer src=\"\/\/platform.instagram.com\/en_US\/embeds.js\"\u003e\u003c\/script\u003e","width":658,"version":"1.0","author_url":"http:\/\/instagram.com\/cazzerson","author_id":31727100,"type":"rich"}'
     http_version: 
-  recorded_at: Thu, 27 Feb 2014 19:42:54 GMT
+  recorded_at: Mon, 09 Mar 2015 18:53:58 GMT
 - request:
     method: get
     uri: http://api.instagram.com/oembed?format=json&url=http://instagram.com/p/k5LhuktiSC/
@@ -109,46 +77,63 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - '*/*'
+      - "*/*"
       User-Agent:
-      - Ruby
+      - Mozilla/5.0 (compatible; ruby-oembed/0.8.12)
   response:
     status:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
-      Content-Language:
-      - en
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 27 Feb 2014 19:42:54 GMT
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Pragma:
-      - no-cache
       Server:
       - nginx
-      Set-Cookie:
-      - ccode=US; Path=/
-      - csrftoken=0433d840e863edb10666afa87b2a068b; expires=Thu, 26-Feb-2015 19:42:54
-        GMT; Max-Age=31449600; Path=/
-      - mid=Uw-VPgAEAAH3fw8MDboIOffN0zE2; expires=Wed, 22-Feb-2034 19:42:54 GMT; Max-Age=630720000;
-        Path=/
+      Date:
+      - Mon, 09 Mar 2015 18:53:58 GMT
+      Content-Type:
+      - application/json
+      Content-Language:
+      - en
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
       Vary:
       - Cookie, Accept-Language, Accept-Encoding
-      Content-Length:
-      - '245'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Set-Cookie:
+      - csrftoken=e9c8b62eab20865c5c1189fea8815aa3; expires=Mon, 07-Mar-2016 18:53:58
+        GMT; Max-Age=31449600; Path=/
+      - mid=VP3sRgAEAAHRofxJLzE02Nfnyp7f; expires=Sun, 04-Mar-2035 18:53:58 GMT; Max-Age=630720000;
+        Path=/
       Connection:
       - keep-alive
+      Content-Length:
+      - '1370'
     body:
       encoding: UTF-8
-      string: '{"provider_url":"http:\/\/instagram.com\/","media_id":"664613116276253826_1128023464","title":"six
-        #hunttesting","url":"http:\/\/distilleryimage8.ak.instagram.com\/28b09b209f2811e38e831293e346cce0_8.jpg","author_name":"bddnc","height":640,"width":640,"version":"1.0","author_url":"http:\/\/instagram.com\/bddnc","author_id":1128023464,"type":"photo","provider_name":"Instagram"}'
+      string: '{"provider_url":"http:\/\/instagram.com\/","media_id":"664613116276253826_1128023464","author_name":"bddnc","height":null,"thumbnail_url":"http:\/\/scontent.cdninstagram.com\/hphotos-xfp1\/t51.2885-15\/1725673_1407639456161936_589510248_n.jpg","thumbnail_width":640,"thumbnail_height":640,"provider_name":"Instagram","title":"six
+        #hunttesting","html":"\u003cblockquote class=\"instagram-media\" data-instgrm-captioned
+        data-instgrm-version=\"4\" style=\" background:#FFF; border:0; border-radius:3px;
+        box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:
+        1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% -
+        2px); width:calc(100% - 2px);\"\u003e\u003cdiv style=\"padding:8px;\"\u003e
+        \u003cdiv style=\" background:#F8F8F8; line-height:0; margin-top:40px; padding:50%
+        0; text-align:center; width:100%;\"\u003e \u003cdiv style=\" background:url(data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf\/\/42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB\/lQPb79drWOyJVa\/DAvg9B\/rLB4cC+Nqgdz\/TvBbBnr6GBReqn\/nRmDgaQEej7WhonozjF+Y2I\/fZou\/qAAAAAElFTkSuQmCC);
+        display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px;
+        width:44px;\"\u003e\u003c\/div\u003e\u003c\/div\u003e \u003cp style=\" margin:8px
+        0 0 0; padding:0 4px;\"\u003e \u003ca href=\"https:\/\/instagram.com\/p\/k5LhuktiSC\/\"
+        style=\" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal;
+        font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;\"
+        target=\"_top\"\u003esix #hunttesting\u003c\/a\u003e\u003c\/p\u003e \u003cp
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px;
+        margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center;
+        text-overflow:ellipsis; white-space:nowrap;\"\u003eA photo posted by @bddnc
+        on \u003ctime style=\" font-family:Arial,sans-serif; font-size:14px; line-height:17px;\"
+        datetime=\"2014-02-26T20:54:39+00:00\"\u003eFeb 26, 2014 at 12:54pm PST\u003c\/time\u003e\u003c\/p\u003e\u003c\/div\u003e\u003c\/blockquote\u003e\n\u003cscript
+        async defer src=\"\/\/platform.instagram.com\/en_US\/embeds.js\"\u003e\u003c\/script\u003e","width":658,"version":"1.0","author_url":"http:\/\/instagram.com\/bddnc","author_id":1128023464,"type":"rich"}'
     http_version: 
-  recorded_at: Thu, 27 Feb 2014 19:42:54 GMT
+  recorded_at: Mon, 09 Mar 2015 18:53:58 GMT
 - request:
     method: get
     uri: http://api.instagram.com/oembed?format=json&url=http://instagram.com/p/R82ycNoNfn/
@@ -159,46 +144,63 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - '*/*'
+      - "*/*"
       User-Agent:
-      - Ruby
+      - Mozilla/5.0 (compatible; ruby-oembed/0.8.12)
   response:
     status:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
-      Content-Language:
-      - en
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 27 Feb 2014 19:42:54 GMT
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Pragma:
-      - no-cache
       Server:
       - nginx
-      Set-Cookie:
-      - ccode=US; Path=/
-      - csrftoken=55845d2b97bc7fb8c3f8f9d4d3fe9409; expires=Thu, 26-Feb-2015 19:42:54
-        GMT; Max-Age=31449600; Path=/
-      - mid=Uw-VPgAEAAEij81IRus_AlKNWNP7; expires=Wed, 22-Feb-2034 19:42:54 GMT; Max-Age=630720000;
-        Path=/
+      Date:
+      - Mon, 09 Mar 2015 18:53:58 GMT
+      Content-Type:
+      - application/json
+      Content-Language:
+      - en
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
       Vary:
       - Cookie, Accept-Language, Accept-Encoding
-      Content-Length:
-      - '249'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Set-Cookie:
+      - csrftoken=3e48f90db9e990073bff7ca5ec4902a6; expires=Mon, 07-Mar-2016 18:53:58
+        GMT; Max-Age=31449600; Path=/
+      - mid=VP3sRgAEAAGcNLkZ8CrrOzdTyEgb; expires=Sun, 04-Mar-2035 18:53:58 GMT; Max-Age=630720000;
+        Path=/
       Connection:
       - keep-alive
+      Content-Length:
+      - '1351'
     body:
       encoding: UTF-8
-      string: '{"provider_url":"http:\/\/instagram.com\/","media_id":"323374234042685415_31727100","title":"Bubble
-        bubble...","url":"http:\/\/distilleryimage3.ak.instagram.com\/644f52a02d2f11e2b55e22000a9f09fb_7.jpg","author_name":"cazzerson","height":612,"width":612,"version":"1.0","author_url":"http:\/\/instagram.com\/cazzerson","author_id":31727100,"type":"photo","provider_name":"Instagram"}'
+      string: '{"provider_url":"http:\/\/instagram.com\/","media_id":"323374234042685415_31727100","author_name":"cazzerson","height":null,"thumbnail_url":"http:\/\/distilleryimage3.ak.instagram.com\/644f52a02d2f11e2b55e22000a9f09fb_7.jpg","thumbnail_width":612,"thumbnail_height":612,"provider_name":"Instagram","title":"Bubble
+        bubble...","html":"\u003cblockquote class=\"instagram-media\" data-instgrm-captioned
+        data-instgrm-version=\"4\" style=\" background:#FFF; border:0; border-radius:3px;
+        box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:
+        1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% -
+        2px); width:calc(100% - 2px);\"\u003e\u003cdiv style=\"padding:8px;\"\u003e
+        \u003cdiv style=\" background:#F8F8F8; line-height:0; margin-top:40px; padding:50%
+        0; text-align:center; width:100%;\"\u003e \u003cdiv style=\" background:url(data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf\/\/42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB\/lQPb79drWOyJVa\/DAvg9B\/rLB4cC+Nqgdz\/TvBbBnr6GBReqn\/nRmDgaQEej7WhonozjF+Y2I\/fZou\/qAAAAAElFTkSuQmCC);
+        display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px;
+        width:44px;\"\u003e\u003c\/div\u003e\u003c\/div\u003e \u003cp style=\" margin:8px
+        0 0 0; padding:0 4px;\"\u003e \u003ca href=\"https:\/\/instagram.com\/p\/R82ycNoNfn\/\"
+        style=\" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal;
+        font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;\"
+        target=\"_top\"\u003eBubble bubble...\u003c\/a\u003e\u003c\/p\u003e \u003cp
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px;
+        margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center;
+        text-overflow:ellipsis; white-space:nowrap;\"\u003eA photo posted by @cazzerson
+        on \u003ctime style=\" font-family:Arial,sans-serif; font-size:14px; line-height:17px;\"
+        datetime=\"2012-11-13T01:13:54+00:00\"\u003eNov 12, 2012 at 5:13pm PST\u003c\/time\u003e\u003c\/p\u003e\u003c\/div\u003e\u003c\/blockquote\u003e\n\u003cscript
+        async defer src=\"\/\/platform.instagram.com\/en_US\/embeds.js\"\u003e\u003c\/script\u003e","width":658,"version":"1.0","author_url":"http:\/\/instagram.com\/cazzerson","author_id":31727100,"type":"rich"}'
     http_version: 
-  recorded_at: Thu, 27 Feb 2014 19:42:54 GMT
+  recorded_at: Mon, 09 Mar 2015 18:53:58 GMT
 - request:
     method: get
     uri: http://api.instagram.com/oembed?format=json&url=http://instagram.com/p/ZA1L0nINXi/
@@ -209,48 +211,47 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - '*/*'
+      - "*/*"
       User-Agent:
-      - Ruby
+      - Mozilla/5.0 (compatible; ruby-oembed/0.8.12)
   response:
     status:
       code: 404
       message: NOT FOUND
     headers:
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
-      Content-Language:
-      - en
-      Content-Type:
-      - text/html; charset=utf-8
-      Date:
-      - Thu, 27 Feb 2014 19:42:54 GMT
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Pragma:
-      - no-cache
       Server:
       - nginx
-      Set-Cookie:
-      - ccode=US; Path=/
-      - csrftoken=d6266caf663f9909c87673d4d8f895a8; expires=Thu, 26-Feb-2015 19:42:54
-        GMT; Max-Age=31449600; Path=/
-      - mid=Uw-VPgAEAAE-mydLNVv49vMpmJT4; expires=Wed, 22-Feb-2034 19:42:54 GMT; Max-Age=630720000;
-        Path=/
+      Date:
+      - Mon, 09 Mar 2015 18:53:59 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Language:
+      - en
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
       Vary:
       - Cookie, Accept-Language
-      Content-Length:
-      - '34'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Set-Cookie:
+      - csrftoken=b0fd9a253b240c05f349817b6bfb4241; expires=Mon, 07-Mar-2016 18:53:59
+        GMT; Max-Age=31449600; Path=/
+      - mid=VP3sRgAEAAFgRXzn64qBiu0Hkloc; expires=Sun, 04-Mar-2035 18:53:59 GMT; Max-Age=630720000;
+        Path=/
       Connection:
       - keep-alive
+      Content-Length:
+      - '14'
     body:
       encoding: UTF-8
       string: No Media Match
     http_version: 
-  recorded_at: Thu, 27 Feb 2014 19:42:54 GMT
+  recorded_at: Mon, 09 Mar 2015 18:53:59 GMT
 - request:
     method: get
-    uri: http://api.instagram.com/oembed?format=json&url=http://instagram.com/p/R0NyCsK_xf/
+    uri: http://api.instagram.com/oembed?format=json&url=http://instagram.com/p/k5LhuktiSC/
     body:
       encoding: US-ASCII
       string: ''
@@ -258,43 +259,61 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - '*/*'
+      - "*/*"
       User-Agent:
-      - Ruby
+      - Mozilla/5.0 (compatible; ruby-oembed/0.8.12)
   response:
     status:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
-      Content-Language:
-      - en
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 27 Feb 2014 19:42:54 GMT
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Pragma:
-      - no-cache
       Server:
       - nginx
-      Set-Cookie:
-      - ccode=US; Path=/
-      - csrftoken=65113997a68a232330752b7f4ecfc78e; expires=Thu, 26-Feb-2015 19:42:54
-        GMT; Max-Age=31449600; Path=/
-      - mid=Uw-VPgAEAAFdCNfvK9phYZ52i0ao; expires=Wed, 22-Feb-2034 19:42:54 GMT; Max-Age=630720000;
-        Path=/
+      Date:
+      - Mon, 09 Mar 2015 18:53:59 GMT
+      Content-Type:
+      - application/json
+      Content-Language:
+      - en
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
       Vary:
       - Cookie, Accept-Language, Accept-Encoding
-      Content-Length:
-      - '243'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Set-Cookie:
+      - csrftoken=14a7c60e26c69e93080dc0de32445378; expires=Mon, 07-Mar-2016 18:53:59
+        GMT; Max-Age=31449600; Path=/
+      - mid=VP3sRwAEAAHVPA_B_P1C1A7mwgTU; expires=Sun, 04-Mar-2035 18:53:59 GMT; Max-Age=630720000;
+        Path=/
       Connection:
       - keep-alive
+      Content-Length:
+      - '1370'
     body:
       encoding: UTF-8
-      string: '{"provider_url":"http:\/\/instagram.com\/","media_id":"320942086917192799_244467814","title":"Tethered","url":"http:\/\/distilleryimage7.ak.instagram.com\/55dcf0ba2a8c11e29cc822000a1f96e3_7.jpg","author_name":"corylown","height":612,"width":612,"version":"1.0","author_url":"http:\/\/instagram.com\/corylown","author_id":244467814,"type":"photo","provider_name":"Instagram"}'
+      string: '{"provider_url":"http:\/\/instagram.com\/","media_id":"664613116276253826_1128023464","author_name":"bddnc","height":null,"thumbnail_url":"http:\/\/scontent.cdninstagram.com\/hphotos-xfp1\/t51.2885-15\/1725673_1407639456161936_589510248_n.jpg","thumbnail_width":640,"thumbnail_height":640,"provider_name":"Instagram","title":"six
+        #hunttesting","html":"\u003cblockquote class=\"instagram-media\" data-instgrm-captioned
+        data-instgrm-version=\"4\" style=\" background:#FFF; border:0; border-radius:3px;
+        box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:
+        1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% -
+        2px); width:calc(100% - 2px);\"\u003e\u003cdiv style=\"padding:8px;\"\u003e
+        \u003cdiv style=\" background:#F8F8F8; line-height:0; margin-top:40px; padding:50%
+        0; text-align:center; width:100%;\"\u003e \u003cdiv style=\" background:url(data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf\/\/42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB\/lQPb79drWOyJVa\/DAvg9B\/rLB4cC+Nqgdz\/TvBbBnr6GBReqn\/nRmDgaQEej7WhonozjF+Y2I\/fZou\/qAAAAAElFTkSuQmCC);
+        display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px;
+        width:44px;\"\u003e\u003c\/div\u003e\u003c\/div\u003e \u003cp style=\" margin:8px
+        0 0 0; padding:0 4px;\"\u003e \u003ca href=\"https:\/\/instagram.com\/p\/k5LhuktiSC\/\"
+        style=\" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal;
+        font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;\"
+        target=\"_top\"\u003esix #hunttesting\u003c\/a\u003e\u003c\/p\u003e \u003cp
+        style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px;
+        margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center;
+        text-overflow:ellipsis; white-space:nowrap;\"\u003eA photo posted by @bddnc
+        on \u003ctime style=\" font-family:Arial,sans-serif; font-size:14px; line-height:17px;\"
+        datetime=\"2014-02-26T20:54:39+00:00\"\u003eFeb 26, 2014 at 12:54pm PST\u003c\/time\u003e\u003c\/p\u003e\u003c\/div\u003e\u003c\/blockquote\u003e\n\u003cscript
+        async defer src=\"\/\/platform.instagram.com\/en_US\/embeds.js\"\u003e\u003c\/script\u003e","width":658,"version":"1.0","author_url":"http:\/\/instagram.com\/bddnc","author_id":1128023464,"type":"rich"}'
     http_version: 
-  recorded_at: Thu, 27 Feb 2014 19:42:54 GMT
-recorded_with: VCR 2.7.0
+  recorded_at: Mon, 09 Mar 2015 18:53:59 GMT
+recorded_with: VCR 2.9.3
