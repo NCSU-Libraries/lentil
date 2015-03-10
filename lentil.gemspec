@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.test_files = `git ls-files -- test/*`.split("\n")
 
   s.add_dependency "rails", "~> 4.2.0"
-  s.add_dependency 'jquery-rails', '~> 2.3.0'
+  s.add_dependency 'jquery-rails', '~> 4.0.3'
   #s.add_dependency "activeadmin", '~> 0.6.3'
   s.add_dependency 'devise', "~> 3.4.1"
   s.add_dependency "formtastic", '~> 3.1.0' # simplifies form creation
@@ -33,7 +33,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'will_paginate', '~> 3.0.5' # adds paging feature to rails models
   s.add_dependency 'state_machine', "~> 1.2.0" # adds state machine for moderation
   s.add_dependency 'ruby-oembed', "~> 0.8.9" # Retrieve OEmbed data
-  s.add_dependency 'chosen-rails', "~> 1.2.0" # improved form select box
+  s.add_dependency 'chosen-rails', "~> 1.3.0" # improved form select box
   s.add_dependency 'randumb', "~> 0.5.0" # pull random records from Active Record
   s.add_dependency 'lazing', "~> 0.1.1" # Lazy equivalents for many of the methods defined in Ruby's Enumerable module
   s.add_dependency 'sitemap_generator', "~> 5.0.5" # Generate sitemaps on deployment
