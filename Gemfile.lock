@@ -204,7 +204,7 @@ GEM
       addressable (~> 2.3)
     lazing (0.1.1)
     libv8 (3.16.14.7)
-    listen (2.8.6)
+    listen (2.9.0)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
