@@ -47,6 +47,10 @@ bundle exec rails server
 
 Visit <http://localhost:3000>
 
+## Upgrading
+
+You may need to run `bundle exec rake lentil:install:migrations` to incorporate any new database migration files.
+
 ## Harvest Images
 
 - You will need to define your `instagram_client_id` and `instagram_client_secret` in `config/lentil_config.yml`. You can generate these strings by creating an [Instagram API](http://instagram.com/developer) client for your application.

@@ -91,4 +91,13 @@ class ImageTest < ActiveSupport::TestCase
       assert_equal image.valid?, true
     end
   end
+
+  test 'Suppressed images should not be returned with approved images' do
+    assert_difference 'Lentil::Image.approved.count', -1,
+      'A suppressed image should not be treated as approved' do
+      img = Lentil::Image.approved.first
+      img.suppressed = true
+      img.save
+    end
+  end
 end

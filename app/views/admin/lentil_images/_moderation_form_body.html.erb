@@ -38,6 +38,7 @@
             <% if action?("moderate_passed")%>
               <td><%= image.moderator.email %></td>
             <% end %>
+            <td><%= f.input :suppressed, :label => "Suppressed", :wrapper_html => { :class => "moderation_checkbox" } %></td>
             <td><%= f.input :state, :label => false, :as => :radio, :collection => Lentil::Image::States, :wrapper_html => { :class => "moderation_radio" } %></td>
         <% end -%>
       </tr>

@@ -6,6 +6,7 @@ if defined?(ActiveAdmin)
     config.per_page = 10
 
     filter :state, :as => :select, :collection => proc { Lentil::Image::States }
+    filter :suppressed
     filter :media_type, :as => :select
     filter :user_user_name, :as => :string, :label => "Username"
     filter :user_full_name, :as => :string, :label => "Full Name"
@@ -60,6 +61,7 @@ if defined?(ActiveAdmin)
         end
       end
       column "Score", :popular_score
+      column :suppressed
       column :state do |image|
         image.state_name
       end
@@ -92,6 +94,7 @@ if defined?(ActiveAdmin)
         row :do_not_request_donation
         row :donor_agreement_submitted_date
         row :file_harvested_date
+        row :suppressed
         row :state do
           image.state_name
         end
@@ -134,7 +137,8 @@ if defined?(ActiveAdmin)
           taggings = new_taggings + taggings_to_keep
 
           image.update_attributes!(:state => image_params['state'], :taggings => taggings, :staff_like => image_params['staff_like'],
-            :moderator => current_admin_user, :moderated_at => DateTime.now, :second_moderation => second_moderation, :do_not_request_donation => image_params['do_not_request_donation'])
+            :moderator => current_admin_user, :moderated_at => DateTime.now, :second_moderation => second_moderation,
+            :do_not_request_donation => image_params['do_not_request_donation'], :suppressed => image_params['suppressed'])
         end
       end
     end
