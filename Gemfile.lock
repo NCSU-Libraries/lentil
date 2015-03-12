@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/activeadmin/activeadmin.git
-  revision: 74769783b78046d4e5cd148beb957317a4f86ca1
+  revision: b8c813bd4877853b527654cef6dcf3700693d03b
   specs:
-    activeadmin (1.0.0.pre)
+    activeadmin (1.0.0.pre1)
       arbre (~> 1.0, >= 1.0.2)
       bourbon
       coffee-rails
@@ -263,7 +263,7 @@ GEM
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
-    rails-html-sanitizer (1.0.1)
+    rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
     railties (4.2.0)
       actionpack (= 4.2.0)
@@ -324,7 +324,7 @@ GEM
       libv8 (~> 3.16.14.0)
       ref
     thor (0.19.1)
-    thread_safe (0.3.4)
+    thread_safe (0.3.5)
     tilt (1.4.1)
     timers (4.0.1)
       hitimes
