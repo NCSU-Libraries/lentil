@@ -20,9 +20,9 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = `git ls-files -- test/*`.split("\n")
 
-  s.add_dependency "rails", "~> 4.2.0"
+  s.add_dependency "rails", "~> 4.2.1.rc"
   s.add_dependency 'jquery-rails', '~> 4.0.3'
-  #s.add_dependency "activeadmin", '~> 0.6.3'
+  s.add_dependency "activeadmin", '~> 1.0.0.pre'
   s.add_dependency 'devise', "~> 3.4.1"
   s.add_dependency "formtastic", '~> 3.1.0' # simplifies form creation
   s.add_dependency "instagram", "~> 1.1.2" # Interact with the Instagram API
@@ -40,19 +40,18 @@ Gem::Specification.new do |s|
   s.add_dependency 'google-analytics-rails', "~> 0.0.4"
   s.add_dependency 'typhoeus', "~> 0.7.1" # for checking and harvesting image files
   s.add_dependency 'kaminari', "~> 0.16.1" # for checking and harvesting image files
-  s.add_dependency 'protected_attributes', '~> 1.0.8'
+  s.add_dependency 'protected_attributes', '~> 1.0.9'
 
   s.add_development_dependency "sqlite3", "~> 1.3.8"
   s.add_development_dependency "capybara", "~> 2.4.1"
   s.add_development_dependency "database_cleaner", "~> 1.4.0"
   s.add_development_dependency "launchy", "~> 2.4.0"
   s.add_development_dependency "vcr", "~> 2.9.3"
-  s.add_development_dependency "webmock", "~> 1.20.4"
+  s.add_development_dependency "webmock", "~> 1.21.0"
   s.add_development_dependency "simplecov", "~> 0.9.0"
   s.add_development_dependency "pry-rails", "~> 0.3.2"
-  s.add_development_dependency "minitest-rails", "~> 2.1.1"
   s.add_development_dependency "mocha", "~> 1.1.0"
   s.add_development_dependency "single_test", "~> 0.6.0"
-  s.add_development_dependency "capybara-webkit", "~> 1.4.1"
+  s.add_development_dependency "capybara-webkit", "~> 1.5.0"
   s.add_development_dependency "yard", "~> 0.8.7"
 end

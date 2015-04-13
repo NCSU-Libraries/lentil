@@ -5,8 +5,6 @@ source "https://rubygems.org"
 # development dependencies will be added by default to the :development group.
 gemspec
 
-gem 'activeadmin', github: 'activeadmin'
-
 group :development do
   gem 'rb-readline'
   gem 'guard'
@@ -18,8 +16,12 @@ group :tools do
   gem 'guard-test'
 end
 
-gem 'protected_attributes', '~> 1.0.8'
-gem 'therubyracer'
+gem 'protected_attributes', '~> 1.0.9'
+
+gem 'minitest-rails-capybara'
+gem 'minitest-reporters'
+
+gem 'puffing-billy'
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
