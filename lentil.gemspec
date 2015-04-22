@@ -41,6 +41,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'google-analytics-rails', "~> 0.0.4"
   s.add_dependency 'typhoeus', "~> 0.7.1" # for checking and harvesting image files
   s.add_dependency 'kaminari', "~> 0.16.1" # for checking and harvesting image files
+  s.add_dependency 'oj', '~> 2.12.4' # Alternative JSON library
+  s.add_dependency 'oj_mimic_json', '~> 1.0.1' # Alternative JSON library
 
   s.add_development_dependency "sqlite3", "~> 1.3.8"
   s.add_development_dependency "capybara", "~> 2.4.1"
