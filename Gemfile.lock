@@ -9,6 +9,7 @@ PATH
       fancybox2-rails (~> 0.2.8)
       formtastic (~> 2.0)
       google-analytics-rails (~> 0.0.4)
+      hashie (~> 3.4.1)
       instagram (~> 1.1.2)
       jquery-rails (~> 2.3.0)
       kaminari (~> 0.16.1)

@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
   s.add_dependency "meta_search", '~> 1.1.3' # for search within admin interface
   s.add_dependency "formtastic", '~> 2.0' # simplifies form creation
   s.add_dependency "instagram", "~> 1.1.2" # Interact with the Instagram API
+  s.add_dependency "hashie", "~> 3.4.1" # Updated Hashie gem for Instagram
   s.add_dependency "modernizr-rails", "~> 2.7.0" # browser feature detection, used by breakpoint
   s.add_dependency 'fancybox2-rails', '~> 0.2.8' # for image interface overlays
   s.add_dependency 'whenever', '>=0.8.0' # for defining cron jobs
