@@ -37,7 +37,7 @@ namespace :lentil do
       harvester = Lentil::InstagramHarvester.new
 
       Lentil::Service.where(:name => args[:image_service]).first.images.where(:file_harvested_date => nil).
-        order("file_harvest_failed ASC").limit(num_to_harvest).each do |image|
+        order("file_harvest_failed ASC").limit(num_to_harvest).find_each do |image|
         begin
           raise "Destination directory does not exist or is not a directory: #{base_dir}" unless File.directory?(base_dir)
 
@@ -95,7 +95,7 @@ namespace :lentil do
       Lentil::Service.unscoped.where(:name => args[:image_service]).first.images.
         where("(file_last_checked IS NULL) OR (file_last_checked < :day)", {:day => 1.day.ago}).
         where("failed_file_checks < 10").
-        order("file_last_checked ASC").limit(num_to_check).each do |image|
+        order("file_last_checked ASC").limit(num_to_check).find_each do |image|
           image_check = harvester.test_remote_image(image)
 
           if image_check
@@ -127,7 +127,7 @@ namespace :lentil do
               where(:donor_agreement_submitted_date => nil).
               where("lentil_images.last_donor_agreement_failure_date < :week OR lentil_images.last_donor_agreement_failure_date IS NULL", {:week => 1.week.ago}).
               order("donor_agreement_failed ASC").
-              limit(num_to_harvest).each do |image|
+              limit(num_to_harvest).find_each do |image|
 
         begin
           harvester.leave_image_comment(image, donor_agreement)
@@ -153,7 +153,7 @@ namespace :lentil do
 
       lentilService = Lentil::Service.unscoped.where(:name => args[:image_service]).first
       numUpdated = 0;
-      lentilService.images.unscoped.each do |image|
+      lentilService.images.unscoped.find_each do |image|
         #Skip if media type already known i.e. was properly harvested
         next if !image.media_type.blank?
         
@@ -184,7 +184,7 @@ namespace :lentil do
 
       lentilService = Lentil::Service.unscoped.where(:name => args[:image_service]).first
       numArchived = 0;
-      lentilService.images.unscoped.each do |image|
+      lentilService.images.unscoped.find_each do |image|
         begin
           raise "Destination directory does not exist or is not a directory: #{base_dir}" unless File.directory?(base_dir)
 
@@ -200,18 +200,15 @@ namespace :lentil do
           raise e
         end
 
-        jsonobj = image.serializable_hash(except: :id)
-        jsonobj["tags"] = image.tags.serializable_hash
-        jsonobj["licenses"] = image.licenses.serializable_hash
-        jsonobj["licenses"].each do |lic|
-          lic.delete("id")
-        end
+        jsonobj = image.serializable_hash
+        jsonobj["tags"] = image.tags.all
+        jsonobj["licenses"] = image.licenses.all
 
-        jsonobj["like_votes"] = image.like_votes.serializable_hash
-        jsonobj["flags"] = image.flags.serializable_hash
+        jsonobj["like_votes"] = image.like_votes.all
+        jsonobj["flags"] = image.flags.all
 
-        jsonobj["service"] = image.service.serializable_hash(except: :id)
-        jsonobj["user"] = image.user.serializable_hash(except: [:id, :service_id])
+        jsonobj["service"] = image.service
+        jsonobj["user"] = image.user
 
         image_file_path += "/#{image.external_identifier}.json"
         File.open(image_file_path, "w") do |f|
