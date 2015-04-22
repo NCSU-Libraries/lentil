@@ -200,19 +200,19 @@ namespace :lentil do
           raise e
         end
 
-        jsonobj = JSON.parse(image)
+        jsonobj = image.to_hash
         jsonobj.delete("id")
-        jsonobj["tags"] = JSON.parse(image.tags)
-        jsonobj["licenses"] = JSON.parse(image.licenses)
+        jsonobj["tags"] = image.tags.to_hash
+        jsonobj["licenses"] = image.licenses.to_hash
         jsonobj["licenses"].each do |lic|
           lic.delete("id")
         end
 
-        jsonobj["like_votes"] = JSON.parse(image.like_votes)
-        jsonobj["flags"] = JSON.parse(image.flags)
+        jsonobj["like_votes"] = image.like_votes.to_hash
+        jsonobj["flags"] = image.flags.to_hash
 
-        jsonobj["service"] = JSON.parse(image.service).except("id")
-        jsonobj["user"] = JSON.parse(image.user).except("id", "service_id")
+        jsonobj["service"] = image.service.to_hash.except("id")
+        jsonobj["user"] = image.user.to_hash.except("id", "service_id")
 
         image_file_path += "/#{image.external_identifier}.json"
         File.open(image_file_path, "w") do |f|
