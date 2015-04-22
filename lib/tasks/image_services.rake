@@ -37,7 +37,7 @@ namespace :lentil do
       harvester = Lentil::InstagramHarvester.new
 
       Lentil::Service.where(:name => args[:image_service]).first.images.where(:file_harvested_date => nil).
-        order("file_harvest_failed ASC").limit(num_to_harvest).find_each do |image|
+        order("file_harvest_failed ASC").limit(num_to_harvest).each do |image|
         begin
           raise "Destination directory does not exist or is not a directory: #{base_dir}" unless File.directory?(base_dir)
 
@@ -60,7 +60,7 @@ namespace :lentil do
           raise "Image file already exists, will not overwrite: #{image_file_path}" if File.exist?(image_file_path)
 
           image_data = harvester.harvest_image_data(image)
-          
+
           File.open(image_file_path, "wb") do |f|
             f.write image_data
           end
@@ -72,7 +72,7 @@ namespace :lentil do
               f.write video_data
             end
           end
-          
+
           image.file_harvested_date = DateTime.now
           image.save
           puts "Harvested image #{image.id}, #{image_file_path}"
@@ -95,7 +95,7 @@ namespace :lentil do
       Lentil::Service.unscoped.where(:name => args[:image_service]).first.images.
         where("(file_last_checked IS NULL) OR (file_last_checked < :day)", {:day => 1.day.ago}).
         where("failed_file_checks < 10").
-        order("file_last_checked ASC").limit(num_to_check).find_each do |image|
+        order("file_last_checked ASC").limit(num_to_check).each do |image|
           image_check = harvester.test_remote_image(image)
 
           if image_check
@@ -127,7 +127,7 @@ namespace :lentil do
               where(:donor_agreement_submitted_date => nil).
               where("lentil_images.last_donor_agreement_failure_date < :week OR lentil_images.last_donor_agreement_failure_date IS NULL", {:week => 1.week.ago}).
               order("donor_agreement_failed ASC").
-              limit(num_to_harvest).find_each do |image|
+              limit(num_to_harvest).each do |image|
 
         begin
           harvester.leave_image_comment(image, donor_agreement)
@@ -144,7 +144,7 @@ namespace :lentil do
         end
       end
     end
-    
+
     desc "Get video urls from videos previously harvested"
     task :restore_videos, [:image_service] => :environment do |t, args|
       args.with_defaults(:image_service => 'Instagram')
@@ -156,7 +156,7 @@ namespace :lentil do
       lentilService.images.unscoped.find_each do |image|
         #Skip if media type already known i.e. was properly harvested
         next if !image.media_type.blank?
-        
+
         meta = image.original_metadata
         obj = YAML.load(meta)
         type = obj["type"]
