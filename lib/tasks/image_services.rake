@@ -175,7 +175,7 @@ namespace :lentil do
       end
       puts numUpdated.to_s + " record(s) updated"
     end
-    
+
     desc "Dump image metadata for archiving"
     task :dump_metadata, [:image_service, :base_directory] => :environment do |t, args|
       args.with_defaults(:image_service => 'Instagram')
@@ -199,24 +199,24 @@ namespace :lentil do
           Rails.logger.error e.message
           raise e
         end
-      
-        @jsonobj = JSON.parse(image.to_json)
-        @jsonobj.delete("id")
-        @jsonobj["tags"] = JSON.parse(image.tags.to_json)
-        @jsonobj["licenses"] = JSON.parse(image.licenses.to_json)
-        @jsonobj["licenses"].each do |lic|
+
+        jsonobj = image.to_hash
+        jsonobj.delete("id")
+        jsonobj["tags"] = image.tags.to_hash
+        jsonobj["licenses"] = image.licenses.to_hash
+        jsonobj["licenses"].each do |lic|
           lic.delete("id")
         end
-        
-        @jsonobj["like_votes"] = JSON.parse(image.like_votes.to_json)
-        @jsonobj["flags"] = JSON.parse(image.flags.to_json)
-        
-        @jsonobj["service"] = JSON.parse(image.service.to_json).except("id")
-        @jsonobj["user"] = JSON.parse(image.user.to_json).except("id", "service_id")
-        
+
+        jsonobj["like_votes"] = image.like_votes.to_hash
+        jsonobj["flags"] = image.flags.to_hash
+
+        jsonobj["service"] = image.service.to_hash.except("id")
+        jsonobj["user"] = image.user.to_hash.except("id", "service_id")
+
         image_file_path += "/#{image.external_identifier}.json"
         File.open(image_file_path, "w") do |f|
-          f.write @jsonobj.to_json
+          f.write jsonobj.to_json
           numArchived += 1
         end
       end

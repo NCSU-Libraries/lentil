@@ -135,9 +135,7 @@ module Lentil
         :media_type => image_data[:media_type]
       })
 
-      # This is a temporary fix for a bug in the Hashie to_hash method.
-      # It's fixed in master and should be in the next release (>1.2.0).
-      image_record.original_metadata = JSON.parse(image_data[:original_metadata].to_json)
+      image_record.original_metadata = image_data[:original_metadata].to_hash
 
       # Default to "All Rights Reserved" until we find out more about licenses
       # FIXME: Set the default license in the app config

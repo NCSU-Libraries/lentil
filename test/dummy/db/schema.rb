@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311004606) do
+ActiveRecord::Schema.define(:version => 20150422123522) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "resource_id",   limit: 255, null: false
@@ -95,8 +95,19 @@ ActiveRecord::Schema.define(version: 20150311004606) do
     t.boolean  "suppressed",                                    default: false
   end
 
-  add_index "lentil_images", ["external_identifier"], name: "index_images_on_external_identifier"
-  add_index "lentil_images", ["moderator_id"], name: "index_images_on_moderator_id"
+  add_index "lentil_images", ["created_at"], :name => "index_lentil_images_on_created_at"
+  add_index "lentil_images", ["do_not_request_donation"], :name => "index_lentil_images_on_do_not_request_donation"
+  add_index "lentil_images", ["external_identifier"], :name => "index_images_on_external_identifier"
+  add_index "lentil_images", ["failed_file_checks"], :name => "index_lentil_images_on_failed_file_checks"
+  add_index "lentil_images", ["file_last_checked"], :name => "index_lentil_images_on_file_last_checked"
+  add_index "lentil_images", ["last_donor_agreement_failure_date"], :name => "index_lentil_images_on_last_donor_agreement_failure_date"
+  add_index "lentil_images", ["moderator_id"], :name => "index_images_on_moderator_id"
+  add_index "lentil_images", ["original_datetime"], :name => "index_lentil_images_on_original_datetime"
+  add_index "lentil_images", ["staff_like"], :name => "index_lentil_images_on_staff_like"
+  add_index "lentil_images", ["state"], :name => "index_lentil_images_on_state"
+  add_index "lentil_images", ["suppressed"], :name => "index_lentil_images_on_suppressed"
+  add_index "lentil_images", ["updated_at"], :name => "index_lentil_images_on_updated_at"
+  add_index "lentil_images", ["user_id"], :name => "index_lentil_images_on_user_id"
 
   create_table "lentil_licenses", force: :cascade do |t|
     t.string   "name",        limit: 255
