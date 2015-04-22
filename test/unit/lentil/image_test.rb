@@ -100,4 +100,12 @@ class ImageTest < ActiveSupport::TestCase
       img.save
     end
   end
+
+  test 'Original metadata should only be returned for unscoped images' do
+    img = Lentil::Image.approved.first
+    assert !img.has_attribute?(:original_metadata)
+
+    img = Lentil::Image.unscoped.approved.first
+    assert img.has_attribute?(:original_metadata)
+  end
 end

@@ -38,7 +38,7 @@ class Lentil::Image < ActiveRecord::Base
                   :do_not_request_donation, :donor_agreement_rejected, :media_type, :video_url, :suppressed
 
   attr_protected  :original_metadata
-  
+
   has_many :won_battles, :class_name => "Battle"
   has_many :losers, :through => :battles
   has_many :lost_battles, :class_name => "Battle", :foreign_key => "loser_id"
@@ -58,7 +58,9 @@ class Lentil::Image < ActiveRecord::Base
 
   belongs_to :moderator, :class_name => Lentil::AdminUser
 
-  default_scope where("failed_file_checks < 3")
+  default_scope { select((self.column_names - ['original_metadata']).map{|c| "#{self.table_name}.#{c}"}) }
+
+  default_scope { where("failed_file_checks < 3") }
 
   validates_uniqueness_of :external_identifier, :scope => :user_id
   validates :url, :format => URI::regexp(%w(http https))
