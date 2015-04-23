@@ -85,7 +85,6 @@ function addfancybox() {
             overlay : { locked : false }
         },
         aspectRatio : true,
-        
         afterLoad: function(current, previous) {
 
           // pushing base url so that back/close returns to image gallery
