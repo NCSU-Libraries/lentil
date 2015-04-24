@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.instagram.com/oembed?format=json&url=http://instagram.com/p/R0NyCsK_xf/
+    uri: https://api.instagram.com/oembed?format=json&url=http://instagram.com/p/R0NyCsK_xf/
     body:
       encoding: US-ASCII
       string: ''
@@ -10,43 +10,61 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - '*/*'
+      - "*/*"
       User-Agent:
-      - Ruby
+      - Mozilla/5.0 (compatible; ruby-oembed/0.8.13)
   response:
     status:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
-      Content-Language:
-      - en
-      Content-Type:
-      - application/json
-      Date:
-      - Wed, 26 Feb 2014 21:56:54 GMT
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Pragma:
-      - no-cache
       Server:
       - nginx
-      Set-Cookie:
-      - ccode=US; Path=/
-      - csrftoken=e2b7546b8f6205ce3b63f01ddd5ed9e8; expires=Wed, 25-Feb-2015 21:56:54
-        GMT; Max-Age=31449600; Path=/
-      - mid=Uw5jJgAEAAGFSpf5tlLPwEjb_CCP; expires=Tue, 21-Feb-2034 21:56:54 GMT; Max-Age=630720000;
-        Path=/
+      Date:
+      - Fri, 24 Apr 2015 14:02:19 GMT
+      Content-Type:
+      - application/json
+      Content-Language:
+      - en
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
       Vary:
       - Cookie, Accept-Language, Accept-Encoding
-      Content-Length:
-      - '243'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Set-Cookie:
+      - csrftoken=38177ebb04cbab402bd6873db2c70d5c; expires=Fri, 22-Apr-2016 14:02:19
+        GMT; Max-Age=31449600; Path=/
+      - mid=VTpM6wAEAAFkIMLVGldYscBUFcuc; expires=Thu, 19-Apr-2035 14:02:19 GMT; Max-Age=630720000;
+        Path=/
       Connection:
       - keep-alive
+      Content-Length:
+      - '1351'
     body:
       encoding: UTF-8
-      string: '{"provider_url":"http:\/\/instagram.com\/","media_id":"320942086917192799_244467814","title":"Tethered","url":"http:\/\/distilleryimage7.ak.instagram.com\/55dcf0ba2a8c11e29cc822000a1f96e3_7.jpg","author_name":"corylown","height":612,"width":612,"version":"1.0","author_url":"http:\/\/instagram.com\/corylown","author_id":244467814,"type":"photo","provider_name":"Instagram"}'
+      string: '{"provider_url":"https:\/\/instagram.com\/","media_id":"320942086917192799_244467814","author_name":"corylown","height":null,"thumbnail_url":"https:\/\/distilleryimage7-a.akamaihd.net\/55dcf0ba2a8c11e29cc822000a1f96e3_7.jpg","thumbnail_width":612,"thumbnail_height":612,"provider_name":"Instagram","title":"Tethered","html":"\u003cblockquote
+        class=\"instagram-media\" data-instgrm-captioned data-instgrm-version=\"4\"
+        style=\" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px
+        0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px;
+        padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100%
+        - 2px);\"\u003e\u003cdiv style=\"padding:8px;\"\u003e \u003cdiv style=\" background:#F8F8F8;
+        line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;\"\u003e
+        \u003cdiv style=\" background:url(data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf\/\/42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB\/lQPb79drWOyJVa\/DAvg9B\/rLB4cC+Nqgdz\/TvBbBnr6GBReqn\/nRmDgaQEej7WhonozjF+Y2I\/fZou\/qAAAAAElFTkSuQmCC);
+        display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px;
+        width:44px;\"\u003e\u003c\/div\u003e\u003c\/div\u003e \u003cp style=\" margin:8px
+        0 0 0; padding:0 4px;\"\u003e \u003ca href=\"https:\/\/instagram.com\/p\/R0NyCsK_xf\/\"
+        style=\" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal;
+        font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;\"
+        target=\"_top\"\u003eTethered\u003c\/a\u003e\u003c\/p\u003e \u003cp style=\"
+        color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px;
+        margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center;
+        text-overflow:ellipsis; white-space:nowrap;\"\u003eA photo posted by @corylown
+        on \u003ctime style=\" font-family:Arial,sans-serif; font-size:14px; line-height:17px;\"
+        datetime=\"2012-11-09T16:41:39+00:00\"\u003eNov 9, 2012 at 8:41am PST\u003c\/time\u003e\u003c\/p\u003e\u003c\/div\u003e\u003c\/blockquote\u003e\n\u003cscript
+        async defer src=\"\/\/platform.instagram.com\/en_US\/embeds.js\"\u003e\u003c\/script\u003e","width":658,"version":"1.0","author_url":"https:\/\/instagram.com\/corylown","author_id":244467814,"type":"rich"}'
     http_version: 
-  recorded_at: Wed, 26 Feb 2014 21:56:54 GMT
-recorded_with: VCR 2.7.0
+  recorded_at: Fri, 24 Apr 2015 14:02:19 GMT
+recorded_with: VCR 2.9.3

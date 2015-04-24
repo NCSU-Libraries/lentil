@@ -60,7 +60,7 @@ namespace :lentil do
           raise "Image file already exists, will not overwrite: #{image_file_path}" if File.exist?(image_file_path)
 
           image_data = harvester.harvest_image_data(image)
-          
+
           File.open(image_file_path, "wb") do |f|
             f.write image_data
           end
@@ -72,7 +72,7 @@ namespace :lentil do
               f.write video_data
             end
           end
-          
+
           image.file_harvested_date = DateTime.now
           image.save
           puts "Harvested image #{image.id}, #{image_file_path}"
@@ -144,7 +144,7 @@ namespace :lentil do
         end
       end
     end
-    
+
     desc "Get video urls from videos previously harvested"
     task :restore_videos, [:image_service] => :environment do |t, args|
       args.with_defaults(:image_service => 'Instagram')
@@ -153,10 +153,10 @@ namespace :lentil do
 
       lentilService = Lentil::Service.unscoped.where(:name => args[:image_service]).first
       numUpdated = 0;
-      lentilService.images.unscoped.each do |image|
+      lentilService.images.unscoped.find_each do |image|
         #Skip if media type already known i.e. was properly harvested
         next if !image.media_type.blank?
-        
+
         meta = image.original_metadata
         obj = YAML.load(meta)
         type = obj["type"]
@@ -184,7 +184,7 @@ namespace :lentil do
 
       lentilService = Lentil::Service.unscoped.where(:name => args[:image_service]).first
       numArchived = 0;
-      lentilService.images.unscoped.each do |image|
+      lentilService.images.unscoped.find_each do |image|
         begin
           raise "Destination directory does not exist or is not a directory: #{base_dir}" unless File.directory?(base_dir)
 
@@ -200,19 +200,15 @@ namespace :lentil do
           raise e
         end
 
-        jsonobj = image.to_hash
-        jsonobj.delete("id")
-        jsonobj["tags"] = image.tags.to_hash
-        jsonobj["licenses"] = image.licenses.to_hash
-        jsonobj["licenses"].each do |lic|
-          lic.delete("id")
-        end
+        jsonobj = image.serializable_hash
+        jsonobj["tags"] = image.tags.all
+        jsonobj["licenses"] = image.licenses.all
 
-        jsonobj["like_votes"] = image.like_votes.to_hash
-        jsonobj["flags"] = image.flags.to_hash
+        jsonobj["like_votes"] = image.like_votes.all
+        jsonobj["flags"] = image.flags.all
 
-        jsonobj["service"] = image.service.to_hash.except("id")
-        jsonobj["user"] = image.user.to_hash.except("id", "service_id")
+        jsonobj["service"] = image.service
+        jsonobj["user"] = image.user
 
         image_file_path += "/#{image.external_identifier}.json"
         File.open(image_file_path, "w") do |f|
