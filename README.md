@@ -227,8 +227,10 @@ Submit a GitHub issue or contact lentil@lists.ncsu.edu.
 
 * Jason Casden
 * Bret Davidson
+* Aniket Lawande
 * Cory Lown
 * Jason Ronallo
+* Heidi Tebbe
 
 ## Additional project team members
 
