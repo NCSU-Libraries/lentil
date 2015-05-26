@@ -215,6 +215,10 @@ Edit `config/lentil_config.yml` and set `instagram_client_id` to the client ID a
 bundle exec rake image_services:instagram:fetch_by_tag
 ```
 
+## Heroku
+
+Documentation for deploying lentil to Heroku may be found in the [doc directory](doc/heroku.md).
+
 ## License
 
 See MIT-LICENSE
