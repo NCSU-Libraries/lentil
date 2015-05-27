@@ -24,6 +24,18 @@ config.assets.initialize_on_precompile = true
 config.serve_static_assets = false
 ```
 
+4) In `config/database.yml` replace the production db definition with:
+
+```
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: <app_name>_production
+  pool: 5
+  username: <app_name>
+  password:
+```
+
 ## Setup Heroku account and toolbelt
 
 1) Create a Herkou [account]().
