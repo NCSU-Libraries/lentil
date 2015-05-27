@@ -17,7 +17,7 @@ gem 'pg', group: :production
 
 The gem definition for Sqlite3 should also be modified: `gem 'sqlite3', group: :development`.
 
-3) In `config/application.rb` add: 
+3) In `config/application.rb` add:
 
 ```
 config.assets.initialize_on_precompile = true
@@ -30,9 +30,9 @@ config.serve_static_assets = false
 production:
   adapter: postgresql
   encoding: unicode
-  database: <app_name>_production
+  database: <name_of_app>_production
   pool: 5
-  username: <app_name>
+  username: <name_of_app>
   password:
 ```
 
@@ -74,7 +74,7 @@ There are three [harvesting tasks](https://github.com/NCSU-Libraries/lentil#sche
 
 2) A PostgreSQL user must be created for your application: `createuser -s -r <name_of_app>`.
 
-3) You may also need to install the pg driver. See `config/database.yml` after creating your rails app for details. 
+3) You may also need to install the pg driver. See `config/database.yml` after creating your rails app for details.
 
 4) When [creating](https://github.com/NCSU-Libraries/lentil/blob/master/README.md#create-a-new-rails-app-with-rails-32x) a new application for lentil, the command should be invoked using the postgresql option and lentil compatible rails version: `rails _3.2.x_ new <name_of_app> --database=postgresql`. You will not need to modify the `config/database.yml` file when using this method.
 
