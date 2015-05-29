@@ -3,7 +3,7 @@ rvm:
   - 1.9
   - 2.1
   - 2.2
-script: "bundle exec rake test"
+script: "RAILS_ENV=$RAILS_ENV bundle exec rake test"
 env:
   - RAILS_ENV=test DB=sqlite
   - RAILS_ENV=test2 DB=postgresql
