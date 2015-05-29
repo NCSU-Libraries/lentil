@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 require 'yaml'
+require 'erb'
 
 # Declare your gem's dependencies in lentil.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
@@ -19,10 +20,8 @@ end
 
 # Configuration to install correct DB adapter
 env = ENV["RAILS_ENV"] || 'development'
-dbconfig = File.expand_path("../config/database.yml", __FILE__)
-
+dbconfig = File.expand_path("../test/dummy/config/database.yml", __FILE__)
 raise "You need to configure config/database.yml first" unless File.exists?(dbconfig)
-require 'erb'
 config = YAML.load(ERB.new(File.read(dbconfig)).result)
 
 environment = config[env]
@@ -37,7 +36,7 @@ when 'postgresql'
 when 'mysql2'
   gem 'mysql2'
 else
-  raise "Not supported database adapter: #{adapter}"
+  raise "Unsupported database adapter: #{adapter}"
 end
 
 # Declare any dependencies that are still in development here instead of in
