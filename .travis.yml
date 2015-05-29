@@ -5,8 +5,8 @@ rvm:
   - 2.2
 script: "bundle exec rake test"
 env:
-  - DB=sqlite
-  - DB=postgresql
+  - RAILS_ENV=test DB=sqlite
+  - RAILS_ENV=test2 DB=postgresql
 before_install:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
