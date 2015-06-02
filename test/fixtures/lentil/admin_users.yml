@@ -23,11 +23,11 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: 
+one:
   email: admin@example.com
   encrypted_password: $2a$10$Jln3fQjXhb6Tqecn29ZSZei7lHspu22aVlYTDOKEn.dmio4cJGrh.
-  created_at: <%= DateTime.now.strftime('%y-%m-%d %H:%M:%S') %>
-  updated_at: <%= DateTime.now.strftime('%y-%m-%d %H:%M:%S') %>
+  created_at: <%= DateTime.now.strftime('%Y-%m-%d %H:%M:%S') %>
+  updated_at: <%= DateTime.now.strftime('%Y-%m-%d %H:%M:%S') %>
 
 # column: value
 #
