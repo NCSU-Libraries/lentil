@@ -3,18 +3,16 @@ rvm:
   - 1.9
   - 2.1
   - 2.2
-script: "RAILS_ENV=$RAILS_ENV bundle exec rake test"
+script: "RAILS_ENV=test bundle exec rake test"
 env:
-  - RAILS_ENV=test DB=sqlite
-  - RAILS_ENV=test2 DB=postgresql
+  - DB=sqlite
+  - DB=postgresql
 before_install:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
 before_script:
-  - sh -c "if [ '$DB' = 'sqlite' ]; then RAILS_ENV=test bundle exec rake db:create db:schema:load; fi"
-  - sh -c "if [ '$DB' = 'postgresql' ]; then psql -c 'DROP DATABASE IF EXISTS travis_ci_test;' -U postgres; fi"
-  - sh -c "if [ '$DB' = 'postgresql' ]; then psql -c 'create database travis_ci_test;' -U postgres; fi"
-  - sh -c "if [ '$DB' = 'postgresql' ]; then RAILS_ENV=test2 bundle exec rake db:create db:schema:load; fi"
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - "RAILS_ENV=test bundle exec rake db:create db:schema:load"
 notifications:
   email:
     - jmcasden@ncsu.edu
