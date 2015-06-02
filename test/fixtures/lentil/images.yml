@@ -285,8 +285,8 @@ three:
 
 video:
   description: 'video six #hunttesting'
-  created_at: 2013-04-16 16:16:16.273698000 Z
-  updated_at: 2013-04-16 16:16:16.481430000 Z
+  created_at: 2013-04-16 16:16:16.273698100 Z
+  updated_at: 2013-04-16 16:16:16.481430100 Z
   like_votes_count: 0
   url: http://instagram.com/p/k5LhuktiSC/
   user: bd
