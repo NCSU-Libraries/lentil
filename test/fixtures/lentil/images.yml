@@ -70,8 +70,8 @@ tres:
 
 one:
   description: 'six #hunttesting'
-  created_at: 2013-04-15 16:16:16.273698000 Z
-  updated_at: 2013-04-15 16:16:16.481430000 Z
+  created_at: 2013-04-16 16:16:16.273698000 Z
+  updated_at: 2013-04-16 16:16:16.481430000 Z
   like_votes_count: 0
   url: http://instagram.com/p/k5LhuktiSC/
   user: bd
@@ -285,8 +285,8 @@ three:
 
 video:
   description: 'video six #hunttesting'
-  created_at: 2013-04-16 16:16:16.273698100 Z
-  updated_at: 2013-04-16 16:16:16.481430100 Z
+  created_at: 2013-04-16 16:16:16.273698000 Z
+  updated_at: 2013-04-16 16:16:16.481430000 Z
   like_votes_count: 0
   url: http://instagram.com/p/k5LhuktiSC/
   user: bd
@@ -294,7 +294,7 @@ video:
   external_identifier: '853651752801735775_3292244'
   long_url: http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/915706_724481087621112_1586087020_n.jpg
   original_datetime: 2013-04-16 15:58:34.000000000 Z
-  staff_like: true
+  staff_like: false
   moderator_id:
   moderated_at:
   second_moderation: false
