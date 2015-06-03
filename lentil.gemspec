@@ -47,7 +47,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "sqlite3", "~> 1.3.8"
   s.add_development_dependency "capybara", "~> 2.4.1"
-  s.add_development_dependency "database_cleaner", "~> 1.3.0"
+  s.add_development_dependency "database_cleaner", "~> 1.4.1"
   s.add_development_dependency "launchy", "~> 2.4.0"
   s.add_development_dependency "vcr", "~> 2.9.3"
   s.add_development_dependency "webmock", "~> 1.18.0"
