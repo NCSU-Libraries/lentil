@@ -7,13 +7,13 @@ mysql: &mysql
   encoding: utf8
   username: travis
   password:
-  database: lentil<%= Rails.env %>
+  database: lentil_<%= Rails.env %>
 
 postgresql: &postgresql
   adapter: postgresql
   username: postgres
   password:
-  database: lentil<%= Rails.env %>
+  database: lentil_<%= Rails.env %>
   min_messages: ERROR
 
 defaults: &defaults

@@ -44,6 +44,7 @@ uno:
   wins_count: 5
   losses_count: 5
   win_pct: 50
+  original_datetime: 2013-04-12 15:58:34.000000000 Z
 
 dos:
   description: "Love the new @snohetta_design #HuntLibrary at #NCState @CentCampus  #nofilter"
@@ -54,6 +55,7 @@ dos:
   user: cl
   state: 1
   staff_like: false
+  original_datetime: 2013-04-13 15:58:34.000000000 Z
 
 tres:
   description: "This is a bad image"
@@ -67,6 +69,7 @@ tres:
   wins_count: 5
   losses_count: 5
   win_pct: 50
+  original_datetime: 2013-04-14 15:58:34.000000000 Z
 
 one:
   description: 'six #hunttesting'
