@@ -26,7 +26,7 @@ ActiveSupport::TestCase.fixtures :all
 # Transactional fixtures do not work with Selenium tests, because Capybara
 # uses a separate server thread, which the transactions would be hidden
 # from. We hence use DatabaseCleaner to truncate our test database.
-DatabaseCleaner.strategy = :transaction
+DatabaseCleaner.strategy = :truncation
 
 if ActionDispatch::IntegrationTest.method_defined?(:fixture_path=)
   ActionDispatch::IntegrationTest.fixture_path = File.expand_path("../fixtures", __FILE__)
@@ -49,6 +49,7 @@ class ActionDispatch::IntegrationTest
 
   def browser_start
     Capybara.current_driver = :webkit #_with_long_timeout
+    Capybara.default_wait_time = 15
   end
 
   def browser_end
@@ -81,17 +82,3 @@ VCR.configure do |c|
   c.hook_into :webmock
   c.ignore_localhost = true
 end
-
-# In your test_helper.rb
-class ActiveRecord::Base
-  mattr_accessor :shared_connection
-  @@shared_connection = nil
-
-  def self.connection
-    @@shared_connection || retrieve_connection
-  end
-end
-
-# Forces all threads to share the same connection. This works on
-# Capybara because it starts the web server in a thread.
-ActiveRecord::Base.shared_connection = ActiveRecord::Base.connection

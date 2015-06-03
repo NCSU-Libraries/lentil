@@ -22,4 +22,4 @@ matrix:
   allow_failures:
     - rvm: 2.2
 addons:
-  postgresql: "9.3"
+  postgresql: "9.4"
