@@ -56,7 +56,9 @@ production:
 
 5) Add dummy admin user: `heroku run bundle exec rake lentil:dummy_admin_user`. **Create a new admin user and delete the dummy admin as soon as possible!**
 
-6) Ensure your "dyno" is running: `heroku ps:scale web=1`
+6) Add seed data: `heroku run bundle exec rake db:seed`
+
+7) Ensure your "dyno" is running: `heroku ps:scale web=1`
 
 ## Visit your application
 [Vist](https://devcenter.heroku.com/articles/getting-started-with-rails3#visit-your-application) your app: `heroku open`.
