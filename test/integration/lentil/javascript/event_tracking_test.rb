@@ -45,14 +45,13 @@ class EventTrackingTest < ActionDispatch::IntegrationTest
   #   assert_equal("_trackEvent,image_view,email,#{@image.id}", console_message)
   # end
 
-  # FIXME: Issue with the image fixtures (one and video) prevent this from passing
-  # test "should trigger an event for liking and unliking an image" do
-  #   visit lentil.image_path(@image)
-  #   find('.like-btn.initial-state', :visible => true).click
-  #   assert_equal("_trackEvent,image_view,like,#{@image.id}", console_message)
-  #   find('.like-btn.already-clicked', :visible => true).click
-  #   assert_equal("_trackEvent,image_view,unlike,#{@image.id}", console_message)
-  # end
+  test "should trigger an event for liking and unliking an image" do
+    visit lentil.image_path(@image)
+    find('.like-btn.initial-state', :visible => true).click
+    assert_equal("_trackEvent,image_view,like,#{@image.id}", console_message)
+    find('.like-btn.already-clicked', :visible => true).click
+    assert_equal("_trackEvent,image_view,unlike,#{@image.id}", console_message)
+  end
 
   # TODO: Not currently implemented
   # test "should trigger an event for unliking an image that was previously liked" do

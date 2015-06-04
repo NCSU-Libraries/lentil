@@ -49,7 +49,7 @@ class ActionDispatch::IntegrationTest
 
   def browser_start
     Capybara.current_driver = :webkit #_with_long_timeout
-    Capybara.default_wait_time = 15
+    Capybara.default_wait_time = 30
   end
 
   def browser_end
