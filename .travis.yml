@@ -18,6 +18,7 @@ before_script:
 notifications:
   email:
     - jmcasden@ncsu.edu
+    - bddavids@ncsu.edu
 matrix:
   allow_failures:
     - rvm: 2.2
