@@ -19,8 +19,5 @@ notifications:
   email:
     - jmcasden@ncsu.edu
     - bddavids@ncsu.edu
-matrix:
-  allow_failures:
-    - rvm: 2.2
 addons:
   postgresql: "9.4"
