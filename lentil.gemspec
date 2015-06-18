@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = `git ls-files -- test/*`.split("\n")
 
-  s.add_dependency "rails", "~> 3.2.21"
+  s.add_dependency "rails", "~> 3.2.22"
   s.add_dependency 'jquery-rails', '~> 2.3.0'
   s.add_dependency "activeadmin", '~> 0.6.3'
   s.add_dependency 'devise', "~> 3.4.1"
