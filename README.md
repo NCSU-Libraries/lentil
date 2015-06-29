@@ -20,11 +20,13 @@ lentil has been tested under Ruby 1.9.3 through 2.2.0.
 ### Create a new Rails app with Rails 3.2.x
 
 ```sh
-rails new your_app_name
+gem install rails -v '~> 3.2'
+rails _3.2.22_ new your_app_name
 cd your_app_name
 ```
+> In the example above, `3.2.22` should be the version of Rails 3.x that is installed by the `gem` command.
 
-### Add lentil and therubyracer (or another ExecJS runtime) to your Gemfile and `bundle`
+### Add lentil and therubyracer (or another ExecJS runtime) to your Gemfile and run `bundle update`
 
 ```ruby
 gem 'lentil'
