@@ -38,7 +38,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'chosen-rails', "~> 1.2.0" # improved form select box
   s.add_dependency 'randumb', "~> 0.4.1" # pull random records from Active Record
   s.add_dependency 'lazing', "~> 0.1.1" # Lazy equivalents for many of the methods defined in Ruby's Enumerable module
-  s.add_dependency 'sitemap_generator', "~> 5.0.5" # Generate sitemaps on deployment
+  s.add_dependency 'sitemap_generator', "~> 5.1.0" # Generate sitemaps on deployment
   s.add_dependency 'google-analytics-rails', "~> 0.0.4"
   s.add_dependency 'typhoeus', "~> 0.7.1" # for checking and harvesting image files
   s.add_dependency 'kaminari', "~> 0.16.1" # for checking and harvesting image files
