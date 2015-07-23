@@ -4,7 +4,6 @@ sqlite: &sqlite
 
 mysql: &mysql
   adapter: mysql2
-  encoding: utf8
   username: travis
   password:
   database: lentil_<%= Rails.env %>
@@ -20,6 +19,7 @@ defaults: &defaults
   pool: 5
   timeout: 5000
   host: 127.0.0.1
+  encoding: utf8
   <<: *<%= ENV['DB'] || "sqlite" %>
 
 development:
