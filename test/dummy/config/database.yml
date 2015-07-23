@@ -4,6 +4,7 @@ sqlite: &sqlite
 
 mysql: &mysql
   adapter: mysql2
+  encoding: utf8mb4
   username: travis
   password:
   database: lentil_<%= Rails.env %>
