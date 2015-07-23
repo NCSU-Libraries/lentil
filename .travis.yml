@@ -3,12 +3,21 @@ rvm:
   - 1.9
   - 2.1
   - 2.2
-script: "bundle exec rake test"
+script: "RAILS_ENV=test bundle exec rake test"
+env:
+  - DB=sqlite
+  - DB=mysql
+  - DB=postgresql
 before_install:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
 before_script:
+  - mysql -e 'create database lentil_test;'
+  - psql -c 'create database lentil_test;' -U postgres
   - "RAILS_ENV=test bundle exec rake db:create db:schema:load"
 notifications:
   email:
     - jmcasden@ncsu.edu
+    - bddavids@ncsu.edu
+addons:
+  postgresql: "9.4"

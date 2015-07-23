@@ -13,7 +13,8 @@ class ImageModalTest < ActionDispatch::IntegrationTest
     visit lentil.images_path
     assert page.has_no_content?('six #hunttesting')
     assert page.has_no_selector?('.fancybox-image')
-    all('.fancybox').first.click
+    # all('.fancybox').first.click
+    find('.fancybox', match: :first).click
     assert page.has_content?('six #hunttesting')
     assert page.has_selector?('.fancybox-image')
   end

@@ -43,6 +43,10 @@ class ActionDispatch::IntegrationTest
   # Stop ActiveRecord from wrapping tests in transactions
   self.use_transactional_fixtures = false
 
+  def setup
+    DatabaseCleaner.start
+  end
+
   def login_admin_user
     user = lentil_admin_users(:one)
     visit admin_root_path
@@ -54,6 +58,7 @@ class ActionDispatch::IntegrationTest
 
   def browser_start
     Capybara.current_driver = :webkit #_with_long_timeout
+    Capybara.default_wait_time = 30
   end
 
   def browser_end
