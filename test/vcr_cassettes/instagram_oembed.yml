@@ -12,7 +12,50 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - Mozilla/5.0 (compatible; ruby-oembed/0.8.13)
+      - Mozilla/5.0 (compatible; ruby-oembed/0.8.14)
+  response:
+    status:
+      code: 301
+      message: MOVED PERMANENTLY
+    headers:
+      Content-Language:
+      - en
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Vary:
+      - Accept-Language, Cookie
+      Location:
+      - https://api.instagram.com/publicapi/oembed/?url=http%3A%2F%2Finstagram.com%2Fp%2FR0NyCsK_xf%2F&format=json
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Date:
+      - Thu, 23 Jul 2015 19:50:24 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 23 Jul 2015 19:50:24 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/publicapi/oembed/?format=json&url=http://instagram.com/p/R0NyCsK_xf/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (compatible; ruby-oembed/0.8.14)
   response:
     status:
       code: 200
@@ -21,7 +64,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 24 Apr 2015 14:02:19 GMT
+      - Thu, 23 Jul 2015 19:50:24 GMT
       Content-Type:
       - application/json
       Content-Language:
@@ -35,17 +78,17 @@ http_interactions:
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Set-Cookie:
-      - csrftoken=38177ebb04cbab402bd6873db2c70d5c; expires=Fri, 22-Apr-2016 14:02:19
+      - csrftoken=93ad7ac1dfc0b7e20aa3c7402e5930e8; expires=Thu, 21-Jul-2016 19:50:24
         GMT; Max-Age=31449600; Path=/
-      - mid=VTpM6wAEAAFkIMLVGldYscBUFcuc; expires=Thu, 19-Apr-2035 14:02:19 GMT; Max-Age=630720000;
+      - mid=VbFFgAAEAAE5aB5vdjfqeb4ynhHt; expires=Wed, 18-Jul-2035 19:50:24 GMT; Max-Age=630720000;
         Path=/
       Connection:
       - keep-alive
       Content-Length:
-      - '1351'
+      - '1372'
     body:
       encoding: UTF-8
-      string: '{"provider_url":"https:\/\/instagram.com\/","media_id":"320942086917192799_244467814","author_name":"corylown","height":null,"thumbnail_url":"https:\/\/distilleryimage7-a.akamaihd.net\/55dcf0ba2a8c11e29cc822000a1f96e3_7.jpg","thumbnail_width":612,"thumbnail_height":612,"provider_name":"Instagram","title":"Tethered","html":"\u003cblockquote
+      string: '{"provider_url":"https:\/\/instagram.com\/","media_id":"320942086917192799_244467814","author_name":"corylown","height":null,"thumbnail_url":"https:\/\/igcdn-photos-f-a.akamaihd.net\/hphotos-ak-xfa1\/t51.2885-15\/11226827_834700736567381_705997930_n.jpg","thumbnail_width":612,"thumbnail_height":612,"provider_name":"Instagram","title":"Tethered","html":"\u003cblockquote
         class=\"instagram-media\" data-instgrm-captioned data-instgrm-version=\"4\"
         style=\" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px
         0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px;
@@ -66,5 +109,5 @@ http_interactions:
         datetime=\"2012-11-09T16:41:39+00:00\"\u003eNov 9, 2012 at 8:41am PST\u003c\/time\u003e\u003c\/p\u003e\u003c\/div\u003e\u003c\/blockquote\u003e\n\u003cscript
         async defer src=\"\/\/platform.instagram.com\/en_US\/embeds.js\"\u003e\u003c\/script\u003e","width":658,"version":"1.0","author_url":"https:\/\/instagram.com\/corylown","author_id":244467814,"type":"rich"}'
     http_version: 
-  recorded_at: Fri, 24 Apr 2015 14:02:19 GMT
+  recorded_at: Thu, 23 Jul 2015 19:50:24 GMT
 recorded_with: VCR 2.9.3

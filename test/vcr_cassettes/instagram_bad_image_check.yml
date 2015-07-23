@@ -12,32 +12,143 @@ http_interactions:
   response:
     status:
       code: 404
-      message: Not Found
+      message: NOT FOUND
     headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Language:
+      - en
       Content-Type:
       - text/html
       Date:
-      - Wed, 26 Feb 2014 17:18:41 GMT
-      Etag:
-      - '"527ab950-2d6"'
-      Server:
-      - nginx
+      - Thu, 23 Jul 2015 19:50:25 GMT
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - csrftoken=c7497bd9b85a6e366ec1910dcd3a981e; expires=Thu, 21-Jul-2016 19:50:25
+        GMT; Max-Age=31449600; Path=/
+      - mid=VbFFgQAEAAE13MJXQHctWVlJZdcs; expires=Wed, 18-Jul-2035 19:50:25 GMT; Max-Age=630720000;
+        Path=/
+      Vary:
+      - Cookie, Accept-Language
+      X-Frame-Options:
+      - SAMEORIGIN
       Content-Length:
-      - '726'
+      - '10902'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\n
-        \  \"http://www.w3.org/TR/html4/loose.dtd\"> \n \n<html lang=\"en\"> \n<head>
-        \n\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">
-        \n\t<title>Instagram</title> \n        <meta name = \"viewport\" content =
-        \"width = 320px\">\n        <link rel=\"stylesheet\" href=\"/static/styles/master-new.css?1\"
-        type=\"text/css\" media=\"screen\" title=\"no title\" charset=\"utf-8\"> \n</head>
-        \n<body> \n    \n    <div id=\"wrap\" class=\"grid-all group\"> \n        \n<div
-        style=\"width: 100%; margin: 0 auto;\"> \n    <img style=\"margin-left: 0em;
-        margin-top: 1.0em;\" src=\"/static/images/headerWithTitle.png\"><br/> \nSorry,
-        this page could not be found.\n</div> \n \n    </div> \n</body> \n</html>\n\n\n"
+      string: "<!DOCTYPE html>\n<!--[if lt IE 7]>      <html lang=\"en\" class=\"no-js
+        lt-ie9 lt-ie8 lt-ie7 not-logged-in \"> <![endif]-->\n<!--[if IE 7]>         <html
+        lang=\"en\" class=\"no-js lt-ie9 lt-ie8 not-logged-in \"> <![endif]-->\n<!--[if
+        IE 8]>         <html lang=\"en\" class=\"no-js lt-ie9 not-logged-in \"> <![endif]-->\n<!--[if
+        gt IE 8]><!--> <html lang=\"en\" class=\"no-js not-logged-in \"> <!--<![endif]-->\n
+        \   <head>\n        <meta charset=\"utf-8\">\n        <meta http-equiv=\"X-UA-Compatible\"
+        content=\"IE=edge\">\n\n        <title>Page Not Found &bull; Instagram</title>\n\n
+        \       <script type=\"text/javascript\">\n  WebFontConfig = {\n    custom:
+        {\n      families: ['proxima-nova:n3,n4,n6,n7'],\n      urls: ['//instagramstatic-a.akamaihd.net/bluebar/e4b71cb/cache/styles/fonts.css']\n
+        \   }\n  };\n</script>\n<script src=\"//instagramstatic-a.akamaihd.net/bluebar/e4b71cb/scripts/webfont.js\"
+        type=\"text/javascript\" async></script>\n\n        \n    \n        <meta
+        name=\"robots\" content=\"noimageindex\">\n        \n    <meta name=\"apple-mobile-web-app-capable\"
+        content=\"yes\">\n    <meta name=\"apple-mobile-web-app-status-bar-style\"
+        content=\"black\">\n\n\n        \n    <meta id=\"viewport\" name=\"viewport\"
+        content=\"width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1,
+        maximum-scale=1\">\n\n\n        <script type=\"text/javascript\">\n        (function()
+        {\n            var docElement = document.documentElement;\n            var
+        classRE = new RegExp('(^|\\\\s)no-js(\\\\s|$)');\n            var className
+        = docElement.className;\n            docElement.className = className.replace(classRE,
+        '$1js$2');\n        })();\n        </script>\n\n        <link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t\"
+        rel=\"alternate\" hreflang=\"x-default\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=el\"
+        rel=\"alternate\" hreflang=\"el\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=gu\"
+        rel=\"alternate\" hreflang=\"gu\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=en\"
+        rel=\"alternate\" hreflang=\"en\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=af\"
+        rel=\"alternate\" hreflang=\"af\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=vi\"
+        rel=\"alternate\" hreflang=\"vi\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=it\"
+        rel=\"alternate\" hreflang=\"it\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=kn\"
+        rel=\"alternate\" hreflang=\"kn\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=pt-br\"
+        rel=\"alternate\" hreflang=\"pt-br\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=cs\"
+        rel=\"alternate\" hreflang=\"cs\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=id\"
+        rel=\"alternate\" hreflang=\"id\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=es\"
+        rel=\"alternate\" hreflang=\"es\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=ru\"
+        rel=\"alternate\" hreflang=\"ru\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=nl\"
+        rel=\"alternate\" hreflang=\"nl\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=pt\"
+        rel=\"alternate\" hreflang=\"pt\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=zh-tw\"
+        rel=\"alternate\" hreflang=\"zh-tw\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=nb\"
+        rel=\"alternate\" hreflang=\"nb\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=tr\"
+        rel=\"alternate\" hreflang=\"tr\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=ne\"
+        rel=\"alternate\" hreflang=\"ne\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=zh-cn\"
+        rel=\"alternate\" hreflang=\"zh-cn\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=tl\"
+        rel=\"alternate\" hreflang=\"tl\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=pa\"
+        rel=\"alternate\" hreflang=\"pa\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=th\"
+        rel=\"alternate\" hreflang=\"th\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=te\"
+        rel=\"alternate\" hreflang=\"te\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=pl\"
+        rel=\"alternate\" hreflang=\"pl\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=ta\"
+        rel=\"alternate\" hreflang=\"ta\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=fr\"
+        rel=\"alternate\" hreflang=\"fr\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=hr\"
+        rel=\"alternate\" hreflang=\"hr\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=bn\"
+        rel=\"alternate\" hreflang=\"bn\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=de\"
+        rel=\"alternate\" hreflang=\"de\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=da\"
+        rel=\"alternate\" hreflang=\"da\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=hi\"
+        rel=\"alternate\" hreflang=\"hi\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=fi\"
+        rel=\"alternate\" hreflang=\"fi\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=hu\"
+        rel=\"alternate\" hreflang=\"hu\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=ja\"
+        rel=\"alternate\" hreflang=\"ja\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=ml\"
+        rel=\"alternate\" hreflang=\"ml\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=ko\"
+        rel=\"alternate\" hreflang=\"ko\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=sv\"
+        rel=\"alternate\" hreflang=\"sv\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=ur\"
+        rel=\"alternate\" hreflang=\"ur\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=sk\"
+        rel=\"alternate\" hreflang=\"sk\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=si\"
+        rel=\"alternate\" hreflang=\"si\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=ms\"
+        rel=\"alternate\" hreflang=\"ms\" />\n<link href=\"https://instagram.com/p/ZA1L0nINXi/media/?size=t&amp;hl=mr\"
+        rel=\"alternate\" hreflang=\"mr\" />\n\n        \n    \n    \n        <link
+        rel=\"icon\" sizes=\"any\" mask href=\"//instagramstatic-a.akamaihd.net/bluebar/e4b71cb/images/ico/favicon.svg\">\n
+        \       <meta name=\"theme-color\" content=\"#125688\">\n        <link rel=\"Shortcut
+        Icon\" type=\"image/x-icon\" href=\"//instagramstatic-a.akamaihd.net/bluebar/e4b71cb/images/ico/favicon.ico\">\n
+        \   \n    \n        <link rel=\"apple-touch-icon-precomposed\" href=\"//instagramstatic-a.akamaihd.net/bluebar/e4b71cb/images/ico/apple-touch-icon-precomposed.png\">\n
+        \       <link rel=\"apple-touch-icon-precomposed\" sizes=\"72x72\" href=\"//instagramstatic-a.akamaihd.net/bluebar/e4b71cb/images/ico/apple-touch-icon-72x72-precomposed.png\">\n
+        \       <link rel=\"apple-touch-icon-precomposed\" sizes=\"114x114\" href=\"//instagramstatic-a.akamaihd.net/bluebar/e4b71cb/images/ico/apple-touch-icon-114x114-precomposed.png\">\n
+        \       <link rel=\"apple-touch-icon-precomposed\" sizes=\"144x144\" href=\"//instagramstatic-a.akamaihd.net/bluebar/e4b71cb/images/ico/apple-touch-icon-144x144-precomposed.png\">\n
+        \   \n    \n    <link href=\"//instagramstatic-a.akamaihd.net/bluebar/e4b71cb/cache/styles/distillery/dialog-main.css\"
+        type=\"text/css\" rel=\"stylesheet\"></link>\n\n    \n    <script src=\"//instagramstatic-a.akamaihd.net/bluebar/e4b71cb/scripts/jquery.js\"
+        type=\"text/javascript\"></script>\n    <script src=\"//instagramstatic-a.akamaihd.net/bluebar/e4b71cb/scripts/bluebar.js\"
+        type=\"text/javascript\"></script>\n\n\n    </head>\n    <body class=\" p-error
+        dialog-404\">\n        \n    \n        <div class=\"root\">\n        \n            <div
+        class=\"page\">\n                \n                    \n                        <header
+        class=\"top-bar top-bar-new\">\n    <div class=\"top-bar-wrapper\">\n        <div
+        class=\"logo\"><a href=\"/\">Instagram</a></div>\n\n        <div class=\"top-bar-left\">\n
+        \           <ul class=\"top-bar-actions\">\n                <li>\n                    <a
+        class=\"top-bar-home\" href=\"/\" label=Home><i></i></a>\n                </li>\n
+        \           </ul>\n        </div>\n\n        <div class=\"top-bar-right account-state\"
+        id=\"top_bar_right\">\n            <ul class=\"top-bar-actions\">\n                \n
+        \               \n                <li id=\"link_profile\" class=\"link-signin\">\n
+        \                   <a href=\"/accounts/login/\" class=\"loginLink\">\n                        <i></i>\n
+        \                       <strong>Log in</strong>\n                    </a>\n
+        \               </li>\n                \n            </ul>\n        </div>\n
+        \   </div>\n</header> <!-- .top-bar -->\n                    \n                \n\n
+        \               \n                <div class=\"main\">\n                    \n\t<div
+        class=\"error-container\">\n\t\n\n    <h2>Sorry, this page isn&#39;t available.</h2>\n\n
+        \   <p>\n        The link you followed may be broken, or the page may have
+        been removed.\n        <a href=\"/\">Go back to Instagram.</a>\n    </p>\n\n\n\n\t</div>\n\n
+        \               </div> <!-- .main -->\n                \n\n            </div>
+        <!-- .page -->\n\n            \n            <footer class=\"page-footer\"
+        role=\"contentinfo\">\n                <div class=\"wrapper\">\n                    <nav>\n
+        \                       <ul>\n                            <li><a href=\"/about/us/\">About
+        us</a></li>\n                            <li><a href=\"http://help.instagram.com/\">Support</a></li>\n
+        \                           <li><a href=\"http://blog.instagram.com/\">Blog</a></li>\n
+        \                           <li><a href=\"http://instagram.com/press/\">Press</a></li>\n
+        \                           <li><a href=\"/developer/\">API</a></li>\n                            <li><a
+        href=\"/about/jobs/\">Jobs</a></li>\n                            <li><a href=\"/legal/privacy/\">Privacy</a></li>\n
+        \                           <li><a href=\"/legal/terms/\">Terms</a></li>\n
+        \                       </ul>\n                    </nav>\n\n                    <p
+        class=\"copyright\">&copy; 2015 Instagram</p>\n                </div>\n            </footer>\n
+        \           \n        \n        <div id=\"reactModalMountPoint\"></div>\n
+        \   </div> <!-- .root -->\n    \n    \n\n        \n    <script src=//instagramstatic-a.akamaihd.net/bluebar/e4b71cb/scripts/polyfills/es5-shim.min.js></script>\n<script
+        src=//instagramstatic-a.akamaihd.net/bluebar/e4b71cb/scripts/polyfills/es5-sham.min.js></script>\n<script
+        type=\"text/javascript\">window._sharedData = {\"static_root\":\"\\/\\/instagramstatic-a.akamaihd.net\\/bluebar\\/e4b71cb\",\"entry_data\":{},\"hostname\":\"instagram.com\",\"platform\":{\"is_touch\":false,\"app_platform\":\"web\"},\"qe\":{\"su\":false},\"display_properties_server_guess\":{\"viewport_width\":360,\"pixel_ratio\":1.5},\"country_code\":\"US\",\"language_code\":\"en\",\"gatekeepers\":{\"tr\":false,\"search\":true,\"top_posts\":true},\"config\":{\"dismiss_app_install_banner_until\":null,\"viewer\":null,\"csrf_token\":\"c7497bd9b85a6e366ec1910dcd3a981e\"},\"environment_switcher_visible_server_guess\":true};</script>\n\n
+        \   \n\n    </body>\n</html>"
     http_version: 
-  recorded_at: Wed, 26 Feb 2014 17:18:41 GMT
-recorded_with: VCR 2.7.0
+  recorded_at: Thu, 23 Jul 2015 19:50:25 GMT
+recorded_with: VCR 2.9.3

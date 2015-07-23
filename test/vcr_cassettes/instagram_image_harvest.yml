@@ -14,30 +14,24 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      X-Amz-Id-2:
-      - wT3r+59bAmxqj7Jn8V+ucp2QRFkoNeeh1bmF63K6ratlKsdFr2bvNVss89Dp+ESL
-      X-Amz-Request-Id:
-      - 86C42E542B9CC33C
       Last-Modified:
-      - Wed, 26 Feb 2014 20:54:19 GMT
-      Etag:
-      - '"7f2c62c43271e114efddfb8ada893e33"'
-      Accept-Ranges:
-      - bytes
+      - Wed, 26 Feb 2014 20:54:18 GMT
       Content-Type:
       - image/jpeg
-      Content-Length:
-      - '89341'
-      Server:
-      - AmazonS3
-      Cache-Control:
-      - max-age=1209600
+      Timing-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Origin:
+      - "*"
       Expires:
-      - Wed, 12 Mar 2014 21:56:06 GMT
+      - Thu, 06 Aug 2015 17:24:52 GMT
+      Cache-Control:
+      - max-age=1209600, no-transform
       Date:
-      - Wed, 26 Feb 2014 21:56:06 GMT
+      - Thu, 23 Jul 2015 19:50:25 GMT
       Connection:
       - keep-alive
+      Content-Length:
+      - '89341'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -2028,5 +2022,5 @@ http_interactions:
         M1uBJbxL8ynjJpmnmRJ7ebcYhKh+UjHNX7zVLeNZmbbDGxG6WTo3sKqWlw8t
         snnIrKGLLKvAC00Vqkf/2Q==
     http_version: 
-  recorded_at: Wed, 26 Feb 2014 21:56:06 GMT
-recorded_with: VCR 2.7.0
+  recorded_at: Thu, 23 Jul 2015 19:50:25 GMT
+recorded_with: VCR 2.9.3
