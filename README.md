@@ -17,6 +17,8 @@ Although we are using this gem in production, **this gem should be considered an
 
 lentil has been tested under Ruby 1.9.3 through 2.2.0.
 
+> We are currently warning against using MySQL due to issues when encoding emoji. PostgreSQL is preferred, but if this is not an option, you may want to follow [this guide](http://tech.taskrabbit.com/blog/2014/04/24/active-record-mysql-and-emoji/).
+
 ### Create a new Rails app with Rails 3.2.x
 
 ```sh
