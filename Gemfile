@@ -16,7 +16,7 @@ group :tools do
   gem 'guard-test'
 end
 
-gem 'protected_attributes', '~> 1.0.9'
+gem 'protected_attributes', '~> 1.1.3'
 
 gem 'minitest-rails-capybara'
 gem 'minitest-reporters'

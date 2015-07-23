@@ -37,11 +37,11 @@ Gem::Specification.new do |s|
   s.add_dependency 'chosen-rails', "~> 1.4.1" # improved form select box
   s.add_dependency 'randumb', "~> 0.5.0" # pull random records from Active Record
   s.add_dependency 'lazing', "~> 0.1.1" # Lazy equivalents for many of the methods defined in Ruby's Enumerable module
-  s.add_dependency 'sitemap_generator', "~> 5.0.5" # Generate sitemaps on deployment
+  s.add_dependency 'sitemap_generator', "~> 5.1.0" # Generate sitemaps on deployment
   s.add_dependency 'google-analytics-rails', "~> 0.0.4"
   s.add_dependency 'typhoeus', "~> 0.7.1" # for checking and harvesting image files
   s.add_dependency 'kaminari', "~> 0.16.1" # for checking and harvesting image files
-  s.add_dependency 'protected_attributes', '~> 1.0.9'
+  s.add_dependency 'protected_attributes', '~> 1.1.3'
   s.add_dependency 'oj', '~> 2.12.4' # Alternative JSON library
   s.add_dependency 'oj_mimic_json', '~> 1.0.1' # Alternative JSON library
 
@@ -55,6 +55,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "pry-rails", "~> 0.3.2"
   s.add_development_dependency "mocha", "~> 1.1.0"
   s.add_development_dependency "single_test", "~> 0.6.0"
-  s.add_development_dependency "capybara-webkit", "~> 1.5.1"
+  s.add_development_dependency "capybara-webkit", "~> 1.6.0"
   s.add_development_dependency "yard", "~> 0.8.7"
 end
