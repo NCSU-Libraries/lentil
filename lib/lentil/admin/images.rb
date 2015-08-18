@@ -145,7 +145,7 @@ if defined?(ActiveAdmin)
           image.update_attributes!(:state => image_params['state'], :taggings => taggings, :staff_like => image_params['staff_like'],
             :moderator => current_admin_user, :moderated_at => DateTime.now, :second_moderation => second_moderation,
             :do_not_request_donation => image_params['do_not_request_donation'], :suppressed => image_params['suppressed'])
-          end
+
         end
       end
     end
