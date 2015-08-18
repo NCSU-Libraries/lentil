@@ -174,7 +174,7 @@ if defined?(ActiveAdmin)
     collection_action :moderate_flagged do
       @tags = Lentil::Tag.all
       @second_moderation = true
-      @images = Lentil::Image.joins(:flags).includes(:user, :taggings, :tags).group("lentil_images.id").having("count(lentil_flags.id) > 0").where(:second_moderation => false).paginate(:page => params[:page], :per_page => 10)
+      @images = Lentil::Image.includes(:user, :taggings, :tags, :flags).group("lentil_images.id").having("count(lentil_flags.id) > 0").where(:second_moderation => false).paginate(:page => params[:page], :per_page => 10)
       render "/admin/lentil_images/moderate"
     end
 
@@ -197,7 +197,7 @@ if defined?(ActiveAdmin)
     end
 
     collection_action :flagging_history do
-      @images = Lentil::Image.joins(:flags).includes(:user, :taggings, :tags, :flags).group("lentil_images.id").having("count(lentil_flags.id) > 0").paginate(:page => params[:page], :per_page => 10)
+      @images = Lentil::Image.includes(:user, :taggings, :tags, :flags, :moderator).group("lentil_images.id").having("count(lentil_flags.id) > 0").paginate(:page => params[:page], :per_page => 10)
     end
 
     collection_action :manual_input do
