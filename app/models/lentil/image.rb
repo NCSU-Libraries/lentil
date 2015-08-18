@@ -38,7 +38,7 @@ class Lentil::Image < ActiveRecord::Base
                   :do_not_request_donation, :donor_agreement_rejected, :media_type, :video_url, :suppressed
 
   attr_protected  :original_metadata
-  
+
   has_many :won_battles, :class_name => "Battle"
   has_many :losers, :through => :battles
   has_many :lost_battles, :class_name => "Battle", :foreign_key => "loser_id"
@@ -97,8 +97,8 @@ class Lentil::Image < ActiveRecord::Base
 
   def service_tags
     begin
-      tag_ids = self.taggings.where(:staff_tag => false).pluck(:tag_id)
-      tags = Lentil::Tag.find(tag_ids).sort_by(&:name)
+      tag_ids = self.taggings.select { |tagging| tagging.staff_tag == false }.map(&:tag_id)
+      tags = self.tags.select { |tag| tag_ids.include? tag.id}.sort_by(&:name)
     rescue
       Rails.logger.error "Error retrieving service_tags"
       tags = []
@@ -107,31 +107,19 @@ class Lentil::Image < ActiveRecord::Base
 
   def staff_tags
     begin
-      tag_ids = self.taggings.where(:staff_tag => true).pluck(:tag_id)
-      tags = Lentil::Tag.find(tag_ids).sort_by(&:name)
+      tag_ids = self.taggings.select { |tagging| tagging.staff_tag == true }.map(&:tag_id)
+      tags = self.tags.select { |tag| tag_ids.include? tag.id}.sort_by(&:name)
     rescue
       Rails.logger.error "Error retrieving staff_tags"
       tags = []
     end
   end
 
-  def available_staff_tags
-    begin
-      system_tag_ids = self.taggings.where(:staff_tag => false).pluck(:tag_id)
-    rescue
-      Rails.logger.error "Error retrieving staff_tags"
-      tags = []
-    else
-      tags = []
-      Lentil::Tag.all.each do |tag|
-        unless system_tag_ids.include? tag.id
-          tags.push(tag)
-        end
-      end
+  def available_staff_tags(all_tags)
+    tags = all_tags - (self.tags - self.staff_tags)
 
-      if tags.length > 0
-        tags = tags.sort_by(&:name)
-      end
+    if tags.length > 0
+      tags = tags.sort_by(&:name)
     end
   end
 
@@ -189,7 +177,6 @@ class Lentil::Image < ActiveRecord::Base
   }
 
   state_machine :state, :initial => :pending do
-
     States.each do |name, value|
       state name, :value => value
     end
@@ -201,9 +188,8 @@ class Lentil::Image < ActiveRecord::Base
     event :reject do
       transition all => :rejected
     end
-
   end
-  
+
   def original_metadata=(meta)
     write_attribute(:original_metadata, meta.to_hash)
   end

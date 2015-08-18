@@ -99,17 +99,22 @@ if defined?(ActiveAdmin)
           image.state_name
         end
         row :image do
-			unless image.media_type == "video"
-				link_to(image_tag(image.image_url), admin_lentil_image_path(image))
-			else
-				video_tag(image.video_url, controls: true, size: "640x640")
-			end
+      unless image.media_type == "video"
+        link_to(image_tag(image.image_url), admin_lentil_image_path(image))
+      else
+        video_tag(image.video_url, controls: true, size: "640x640")
+      end
         end
       end
       active_admin_comments
     end
 
     controller do
+      def scoped_collection
+        super.includes :user, :taggings, :tags
+      end
+
+      # TODO: This method may need optimization
       def update_images(images, images_params, second_moderation)
         images.each do |image|
           image_params = images_params[image.id.to_s]
@@ -133,17 +138,20 @@ if defined?(ActiveAdmin)
             new_taggings << image.taggings.build(:tag_id => id, :staff_tag => true)
           end
 
-          taggings_to_keep = image.taggings.where(:tag_id => tag_ids_to_keep)
+          taggings_to_keep = image.taggings.select{ |tagging| tag_ids_to_keep.include? tagging.tag_id}
           taggings = new_taggings + taggings_to_keep
 
+          # Save Updated Image
           image.update_attributes!(:state => image_params['state'], :taggings => taggings, :staff_like => image_params['staff_like'],
             :moderator => current_admin_user, :moderated_at => DateTime.now, :second_moderation => second_moderation,
             :do_not_request_donation => image_params['do_not_request_donation'], :suppressed => image_params['suppressed'])
+
         end
       end
     end
 
     member_action :update_image do
+      @tags = Lentil::Tag.all
       id = params['id']
       @second_moderation = false
       @images = Lentil::Image.where(id: id)
@@ -151,24 +159,29 @@ if defined?(ActiveAdmin)
     end
 
     collection_action :moderate do
+      @tags = Lentil::Tag.all
       @second_moderation = false
-      @images = Lentil::Image.where(state: Lentil::Image::States[:pending], moderator_id: nil).paginate(:page => params[:page], :per_page => 10)
+      @images = Lentil::Image.includes(:user, :taggings, :tags).where(state: Lentil::Image::States[:pending], moderator_id: nil).paginate(:page => params[:page], :per_page => 10)
     end
 
     collection_action :moderate_skipped do
+      @tags = Lentil::Tag.all
       @second_moderation = false
-      @images = Lentil::Image.where(state: Lentil::Image::States[:pending]).where("moderator_id IS NOT NULL").paginate(:page => params[:page], :per_page => 10)
+      @images = Lentil::Image.includes(:user, :taggings, :tags).where(state: Lentil::Image::States[:pending]).where("moderator_id IS NOT NULL").paginate(:page => params[:page], :per_page => 10)
       render "/admin/lentil_images/moderate"
     end
 
     collection_action :moderate_flagged do
+      @tags = Lentil::Tag.all
       @second_moderation = true
-      @images = Lentil::Image.joins(:flags).group("lentil_images.id").having("count(lentil_flags.id) > 0").where(:second_moderation => false).paginate(:page => params[:page], :per_page => 10)
+      temp_images = Lentil::Image.includes(:user, :tags, :taggings, :flags).joins(:flags).where(:second_moderation => false).uniq.all
+      @images = Kaminari.paginate_array(temp_images).page(params[:page]).per(10)
+
       render "/admin/lentil_images/moderate"
     end
 
     collection_action :do_moderation, :method => :post do
-      images = Lentil::Image.find(params[:image].keys)
+      images = Lentil::Image.find(params[:image].keys, :include => [:user, :taggings, :tags])
       images_params = params[:image]
       second_moderation = params[:moderation]['second_moderation']
 
@@ -186,7 +199,8 @@ if defined?(ActiveAdmin)
     end
 
     collection_action :flagging_history do
-      @images = Lentil::Image.joins(:flags).group("lentil_images.id").having("count(lentil_flags.id) > 0").paginate(:page => params[:page], :per_page => 10)
+      temp_images = Lentil::Image.includes(:user, :tags, :flags, :moderator).joins(:flags).uniq.all
+      @images = Kaminari.paginate_array(temp_images).page(params[:page]).per(10)
     end
 
     collection_action :manual_input do

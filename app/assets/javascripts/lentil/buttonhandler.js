@@ -1,6 +1,6 @@
 function buttonhandler() {
 
-    $(".like-btn, .flag-confirm").click(function(e) {
+    $("body").on("click", ".like-btn, .flag-confirm", function(e) {
         button = $(this);
         imageId = $(".fancybox-wrap, .image-show").attr("id");
         if (!$(button).is(".already-clicked")) {

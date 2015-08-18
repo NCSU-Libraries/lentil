@@ -130,9 +130,6 @@ function addfancybox() {
                 });
             }
 
-            // adds button handling script to displayed fancybox buttons
-            buttonhandler();
-
             // this is to check that the fancybox is really visible
             // afterClose is fired off on fancybox open -- a bug
             FancyBoxCloseFunctionState.fancyboxvisible = true;
