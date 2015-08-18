@@ -174,9 +174,8 @@ if defined?(ActiveAdmin)
     collection_action :moderate_flagged do
       @tags = Lentil::Tag.all
       @second_moderation = true
-      # include lentil_users.id for pg
-      # @images = Lentil::Image.includes(:user, :taggings, :tags, :flags).group("lentil_images.id, lentil_users.id").having("count(lentil_flags.id) > 0").where(:second_moderation => false).paginate(:page => params[:page], :per_page => 10)
-      @images = Lentil::Image.joins(:flags).group("lentil_images.id").having("count(lentil_flags.id) > 0").includes(:user, :taggings, :tags, :flags).where(:second_moderation => false).paginate(:page => params[:page], :per_page => 10)
+      temp_images = Lentil::Image.includes(:user, :tags, :taggings, :flags).joins(:flags).where(:second_moderation => false).uniq.all
+      @images = Kaminari.paginate_array(temp_images).page(params[:page]).per(10)
 
       render "/admin/lentil_images/moderate"
     end
@@ -200,9 +199,8 @@ if defined?(ActiveAdmin)
     end
 
     collection_action :flagging_history do
-      # include lentil_users.id for pg
-      # @images = Lentil::Image.includes(:user, :taggings, :tags, :flags, :moderator).group("lentil_images.id, lentil_users.id").having("count(lentil_flags.id) > 0").paginate(:page => params[:page], :per_page => 10)
-      @images = Lentil::Image.joins(:flags).group("lentil_images.id").having("count(lentil_flags.id) > 0").includes(:user, :taggings, :tags, :flags, :moderator).paginate(:page => params[:page], :per_page => 10)
+      temp_images = Lentil::Image.includes(:user, :tags, :flags, :moderator).joins(:flags).uniq.all
+      @images = Kaminari.paginate_array(temp_images).page(params[:page]).per(10)
     end
 
     collection_action :manual_input do
