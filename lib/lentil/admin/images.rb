@@ -159,24 +159,20 @@ if defined?(ActiveAdmin)
     end
 
     collection_action :moderate do
-      @tags = Lentil::Tag.all
       @second_moderation = false
       @images = Lentil::Image.includes(:user, :taggings, :tags).where(state: Lentil::Image::States[:pending], moderator_id: nil).paginate(:page => params[:page], :per_page => 10)
     end
 
     collection_action :moderate_skipped do
-      @tags = Lentil::Tag.all
       @second_moderation = false
       @images = Lentil::Image.includes(:user, :taggings, :tags).where(state: Lentil::Image::States[:pending]).where("moderator_id IS NOT NULL").paginate(:page => params[:page], :per_page => 10)
       render "/admin/lentil_images/moderate"
     end
 
     collection_action :moderate_flagged do
-      @tags = Lentil::Tag.all
       @second_moderation = true
       temp_images = Lentil::Image.includes(:user, :tags, :taggings, :flags).joins(:flags).where(:second_moderation => false).uniq.all
       @images = Kaminari.paginate_array(temp_images).page(params[:page]).per(10)
-
       render "/admin/lentil_images/moderate"
     end
 
