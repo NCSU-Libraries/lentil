@@ -43,7 +43,9 @@ if defined?(ActiveAdmin)
         f.input :title
         f.input :description
         f.input :tags, :input_html => {:class => [:"chzn-select"]}, :collection => Lentil::Tag.all.sort_by(&:name)
-        f.input :harvest
+        f.input :harvest do |harvest|
+          harvest.capitalize
+        end
       end
       f.actions
     end
