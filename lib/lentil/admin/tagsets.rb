@@ -6,6 +6,7 @@ if defined?(ActiveAdmin)
 
     filter :title
     filter :description
+    filter :tags_name, :collection => Lentil::Tag.all.sort_by(&:name), :as => :string, :label => "Tags"
 
     scope :all
     scope :harvesting, :default => true do |tagsets|
