@@ -8,14 +8,14 @@ if defined?(ActiveAdmin)
     filter :name
     filter :tagsets_title, :as => :string, :label => "Tagsets"
 
-    scope :all
+    scope :all, :default => true
     scope "Harvesting", :harvestable
     scope "Not Harvesting", :not_harvestable
     scope "Not in a Tagset", :no_tagsets
 
-    harvestable_ids = Lentil::Tag.harvestable.map(&:id)
-
     index :download_links => false do
+      harvestable_ids = Lentil::Tag.harvestable.map(&:id)
+
       column :id
       column :name
       column "Harvestable" do |tag|
