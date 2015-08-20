@@ -119,33 +119,39 @@ if defined?(ActiveAdmin)
         images.each do |image|
           image_params = images_params[image.id.to_s]
 
-          incoming_tag_ids = image_params['tag_ids'].reject(&:empty?)
-          existing_tag_ids = []
-          service_tag_ids = []
+          if image_params.key?(:tag_ids)
+            incoming_tag_ids = image_params['tag_ids'].reject(&:empty?)
+            existing_tag_ids = []
+            service_tag_ids = []
 
-          image.taggings.each do |tagging|
-            existing_tag_ids << tagging[:tag_id]
-            if tagging[:staff_tag] == false
-              service_tag_ids << tagging[:tag_id]
+            image.taggings.each do |tagging|
+              existing_tag_ids << tagging[:tag_id]
+              if tagging[:staff_tag] == false
+                service_tag_ids << tagging[:tag_id]
+              end
             end
+
+            new_tag_ids = incoming_tag_ids - existing_tag_ids
+            tag_ids_to_keep = incoming_tag_ids - new_tag_ids + service_tag_ids
+
+            new_taggings = []
+            new_tag_ids.each do |id|
+              new_taggings << image.taggings.build(:tag_id => id, :staff_tag => true)
+            end
+
+            taggings_to_keep = image.taggings.select{ |tagging| tag_ids_to_keep.include? tagging.tag_id}
+            taggings = new_taggings + taggings_to_keep
+
+            # Save Updated Image with new tags
+            image.update_attributes!(:state => image_params['state'], :taggings => taggings, :staff_like => image_params['staff_like'],
+              :moderator => current_admin_user, :moderated_at => DateTime.now, :second_moderation => second_moderation,
+              :do_not_request_donation => image_params['do_not_request_donation'], :suppressed => image_params['suppressed'])
+          else
+            # Save Updated Image with same tags
+            image.update_attributes!(:state => image_params['state'], :staff_like => image_params['staff_like'],
+              :moderator => current_admin_user, :moderated_at => DateTime.now, :second_moderation => second_moderation,
+              :do_not_request_donation => image_params['do_not_request_donation'], :suppressed => image_params['suppressed'])
           end
-
-          new_tag_ids = incoming_tag_ids - existing_tag_ids
-          tag_ids_to_keep = incoming_tag_ids - new_tag_ids + service_tag_ids
-
-          new_taggings = []
-          new_tag_ids.each do |id|
-            new_taggings << image.taggings.build(:tag_id => id, :staff_tag => true)
-          end
-
-          taggings_to_keep = image.taggings.select{ |tagging| tag_ids_to_keep.include? tagging.tag_id}
-          taggings = new_taggings + taggings_to_keep
-
-          # Save Updated Image
-          image.update_attributes!(:state => image_params['state'], :taggings => taggings, :staff_like => image_params['staff_like'],
-            :moderator => current_admin_user, :moderated_at => DateTime.now, :second_moderation => second_moderation,
-            :do_not_request_donation => image_params['do_not_request_donation'], :suppressed => image_params['suppressed'])
-
         end
       end
     end
