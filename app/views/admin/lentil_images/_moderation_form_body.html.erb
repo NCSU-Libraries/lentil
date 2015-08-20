@@ -6,6 +6,7 @@
         <th>Description</th>
         <th>Username</th>
         <th>Service Tags</th>
+        <th>Harvesting Tags</th>
         <th>Staff Tags</th>
         <th>Staff Like</th>
         <th>DNR</th>
@@ -31,6 +32,7 @@
             <td><%= image.service_tags.map{|tag| tag.name}.join(' | ') %>
               <%= f.input "service_tags", :as => :hidden, :collection => image.service_tags, :wrapper_html => {:style => "list-style: none"} %>
             </td>
+            <td><%= image.service_tags.select{|tag| @harvestable_tag_ids.include? tag.id}.map{|tag| tag.name}.join(' | ') %></td>
             <td class="moderation_tag">
               <% if defined? @tags %>
                 <%= f.input :tags, :label => false, :as => :select, :collection => image.available_staff_tags(@tags), :input_html => {:multiple => true, :class => "chzn-select", :'data-placeholder' => 'Select Tag', :style => "width:190px" }%>

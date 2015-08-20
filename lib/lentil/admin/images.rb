@@ -32,6 +32,7 @@ if defined?(ActiveAdmin)
     action_item { link_to "Add Instagram Image", manual_input_admin_lentil_images_path }
 
     index do
+      harvestable_tag_ids = Lentil::Tag.harvestable.map(&:id)
       column "Image" do |image|
         unless image.media_type == "video"
             link_to(image_tag(image.image_url, :class => "moderation_thumbnail"), admin_lentil_image_path(image))
@@ -49,6 +50,9 @@ if defined?(ActiveAdmin)
       end
       column "All Tags" do |image|
         image.tags.map{|tag| tag.name}.join(' | ')
+      end
+      column "Harvesting Tags" do |image|
+        image.service_tags.select{|tag| harvestable_tag_ids.include? tag.id}.map{|tag| tag.name}.join(' | ')
       end
       column "Likes", :like_votes_count
       column :staff_like
@@ -68,6 +72,7 @@ if defined?(ActiveAdmin)
     end
 
     show :title => :id do |image|
+      harvestable_tag_ids = Lentil::Tag.harvestable.map(&:id)
       attributes_table do
         row :id
         row :description
@@ -88,6 +93,13 @@ if defined?(ActiveAdmin)
             image.tags.map{|tag| tag.name}.join(' | ')
           else
             "Image has not been tagged."
+          end
+        end
+        row "Harvesting Tags" do |image|
+          unless image.service_tags.select{|tag| harvestable_tag_ids.include? tag.id}.empty?
+            image.service_tags.select{|tag| harvestable_tag_ids.include? tag.id}.map{|tag| tag.name}.join(' | ')
+          else
+            "Image has no harvesting tags."
           end
         end
         row :staff_like
@@ -158,6 +170,7 @@ if defined?(ActiveAdmin)
 
     member_action :update_image do
       @tags = Lentil::Tag.all
+      @harvestable_tag_ids = Lentil::Tag.harvestable.map(&:id)
       id = params['id']
       @second_moderation = false
       @images = Lentil::Image.where(id: id)
@@ -165,17 +178,20 @@ if defined?(ActiveAdmin)
     end
 
     collection_action :moderate do
+      @harvestable_tag_ids = Lentil::Tag.harvestable.map(&:id)
       @second_moderation = false
       @images = Lentil::Image.includes(:user, :taggings, :tags).where(state: Lentil::Image::States[:pending], moderator_id: nil).paginate(:page => params[:page], :per_page => 10)
     end
 
     collection_action :moderate_skipped do
+      @harvestable_tag_ids = Lentil::Tag.harvestable.map(&:id)
       @second_moderation = false
       @images = Lentil::Image.includes(:user, :taggings, :tags).where(state: Lentil::Image::States[:pending]).where("moderator_id IS NOT NULL").paginate(:page => params[:page], :per_page => 10)
       render "/admin/lentil_images/moderate"
     end
 
     collection_action :moderate_flagged do
+      @harvestable_tag_ids = Lentil::Tag.harvestable.map(&:id)
       @second_moderation = true
       temp_images = Lentil::Image.includes(:user, :tags, :taggings, :flags).joins(:flags).where(:second_moderation => false).uniq.all
       @images = Kaminari.paginate_array(temp_images).page(params[:page]).per(10)
@@ -201,6 +217,7 @@ if defined?(ActiveAdmin)
     end
 
     collection_action :flagging_history do
+      @harvestable_tag_ids = Lentil::Tag.harvestable.map(&:id)
       temp_images = Lentil::Image.includes(:user, :tags, :flags, :moderator).joins(:flags).uniq.all
       @images = Kaminari.paginate_array(temp_images).page(params[:page]).per(10)
     end

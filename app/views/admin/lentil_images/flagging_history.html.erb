@@ -7,6 +7,7 @@
         <th>Description</th>
         <th>Username</th>
         <th>All Tags</th>
+        <th>Harvesting Tags</th>
         <th>Moderator</th>
         <th>Status</th>
       </tr>
@@ -19,6 +20,7 @@
             <td><%= image.description %></td>
             <td><%= image.user.user_name %></td>
             <td><%= image.tags.map{|tag| tag.name}.join(' | ') %></td>
+            <td><%= image.service_tags.select{|tag| @harvestable_tag_ids.include? tag.id}.map{|tag| tag.name}.join(' | ') %></td>
             <td><%= image.moderator.email if image.moderator %></td>
             <td><%= image.state_name %></td>
         <% end -%>
