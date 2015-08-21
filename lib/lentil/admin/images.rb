@@ -26,6 +26,8 @@ if defined?(ActiveAdmin)
       link_to('Update Image', update_image_admin_lentil_image_path(lentil_image))
     end
     action_item { link_to "Moderate New", moderate_admin_lentil_images_path }
+    action_item { link_to "Moderate Approved", moderate_approved_admin_lentil_images_path }
+    action_item { link_to "Moderate Rejected", moderate_rejected_admin_lentil_images_path }
     action_item { link_to "Moderate Skipped", moderate_skipped_admin_lentil_images_path }
     action_item { link_to "Moderate Flagged", moderate_flagged_admin_lentil_images_path }
     action_item { link_to "Flagging History", flagging_history_admin_lentil_images_path }
@@ -181,6 +183,20 @@ if defined?(ActiveAdmin)
       @harvestable_tag_ids = Lentil::Tag.harvestable.map(&:id)
       @second_moderation = false
       @images = Lentil::Image.includes(:user, :taggings, :tags).where(state: Lentil::Image::States[:pending], moderator_id: nil).paginate(:page => params[:page], :per_page => 10)
+    end
+
+    collection_action :moderate_approved do
+      @harvestable_tag_ids = Lentil::Tag.harvestable.map(&:id)
+      @second_moderation = false
+      @images = Lentil::Image.includes(:user, :taggings, :tags).where(state: Lentil::Image::States[:approved]).paginate(:page => params[:page], :per_page => 10)
+      render "/admin/lentil_images/moderate"
+    end
+
+    collection_action :moderate_rejected do
+      @harvestable_tag_ids = Lentil::Tag.harvestable.map(&:id)
+      @second_moderation = false
+      @images = Lentil::Image.includes(:user, :taggings, :tags).where(state: Lentil::Image::States[:rejected]).paginate(:page => params[:page], :per_page => 10)
+      render "/admin/lentil_images/moderate"
     end
 
     collection_action :moderate_skipped do
