@@ -78,7 +78,8 @@ function addfancybox() {
         prevEffect  : 'none',
         live : true,
         loop : false,
-        minWidth : '250px',
+        autoSize : true,
+        minWidth : 250,
         type: 'html',
         helpers     : {
             title   : { type : 'inside' },
