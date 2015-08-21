@@ -8,11 +8,11 @@ ActiveAdmin.register_page "Stats" do
       stats = []
 
       images = Lentil::Image.all
-      battles = Lentil::Battle.all.count
-      like_votes = Lentil::LikeVote.all.count
-      users = Lentil::User.all.count
-      tags = Lentil::Tag.all.count
-      taggings = Lentil::Tagging.all.count
+      battles = Lentil::Battle.count
+      like_votes = Lentil::LikeVote.count
+      users = Lentil::User.count
+      tags = Lentil::Tag.count
+      taggings = Lentil::Tagging.count
 
       submitted_agreements = images.map(&:donor_agreement_submitted_date).compact.count
       rejected_agreements = images.map(&:donor_agreement_rejected).compact.count
