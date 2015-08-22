@@ -18,7 +18,7 @@ function listenforpopstate() {
             // and this doesn't look like an image url
             // switch to page that matches the url
             if (!/images\/[0-9]/.test(window.location.pathname)) {
-              window.location.href = window.location.pathname;
+                window.location.href = window.location.pathname;
             }
         } else {
 
@@ -26,7 +26,7 @@ function listenforpopstate() {
             // but the url looks like an image url
             // switch to the image page that matches the url
             if (/images\/[0-9]/.test(window.location.pathname)) {
-              window.location.href = window.location.pathname;
+                window.location.href = window.location.pathname;
             }
         }
     };
@@ -45,28 +45,28 @@ function pushimageurl() {
         replacementUrl = replacementUrl.replace("//","/");
     }
 
-    // push the url for the displayed image to the browser
-    window.history.pushState(null, null, replacementUrl);
+// push the url for the displayed image to the browser
+window.history.pushState(null, null, replacementUrl);
 
-    Lentil.ga_track(['_trackPageview', replacementUrl]);
+Lentil.ga_track(['_trackPageview', replacementUrl]);
 
-    // listen for popstate (back/forward button)
-    window.onpopstate = function(){
-        if (/images\/[0-9]/.test(window.location.pathname)) {
-            // if this url looks like an image show url then switch
-            // the browser to the displayed url
-            window.location.href = window.location.pathname;
-        } else {
-            // otherwise switch the popcalled state to true
-            // and close the fancybox
-            FancyBoxCloseFunctionState.popcalled = true;
-            $.fancybox.close();
-            // switch the popcalled flag to false
-            // and the fancybox visible flag to false
-            FancyBoxCloseFunctionState.popcalled = false;
-            FancyBoxCloseFunctionState.fancyboxvisible = false;
-        }
-    };
+// listen for popstate (back/forward button)
+window.onpopstate = function(){
+    if (/images\/[0-9]/.test(window.location.pathname)) {
+        // if this url looks like an image show url then switch
+        // the browser to the displayed url
+        window.location.href = window.location.pathname;
+    } else {
+        // otherwise switch the popcalled state to true
+        // and close the fancybox
+        FancyBoxCloseFunctionState.popcalled = true;
+        $.fancybox.close();
+        // switch the popcalled flag to false
+        // and the fancybox visible flag to false
+        FancyBoxCloseFunctionState.popcalled = false;
+        FancyBoxCloseFunctionState.fancyboxvisible = false;
+    }
+};
 }
 
 function addfancybox() {
@@ -78,7 +78,8 @@ function addfancybox() {
         prevEffect  : 'none',
         live : true,
         loop : false,
-        autoSize : true,
+        autoSize : false,
+        fitToView: true,
         minWidth : 250,
         type: 'html',
         helpers     : {
@@ -86,35 +87,29 @@ function addfancybox() {
             overlay : { locked : false }
         },
         aspectRatio : true,
+        beforeLoad: function() {
+            var img = $(this.element).children(".instagram-img");
+
+            if($(img).attr("data-media-type") === "video") {
+                this.content = '<video class="fancybox-video" controls="controls" height="100%"  width="90%" src="' + this.href + '"></video>';
+            } else {
+                this.content = '<img class="fancybox-img" src="' + this.href + '" />';
+            }
+            return true;
+        },
         afterLoad: function(current, previous) {
 
-          // pushing base url so that back/close returns to image gallery
-          // instead of image show
-          window.history.pushState(null,null,FancyBoxCloseFunctionState.pathname);
+            // pushing base url so that back/close returns to image gallery
+            // instead of image show
+            window.history.pushState(null,null,FancyBoxCloseFunctionState.pathname);
         },
         beforeShow  : function() {
-			var img = $(this.element).children(".instagram-img");
-			if($(img).attr("data-media-type") === "video") {
-				var video_url = $(img).attr("src");
-				//this.content = "<video src='" + video_url + "' height='320' width='320' controls='controls'></video>";
-				$(".fancybox-inner").html('<video controls="controls" height="100%"  width="90%" src="' + video_url + '"></video>');
-				var vid = $(".fancybox-inner").children("video")[0];
-				vid.oncanplay = function() {
-					$.fancybox.reposition();
-				}
-			}
-			else {
-				var image_url = $(img).attr("src");
-				$(".fancybox-inner").html('<img class="fancybox-image" src="' + image_url + '" />');
-			}
-
             this.title = $(this.element).next(".text-overlay").html();
             imageId = $(this.element).parents("div").attr("id");
             $(".fancybox-wrap").attr('id', imageId);
             pushimageurl(imageId);
         },
         afterShow : function() {
-
             // checks whether browser understands touch events
             // if so the next/prev buttons are disabled
             // and swipe down/right is added to advance slides
@@ -153,14 +148,14 @@ function addfancybox() {
         afterClose : function() {
             if (FancyBoxCloseFunctionState.popcalled === false && FancyBoxCloseFunctionState.fancyboxvisible === true) {
 
-              // if after closing the fancybox there is no pop event
-              // and the fancybox is visible
-              // (this afterClose event also fires when fancybox opens
-              // -- a bug we're getting around with this hack)
-              // switch the flags and point the url at the previous page
-              // should be an image tile view (recent, popular, staff picks, etc.)
-              FancyBoxCloseFunctionState.fancyboxvisible = false;
-              window.history.back();
+                // if after closing the fancybox there is no pop event
+                // and the fancybox is visible
+                // (this afterClose event also fires when fancybox opens
+                // -- a bug we're getting around with this hack)
+                // switch the flags and point the url at the previous page
+                // should be an image tile view (recent, popular, staff picks, etc.)
+                FancyBoxCloseFunctionState.fancyboxvisible = false;
+                window.history.back();
             }
         }
     });
