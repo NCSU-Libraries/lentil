@@ -78,7 +78,7 @@ function addfancybox() {
         prevEffect  : 'none',
         live : true,
         loop : false,
-        autoSize : false,
+        autoSize : true,
         fitToView: true,
         minWidth : 250,
         type: 'html',
@@ -91,14 +91,13 @@ function addfancybox() {
             var img = $(this.element).children(".instagram-img");
 
             if($(img).attr("data-media-type") === "video") {
-                this.content = '<video class="fancybox-video" controls="controls" height="100%"  width="90%" src="' + this.href + '"></video>';
+                this.content = '<video class="fancybox-video" controls="controls" height="100%"  width="90%" src="' + this.href + '" oncanplay="$.fancybox.update()"></video>';
             } else {
-                this.content = '<img class="fancybox-img" src="' + this.href + '" />';
+                this.content = '<img class="fancybox-img" src="' + this.href + '" onload="$.fancybox.update()"/>';
             }
             return true;
         },
         afterLoad: function(current, previous) {
-
             // pushing base url so that back/close returns to image gallery
             // instead of image show
             window.history.pushState(null,null,FancyBoxCloseFunctionState.pathname);
