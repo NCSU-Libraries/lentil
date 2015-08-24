@@ -6,6 +6,7 @@
         <th>Description</th>
         <th>Username</th>
         <th>Service Tags</th>
+        <th>Harvesting Tags</th>
         <th>Staff Tags</th>
         <th>Staff Like</th>
         <th>DNR</th>
@@ -31,8 +32,16 @@
             <td><%= image.service_tags.map{|tag| tag.name}.join(' | ') %>
               <%= f.input "service_tags", :as => :hidden, :collection => image.service_tags, :wrapper_html => {:style => "list-style: none"} %>
             </td>
+            <td><%= image.service_tags.select{|tag| @harvestable_tag_ids.include? tag.id}.map{|tag| tag.name}.join(' | ') %></td>
             <td class="moderation_tag">
-              <%= f.input :tags, :label => false, :as => :select, :collection => image.available_staff_tags(@tags), :input_html => {:multiple => true, :class => "chzn-select", :'data-placeholder' => 'Select Tag', :style => "width:190px" }%>
+              <% if defined? @tags %>
+                <%= f.input :tags, :label => false, :as => :select, :collection => image.available_staff_tags(@tags), :input_html => {:multiple => true, :class => "chzn-select", :'data-placeholder' => 'Select Tag', :style => "width:190px" }%>
+              <% else %>
+                <% if image.staff_tags.length > 0 %>
+                  <p><%= image.staff_tags.map{|tag| tag.name}.join(' | ') %></p>
+                <% end %>
+                <%= link_to('Edit Staff Tags', update_image_admin_lentil_image_path(image)) %>
+              <% end %>
             </td>
             <td><%= f.input :staff_like, :label => "Staff Like", :wrapper_html => { :class => "moderation_checkbox" } %></td>
             <td><%= f.input :do_not_request_donation, :label => "Don't request donation", :wrapper_html => { :class => "moderation_checkbox" } %></td>

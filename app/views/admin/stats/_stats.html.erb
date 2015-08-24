@@ -1,0 +1,14 @@
+<table class="index_table">
+  <thead>
+    <tr>
+      <th>Stat Name</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <% @stats.each do |stat| %>
+    <tr class=>
+      <td><%= stat[:name] %></td>
+      <td><%= stat[:value] %></td>
+    </tr>
+  <% end -%>
+</table>
