@@ -81,6 +81,7 @@ function addfancybox() {
         autoSize : true,
         fitToView: true,
         minWidth : 250,
+        scrolling : 'no',
         type: 'html',
         helpers     : {
             title   : { type : 'inside' },
@@ -91,7 +92,7 @@ function addfancybox() {
             var img = $(this.element).children(".instagram-img");
 
             if($(img).attr("data-media-type") === "video") {
-                this.content = '<video class="fancybox-video" controls="controls" height="100%"  width="90%" src="' + this.href + '" oncanplay="$.fancybox.update()"></video>';
+                this.content = '<video class="fancybox-video" controls="controls" height="100%"  width="100%" src="' + this.href + '" oncanplay="$.fancybox.update()"></video>';
             } else {
                 this.content = '<img class="fancybox-img" src="' + this.href + '" onload="$.fancybox.update()"/>';
             }
