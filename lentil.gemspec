@@ -32,6 +32,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'fancybox2-rails', '~> 0.2.8' # for image interface overlays
   s.add_dependency 'whenever', '>=0.8.0' # for defining cron jobs
   s.add_dependency 'bootstrap-sass', '~> 2.3.0' # sass version of twitter bootstrap
+  s.add_dependency 'sass', '< 3.4.17' # Avoid sass version with fontawesome bug
   s.add_dependency 'will_paginate', '~> 3.0.5' # adds paging feature to rails models
   s.add_dependency 'state_machine', "~> 1.2.0" # adds state machine for moderation
   s.add_dependency 'ruby-oembed', "~> 0.8.9" # Retrieve OEmbed data

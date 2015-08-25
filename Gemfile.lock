@@ -21,6 +21,7 @@ PATH
       rails (~> 3.2.22)
       randumb (~> 0.4.1)
       ruby-oembed (~> 0.8.9)
+      sass (< 3.4.17)
       sitemap_generator (~> 5.1.0)
       state_machine (~> 1.2.0)
       typhoeus (~> 0.7.1)
@@ -264,7 +265,7 @@ GEM
       railties (>= 3.2, < 4.2)
     ruby-oembed (0.8.14)
     safe_yaml (1.0.4)
-    sass (3.4.17)
+    sass (3.4.16)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -336,3 +337,6 @@ DEPENDENCIES
   vcr (~> 2.9.3)
   webmock (~> 1.18.0)
   yard (~> 0.8.7)
+
+BUNDLED WITH
+   1.10.6
