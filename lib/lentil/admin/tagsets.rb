@@ -6,6 +6,7 @@ if defined?(ActiveAdmin)
 
     filter :title
     filter :description
+    filter :tags_name, :collection => proc {Lentil::Tag.all.sort_by(&:name)}, :as => :string, :label => "Tags"
 
     scope :all
     scope :harvesting, :default => true do |tagsets|
@@ -43,7 +44,9 @@ if defined?(ActiveAdmin)
         f.input :title
         f.input :description
         f.input :tags, :input_html => {:class => [:"chzn-select"]}, :collection => Lentil::Tag.all.sort_by(&:name)
-        f.input :harvest
+        f.input :harvest do |harvest|
+          harvest.capitalize
+        end
       end
       f.actions
     end

@@ -140,6 +140,14 @@ div.images {
     border-radius: 3px;
 }
 
+.fancybox-inner {
+    min-width: 250px;
+}
+
+.fancybox-nav {
+    height:90%;
+}
+
 .pagination .disabled, .pagination .current {
     color: #000;
 }
