@@ -16,7 +16,7 @@ before_install:
 before_script:
   - mysql -e 'create database lentil_test;'
   - psql -c 'create database lentil_test;' -U postgres
-  - "RAILS_ENV=test bundle exec rake db:create db:schema:load rake assets:precompile"
+  - "RAILS_ENV=test bundle exec rake db:create db:schema:load assets:precompile"
 notifications:
   email:
     - jmcasden@ncsu.edu
