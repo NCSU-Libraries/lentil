@@ -10,6 +10,12 @@
 
   <%= meta_description_tag %>
   <%= stylesheet_link_tag "lentil/iframe", :media => "all" %>
+
+  <!-- Define global to make @smallest_width instance variable accessible to JS -->
+  <script>
+    var lentil_smallest_width = <%= @smallest_width %>;
+  </script>
+
   <%= javascript_include_tag "lentil/iframe" %>
   <%= yield :javascript_includes %>
 

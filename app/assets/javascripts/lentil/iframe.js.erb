@@ -87,8 +87,8 @@
       height = window.innerHeight;
 
       // Acceptable image sizes
-      smallestImage = 64;
-      largestImage = 97;
+      smallestImage = lentil_smallest_width; // Global variable from view
+      largestImage = smallestImage * 1.5;
 
       mostColumns = Math.ceil(width/smallestImage);
       leastColumns = Math.ceil(width/largestImage);
