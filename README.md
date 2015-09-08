@@ -169,7 +169,7 @@ div.header {
 
 ### Embeddable iframe view
 
-This is a simple responsive non-interactive image grid that is intended to be embedded as an iframe. You can find this at `http://YOUR_HOST/images/iframe`. Image sizes in the grid are determined using a range of possible image widths, with the smallest width defaulting to 64px and the largest width calculated as 1.5 times the smallest width. The smallest width may be configured by including an integer parameter to the iframe URL, for example: `http://YOUR_HOST/images/iframe?smallest_width=40`.
+This is a simple responsive non-interactive image grid that is intended to be embedded as an iframe. You can find this at `http://YOUR_HOST/images/iframe`. Image sizes in the grid are determined using a range of possible image widths, with the smallest width defaulting to 64px and the largest width calculated as 1.5 times the smallest width. The smallest width may be configured by including an integer parameter to the iframe URL, for example: `http://YOUR_HOST/images/iframe?smallest_width=40`. Currently, values greater than 320 may result in loss of resolution.
 
 ### Large animated view
 

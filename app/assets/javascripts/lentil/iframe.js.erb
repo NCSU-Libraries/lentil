@@ -101,7 +101,8 @@
       // Set width of images to build layout
       images = document.getElementsByClassName('iframe-tile');
       for (var i = 0; i < images.length; i++) {
-        images[i].style.width = String(percent) + '%';
+        images[i].style.width = String(percent) + 'vw';
+        images[i].style.height = String(percent) + 'vw';
       }
 
       // Set height of wrapper div for overflow
