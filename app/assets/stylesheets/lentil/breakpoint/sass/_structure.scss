@@ -2,8 +2,7 @@
 // =============================================================================
 
 @include breakpoint(6, $label: 'phone'){
-    .header { font-size: .68em; }
-    .image-tile { width: fluid(3); font-size: .68em; }
+    .image-tile, div.header { width: fluid(3); font-size: .68em; }
     .solo-image { width: fluid(6); font-size: .68em; }
     .side-filler { width: fluid(0);}
 
@@ -15,7 +14,7 @@
 }
 
 @include breakpoint(9, $label: 'phone'){
-    .image-tile { width: fluid(3); }
+    .image-tile, div.header { width: fluid(3); }
     .solo-image { width: fluid(9); }
     .side-filler { width: fluid(0);}
     .trunc-small {display: none;}
@@ -24,7 +23,7 @@
 }
 
 @include breakpoint(12, $label: 'tablet'){
-    .image-tile { width: fluid(4); font-size: 1.45em; }
+    .image-tile, div.header { width: fluid(4); font-size: 1.45em; }
     .solo-image { width: fluid(12); font-size: 1.45em; }
     .side-filler { width: fluid(0); }
 
@@ -68,7 +67,7 @@
 }
 
 @include breakpoint(18, $label: 'desktop'){
-    .image-tile { width: fluid(6); }
+    .image-tile, div.header { width: fluid(6); }
     .solo-image { width: fluid(14); }
     .side-filler { width: fluid(2); }
     .contribute { width: fluid(14); }
@@ -87,11 +86,11 @@
     div.header {
         font-size: 1.6em;
         display: inline-block;
-        height: 292px;
-        width: 291px;
-        margin: 2px 5px 0 4px ;
-        padding: 0 10px 10px 10px;
         background: gray;
+
+        > div {
+            padding: 0 10px 10px 10px;
+        }
     }
 
     div.header h1 a {
@@ -172,7 +171,7 @@
 }
 
 @include breakpoint(24, $label: 'desktop'){
-    .image-tile { width: fluid(6); }
+    .image-tile, div.header { width: fluid(6); }
     .solo-image { width: fluid(14); }
     .side-filler { width: fluid(5); }
 
@@ -193,12 +192,13 @@
 }
 
 @include breakpoint(30, $label: 'desktop'){
-    .image-tile { width: fluid(6); }
+    .image-tile, div.header { width: fluid(6); }
     .solo-image { width: fluid(14); }
     .side-filler { width: fluid(8); }
     .contribute { width: fluid(15); }
     .pointofview { width: fluid(9); }
     .termsofuse { width: fluid(15); }
+
 
     // Battle View
     .battle-image-wrap { width: fluid(14); }
@@ -208,7 +208,7 @@
 
 @include breakpoint(36, $label: 'eboard') {
 
-    .image-tile { width: fluid(6); }
+    .image-tile, div.header { width: fluid(6); }
     .solo-image { width: fluid(16); }
     .side-filler { width: fluid(10); }
 
@@ -218,5 +218,5 @@
 }
 
 @include breakpoint(124, $label: 'microtile'){
-    .image-tile { width: fluid(8); }
+    .image-tile, div.header { width: fluid(8); }
 }
