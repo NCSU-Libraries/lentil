@@ -4,53 +4,58 @@
       <div class="battle-image-wrap grid__cell">
         <%= semantic_fields_for "image[#{image.id}]", image do |f| %>
           <div id="image_<%= image.id %>" class="battle-image-tile">
+            <div>
               <% unless image.media_type == "video" %>
                 <a href="<%= url_for(image) %>" data-fancybox-href= "<%= image.jpeg %>" class="fancybox">
-                <%= image_tag(image.jpeg, :class => "battle-img instagram-img", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
-              <% else %>
-                <a href="<%= url_for(image) %>" data-fancybox-href= "<%= image.video_url %>" class="fancybox">
-                <%= video_tag(image.video_url, :class => "instagram-img " + image.id.to_s, :height => "100%", :width => "100%", :poster => image.jpeg, :controls => "controls", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
-              <% end %>
-              <div class="battle-image-desc trunc-small"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 35) %></div></div>
-              <div class="battle-image-desc trunc-medium"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 50) %></div></div>
-              <div class="battle-image-desc trunc-large"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 70) %></div></div>
-            </a>
-            <%= render "/layouts/lentil/image_popup", :image => image  %>
-            <%= f.input :id, :as => :hidden %>
-
-          </div>
-          <div class="battle-submit-tile">
-            <%= f.action :submit, :as => :button, :label => t('lentil.battle.pick_me'), :button_html => {:value => "#{image.id}", :name => "vote", :class => "btn btn-large battle-form"} %>
-          </div>
-        <% end -%>
-      </div>
-    <% end -%>
-  <% end -%>
-  <% @prev_images.each do |image| %>
-      <div class="battle-image-wrap grid__cell" style="background:#e6e6e6">
-          <div id="image_<%= image.id %>" class="battle-image-tile">
-              <% unless image.media_type == "video" %>
-                <a href="<%= url_for(image) %>" data-fancybox-href= "<%= image.jpeg %>" class="fancybox">
-                <%= image_tag(image.jpeg, :class => "battle-img instagram-img", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
-              <% else %>
-                <a href="<%= url_for(image) %>" data-fancybox-href= "<%= image.video_url %>" class="fancybox">
-                <%= video_tag(image.video_url, :class => "instagram-img " + image.id.to_s, :height => "100%", :width => "100%", :poster => image.jpeg, :controls => "controls", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
-              <% end %>
-              <div class="battle-image-desc trunc-small"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 35) %></div></div>
-              <div class="battle-image-desc trunc-medium"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 50) %></div></div>
-              <div class="battle-image-desc trunc-large"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 70) %></div></div>
-            </a>
-            <%= render "/layouts/lentil/image_popup", :image => image  %>
-          </div>
-          <div class="battle-submit-tile battle-result-tile">
-            <h4><%= t('lentil.battle.win_pct') %></h4>
-            <h4><%= number_to_percentage(image.win_pct, :precision => 0) %></h4>
-            <% if image.id == @prev_winner %>
-              <div class="battle-result-arrow-wrap">
-                <p><i class="icon-arrow-left winner-left"></i> <%= t 'lentil.battle.you_picked' %> <i class="icon-arrow-right winner-right"></i></p>
+                  <%= image_tag(image.jpeg, :class => "battle-img instagram-img", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
+                <% else %>
+                  <a href="<%= url_for(image) %>" data-fancybox-href= "<%= image.video_url %>" class="fancybox">
+                    <%= video_tag(image.video_url, :class => "instagram-img " + image.id.to_s, :height => "100%", :width => "100%", :poster => image.jpeg, :controls => "controls", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
+                  <% end %>
+                </a>
               </div>
-            <% end %>
-          </div>
+              <div class="battle-image-desc trunc-small"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 35) %></div></div>
+              <div class="battle-image-desc trunc-medium"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 50) %></div></div>
+              <div class="battle-image-desc trunc-large"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 70) %></div></div>
+              <%= render "/layouts/lentil/image_popup", :image => image  %>
+              <%= f.input :id, :as => :hidden %>
+
+            </div>
+            <div class="battle-submit-tile">
+              <%= f.action :submit, :as => :button, :label => t('lentil.battle.pick_me'), :button_html => {:value => "#{image.id}", :name => "vote", :class => "btn btn-large battle-form"} %>
+            </div>
+          <% end -%>
+        </div>
+      <% end -%>
+    <% end -%>
+    <% @prev_images.each do |image| %>
+      <div class="battle-image-wrap grid__cell" style="background:#e6e6e6">
+        <div id="image_<%= image.id %>" class="battle-image-tile">
+          <div>
+            <% unless image.media_type == "video" %>
+              <a href="<%= url_for(image) %>" data-fancybox-href= "<%= image.jpeg %>" class="fancybox">
+                <%= image_tag(image.jpeg, :class => "battle-img instagram-img", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
+              <% else %>
+                <a href="<%= url_for(image) %>" data-fancybox-href= "<%= image.video_url %>" class="fancybox">
+                  <%= video_tag(image.video_url, :class => "instagram-img " + image.id.to_s, :height => "100%", :width => "100%", :poster => image.jpeg, :controls => "controls", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
+                <% end %>
+              </a>
+            </div>
+            <div class="battle-image-desc trunc-small"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 35) %></div></div>
+            <div class="battle-image-desc trunc-medium"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 50) %></div></div>
+            <div class="battle-image-desc trunc-large"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 70) %></div></div>
+          </a>
+          <%= render "/layouts/lentil/image_popup", :image => image  %>
+        </div>
+        <div class="battle-submit-tile battle-result-tile">
+          <h4><%= t('lentil.battle.win_pct') %></h4>
+          <h4><%= number_to_percentage(image.win_pct, :precision => 0) %></h4>
+          <% if image.id == @prev_winner %>
+            <div class="battle-result-arrow-wrap">
+              <p><i class="icon-arrow-left winner-left"></i> <%= t 'lentil.battle.you_picked' %> <i class="icon-arrow-right winner-right"></i></p>
+            </div>
+          <% end %>
+        </div>
       </div>
     <% end -%>
-</div>
+  </div>
