@@ -169,7 +169,7 @@ GEM
       has_scope (~> 0.6.0.rc)
       railties (>= 3.2, < 5)
       responders
-    instagram (1.1.5)
+    instagram (1.1.6)
       faraday (>= 0.7, < 0.10)
       faraday_middleware (>= 0.8, < 0.10)
       hashie (>= 0.4.0)
@@ -213,10 +213,10 @@ GEM
     notiffany (0.0.7)
       nenv (~> 0.1)
       shellany (~> 0.0)
-    oj (2.12.12)
+    oj (2.12.13)
     oj_mimic_json (1.0.1)
     orm_adapter (0.5.0)
-    pg (0.18.2)
+    pg (0.18.3)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.5)
@@ -254,7 +254,7 @@ GEM
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
       rake
-    rb-fsevent (0.9.5)
+    rb-fsevent (0.9.6)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     rb-readline (0.5.3)
@@ -323,7 +323,7 @@ DEPENDENCIES
   launchy (~> 2.4.0)
   lentil!
   mocha (~> 1.1.0)
-  mysql2
+  mysql2 (~> 0.3.20)
   pg
   pry-rails (~> 0.3.2)
   rb-fsevent
