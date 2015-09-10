@@ -101,17 +101,10 @@ div.images {
 }
 
 /*Force square tiles*/
-.image-tile, .image-animate-tile, .battle-image-tile, .header {
+.image-tile, .image-animate-tile, .battle-image-tile > div, .header {
     position: relative;
     padding: 0px;
-    margin: 2px 4px 2px 4px;
     overflow: hidden;
-
-    img, video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
 
     &:before {
         content: "";
@@ -125,6 +118,13 @@ div.images {
         left: 0;
         width: 100%;
         height: 100%;
+        padding: 2px 4px 2px 4px;
+
+        img, video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 }
 
