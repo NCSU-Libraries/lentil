@@ -9,6 +9,7 @@
 //= require lentil/imageerrors
 //= require lentil/addanimatedimages
 //= require touchswipe/jquery.touchSwipe
+//= require lentil/addobjectfit
 
 // wrapped in anonymous function so FANCYBOX_SPINNER
 // is accessible by both addinfinitescroll and addfancybox
@@ -40,6 +41,7 @@
         $('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
 
         addimageerrors();
+        addobjectfit();
 
         if (window.history.pushState) {
             addfancybox();

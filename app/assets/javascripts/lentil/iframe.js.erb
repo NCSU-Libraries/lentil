@@ -1,3 +1,5 @@
+//= require lentil/addobjectfit
+
 (function () {
   var Iframe = {
     init: function () {
@@ -15,6 +17,8 @@
           e.srcElement.parentNode.remove();
         }, false);
       }
+
+      addobjectfit();
 
       // Respond to viewport changes
       window.onresize = function (event) {

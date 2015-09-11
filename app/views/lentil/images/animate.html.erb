@@ -10,9 +10,9 @@
         <li class="image-animate-tile">
           <a href="#">
             <% unless image.media_type == "video" %>
-              <%= image_tag(image.jpeg, :class => "instagram-img") %>
+              <%= image_tag(image.jpeg, :class => "square-media instagram-img") %>
             <% else %>
-              <%= video_tag(image.video_url, :autoplay => "true", :muted => "true", :loop => "true", :poster => image.jpeg, :class => "instagram-img " + image.id.to_s, :height => "100%", :width => "100%", :data => {:media_type => image.media_type}) %>
+              <%= video_tag(image.video_url, :autoplay => "true", :muted => "true", :loop => "true", :poster => image.jpeg, :class => "square-media instagram-img " + image.id.to_s, :height => "100%", :width => "100%", :data => {:media_type => image.media_type}) %>
             <% end %>
           </a>
         </li>

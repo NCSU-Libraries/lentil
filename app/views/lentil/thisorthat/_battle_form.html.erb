@@ -7,10 +7,10 @@
             <div>
               <% unless image.media_type == "video" %>
                 <a href="<%= url_for(image) %>" data-fancybox-href= "<%= image.jpeg %>" class="fancybox">
-                  <%= image_tag(image.jpeg, :class => "battle-img instagram-img", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
+                  <%= image_tag(image.jpeg, :class => "square-media battle-img instagram-img", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
                 <% else %>
                   <a href="<%= url_for(image) %>" data-fancybox-href= "<%= image.video_url %>" class="fancybox">
-                    <%= video_tag(image.video_url, :class => "instagram-img " + image.id.to_s, :height => "100%", :width => "100%", :poster => image.jpeg, :controls => "controls", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
+                    <%= video_tag(image.video_url, :class => "square-media battle-img instagram-img " + image.id.to_s, :height => "100%", :width => "100%", :poster => image.jpeg, :controls => "controls", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
                   <% end %>
                 </a>
               </div>
@@ -34,10 +34,10 @@
           <div>
             <% unless image.media_type == "video" %>
               <a href="<%= url_for(image) %>" data-fancybox-href= "<%= image.jpeg %>" class="fancybox">
-                <%= image_tag(image.jpeg, :class => "battle-img instagram-img", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
+                <%= image_tag(image.jpeg, :class => "square-media battle-img instagram-img", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
               <% else %>
                 <a href="<%= url_for(image) %>" data-fancybox-href= "<%= image.video_url %>" class="fancybox">
-                  <%= video_tag(image.video_url, :class => "instagram-img " + image.id.to_s, :height => "100%", :width => "100%", :poster => image.jpeg, :controls => "controls", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
+                  <%= video_tag(image.video_url, :class => "square-media battle-img instagram-img " + image.id.to_s, :height => "100%", :width => "100%", :poster => image.jpeg, :controls => "controls", :data => {:battles_count => image.battles_count, :win_pct => image.win_pct, :popularity => image.popular_score, :staff_like => image.staff_like, :like_votes_count => image.like_votes_count, :media_type => image.media_type}) %>
                 <% end %>
               </a>
             </div>
