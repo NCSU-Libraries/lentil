@@ -10,7 +10,7 @@
 
       // Remove images that error out
       images = document.getElementsByClassName('instagram-img');
-      for (var i = 1; i < images.length; i++) {
+      for (var i = 0; i < images.length; i++) {
         images[i].addEventListener('error', function (e) {
           e.srcElement.parentNode.remove();
         }, false);
