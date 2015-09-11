@@ -336,3 +336,6 @@ DEPENDENCIES
   vcr (~> 2.9.3)
   webmock (~> 1.18.0)
   yard (~> 0.8.7)
+
+BUNDLED WITH
+   1.10.6
