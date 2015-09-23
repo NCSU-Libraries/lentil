@@ -60,7 +60,7 @@ module Lentil
   mount Lentil::Engine => "/"
 
 ROUTES
-        insert_into_file "config/routes.rb", routes, :after => "Application.routes.draw do\n"
+        insert_into_file "config/routes.rb", routes, :after => "Rails.application.routes.draw do\n"
       end
 
       desc 'create application configuration file'
