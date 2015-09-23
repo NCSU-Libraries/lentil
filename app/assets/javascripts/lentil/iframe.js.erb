@@ -1,3 +1,5 @@
+//= require lentil/addobjectfit
+
 (function () {
   var Iframe = {
     init: function () {
@@ -10,11 +12,13 @@
 
       // Remove images that error out
       images = document.getElementsByClassName('instagram-img');
-      for (var i = 1; i < images.length; i++) {
+      for (var i = 0; i < images.length; i++) {
         images[i].addEventListener('error', function (e) {
           e.srcElement.parentNode.remove();
         }, false);
       }
+
+      addobjectfit();
 
       // Respond to viewport changes
       window.onresize = function (event) {
@@ -87,8 +91,8 @@
       height = window.innerHeight;
 
       // Acceptable image sizes
-      smallestImage = 64;
-      largestImage = 97;
+      smallestImage = lentil_smallest_width; // Global variable from view
+      largestImage = smallestImage * 1.5;
 
       mostColumns = Math.ceil(width/smallestImage);
       leastColumns = Math.ceil(width/largestImage);
@@ -101,7 +105,8 @@
       // Set width of images to build layout
       images = document.getElementsByClassName('iframe-tile');
       for (var i = 0; i < images.length; i++) {
-        images[i].style.width = String(percent) + '%';
+        images[i].style.width = String(percent) + 'vw';
+        images[i].style.height = String(percent) + 'vw';
       }
 
       // Set height of wrapper div for overflow

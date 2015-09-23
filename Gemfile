@@ -23,8 +23,10 @@ gem 'minitest-reporters'
 
 gem 'puffing-billy'
 
-gem 'mysql2'
-gem 'pg'
+group :test do
+  gem 'mysql2', '~> 0.3.20'
+  gem 'pg'
+end
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or

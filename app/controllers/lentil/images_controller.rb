@@ -57,8 +57,13 @@ module Lentil
       render 'animate'
     end
 
+    def numeric_string?(str)
+      Float(str) != nil rescue false
+    end
+
     def iframe
       @images = Image.includes(:user).approved.recent.limit(125)
+      @smallest_width = numeric_string?(params['smallest_width']) ? params['smallest_width'] : 64
       render :action => "iframe", :layout => "lentil/iframe"
     end
   end

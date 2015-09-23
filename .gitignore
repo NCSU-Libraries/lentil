@@ -9,6 +9,7 @@ test/dummy/log/*.log
 test/dummy/tmp/
 test/dummy/.sass-cache
 coverage
+.sass-cache
 
 # binstubs
 bin

@@ -2,7 +2,7 @@
   <div id="iframe-wrapper">
     <% @images.each do |image| %>
       <div class="iframe-tile">
-        <%= image_tag(image.thumbnail_url, :class => "instagram-img " + image.id.to_s, :alt => image.description) %>
+        <%= image_tag(image.medium_url, :class => "square-media instagram-img " + image.id.to_s, :alt => image.description) %>
       </div>
     <% end -%>
   </div>
