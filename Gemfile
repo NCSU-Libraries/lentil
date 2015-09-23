@@ -24,7 +24,7 @@ gem 'minitest-reporters'
 gem 'puffing-billy'
 
 group :test do
-  gem 'mysql2'
+  gem 'mysql2', '~> 0.3.20'
   gem 'pg'
 end
 
