@@ -19,9 +19,9 @@ class Lentil::Tag < ActiveRecord::Base
 
   validates_presence_of :name
 
-  scope :harvestable, where(:lentil_tagsets => {:harvest => true}).includes(:tagsets)
-  scope :not_harvestable, where(:lentil_tagsets => {:harvest => false}).includes(:tagsets)
-  scope :no_tagsets, where(:lentil_tagset_assignments => {:tag_id => nil}).includes(:tagset_assignments)
+  scope :harvestable, -> {where(:lentil_tagsets => {:harvest => true}).includes(:tagsets)}
+  scope :not_harvestable, -> {where(:lentil_tagsets => {:harvest => false}).includes(:tagsets)}
+  scope :no_tagsets, -> {where(:lentil_tagset_assignments => {:tag_id => nil}).includes(:tagset_assignments)}
 
   #Stripping tags on write
   def name=(new_name)
