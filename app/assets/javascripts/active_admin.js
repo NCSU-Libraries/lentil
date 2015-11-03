@@ -12,7 +12,7 @@ $(document).ready(function() {
         data: function (params) {
           return {
             q: params.term
-          }
+          };
         },
         processResults: function (data, page) {
           // parse the results into the format expected by Select2.
@@ -23,11 +23,11 @@ $(document).ready(function() {
               return {
                 text: item.name,
                 id: item.id
-              }
+              };
             })
           };
         },
         cache: true
       }
     });
-});``
+});
