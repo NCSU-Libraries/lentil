@@ -1,12 +1,11 @@
 //= require active_admin/base
 //= require select2
 //= require expanding/expanding
-//= require js-routes
 
 $(document).ready(function() {
     $(".lentil-admin-select").select2({
     	ajax: {
-        url: Routes.tags_api_admin_lentil_tags_path,
+        url: '../../lentil_tags/tags_api',
         dataType: 'json',
         delay: 250,
         data: function (params) {
