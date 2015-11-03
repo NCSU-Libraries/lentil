@@ -30,6 +30,13 @@ if defined?(ActiveAdmin)
       end
     end
 
+    collection_action :tags_api, method: :get do
+      query = params[:q]
+      tags = Lentil::Tag.where("name LIKE ?", "#{query}%").limit(40)
+
+      render json: tags
+    end
+
     controller do
       def scoped_collection
         super.includes :taggings, :tagsets
