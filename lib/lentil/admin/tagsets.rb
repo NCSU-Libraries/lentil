@@ -43,7 +43,7 @@ if defined?(ActiveAdmin)
       f.inputs do
         f.input :title
         f.input :description
-        f.input :tags, :input_html => {:class => [:"lentil-admin-select"]}
+        f.input :tags, :input_html => {:class => [:"lentil-admin-select"]}, :collection => f.object.tags
         f.input :harvest do |harvest|
           harvest.capitalize
         end

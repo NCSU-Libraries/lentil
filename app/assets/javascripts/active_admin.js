@@ -3,9 +3,18 @@
 //= require expanding/expanding
 
 $(document).ready(function() {
+    var url;
+
+    if (window.location.pathname === '/admin/lentil_tagsets/new') {
+      url = '../lentil_tags/tags_api'
+    } else {
+      url = '../../lentil_tags/tags_api'
+    }
+
     $(".lentil-admin-select").select2({
+      width: 200,
     	ajax: {
-        url: '../../lentil_tags/tags_api',
+        url: url,
         dataType: 'json',
         delay: 250,
         data: function (params) {
