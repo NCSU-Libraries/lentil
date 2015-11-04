@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lentil (0.7.1)
+    lentil (0.8.0)
       activeadmin (~> 0.6.3)
       bootstrap-sass (~> 2.3.0)
       compass-rails (~> 2.0.5)
@@ -173,7 +173,7 @@ GEM
     launchy (2.4.3)
       addressable (~> 2.3)
     lazing (0.1.1)
-    listen (3.0.3)
+    listen (3.0.4)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     lumberjack (1.0.9)
