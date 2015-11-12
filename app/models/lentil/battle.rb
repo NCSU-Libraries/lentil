@@ -10,8 +10,6 @@
 #
 
 class Lentil::Battle < ActiveRecord::Base
-  attr_accessible :image_id, :loser_id, :loser
-
   belongs_to :image, :counter_cache => :wins_count, :autosave => true
   belongs_to :loser, :class_name => "Image", :counter_cache => :losses_count, :autosave => true
 

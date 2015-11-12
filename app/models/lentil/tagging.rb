@@ -14,7 +14,5 @@ class Lentil::Tagging < ActiveRecord::Base
   belongs_to :image
   belongs_to :tag
 
-  attr_accessible :tag, :staff_tag, :tag_id
-
   validates :image_id, :uniqueness => {:scope => :tag_id}
 end

@@ -12,8 +12,6 @@
 #
 
 class Lentil::License < ActiveRecord::Base
-  attr_accessible :description, :short_name, :name, :url
-
   has_many :licensings
   has_many :images, :through=>:licensings
 

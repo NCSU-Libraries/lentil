@@ -10,8 +10,6 @@
 #
 
 class Lentil::Service < ActiveRecord::Base
-  attr_accessible :name, :url
-
   has_many :users
   has_many :images, :through => :users
 end

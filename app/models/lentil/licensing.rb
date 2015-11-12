@@ -12,5 +12,4 @@
 class Lentil::Licensing < ActiveRecord::Base
   belongs_to :image
   belongs_to :license
-  # attr_accessible :title, :body
 end

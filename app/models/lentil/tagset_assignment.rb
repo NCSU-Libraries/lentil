@@ -10,8 +10,6 @@
 #
 
 class Lentil::TagsetAssignment < ActiveRecord::Base
-  attr_accessible :tag_id, :tagset_id
-
   belongs_to :tag
   belongs_to :tagset
 end

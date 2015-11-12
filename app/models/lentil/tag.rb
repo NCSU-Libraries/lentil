@@ -9,13 +9,11 @@
 #
 
 class Lentil::Tag < ActiveRecord::Base
-  attr_accessible :name, :staff_tag
-
   has_many :tagset_assignments
-  has_many :tagsets, :through=>:tagset_assignments
+  has_many :tagsets, :through => :tagset_assignments
 
   has_many :taggings
-  has_many :images, :through=>:taggings
+  has_many :images, :through => :taggings
 
   validates_presence_of :name
 

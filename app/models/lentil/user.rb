@@ -14,8 +14,6 @@
 #
 
 class Lentil::User < ActiveRecord::Base
-  attr_accessible :banned, :full_name, :user_name, :bio
-
   has_many :images
   belongs_to :service
 

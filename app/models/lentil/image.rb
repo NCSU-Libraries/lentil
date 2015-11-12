@@ -33,12 +33,6 @@
 #
 
 class Lentil::Image < ActiveRecord::Base
-  attr_accessible :description, :title, :user_id, :state, :staff_like, :url, :long_url, :external_identifier,
-                  :original_datetime, :popular_score, :taggings, :tag_id, :moderator, :moderated_at, :second_moderation,
-                  :do_not_request_donation, :donor_agreement_rejected, :media_type, :video_url, :suppressed
-
-  attr_protected  :original_metadata
-
   has_many :won_battles, :class_name => "Battle"
   has_many :losers, :through => :battles
   has_many :lost_battles, :class_name => "Battle", :foreign_key => "loser_id"
