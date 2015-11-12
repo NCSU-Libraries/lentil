@@ -1,5 +1,6 @@
 if defined?(ActiveAdmin)
   ActiveAdmin.register Lentil::Tagset do
+    permit_params :description, :title, :harvest, :tag_ids => []
 
     config.batch_actions = false
     config.sort_order = "title_asc"
@@ -39,11 +40,15 @@ if defined?(ActiveAdmin)
       end
     end
 
+    controller do
+      resources_configuration[:self][:instance_name] = 'tagset'
+    end
+
     form do |f|
       f.inputs do
         f.input :title
         f.input :description
-        f.input :tags, :input_html => {:class => [:"chzn-select"]}, :collection => Lentil::Tag.all.sort_by(&:name)
+        f.input :tags
         f.input :harvest do |harvest|
           harvest.capitalize
         end

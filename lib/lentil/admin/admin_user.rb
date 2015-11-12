@@ -17,6 +17,10 @@ if defined?(ActiveAdmin)
   filter :sign_in_count
   filter :created_at
 
+  controller do
+    resources_configuration[:self][:instance_name] = 'admin_user'
+  end
+
   form do |f|
     f.inputs "Admin Details" do
       f.input :email
