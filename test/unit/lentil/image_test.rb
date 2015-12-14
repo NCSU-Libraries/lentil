@@ -69,7 +69,7 @@ class ImageTest < ActiveSupport::TestCase
 
   test "Image description should preserve emoji" do
     image = lentil_images(:one)
-    emoji_desc = "Hello! 😁"
+    emoji_desc = "Test 😎 emoji"
     image.description = emoji_desc
     image.save
     image.reload
