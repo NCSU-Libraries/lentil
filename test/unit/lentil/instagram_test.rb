@@ -8,7 +8,11 @@ class InstagramTest < ActiveSupport::TestCase
   test "Instagram images should be added to Image model without duplication" do
     VCR.use_cassette('instagram_by_tag') do
       instagram_metadata = @harvester.fetch_recent_images_by_tag "huntlibrary"
-      @harvester.save_instagram_load instagram_metadata
+      expected_image_count = instagram_metadata.length - 1
+      actual_image_count = @harvester.save_instagram_load instagram_metadata
+
+      assert_equal(expected_image_count, actual_image_count.length)
+
       assert_raise DuplicateImageError do
         @harvester.save_instagram_load! instagram_metadata
       end
@@ -23,7 +27,7 @@ class InstagramTest < ActiveSupport::TestCase
       actual_image_count = nil
 
       silence_stream(STDOUT) do
-        actual_image_count = @harvester.save_instagram_load(instagram_metadata)
+        actual_image_count = @harvester.save_instagram_load instagram_metadata
       end
 
       assert_equal(expected_image_count, actual_image_count.length)
