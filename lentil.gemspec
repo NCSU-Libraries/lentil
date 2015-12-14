@@ -48,8 +48,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'emojimmy', '~> 0.2.2' # Alternative JSON library
 
   s.add_development_dependency "sqlite3", "~> 1.3.8"
-  s.add_development_dependency "capybara", "~> 2.4.1"
-  s.add_development_dependency "database_cleaner", "~> 1.4.1"
+  s.add_development_dependency "capybara", "~> 2.5.0"
+  s.add_development_dependency "database_cleaner", "~> 1.5.1"
   s.add_development_dependency "launchy", "~> 2.4.0"
   s.add_development_dependency "vcr", "~> 2.9.3"
   s.add_development_dependency "webmock", "~> 1.18.0"
@@ -58,6 +58,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "test-unit", "~> 3.1.2"
   s.add_development_dependency "mocha", "~> 1.1.0"
   s.add_development_dependency "single_test", "~> 0.6.0"
-  s.add_development_dependency "capybara-webkit", "~> 1.5.1"
+  s.add_development_dependency "capybara-webkit", "~> 1.7.1"
   s.add_development_dependency "yard", "~> 0.8.7"
 end
