@@ -1,5 +1,7 @@
 # Lentil
 
+> Instagram has removed access to a large portion of their public API in favor of a focus on their advertising API. Lentil will work with pre-existing developer credentials until June 2016, but we are currently [attempting to contact Instagram and Facebook](https://twitter.com/cazzerson/status/671448637872934912) to discuss blanket application approvals for academic uses.
+
 lentil is a Ruby on Rails Engine that supports the harvesting of images from Instagram and provides several browsing views, mechanisms for sharing, tools for users to select their favorite images, an administrative interface for moderating images, and a system for harvesting images and submitting donor agreements in preparation of ingest into external repositories. Built according to the principles of responsive design, lentil is designed for use on mobile devices, tablets, desktops, and larger screens.
 
 [![Build Status](https://travis-ci.org/NCSU-Libraries/lentil.png)](https://travis-ci.org/NCSU-Libraries/lentil)
@@ -16,8 +18,6 @@ Although we are using this gem in production, **this gem should be considered an
 ## Installation
 
 lentil has been tested under Ruby 1.9.3 through 2.2.0.
-
-> We are currently warning against using MySQL due to issues when encoding emoji. PostgreSQL is preferred, but if this is not an option, you may want to follow [this guide](http://tech.taskrabbit.com/blog/2014/04/24/active-record-mysql-and-emoji/).
 
 ### Create a new Rails app with Rails 3.2.x
 
@@ -57,7 +57,7 @@ You may need to run `bundle exec rake lentil:install:migrations` to incorporate 
 
 ## Harvest Images
 
-- You will need to define your `instagram_client_id` and `instagram_client_secret` in `config/lentil_config.yml`. You can generate these strings by creating an [Instagram API](http://instagram.com/developer) client for your application.
+- You will need to define your `instagram_client_id`, `instagram_client_secret`, and `instagram_access_token` in `config/lentil_config.yml`. You can generate these strings by creating an [Instagram API](http://instagram.com/developer) client for your application and following the [Client-side (Implicit) Authentication steps](https://www.instagram.com/developer/authentication/).
 
 - If you haven't already, add an administrative user in development.
 
