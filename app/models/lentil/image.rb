@@ -38,6 +38,7 @@ class Lentil::Image < ActiveRecord::Base
                   :do_not_request_donation, :donor_agreement_rejected, :media_type, :video_url, :suppressed
 
   attr_protected  :original_metadata
+  stores_emoji_characters :description
 
   has_many :won_battles, :class_name => "Battle"
   has_many :losers, :through => :battles
