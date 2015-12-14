@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.instagram.com/v1/media/289998623568090948_31727100.json?client_id=YOUR_CLIENT_ID
+    uri: https://api.instagram.com/v1/media/289998623568090948_31727100.json?access_token=YOUR_ACCESS_TOKEN_FROM_INSTAGRAM_OAUTH
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,9 @@ http_interactions:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
-      - Instagram Ruby Gem 0.10.0
+      - Instagram Ruby Gem 1.1.6
+      Authorization:
+      - Token token="YOUR_ACCESS_TOKEN_FROM_INSTAGRAM_OAUTH"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -18,30 +20,35 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      X-Ratelimit-Remaining:
+      - '4999'
       Content-Language:
       - en
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Thu, 21 Nov 2013 15:43:32 GMT
-      Server:
-      - nginx
-      Set-Cookie:
-      - csrftoken=8a2adc6ab5f1786048091007222be06e; expires=Thu, 20-Nov-2014 15:43:32
-        GMT; Max-Age=31449600; Path=/
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
       Vary:
       - Cookie, Accept-Language, Accept-Encoding
       X-Ratelimit-Limit:
       - '5000'
-      X-Ratelimit-Remaining:
-      - '4980'
-      Content-Length:
-      - '1549'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Date:
+      - Mon, 14 Dec 2015 16:38:55 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Set-Cookie:
+      - csrftoken=d1d66c84a677f672d8d9543243282513; expires=Mon, 12-Dec-2016 16:38:55
+        GMT; Max-Age=31449600; Path=/
+      - s_network=; expires=Mon, 14-Dec-2015 17:38:55 GMT; Max-Age=3600; Path=/
       Connection:
       - keep-alive
+      Content-Length:
+      - '1595'
     body:
-      encoding: UTF-8
-      string: '{"meta":{"code":200},"data":{"attribution":null,"tags":[],"location":null,"comments":{"count":3,"data":[{"created_time":"1353016068","text":"This
+      encoding: ASCII-8BIT
+      string: '{"meta":{"code":200},"data":{"attribution":null,"tags":[],"type":"image","location":null,"comments":{"count":3,"data":[{"created_time":"1353016068","text":"This
         is a test comment. Lorem ipsum dolor sit amet, risus parturient illo quaerat
         euismod integer, bibendum tempus, ligula fringilla leo purus, sed cursus nibh
         vestibulum donec, suscipit amet morbi. Lectus ultrices cursus leo justo elit
@@ -62,12 +69,11 @@ http_interactions:
         fringilla faucibus maecenas, imperdiet nunc dolor congue sapien nunc cras,
         nobis nec. Neque ut vel hendrerit fugiat enim in, suscipit egestas eu ut,
         nec semper a sed lacus, purus amet, massa lacus imperdiet. Fringilla eu. Aenean
-        etiam nunc.","from":{"username":"cazzerson","profile_picture":"http:\/\/images.ak.instagram.com\/profiles\/profile_31727100_75sq_1376601604.jpg","id":"31727100","full_name":"cazzerson"},"id":"325444824656303850"},{"created_time":"1355615098","text":"Wow!
+        etiam nunc.","from":{"username":"cazzerson","profile_picture":"http:\/\/scontent.cdninstagram.com\/hphotos-xaf1\/t51.2885-19\/11376324_875828759153387_1966553941_a.jpg","id":"31727100","full_name":""},"id":"325444824656303850"},{"created_time":"1355615098","text":"Wow!
         Didn''t read it at all cuz I didn''t \u00fc\u00f1d\u00ear\u00dft\u00e6\u0144d
-        it @crayzay34  is my sis","from":{"username":"poteo84","profile_picture":"http:\/\/images.ak.instagram.com\/profiles\/profile_252683448_75sq_1371850088.jpg","id":"252683448","full_name":"\ud83d\ude0fMatteo\ud83d\udc4d\ud83c\uddfa\ud83c\uddf8\ud83c\uddea\ud83c\uddf8"},"id":"347247075569751123"},{"created_time":"1355624206","text":"Ha,
+        it @crayzay34  is my sis","from":{"username":"mattster_of_life","profile_picture":"http:\/\/scontent.cdninstagram.com\/hphotos-xtf1\/t51.2885-19\/11373767_1665443780369916_281689035_a.jpg","id":"252683448","full_name":"\ud83d\ude0eMatteo\ud83e\udd13"},"id":"347247075569751123"},{"created_time":"1355624206","text":"Ha,
         yeah, this is just filler lorem ipsum text I was using to figure out the maximum
-        allowable length for comments. I''m working on an Instagram project at work.","from":{"username":"cazzerson","profile_picture":"http:\/\/images.ak.instagram.com\/profiles\/profile_31727100_75sq_1376601604.jpg","id":"31727100","full_name":"cazzerson"},"id":"347323476863931818"}]},"filter":"Lord
-        Kelvin","created_time":"1348790551","link":"http:\/\/instagram.com\/p\/QGSDYvINdE\/","likes":{"count":1,"data":[{"username":"poteo84","profile_picture":"http:\/\/images.ak.instagram.com\/profiles\/profile_252683448_75sq_1371850088.jpg","id":"252683448","full_name":"\ud83d\ude0fMatteo\ud83d\udc4d\ud83c\uddfa\ud83c\uddf8\ud83c\uddea\ud83c\uddf8"}]},"images":{"low_resolution":{"url":"http:\/\/distilleryimage0.s3.amazonaws.com\/cc8bd9a008ff11e2a9d822000a1de77b_6.jpg","width":306,"height":306},"thumbnail":{"url":"http:\/\/distilleryimage0.s3.amazonaws.com\/cc8bd9a008ff11e2a9d822000a1de77b_5.jpg","width":150,"height":150},"standard_resolution":{"url":"http:\/\/distilleryimage0.s3.amazonaws.com\/cc8bd9a008ff11e2a9d822000a1de77b_7.jpg","width":612,"height":612}},"users_in_photo":[],"caption":null,"type":"image","id":"289998623568090948_31727100","user":{"username":"cazzerson","website":"","profile_picture":"http:\/\/images.ak.instagram.com\/profiles\/profile_31727100_75sq_1376601604.jpg","full_name":"cazzerson","bio":"","id":"31727100"}}}'
+        allowable length for comments. I''m working on an Instagram project at work.","from":{"username":"cazzerson","profile_picture":"http:\/\/scontent.cdninstagram.com\/hphotos-xaf1\/t51.2885-19\/11376324_875828759153387_1966553941_a.jpg","id":"31727100","full_name":""},"id":"347323476863931818"}]},"filter":"Kelvin","created_time":"1348790551","link":"https:\/\/www.instagram.com\/p\/QGSDYvINdE\/","likes":{"count":1,"data":[{"username":"mattster_of_life","profile_picture":"http:\/\/scontent.cdninstagram.com\/hphotos-xtf1\/t51.2885-19\/11373767_1665443780369916_281689035_a.jpg","id":"252683448","full_name":"\ud83d\ude0eMatteo\ud83e\udd13"}]},"images":{"low_resolution":{"url":"https:\/\/scontent.cdninstagram.com\/hphotos-xfa1\/t51.2885-15\/s320x320\/e15\/11208502_1639811819581389_1713413225_n.jpg","width":320,"height":320},"thumbnail":{"url":"https:\/\/scontent.cdninstagram.com\/hphotos-xfa1\/t51.2885-15\/s150x150\/e15\/11208502_1639811819581389_1713413225_n.jpg","width":150,"height":150},"standard_resolution":{"url":"https:\/\/scontent.cdninstagram.com\/hphotos-xfa1\/t51.2885-15\/e15\/11208502_1639811819581389_1713413225_n.jpg","width":612,"height":612}},"users_in_photo":[],"caption":null,"user_has_liked":false,"id":"289998623568090948_31727100","user":{"username":"cazzerson","profile_picture":"http:\/\/scontent.cdninstagram.com\/hphotos-xaf1\/t51.2885-19\/11376324_875828759153387_1966553941_a.jpg","id":"31727100","full_name":""}}}'
     http_version:
-  recorded_at: Thu, 21 Nov 2013 15:43:34 GMT
-recorded_with: VCR 2.7.0
+  recorded_at: Mon, 14 Dec 2015 16:38:55 GMT
+recorded_with: VCR 2.9.3

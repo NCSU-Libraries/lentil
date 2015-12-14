@@ -18,7 +18,7 @@ class InstagramTest < ActiveSupport::TestCase
   test "Invalid image metadata should not prevent other images from being added" do
     # One record in this cassette is damaged by manually removing the 'link'
     VCR.use_cassette('instagram_by_tag_damaged') do
-      instagram_metadata = @harvester.fetch_recent_images_by_tag "dhhill"
+      instagram_metadata = @harvester.fetch_recent_images_by_tag "huntlibrary"
       expected_image_count = instagram_metadata.length - 1
       actual_image_count = nil
 
