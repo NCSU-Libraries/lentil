@@ -41,9 +41,9 @@ Gem::Specification.new do |s|
   s.add_dependency 'lazing', "~> 0.1.1" # Lazy equivalents for many of the methods defined in Ruby's Enumerable module
   s.add_dependency 'sitemap_generator', "~> 5.1.0" # Generate sitemaps on deployment
   s.add_dependency 'google-analytics-rails', "~> 0.0.4"
-  s.add_dependency 'typhoeus', "~> 0.7.1" # for checking and harvesting image files
+  s.add_dependency 'typhoeus', "~> 0.8.0" # for checking and harvesting image files
   s.add_dependency 'kaminari', "~> 0.16.1" # for checking and harvesting image files
-  s.add_dependency 'oj', '~> 2.12.4' # Alternative JSON library
+  s.add_dependency 'oj', '~> 2.14.0' # Alternative JSON library
   s.add_dependency 'oj_mimic_json', '~> 1.0.1' # Alternative JSON library
   s.add_dependency 'emojimmy', '~> 0.2.2' # Alternative JSON library
 
@@ -53,7 +53,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "launchy", "~> 2.4.0"
   s.add_development_dependency "vcr", "~> 2.9.3"
   s.add_development_dependency "webmock", "~> 1.18.0"
-  s.add_development_dependency "simplecov", "~> 0.10.0"
+  s.add_development_dependency "simplecov", "~> 0.11.1"
   s.add_development_dependency "pry-rails", "~> 0.3.2"
   s.add_development_dependency "test-unit", "~> 3.1.2"
   s.add_development_dependency "mocha", "~> 1.1.0"
