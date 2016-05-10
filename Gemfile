@@ -11,6 +11,7 @@ group :development do
   gem 'rb-readline'
   gem 'guard'
   gem 'guard-test'
+  gem 'listen', '~> 3.0'
   gem 'rb-fsevent', :require => RUBY_PLATFORM.include?('darwin') && 'rb-fsevent'
   gem 'rb-inotify', :require => RUBY_PLATFORM.include?('linux') && 'rb-inotify'
 end
