@@ -10,12 +10,9 @@ gemspec
 group :development do
   gem 'rb-readline'
   gem 'guard'
+  gem 'guard-test'
   gem 'rb-fsevent', :require => RUBY_PLATFORM.include?('darwin') && 'rb-fsevent'
   gem 'rb-inotify', :require => RUBY_PLATFORM.include?('linux') && 'rb-inotify'
-end
-
-group :tools do
-  gem 'guard-test'
 end
 
 group :test do
