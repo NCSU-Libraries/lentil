@@ -16,8 +16,6 @@ http_interactions:
     headers:
       Last-Modified:
       - Wed, 26 Feb 2014 20:54:18 GMT
-      X-Object-Type-Name:
-      - INSTAGRAM_PHOTO
       Content-Type:
       - image/jpeg
       Timing-Allow-Origin:
@@ -25,11 +23,11 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Expires:
-      - Mon, 28 Dec 2015 16:38:49 GMT
+      - Tue, 24 May 2016 15:48:03 GMT
       Cache-Control:
       - max-age=1209600, no-transform
       Date:
-      - Mon, 14 Dec 2015 16:39:00 GMT
+      - Tue, 10 May 2016 15:57:31 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -1926,5 +1924,5 @@ http_interactions:
         OnZJx7BR22uQF2ixBQzKaz2jOMexQ7UKqKB7TFQnWdFrNdxs5Xcfl37te0rJ
         Nb3GwtvZSzVeLIofjtY16As//9k=
     http_version: 
-  recorded_at: Mon, 14 Dec 2015 16:39:00 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Tue, 10 May 2016 15:57:31 GMT
+recorded_with: VCR 3.0.1

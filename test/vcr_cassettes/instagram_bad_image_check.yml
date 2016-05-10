@@ -12,32 +12,170 @@ http_interactions:
   response:
     status:
       code: 404
-      message: Not Found
+      message: NOT FOUND
     headers:
+      Strict-Transport-Security:
+      - max-age=86400
+      Content-Language:
+      - en
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Vary:
+      - Cookie, Accept-Language
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Date:
+      - Tue, 10 May 2016 15:57:30 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
       Content-Type:
       - text/html
-      Date:
-      - Wed, 26 Feb 2014 17:18:41 GMT
-      Etag:
-      - '"527ab950-2d6"'
-      Server:
-      - nginx
-      Content-Length:
-      - '726'
+      Set-Cookie:
+      - csrftoken=3ee73b8d5e51a0ed99f13b564c31e96f; expires=Tue, 09-May-2017 15:57:30
+        GMT; Max-Age=31449600; Path=/
+      - mid=VzIE6gAEAAFHm4ypiwz1uU4gBkNF; expires=Mon, 05-May-2036 15:57:30 GMT; Max-Age=630720000;
+        Path=/
       Connection:
       - keep-alive
+      Content-Length:
+      - '13920'
     body:
       encoding: UTF-8
-      string: "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\n
-        \  \"http://www.w3.org/TR/html4/loose.dtd\"> \n \n<html lang=\"en\"> \n<head>
-        \n\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">
-        \n\t<title>Instagram</title> \n        <meta name = \"viewport\" content =
-        \"width = 320px\">\n        <link rel=\"stylesheet\" href=\"/static/styles/master-new.css?1\"
-        type=\"text/css\" media=\"screen\" title=\"no title\" charset=\"utf-8\"> \n</head>
-        \n<body> \n    \n    <div id=\"wrap\" class=\"grid-all group\"> \n        \n<div
-        style=\"width: 100%; margin: 0 auto;\"> \n    <img style=\"margin-left: 0em;
-        margin-top: 1.0em;\" src=\"/static/images/headerWithTitle.png\"><br/> \nSorry,
-        this page could not be found.\n</div> \n \n    </div> \n</body> \n</html>\n\n\n"
+      string: "<!DOCTYPE html>\n<!--[if lt IE 7]>      <html lang=\"en\" class=\"no-js
+        lt-ie9 lt-ie8 lt-ie7 not-logged-in \"> <![endif]-->\n<!--[if IE 7]>         <html
+        lang=\"en\" class=\"no-js lt-ie9 lt-ie8 not-logged-in \"> <![endif]-->\n<!--[if
+        IE 8]>         <html lang=\"en\" class=\"no-js lt-ie9 not-logged-in \"> <![endif]-->\n<!--[if
+        gt IE 8]><!--> <html lang=\"en\" class=\"no-js not-logged-in \"> <!--<![endif]-->\n
+        \   <head>\n        \n    <script type=\"text/javascript\">window._timings
+        = {\"domLoading\": Date.now()}</script>\n\n        <meta charset=\"utf-8\">\n
+        \       <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n\n        <title>\n
+        \     \n        Instagram\n      \n    </title>\n\n        <script type=\"text/javascript\">\n
+        \ WebFontConfig = {\n    custom: {\n      families: ['proxima-nova:n3,n4,n6,n7'],\n
+        \   }\n  };\n</script>\n<script src=\"//instagramstatic-a.akamaihd.net/h1/scripts/webfont.js/c0456c81549b.js\"
+        type=\"text/javascript\" async></script>\n\n<style type=\"text/css\">\n  /*
+        @license\n   * MyFonts Webfont Build ID 2164953, 2012-03-23T23:06:30-0400\n
+        \  *\n   * The fonts listed in this notice are subject to the End User License\n
+        \  * Agreement(s) entered into by the website owner. All other parties are\n
+        \  * explicitly restricted from using the Licensed Webfonts(s).\n   *\n   *
+        You may obtain a valid license at the URLs below.\n   *\n   *\n   * Webfont:
+        Proxima Nova Light by Mark Simonson\n   * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/light/\n
+        \  * Licensed pageviews: unlimited\n   *\n   * Webfont: Proxima Nova Regular
+        by Mark Simonson\n   * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/regular/\n
+        \  * Licensed pageviews: unlimited\n   *\n   * Webfont: Proxima Nova Semibold
+        by Mark Simonson\n   * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/semibold/\n
+        \  * Licensed pageviews: unlimited\n   *\n   * Webfont: Proxima Nova Bold
+        Italic by Mark Simonson\n   * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/bold-it/\n
+        \  * Licensed pageviews: unlimited\n   *\n   * Webfont: Proxima Nova Bold
+        by Mark Simonson\n   * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/bold/\n
+        \  * Licensed pageviews: unlimited\n   *\n   * Webfont: Proxima Nova Italic
+        by Mark Simonson\n   * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/regular-it/\n
+        \  * Licensed pageviews: unlimited\n   *\n   *\n   * License: http://www.myfonts.com/viewlicense?type=web&buildid=2164953\n
+        \  * Webfonts copyright: Copyright (c) Mark Simonson, 2005. All rights reserved.\n
+        \  *\n   * (c) 2012 Bitstream Inc\n   */\n  @font-face {\n    font-family:
+        'proxima-nova';\n    src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-bold-webfont.eot/115b1f7f9c04.eot');\n
+        \   src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-bold-webfont.eot/115b1f7f9c04.eot?#iefix')
+        format(\"embedded-opentype\"),\n      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-bold-webfont.woff/618250d25a4d.woff')
+        format(\"woff\"),\n      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-bold-webfont.ttf/646346e03084.ttf')
+        format(\"truetype\"),\n      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-bold-webfont.svg/e55a9d6051e8.svg#ProximaNovaBold')
+        format(\"svg\");\n    font-weight: bold;\n    font-style: normal; }\n\n  @font-face
+        {\n    font-family: 'proxima-nova';\n    src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-boldit-webfont.eot/1cbb869da891.eot');\n
+        \   src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-boldit-webfont.eot/1cbb869da891.eot?#iefix')
+        format(\"embedded-opentype\"),\n      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-boldit-webfont.woff/b1cf049474c9.woff')
+        format(\"woff\"),\n      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-boldit-webfont.ttf/3adb020ceae3.ttf')
+        format(\"truetype\"),\n      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-boldit-webfont.svg/29948a2d3c58.svg#ProximaNovaBoldItalic')
+        format(\"svg\");\n    font-weight: bold;\n    font-style: italic; }\n\n  @font-face
+        {\n    font-family: 'proxima-nova';\n    src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-reg-webfont.eot/12af77715cee.eot');\n
+        \   src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-reg-webfont.eot/12af77715cee.eot?#iefix')
+        format(\"embedded-opentype\"),\n      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-reg-webfont.woff/a9a9773b8e29.woff')
+        format(\"woff\"),\n      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-reg-webfont.ttf/99e19808976a.ttf')
+        format(\"truetype\"),\n      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-reg-webfont.svg/c33d2fd56309.svg#ProximaNovaRegular')
+        format(\"svg\");\n    font-weight: normal;\n    font-style: normal; }\n\n
+        \ @font-face {\n    font-family: 'proxima-nova';\n    src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-regit-webfont.eot/1bbbd1312b0d.eot');\n
+        \   src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-regit-webfont.eot/1bbbd1312b0d.eot?#iefix')
+        format(\"embedded-opentype\"),\n      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-regit-webfont.woff/9e306befca91.woff')
+        format(\"woff\"),\n      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-regit-webfont.ttf/4a8663684135.ttf')
+        format(\"truetype\"),\n      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-regit-webfont.svg/876278d4b189.svg#ProximaNovaRegularItalic')
+        format(\"svg\");\n    font-weight: normal;\n    font-style: italic; }\n\n
+        \ @font-face {\n    font-family: 'proxima-nova';\n    src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-sbold-webfont.eot/5016edf79e1d.eot');\n
+        \   src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-sbold-webfont.eot/5016edf79e1d.eot?#iefix')
+        format(\"embedded-opentype\"),\n      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-sbold-webfont.woff/615c1b06d8fa.woff')
+        format(\"woff\"),\n      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-sbold-webfont.ttf/2973bd483f7a.ttf')
+        format(\"truetype\"),\n      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-sbold-webfont.svg/868597833e49.svg#ProximaNovaSemibold')
+        format(\"svg\");\n    font-weight: 600;\n    font-style: normal; }\n</style>\n\n
+        \ <style type=\"text/css\">\n  @font-face {\n    font-family: 'proxima-nova';\n
+        \   src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-light-webfont.eot/63c84728610f.eot');\n
+        \   src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-light-webfont.eot/63c84728610f.eot?#iefix')
+        format(\"embedded-opentype\"),\n      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-light-webfont.woff/66bbe029f180.woff')
+        format(\"woff\"),\n      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-light-webfont.ttf/eb408516399b.ttf')
+        format(\"truetype\"),\n      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-light-webfont.svg/858f6a9b7ef3.svg#ProximaNovaLight')
+        format(\"svg\");\n    font-weight: 300;\n    font-style: normal; }\n</style>\n\n\n
+        \       \n    \n        <meta name=\"robots\" content=\"noimageindex\">\n
+        \       \n    <meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\n
+        \   <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black\">\n\n\n
+        \       \n    <meta id=\"viewport\" name=\"viewport\" content=\"width=device-width,
+        user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1\">\n\n\n
+        \       <script type=\"text/javascript\">\n        (function() {\n            var
+        docElement = document.documentElement;\n            var classRE = new RegExp('(^|\\\\s)no-js(\\\\s|$)');\n
+        \           var className = docElement.className;\n            docElement.className
+        = className.replace(classRE, '$1js$2');\n        })();\n        </script>\n\n
+        \       \n    \n    \n        <link rel=\"Shortcut Icon\" type=\"image/x-icon\"
+        href=\"//instagramstatic-a.akamaihd.net/h1/images/ico/favicon.ico/7cdab0872b15.ico\"><link
+        rel=\"mask-icon\" href=\"//instagramstatic-a.akamaihd.net/h1/images/ico/favicon.svg/dfde15ef1533.svg\"
+        color=\"#125688\">\n    \n    \n        <link rel=\"apple-touch-icon-precomposed\"
+        href=\"//instagramstatic-a.akamaihd.net/h1/images/ico/apple-touch-icon-precomposed.png/29d68fc587d7.png\">\n
+        \       <link rel=\"apple-touch-icon-precomposed\" sizes=\"72x72\" href=\"//instagramstatic-a.akamaihd.net/h1/images/ico/apple-touch-icon-72x72-precomposed.png/3f5e04d85488.png\">\n
+        \       <link rel=\"apple-touch-icon-precomposed\" sizes=\"114x114\" href=\"//instagramstatic-a.akamaihd.net/h1/images/ico/apple-touch-icon-114x114-precomposed.png/29d68fc587d7.png\">\n
+        \       <link rel=\"apple-touch-icon-precomposed\" sizes=\"144x144\" href=\"//instagramstatic-a.akamaihd.net/h1/images/ico/apple-touch-icon-144x144-precomposed.png/52fcc0fc09e4.png\">\n
+        \   \n    \n    \n        <link href=\"//instagramstatic-a.akamaihd.net/h1/styles/distillery/dialog-main.css/aaf7a1937bef.css\"
+        type=\"text/css\" rel=\"stylesheet\"></link>\n    \n\n    \n    <script src=\"//instagramstatic-a.akamaihd.net/h1/scripts/jquery.js/213ba890e802.js\"
+        type=\"text/javascript\"></script>\n    <script src=\"//instagramstatic-a.akamaihd.net/h1/scripts/bluebar.js/57733d51aed5.js\"
+        type=\"text/javascript\"></script>\n\n\n    </head>\n    <body class=\" p-error
+        dialog-404\">\n        \n    \n        <div class=\"root\">\n        \n            <div
+        class=\"page -cx-PRIVATE-Page__root\">\n                \n                    \n
+        \                       <header class=\"top-bar top-bar-new -cx-PRIVATE-NavBar__root\">\n
+        \   <div class=\"top-bar-wrapper -cx-PRIVATE-NavBar__wrapper\">\n        <div
+        class=\"logo -cx-PRIVATE-NavBar__logo\"><a href=\"/\">Instagram</a></div>\n\n
+        \       <div class=\"top-bar-left -cx-PRIVATE-NavBar__topBarLeft\">\n            <ul
+        class=\"top-bar-actions\">\n                <li>\n                    <a class=\"top-bar-home\"
+        href=\"/\" label=Home><i></i></a>\n                </li>\n            </ul>\n
+        \       </div>\n\n        \n            <div class=\"top-bar-right account-state\"
+        id=\"top_bar_right\">\n                <ul class=\"top-bar-actions -cx-PRIVATE-NavBar__topBarActions\">\n
+        \                   \n                    \n                    <li id=\"link_profile\"
+        class=\"link-signin -cx-PRIVATE-NavBar__signIn\">\n                        <a
+        href=\"/accounts/login/\" class=\"loginLink\">\n                            <i></i>\n
+        \                           <strong class=\"-cx-PRIVATE-NavBar__signInText\">Log
+        in</strong>\n                        </a>\n                    </li>\n                    \n
+        \               </ul>\n            </div>\n        \n    </div>\n</header>
+        <!-- .top-bar -->\n                    \n                \n\n                \n
+        \               <div class=\"main -cx-PRIVATE-Page__main\">\n                    \n
+        \   <div class=\"error-container\">\n    \n\n    <h2>Sorry, this page isn&#39;t
+        available.</h2>\n\n    <p>\n        The link you followed may be broken, or
+        the page may have been removed.\n        <a href=\"/\">Go back to Instagram.</a>\n
+        \   </p>\n\n\n\n    </div>\n\n                </div> <!-- .main -->\n                \n\n
+        \           </div> <!-- .page -->\n\n            \n            <footer class=\"page-footer
+        -cx-PRIVATE-Footer__root\" role=\"contentinfo\">\n                <div class=\"wrapper
+        -cx-PRIVATE-Footer__wrapper\">\n                    <nav class=\"-cx-PRIVATE-Footer__nav\">\n
+        \                       <ul class=\"-cx-PRIVATE-Footer__navItems\">\n                            <li><a
+        href=\"/about/us/\">About us</a></li>\n                            <li><a
+        href=\"http://help.instagram.com/\">Support</a></li>\n                            <li><a
+        href=\"http://blog.instagram.com/\">Blog</a></li>\n                            <li><a
+        href=\"http://instagram.com/press/\">Press</a></li>\n                            <li><a
+        href=\"/developer/\">API</a></li>\n                            <li><a href=\"/about/jobs/\">Jobs</a></li>\n
+        \                           <li><a href=\"/legal/privacy/\">Privacy</a></li>\n
+        \                           <li><a href=\"/legal/terms/\">Terms</a></li>\n
+        \                       </ul>\n                    </nav>\n\n                    <p
+        class=\"copyright -cx-PRIVATE-Footer__copyright\">&copy; 2016 Instagram</p>\n
+        \               </div>\n            </footer>\n            \n        \n        <div
+        id=\"reactModalMountPoint\"></div>\n    </div> <!-- .root -->\n    \n    \n\n
+        \       \n    <script src=//instagramstatic-a.akamaihd.net/h1/scripts/polyfills/es5-shim.min.js/6514c5e08593.js></script>\n<script
+        src=//instagramstatic-a.akamaihd.net/h1/scripts/polyfills/es5-sham.min.js/fc3c22cf2d67.js></script>\n<script
+        type=\"text/javascript\">window._sharedData = {\"country_code\":\"US\",\"language_code\":\"en\",\"gatekeepers\":{\"sulgin\":true},\"qs\":\"{\\\"shift\\\":10,\\\"header\\\":\\\"TNy0xhCu0QVlptVCxLH2TGMoFpkPoNj9\\\",\\\"edges\\\":100,\\\"blob\\\":\\\"AQAKmKsPeRNJDyUhsn7EonrL8tzYq2AOVHcbUHOfdjXLJRkxIpOBs-W1iUuRS3veMuEAC5HqAe9NxnpRmzE3zZZDkXTPgZrihnG00vdIpPAUJNpHD-1484f-PAvklajvcBSPfZUJ8y3S7GN2W3-v9hO_d8JUojApdzseJ5Jh5Ij-nrEJL9fB7ehnj6PAUxIJ9PdVz5FeCjBhwXuPCWVIdC350uE67eFn1tAk2PT8uOhkUg\\\",\\\"iterations\\\":7,\\\"size\\\":42}\",\"show_app_install\":true,\"static_root\":\"\\/\\/instagramstatic-a.akamaihd.net\\/h1\",\"platform\":\"web\",\"hostname\":\"www.instagram.com\",\"entry_data\":{},\"qe\":{\"wo\":{\"p\":{},\"g\":\"\"},\"su_universe\":{\"p\":{},\"g\":\"\"},\"su\":{\"p\":{\"enabled\":\"true\"},\"g\":\"rollout_20160325\"},\"discovery\":{\"p\":{},\"g\":\"\"}},\"display_properties_server_guess\":{\"viewport_width\":360,\"pixel_ratio\":1.5},\"config\":{\"viewer\":null,\"csrf_token\":\"3ee73b8d5e51a0ed99f13b564c31e96f\"},\"environment_switcher_visible_server_guess\":true};</script>\n\n
+        \       \n<script>\n!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?\nn.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;\nn.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;\nt.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,\ndocument,'script','//connect.facebook.net/en_US/fbevents.js');\n\nfbq('init',
+        '1425767024389221');\n\nfbq('track', 'PageView');\n\n\n</script>\n<noscript>\n\n\n</noscript>\n\n
+        \   \n    <script type=\"text/javascript\">window._timings.domInteractive
+        = Date.now()</script>\n\n    </body>\n</html>"
     http_version: 
-  recorded_at: Wed, 26 Feb 2014 17:18:41 GMT
-recorded_with: VCR 2.7.0
+  recorded_at: Tue, 10 May 2016 15:57:30 GMT
+recorded_with: VCR 3.0.1
