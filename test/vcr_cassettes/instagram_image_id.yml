@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.instagram.com/v1/media/289998623568090948_31727100.json?client_id=YOUR_CLIENT_ID
+    uri: https://api.instagram.com/v1/media/289998623568090948_31727100.json?access_token=YOUR_ACCESS_TOKEN_FROM_INSTAGRAM_OAUTH
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,9 @@ http_interactions:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
-      - Instagram Ruby Gem 1.1.5
+      - Instagram Ruby Gem 1.1.6
+      Authorization:
+      - Token token="YOUR_ACCESS_TOKEN_FROM_INSTAGRAM_OAUTH"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -19,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       X-Ratelimit-Remaining:
-      - '4989'
+      - '4999'
       Content-Language:
       - en
       Expires:
@@ -33,28 +35,32 @@ http_interactions:
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Date:
-      - Thu, 23 Jul 2015 19:50:28 GMT
+      - Tue, 10 May 2016 15:57:25 GMT
       Content-Type:
       - application/json; charset=utf-8
       Set-Cookie:
-      - csrftoken=e620c5c229455df8feae2d209517adb6; expires=Thu, 21-Jul-2016 19:50:28
+      - csrftoken=dd8f464aa9f949b737cfb5e675aab815; expires=Tue, 09-May-2017 15:57:25
         GMT; Max-Age=31449600; Path=/
+      - s_network=; expires=Tue, 10-May-2016 16:57:25 GMT; Max-Age=3600; Path=/
+      - sessionid=IGSCc6af63a91f18cbeb1e49090f33ec267fabf62f79b216874b280682ea1e3c9a3c%3AateTo2hXDdvP7odHmNaXVKJwWSw5YGi5%3A%7B%22asns%22%3A%7B%22152.1.190.15%22%3A11442%2C%22time%22%3A1462895845%7D%7D;
+        expires=Mon, 08-Aug-2016 15:57:25 GMT; httponly; Max-Age=7776000; Path=/
       Connection:
       - keep-alive
       Content-Length:
-      - '1545'
+      - '1605'
     body:
-      encoding: UTF-8
-      string: '{"meta":{"code":200},"data":{"attribution":null,"tags":[],"location":null,"comments":{"count":3,"data":[{"created_time":"1353016068","text":"This
-        is a test comment. Lorem ipsum dolor sit amet, risus parturient illo quaerat
-        euismod integer, bibendum tempus, ligula fringilla leo purus, sed cursus nibh
-        vestibulum donec, suscipit amet morbi. Lectus ultrices cursus leo justo elit
-        lorem, gravida aliquam non dis posuere luctus ut, accumsan in mauris auctor.
-        Iaculis amet, ornare dolor sed sit, lectus neque pede laoreet. Diam dignissim
-        amet eu, lectus quis fringilla nulla in, elit quis dis sollicitudin vel. Quam
-        tempor ut, arcu ante sagittis ipsam non sed diam, nunc non erat luctus amet
-        sem. Euismod ultrices nibh bibendum accumsan, dapibus suspendisse, turpis
-        quam cum sed sed in, quam vel sit a conubia.\nBibendum aliquam condimentum
+      encoding: ASCII-8BIT
+      string: '{"meta": {"code": 200}, "data": {"attribution": null, "tags": [], "type":
+        "image", "location": null, "comments": {"count": 3, "data": [{"created_time":
+        "1353016068", "text": "This is a test comment. Lorem ipsum dolor sit amet,
+        risus parturient illo quaerat euismod integer, bibendum tempus, ligula fringilla
+        leo purus, sed cursus nibh vestibulum donec, suscipit amet morbi. Lectus ultrices
+        cursus leo justo elit lorem, gravida aliquam non dis posuere luctus ut, accumsan
+        in mauris auctor. Iaculis amet, ornare dolor sed sit, lectus neque pede laoreet.
+        Diam dignissim amet eu, lectus quis fringilla nulla in, elit quis dis sollicitudin
+        vel. Quam tempor ut, arcu ante sagittis ipsam non sed diam, nunc non erat
+        luctus amet sem. Euismod ultrices nibh bibendum accumsan, dapibus suspendisse,
+        turpis quam cum sed sed in, quam vel sit a conubia.\nBibendum aliquam condimentum
         urna dis, faucibus aliquam. Suscipit cupidatat faucibus vestibulum erat, sodales
         rem cursus feugiat odio id nec, id aliqua. Amet libero diam aliquet tincidunt
         nullam purus, montes wisi ut, orci vitae wisi elit, nunc fringilla vel adipiscing
@@ -66,11 +72,28 @@ http_interactions:
         fringilla faucibus maecenas, imperdiet nunc dolor congue sapien nunc cras,
         nobis nec. Neque ut vel hendrerit fugiat enim in, suscipit egestas eu ut,
         nec semper a sed lacus, purus amet, massa lacus imperdiet. Fringilla eu. Aenean
-        etiam nunc.","from":{"username":"cazzerson","profile_picture":"http:\/\/images.ak.instagram.com\/profiles\/profile_31727100_75sq_1376601604.jpg","id":"31727100","full_name":""},"id":"325444824656303850"},{"created_time":"1355615098","text":"Wow!
-        Didn''t read it at all cuz I didn''t \u00fc\u00f1d\u00ear\u00dft\u00e6\u0144d
-        it @crayzay34  is my sis","from":{"username":"mattster_of_life","profile_picture":"http:\/\/images.ak.instagram.com\/profiles\/profile_252683448_75sq_1385852831.jpg","id":"252683448","full_name":"\ud83d\ude0fMatteo\ud83d\udc4d"},"id":"347247075569751123"},{"created_time":"1355624206","text":"Ha,
-        yeah, this is just filler lorem ipsum text I was using to figure out the maximum
-        allowable length for comments. I''m working on an Instagram project at work.","from":{"username":"cazzerson","profile_picture":"http:\/\/images.ak.instagram.com\/profiles\/profile_31727100_75sq_1376601604.jpg","id":"31727100","full_name":""},"id":"347323476863931818"}]},"filter":"Kelvin","created_time":"1348790551","link":"https:\/\/instagram.com\/p\/QGSDYvINdE\/","likes":{"count":1,"data":[{"username":"mattster_of_life","profile_picture":"http:\/\/images.ak.instagram.com\/profiles\/profile_252683448_75sq_1385852831.jpg","id":"252683448","full_name":"\ud83d\ude0fMatteo\ud83d\udc4d"}]},"images":{"low_resolution":{"url":"https:\/\/scontent.cdninstagram.com\/hphotos-xta1\/t51.2885-15\/s320x320\/e15\/11208502_1639811819581389_1713413225_n.jpg","width":320,"height":320},"thumbnail":{"url":"https:\/\/scontent.cdninstagram.com\/hphotos-xta1\/t51.2885-15\/s150x150\/e15\/11208502_1639811819581389_1713413225_n.jpg","width":150,"height":150},"standard_resolution":{"url":"https:\/\/scontent.cdninstagram.com\/hphotos-xta1\/t51.2885-15\/e15\/11208502_1639811819581389_1713413225_n.jpg","width":612,"height":612}},"users_in_photo":[],"caption":null,"type":"image","id":"289998623568090948_31727100","user":{"username":"cazzerson","profile_picture":"http:\/\/images.ak.instagram.com\/profiles\/profile_31727100_75sq_1376601604.jpg","id":"31727100","full_name":""}}}'
+        etiam nunc.", "from": {"username": "cazzerson", "profile_picture": "http://scontent.cdninstagram.com/t51.2885-19/11376324_875828759153387_1966553941_a.jpg",
+        "id": "31727100", "full_name": ""}, "id": "17845593136047101"}, {"created_time":
+        "1355615098", "text": "Wow! Didn''t read it at all cuz I didn''t \u00fc\u00f1d\u00ear\u00dft\u00e6\u0144d
+        it @crayzay34  is my sis", "from": {"username": "matt_fam84", "profile_picture":
+        "http://scontent.cdninstagram.com/t51.2885-19/s150x150/12818929_220477978305109_1868953284_a.jpg",
+        "id": "252683448", "full_name": "\ud83d\ude0eMatteo\ud83e\udd13"}, "id": "17845606123047101"},
+        {"created_time": "1355624206", "text": "Ha, yeah, this is just filler lorem
+        ipsum text I was using to figure out the maximum allowable length for comments.
+        I''m working on an Instagram project at work.", "from": {"username": "cazzerson",
+        "profile_picture": "http://scontent.cdninstagram.com/t51.2885-19/11376324_875828759153387_1966553941_a.jpg",
+        "id": "31727100", "full_name": ""}, "id": "17845606213047101"}]}, "filter":
+        "Kelvin", "created_time": "1348790551", "link": "https://www.instagram.com/p/QGSDYvINdE/",
+        "likes": {"count": 1, "data": [{"username": "matt_fam84", "profile_picture":
+        "http://scontent.cdninstagram.com/t51.2885-19/s150x150/12818929_220477978305109_1868953284_a.jpg",
+        "id": "252683448", "full_name": "\ud83d\ude0eMatteo\ud83e\udd13"}]}, "images":
+        {"low_resolution": {"url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e15/11208502_1639811819581389_1713413225_n.jpg?ig_cache_key=Mjg5OTk4NjIzNTY4MDkwOTQ4.2",
+        "width": 320, "height": 320}, "thumbnail": {"url": "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e15/11208502_1639811819581389_1713413225_n.jpg?ig_cache_key=Mjg5OTk4NjIzNTY4MDkwOTQ4.2",
+        "width": 150, "height": 150}, "standard_resolution": {"url": "https://scontent.cdninstagram.com/t51.2885-15/e15/11208502_1639811819581389_1713413225_n.jpg?ig_cache_key=Mjg5OTk4NjIzNTY4MDkwOTQ4.2",
+        "width": 612, "height": 612}}, "users_in_photo": [], "caption": null, "user_has_liked":
+        false, "id": "289998623568090948_31727100", "user": {"username": "cazzerson",
+        "profile_picture": "http://scontent.cdninstagram.com/t51.2885-19/11376324_875828759153387_1966553941_a.jpg",
+        "id": "31727100", "full_name": ""}}}'
     http_version:
-  recorded_at: Thu, 23 Jul 2015 19:50:28 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Tue, 10 May 2016 15:57:25 GMT
+recorded_with: VCR 3.0.1
