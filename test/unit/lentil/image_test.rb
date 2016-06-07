@@ -67,6 +67,15 @@ class ImageTest < ActiveSupport::TestCase
     assert_equal license.name, image.licenses.first.name
   end
 
+  test "Image description should preserve emoji" do
+    image = lentil_images(:one)
+    emoji_desc = "Hello! 😁"
+    image.description = emoji_desc
+    image.save
+    image.reload
+    assert_equal(emoji_desc, image.description)
+  end
+
   test "Image should have valid urls" do
     image = lentil_images(:one)
 
