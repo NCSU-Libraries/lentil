@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 4.2.3"
   s.add_dependency 'jquery-rails', '~> 4.1.1'
   s.add_dependency "activeadmin", '~> 1.0.0.pre2'
-  s.add_dependency 'devise', "~> 4.1.1"
+  s.add_dependency 'devise', "~> 3.5.9"
   s.add_dependency "formtastic", '~> 3.1.0' # simplifies form creation
   s.add_dependency "instagram", "~> 1.1.2" # Interact with the Instagram API
   s.add_dependency "hashie", "~> 3.4.1" # Updated Hashie gem for Instagram
