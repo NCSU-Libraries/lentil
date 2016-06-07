@@ -34,7 +34,7 @@ if defined?(ActiveAdmin)
 
     collection_action :tags_api, method: :get do
       query = params[:q]
-      tags = Lentil::Tag.where("name LIKE ?", "#{query}%").limit(40)
+      tags = Lentil::Tag.where("name LIKE ?", "#{query}%").limit(20)
 
       render json: tags
     end
