@@ -21,9 +21,9 @@ Gem::Specification.new do |s|
   s.test_files = `git ls-files -- test/*`.split("\n")
 
   s.add_dependency "rails", "~> 4.2.3"
-  s.add_dependency 'jquery-rails', '~> 4.0.3'
+  s.add_dependency 'jquery-rails', '~> 4.1.1'
   s.add_dependency "activeadmin", '~> 1.0.0.pre2'
-  s.add_dependency 'devise', "~> 3.5.9"
+  s.add_dependency 'devise', "~> 4.1.1"
   s.add_dependency "formtastic", '~> 3.1.0' # simplifies form creation
   s.add_dependency "instagram", "~> 1.1.2" # Interact with the Instagram API
   s.add_dependency "hashie", "~> 3.4.1" # Updated Hashie gem for Instagram
@@ -33,16 +33,16 @@ Gem::Specification.new do |s|
   s.add_dependency 'bootstrap-sass', '~> 2.3.0' # sass version of twitter bootstrap
   s.add_dependency 'will_paginate', '~> 3.1.0' # adds paging feature to rails models
   s.add_dependency 'state_machine', "~> 1.2.0" # adds state machine for moderation
-  s.add_dependency 'ruby-oembed', "~> 0.9.0" # Retrieve OEmbed data
+  s.add_dependency 'ruby-oembed', "~> 0.10.1" # Retrieve OEmbed data
   s.add_dependency 'select2-rails', "~> 4.0.0" # improved form select box
-  s.add_dependency 'compass-rails', "~> 2.0.5"
+  s.add_dependency 'compass-rails', "~> 3.0.2"
   s.add_dependency 'randumb', "~> 0.5.0" # pull random records from Active Record
   s.add_dependency 'lazing', "~> 0.1.1" # Lazy equivalents for many of the methods defined in Ruby's Enumerable module
   s.add_dependency 'sitemap_generator', "~> 5.1.0" # Generate sitemaps on deployment
-  s.add_dependency 'google-analytics-rails', "~> 0.0.4"
+  s.add_dependency 'google-analytics-rails', "~> 1.1.0"
   s.add_dependency 'typhoeus', "~> 1.0.2" # for checking and harvesting image files
-  s.add_dependency 'kaminari', "~> 0.16.1" # for checking and harvesting image files
-  s.add_dependency 'oj', '~> 2.12.4' # Alternative JSON library
+  s.add_dependency 'kaminari', "~> 0.17.0" # for checking and harvesting image files
+  s.add_dependency 'oj', '~> 2.15.1' # Alternative JSON library
   s.add_dependency 'oj_mimic_json', '~> 1.0.1' # Alternative JSON library
   s.add_dependency 'emojimmy', '~> 0.2.2' # Alternative JSON library
 
@@ -51,7 +51,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "database_cleaner", "~> 1.5.1"
   s.add_development_dependency "launchy", "~> 2.4.0"
   s.add_development_dependency "vcr", "~> 3.0.1"
-  s.add_development_dependency "webmock", "~> 2.0.1"
+  s.add_development_dependency "webmock", "~> 2.1.0"
   s.add_development_dependency "simplecov", "~> 0.11.1"
   s.add_development_dependency "pry-rails", "~> 0.3.2"
   s.add_development_dependency "mocha", "~> 1.1.0"
