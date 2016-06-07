@@ -71,16 +71,37 @@ if defined?(ActiveAdmin)
     #   images.includes(:user, :tags, :taggings, :flags).joins(:flags).where(:second_moderation => false).uniq.all
     # end
 
-    action_item :only => :show do
+    action_item :update_image, :only => :show do
       link_to('Update Image', update_image_admin_lentil_image_path(lentil_image))
     end
-    action_item { link_to "Moderate New", moderate_admin_lentil_images_path }
-    action_item { link_to "Moderate Skipped", moderate_skipped_admin_lentil_images_path }
-    action_item { link_to "Moderate Flagged", moderate_flagged_admin_lentil_images_path }
-    action_item { link_to "Moderate Approved", moderate_approved_admin_lentil_images_path }
-    action_item { link_to "Moderate Rejected", moderate_rejected_admin_lentil_images_path }
-    action_item { link_to "Flagging History", flagging_history_admin_lentil_images_path }
-    action_item { link_to "Add Instagram Image", manual_input_admin_lentil_images_path }
+
+    action_item :moderate_new do
+      link_to "Moderate New", moderate_admin_lentil_images_path
+    end
+
+    action_item :moderdate_skipped do
+      link_to "Moderate Skipped", moderate_skipped_admin_lentil_images_path
+    end
+
+    action_item :moderate_flagged do
+      link_to "Moderate Flagged", moderate_flagged_admin_lentil_images_path
+    end
+
+    action_item :moderate_flagged do
+      link_to "Moderate Approved", moderate_approved_admin_lentil_images_path
+    end
+
+    action_item :moderate_rejected do
+      link_to "Moderate Rejected", moderate_rejected_admin_lentil_images_path
+    end
+
+    action_item :flagging_history do
+      link_to "Flagging History", flagging_history_admin_lentil_images_path
+    end
+
+    action_item :add_instagram_image do
+      link_to "Add Instagram Image", manual_input_admin_lentil_images_path
+    end
 
     index do
       harvestable_tag_ids = Lentil::Tag.harvestable.map(&:id)

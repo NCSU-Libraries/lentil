@@ -24,7 +24,7 @@ if defined?(ActiveAdmin)
         tagset.tags.sort_by(&:name).map{|t| t.name}.join(' | ')
       end
       column :harvest
-      default_actions
+      actions
     end
 
     show do |tagset|
