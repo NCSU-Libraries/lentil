@@ -20,6 +20,7 @@ require 'sitemap_generator'
 require 'compass-rails'
 require 'google-analytics-rails'
 require 'typhoeus'
+require 'emojimmy'
 
 module Lentil
 end

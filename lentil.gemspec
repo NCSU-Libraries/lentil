@@ -44,6 +44,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'kaminari', "~> 0.16.1" # for checking and harvesting image files
   s.add_dependency 'oj', '~> 2.12.4' # Alternative JSON library
   s.add_dependency 'oj_mimic_json', '~> 1.0.1' # Alternative JSON library
+  s.add_dependency 'emojimmy', '~> 0.2.2' # Alternative JSON library
 
   s.add_development_dependency "sqlite3", "~> 1.3.8"
   s.add_development_dependency "capybara", "~> 2.7.1"

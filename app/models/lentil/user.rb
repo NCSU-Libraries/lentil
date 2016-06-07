@@ -14,6 +14,8 @@
 #
 
 class Lentil::User < ActiveRecord::Base
+  stores_emoji_characters :full_name, :bio
+
   has_many :images
   belongs_to :service
 

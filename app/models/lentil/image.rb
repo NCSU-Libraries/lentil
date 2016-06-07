@@ -33,6 +33,8 @@
 #
 
 class Lentil::Image < ActiveRecord::Base
+  stores_emoji_characters :description
+
   has_many :won_battles, :class_name => "Battle"
   has_many :losers, :through => :battles
   has_many :lost_battles, :class_name => "Battle", :foreign_key => "loser_id"
