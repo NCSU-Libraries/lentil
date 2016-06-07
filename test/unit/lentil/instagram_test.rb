@@ -8,7 +8,7 @@ class InstagramTest < ActiveSupport::TestCase
   test "Instagram images should be added to Image model without duplication" do
     VCR.use_cassette('instagram_by_tag') do
       instagram_metadata = @harvester.fetch_recent_images_by_tag "huntlibrary"
-      expected_image_count = instagram_metadata.length - 1
+      expected_image_count = instagram_metadata.length
       actual_image_count = @harvester.save_instagram_load instagram_metadata
 
       assert_equal(expected_image_count, actual_image_count.length)
@@ -22,7 +22,7 @@ class InstagramTest < ActiveSupport::TestCase
   test "Invalid image metadata should not prevent other images from being added" do
     # One record in this cassette is damaged by manually removing the 'link'
     VCR.use_cassette('instagram_by_tag_damaged') do
-      instagram_metadata = @harvester.fetch_recent_images_by_tag "huntlibrary"
+      instagram_metadata = @harvester.fetch_recent_images_by_tag "dhhill"
       expected_image_count = instagram_metadata.length - 1
       actual_image_count = nil
 
