@@ -20,7 +20,7 @@ module Lentil
     def configure_connection(opts = {})
       opts['client_id'] ||= Lentil::Engine::APP_CONFIG["instagram_client_id"]
       opts['client_secret'] ||= Lentil::Engine::APP_CONFIG["instagram_client_secret"]
-      opts['access_token'] ||= nil
+      opts['access_token'] ||= Lentil::Engine::APP_CONFIG["instagram_access_token"] || nil
 
       Instagram.configure do |config|
         config.client_id = opts['client_id']
@@ -218,7 +218,7 @@ module Lentil
 
       response.body
     end
-    
+
     #
     # Retrieve the binary video data for a given Image object
     #
