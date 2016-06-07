@@ -194,7 +194,7 @@ GEM
     modernizr-rails (2.7.1)
     multi_json (1.11.2)
     multipart-post (2.0.0)
-    mysql2 (0.3.20)
+    mysql2 (0.4.2)
     nenv (0.2.0)
     nokogiri (1.6.7)
       mini_portile2 (~> 2.0.0.rc2)
@@ -313,7 +313,7 @@ DEPENDENCIES
   launchy (~> 2.4.0)
   lentil!
   mocha (~> 1.1.0)
-  mysql2 (~> 0.3.20)
+  mysql2 (~> 0.4.2)
   pg
   pry-rails (~> 0.3.2)
   rb-fsevent
@@ -326,3 +326,6 @@ DEPENDENCIES
   vcr (~> 2.9.3)
   webmock (~> 1.18.0)
   yard (~> 0.8.7)
+
+BUNDLED WITH
+   1.10.6
