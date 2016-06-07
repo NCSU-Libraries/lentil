@@ -5,7 +5,7 @@
 $(document).ready(function() {
     var url;
 
-    if (window.location.pathname === '/admin/lentil_tagsets/new') {
+    if (window.location.pathname.indexOf('/lentil_tagsets/new') > -1) {
       url = '../lentil_tags/tags_api';
     } else {
       url = '../../lentil_tags/tags_api';
