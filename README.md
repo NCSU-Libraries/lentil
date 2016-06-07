@@ -1,6 +1,6 @@
 # Lentil
 
-> Instagram has removed access to a large portion of their public API in favor of a focus on their advertising API. Lentil will work with pre-existing developer credentials until June 2016, but we are currently [attempting to contact Instagram and Facebook](https://twitter.com/cazzerson/status/671448637872934912) to discuss blanket application approvals for academic uses.
+> Instagram has removed access to a large portion of their public API in favor of a focus on their advertising API. Lentil will work with pre-existing developer credentials until June 2016, but we are currently [attempting to contact Instagram and Facebook](https://twitter.com/cazzerson/status/671448637872934912) to discuss blanket application approvals for academic uses. We are also developing an API access submission packet for general use.
 
 lentil is a Ruby on Rails Engine that supports the harvesting of images from Instagram and provides several browsing views, mechanisms for sharing, tools for users to select their favorite images, an administrative interface for moderating images, and a system for harvesting images and submitting donor agreements in preparation of ingest into external repositories. Built according to the principles of responsive design, lentil is designed for use on mobile devices, tablets, desktops, and larger screens.
 
