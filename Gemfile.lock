@@ -242,7 +242,7 @@ GEM
     modernizr-rails (2.7.1)
     multi_json (1.12.1)
     multipart-post (2.0.0)
-    mysql2 (0.4.4)
+    mysql2 (0.3.21)
     nenv (0.3.0)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
@@ -379,7 +379,7 @@ DEPENDENCIES
   minitest-rails-capybara
   minitest-reporters
   mocha (~> 1.1.0)
-  mysql2 (~> 0.4.4)
+  mysql2 (~> 0.3.21)
   pg
   pry-rails (~> 0.3.2)
   rb-fsevent

@@ -20,7 +20,7 @@ gem 'minitest-rails-capybara'
 gem 'minitest-reporters'
 
 group :test do
-  gem 'mysql2', '~> 0.4.4'
+  gem 'mysql2', '~> 0.3.21'
   gem 'pg'
 end
 
