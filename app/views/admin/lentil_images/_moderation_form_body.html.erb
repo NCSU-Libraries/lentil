@@ -35,7 +35,7 @@
             <td><%= image.service_tags.select{|tag| @harvestable_tag_ids.include? tag.id}.map{|tag| tag.name}.join(' | ') %></td>
             <td class="moderation_tag">
               <% if defined? @tags %>
-                <%= f.input :tags, :label => false, :as => :select, :collection => image.available_staff_tags(@tags), :input_html => {:multiple => true, :class => "chzn-select", :'data-placeholder' => 'Select Tag', :style => "width:190px" }%>
+                <%= f.input :tags, :label => false, :as => :select, :collection => image.available_staff_tags(@tags), :input_html => {:multiple => true, :class => "lentil-admin-select", :'data-placeholder' => 'Select Tag', :style => "width:190px" }%>
               <% else %>
                 <% if image.staff_tags.length > 0 %>
                   <p><%= image.staff_tags.map{|tag| tag.name}.join(' | ') %></p>
