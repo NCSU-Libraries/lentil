@@ -21,6 +21,8 @@ require 'compass-rails'
 require 'google-analytics-rails'
 require 'typhoeus'
 require 'emojimmy'
+require 'oj'
+require 'oj_mimic_json'
 
 module Lentil
 end
