@@ -187,6 +187,11 @@ class Lentil::Image < ActiveRecord::Base
   end
 
   def original_metadata=(meta)
-    write_attribute(:original_metadata, meta.to_hash)
+    write_attribute(:original_metadata, Oj.load(Emojimmy.emoji_to_token(meta.to_hash.to_json)))
   end
+
+  def original_metadata
+    Oj.load(Emojimmy.token_to_emoji(super.to_json))
+  end
+
 end
