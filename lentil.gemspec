@@ -43,7 +43,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'google-analytics-rails', "~> 0.0.4"
   s.add_dependency 'typhoeus', "~> 1.0.2" # for checking and harvesting image files
   s.add_dependency 'kaminari', "~> 0.16.1"
-  s.add_dependency 'oj', '~> 2.15.0' # Alternative JSON library
+  s.add_dependency 'oj', '~> 2.17.3' # Alternative JSON library
   s.add_dependency 'oj_mimic_json', '~> 1.0.1' # Alternative JSON library
   s.add_dependency 'emojimmy', '~> 0.2.2' # Storing emoji
 
