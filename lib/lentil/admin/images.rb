@@ -310,7 +310,7 @@ if defined?(ActiveAdmin)
     end
 
     collection_action :do_moderation, :method => :post do
-      images = Lentil::Image.find(params[:image].keys, :include => [:user, :taggings, :tags])
+      images = Lentil::Image.includes(:user, :taggings, :tags).find(params[:image].keys)
       images_params = params[:image]
       second_moderation = params[:moderation]['second_moderation']
       update_images(images, images_params, second_moderation)

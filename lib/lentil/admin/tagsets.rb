@@ -1,5 +1,6 @@
 if defined?(ActiveAdmin)
   ActiveAdmin.register Lentil::Tagset do
+    permit_params :title, :description, :harvest, :tag_ids => []
 
     config.batch_actions = false
     config.sort_order = "title_asc"
@@ -40,6 +41,7 @@ if defined?(ActiveAdmin)
     end
 
     form do |f|
+      f.semantic_errors *f.object.errors.keys
       f.inputs do
         f.input :title
         f.input :description
@@ -49,6 +51,19 @@ if defined?(ActiveAdmin)
         end
       end
       f.actions
+    end
+
+    controller do
+      def create
+        @tagset = Lentil::Tagset.create(permitted_params[:tagset])
+        redirect_to "/admin/lentil_tagsets"
+      end
+
+      def update
+        @tagset = Lentil::Tagset.find(params[:id])
+        @tagset.update_attributes(permitted_params[:tagset])
+        redirect_to "/admin/lentil_tagsets/#{@tagset.id}"
+      end
     end
   end
 end
