@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.test_files = `git ls-files -- test/*`.split("\n")
 
   s.add_dependency "rails", "~> 4.2.3"
-  s.add_dependency 'jquery-rails', '~> 4.1.1'
+  s.add_dependency 'jquery-rails', '~> 4.2'
   s.add_dependency "activeadmin", '~> 1.0.0.pre4'
   s.add_dependency 'devise', "~> 3.5.9"
   s.add_dependency "formtastic", '~> 3.1.0' # simplifies form creation
@@ -40,11 +40,11 @@ Gem::Specification.new do |s|
   s.add_dependency 'lazing', "~> 0.1.1" # Lazy equivalents for many of the methods defined in Ruby's Enumerable module
   s.add_dependency 'sitemap_generator', "~> 5.1.0" # Generate sitemaps on deployment
   s.add_dependency 'google-analytics-rails', "~> 1.1.0"
-  s.add_dependency 'typhoeus', "~> 1.0.2" # for checking and harvesting image files
+  s.add_dependency 'typhoeus', "~> 1.1.0" # for checking and harvesting image files
   s.add_dependency 'kaminari', "~> 0.17.0" # for checking and harvesting image files
-  s.add_dependency 'oj', '~> 2.15.1' # Alternative JSON library
-  s.add_dependency 'oj_mimic_json', '~> 1.0.1' # Alternative JSON library
-  s.add_dependency 'emojimmy', '~> 0.2.2' # Alternative JSON library
+  s.add_dependency 'oj', '~> 2.17' # Alternative JSON library
+  s.add_dependency 'oj_mimic_json', '~> 1.0' # Alternative JSON library
+  s.add_dependency 'emojimmy', '~> 0.3.0' # Alternative JSON library
 
   s.add_development_dependency "sqlite3", "~> 1.3.8"
   s.add_development_dependency "capybara", "~> 2.7.1"
@@ -52,10 +52,10 @@ Gem::Specification.new do |s|
   s.add_development_dependency "launchy", "~> 2.4.0"
   s.add_development_dependency "vcr", "~> 3.0.1"
   s.add_development_dependency "webmock", "~> 2.1.0"
-  s.add_development_dependency "simplecov", "~> 0.11.1"
+  s.add_development_dependency "simplecov", "~> 0.12.0"
   s.add_development_dependency "pry-rails", "~> 0.3.2"
   s.add_development_dependency "mocha", "~> 1.1.0"
   s.add_development_dependency "single_test", "~> 0.6.0"
   s.add_development_dependency "capybara-webkit", "~> 1.11.1"
-  s.add_development_dependency "yard", "~> 0.8.7"
+  s.add_development_dependency "yard", "~> 0.9.5"
 end
