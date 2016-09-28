@@ -18,12 +18,6 @@ module Lentil
         remove_file("test/performance/browsing_test.rb")
       end
 
-      desc "Update gems"
-      def lentil_update_gems
-        gsub_file "Gemfile", /^.*sass-rails.*$/, "gem 'sass-rails'"
-        gsub_file "Gemfile", /^.*coffee-rails.*$/, "gem 'coffee-rails'"
-      end
-
       desc "Remove gems"
       def lentil_remove_gems
         gsub_file "Gemfile", /^.*rails-perftest.*$/, ""
