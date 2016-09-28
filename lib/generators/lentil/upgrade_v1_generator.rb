@@ -32,7 +32,8 @@ module Lentil
 
       desc "Update precompilation paths"
       def update_precompilation_paths
-        gsub_file "config/application.rb", /^.*Rails.application.config.assets.precompile.*$/, "Rails.application.config.assets.precompile += %w( *.js ^[^_]*.css *.css.erb lentil/iframe.js lentil/iframe.css addanimatedimages.js animatedimages/css/style.css )"
+        gsub_file "config/application.rb", /^.*Rails.application.config.assets.precompile.*$/, ""
+        append_to_file "config/assets.rb", "Rails.application.config.assets.precompile += %w( *.js ^[^_]*.css *.css.erb lentil/iframe.js lentil/iframe.css addanimatedimages.js animatedimages/css/style.css )\n"
       end
 
     end
