@@ -18,7 +18,7 @@ end
 
 group :test do
   gem 'mysql2', '~> 0.3.21'
-  gem 'pg'
+  gem 'pg', '~> 0.18.0'
 end
 
 # Declare any dependencies that are still in development here instead of in
