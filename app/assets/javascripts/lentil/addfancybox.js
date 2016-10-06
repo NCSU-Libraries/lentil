@@ -104,8 +104,8 @@ function addfancybox() {
             window.history.pushState(null,null,FancyBoxCloseFunctionState.pathname);
         },
         beforeShow  : function() {
-            this.title = $(this.element).next(".text-overlay").html();
-            imageId = $(this.element).parents("div").attr("id");
+            this.title = $(this.element).parents("div").next(".text-overlay").html();
+            imageId = $(this.element).parents("div.battle-image-tile").attr("id");
             $(".fancybox-wrap").attr('id', imageId);
             pushimageurl(imageId);
         },
@@ -129,7 +129,7 @@ function addfancybox() {
             // this is to check that the fancybox is really visible
             // afterClose is fired off on fancybox open -- a bug
             FancyBoxCloseFunctionState.fancyboxvisible = true;
-            imageId = $(this.element).parents("div").attr("id");
+            imageId = $(this.element).parents("div.battle-image-tile").attr("id");
 
             // check whether we're on the last image in the gallery
             // and whether there's more than one page of images
