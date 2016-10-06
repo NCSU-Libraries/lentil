@@ -16,7 +16,7 @@
               </div>
               <div class="battle-image-desc trunc-small"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 22) %></div></div>
               <div class="battle-image-desc trunc-medium"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 35) %></div></div>
-              <div class="battle-image-desc trunc-large"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 50) %></div></div>
+              <div class="battle-image-desc trunc-large"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 45) %></div></div>
               <%= render "/layouts/lentil/image_popup", :image => image  %>
               <%= f.input :id, :as => :hidden %>
 
@@ -43,7 +43,7 @@
             </div>
             <div class="battle-image-desc trunc-small"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 22) %></div></div>
             <div class="battle-image-desc trunc-medium"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 35) %></div></div>
-            <div class="battle-image-desc trunc-large"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 50) %></div></div>
+            <div class="battle-image-desc trunc-large"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 45) %></div></div>
           </a>
           <%= render "/layouts/lentil/image_popup", :image => image  %>
         </div>
