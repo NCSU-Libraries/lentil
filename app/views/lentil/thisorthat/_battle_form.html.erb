@@ -14,9 +14,9 @@
                   <% end %>
                 </a>
               </div>
-              <div class="battle-image-desc trunc-small"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 35) %></div></div>
-              <div class="battle-image-desc trunc-medium"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 50) %></div></div>
-              <div class="battle-image-desc trunc-large"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 70) %></div></div>
+              <div class="battle-image-desc trunc-small"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 25) %></div></div>
+              <div class="battle-image-desc trunc-medium"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 40) %></div></div>
+              <div class="battle-image-desc trunc-large"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 55) %></div></div>
               <%= render "/layouts/lentil/image_popup", :image => image  %>
               <%= f.input :id, :as => :hidden %>
 
@@ -41,9 +41,9 @@
                 <% end %>
               </a>
             </div>
-            <div class="battle-image-desc trunc-small"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 35) %></div></div>
-            <div class="battle-image-desc trunc-medium"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 50) %></div></div>
-            <div class="battle-image-desc trunc-large"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 70) %></div></div>
+            <div class="battle-image-desc trunc-small"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 25) %></div></div>
+            <div class="battle-image-desc trunc-medium"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 40) %></div></div>
+            <div class="battle-image-desc trunc-large"><div class="battle-image-inner-desc"><%= truncate(image.description, :length => 55) %></div></div>
           </a>
           <%= render "/layouts/lentil/image_popup", :image => image  %>
         </div>
