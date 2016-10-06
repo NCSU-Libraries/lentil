@@ -56,13 +56,13 @@ if defined?(ActiveAdmin)
     controller do
       def create
         @tagset = Lentil::Tagset.create(permitted_params[:tagset])
-        redirect_to "/admin/lentil_tagsets"
+        redirect_to admin_lentil_tagsets_path
       end
 
       def update
         @tagset = Lentil::Tagset.find(params[:id])
         @tagset.update_attributes(permitted_params[:tagset])
-        redirect_to "/admin/lentil_tagsets/#{@tagset.id}"
+        redirect_to admin_lentil_tagset_path(tagset.id)
       end
     end
   end
