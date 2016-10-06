@@ -32,7 +32,7 @@ function listenforpopstate() {
     };
 }
 
-function pushimageurl() {
+function pushimageurl(imageId) {
 
     // extract application root url
     var approot = FancyBoxCloseFunctionState.pathname.replace(/(photographers\/\d+|images|thisorthat\/battle|thisorthat\/battle_leaders)\/\D*\/?/, "");
