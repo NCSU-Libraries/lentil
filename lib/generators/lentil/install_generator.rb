@@ -22,6 +22,7 @@ module Lentil
       def lentil_remove_gems
         gsub_file "Gemfile", /^.*rails-perftest.*$/, ""
         gsub_file "Gemfile", /^.*ruby-prof.*$/, ""
+        gsub_file "Gemfile", /^.*ruby-prof.*$/, ""
       end
 
       desc "Enable raise_in_transactions_callbacks"
@@ -104,6 +105,12 @@ ROUTES
       def add_javascript
         gsub_file('app/assets/javascripts/application.js', '//= require_tree .',
                  '//= require lentil')
+      end
+
+      desc 'disable turbolinks'
+      def disable_turbolinks
+        gsub_file "app/assets/javascripts/application.js", "//= require turbolinks", ""
+        gsub_file "Gemfile", /^.*turbolinks.*$/, ""
       end
 
       desc 'add a dummy admin user to the development database?'

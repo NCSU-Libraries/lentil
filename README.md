@@ -22,11 +22,11 @@ lentil has been tested under Ruby 2.2.x through 2.3.x.
 ### Create a new Rails app with Rails 4.2.x
 
 ```sh
-gem install rails -v '~> 4.2.6'
-rails _4.2.6_ new your_app_name
+gem install rails -v '~> 4.2.7'
+rails _4.2.7.1_ new --skip-turbolinks your_app_name
 cd your_app_name
 ```
-> In the example above, `4.2.6` should be the version of Rails 4.x that is installed by the `gem` command.
+> In the example above, `4.2.7.1` should be the version of Rails 4.x that is installed by the `gem` command.
 
 ### Add lentil and therubyracer (or another ExecJS runtime) to your Gemfile and run `bundle update`
 
