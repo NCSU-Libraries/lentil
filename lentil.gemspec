@@ -38,7 +38,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'compass-rails', "~> 3.0.2"
   s.add_dependency 'randumb', "~> 0.5.0" # pull random records from Active Record
   s.add_dependency 'lazing', "~> 0.1.1" # Lazy equivalents for many of the methods defined in Ruby's Enumerable module
-  s.add_dependency 'sitemap_generator', "~> 5.1.0" # Generate sitemaps on deployment
+  s.add_dependency 'sitemap_generator', "~> 5.2" # Generate sitemaps on deployment
   s.add_dependency 'google-analytics-rails', "~> 1.1.0"
   s.add_dependency 'typhoeus', "~> 1.1.0" # for checking and harvesting image files
   s.add_dependency 'kaminari', "~> 0.17.0" # for checking and harvesting image files
