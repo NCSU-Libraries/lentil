@@ -36,6 +36,19 @@ module Lentil
         append_to_file "config/initializers/assets.rb", "Rails.application.config.assets.precompile += %w( *.js ^[^_]*.css *.css.erb lentil/iframe.js lentil/iframe.css addanimatedimages.js animatedimages/css/style.css )\n"
       end
 
+      desc 'insert routes'
+      def insert_routes
+        routes = <<-ROUTES
+
+  root :to => 'lentil/images#index'
+  devise_for :admin_users, ActiveAdmin::Devise.config.merge(:class_name => 'Lentil::AdminUser')
+  ActiveAdmin.routes(self)
+  mount Lentil::Engine => "/"
+
+ROUTES
+        insert_into_file "config/routes.rb", routes, :after => "Rails.application.routes.draw do\n"
+      end
+
     end
   end
 end
