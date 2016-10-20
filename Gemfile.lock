@@ -250,7 +250,7 @@ GEM
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
-    oj (2.17.4)
+    oj (2.17.5)
     oj_mimic_json (1.0.1)
     orm_adapter (0.5.0)
     pg (0.19.0)
@@ -309,7 +309,7 @@ GEM
       railties (>= 4.2.0, < 5.1)
     ruby-oembed (0.10.1)
     ruby-progressbar (1.8.1)
-    ruby_dep (1.4.0)
+    ruby_dep (1.5.0)
     rumoji (0.5.0)
     safe_yaml (1.0.4)
     sass (3.4.22)
@@ -339,7 +339,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.3.11)
+    sqlite3 (1.3.12)
     state_machine (1.2.0)
     test-unit (3.2.1)
       power_assert
@@ -359,7 +359,7 @@ GEM
       hashdiff
     whenever (0.9.7)
       chronic (>= 0.6.3)
-    will_paginate (3.1.3)
+    will_paginate (3.1.5)
     xpath (2.0.0)
       nokogiri (~> 1.3)
     yard (0.9.5)
@@ -392,4 +392,4 @@ DEPENDENCIES
   yard (~> 0.9.5)
 
 BUNDLED WITH
-   1.12.5
+   1.12.6
