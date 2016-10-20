@@ -5,6 +5,17 @@
 $(document).ready(function() {
     var url;
 
+    // Fix subdirectory deployment nav links
+    // https://github.com/activeadmin/activeadmin/issues/101#issuecomment-244028956
+    $('#header li a').each(function() {
+      var current_location, href, location_prefix, url_suffix;
+      href = $(this).attr('href');
+      url_suffix = href.replace(/.*\/admin\//, '');
+      current_location = document.location.pathname;
+      location_prefix = current_location.replace(/admin\/?.*/, "admin/");
+      return $(this).attr('href', location_prefix + url_suffix);
+    });
+
     if (window.location.pathname.indexOf('/lentil_tagsets/new') > -1) {
       url = '../lentil_tags/tags_api';
     } else {

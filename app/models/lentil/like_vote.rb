@@ -10,5 +10,4 @@
 
 class Lentil::LikeVote < ActiveRecord::Base
   belongs_to :image, counter_cache: true
-  attr_accessible :image
 end

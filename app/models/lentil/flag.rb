@@ -10,5 +10,4 @@
 
 class Lentil::Flag < ActiveRecord::Base
   belongs_to :image
-  attr_accessible :image
 end

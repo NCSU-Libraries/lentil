@@ -9,12 +9,12 @@ class AdminTagsetsControllerTest < ActionController::TestCase
   end
 
   test "should get to tagset index" do
-    get :index, :use_route => :lentil
+    get :index
     assert_response :success
   end
 
   test "should get to tagset show" do
-    get :show, :id => lentil_tagsets(:one), :use_route => :lentil
+    get :show, :id => lentil_tagsets(:one)
     assert_response :success
   end
 

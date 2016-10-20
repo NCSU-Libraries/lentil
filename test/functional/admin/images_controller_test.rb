@@ -9,37 +9,37 @@ class AdminImagesControllerTest < ActionController::TestCase
   end
 
   test "should get to images index" do
-    get :index, :use_route => :lentil
+    get :index
     assert_response :success
   end
 
   test "should get show view" do
-    get :show, {:id => lentil_images(:one).id, :use_route => :lentil} #admin_lentil_image_path(lentil_images(:one)), :use_route => :lentil
+    get :show, {:id => lentil_images(:one).id} #admin_lentil_image_path(lentil_images(:one)), :use_route => :lentil
     assert_response :success
   end
 
   test "should get to images moderate new" do
-    get :moderate, :use_route => :lentil
+    get :moderate
     assert_response :success
   end
 
   test "should get to images moderate skipped" do
-    get :moderate_skipped, :use_route => :lentil
+    get :moderate_skipped
     assert_response :success
   end
 
   test "should get to moderate flagged" do
-    get :moderate_flagged, :use_route => :lentil
+    get :moderate_flagged
     assert_response :success
   end
 
   test "should get flagging history" do
-    get :flagging_history, :use_route => :lentil
+    get :flagging_history
     assert_response :success
   end
 
   test "should get to manual images input" do
-    get :manual_input, :use_route => :lentil
+    get :manual_input
     assert_response :success
   end
 

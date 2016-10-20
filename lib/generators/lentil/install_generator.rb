@@ -13,9 +13,31 @@ module Lentil
         insert_into_file "config/application.rb", "\n    # Inserted by lentil\n    # End of lentil changes\n\n", :after => "class Application < Rails::Application\n"
       end
 
+      desc "Remove test/performance/browsing_test.rb"
+      def remove_test_performance_browsing_test
+        remove_file("test/performance/browsing_test.rb")
+      end
+
+      desc "Remove gems"
+      def lentil_remove_gems
+        gsub_file "Gemfile", /^.*rails-perftest.*$/, ""
+        gsub_file "Gemfile", /^.*ruby-prof.*$/, ""
+        gsub_file "Gemfile", /^.*ruby-prof.*$/, ""
+      end
+
+      desc "Enable raise_in_transactions_callbacks"
+      def enable_raise_trans_cb
+        insert_into_file "config/application.rb", "    config.active_record.raise_in_transactional_callbacks = true", :after => "# Inserted by lentil\n"
+      end
+
+      desc "Randomize tests"
+      def randomize_tests
+        insert_into_file "config/environments/test.rb", "    config.active_support.test_order = :random", :before => "end"
+      end
+
       desc 'precompile additional assets'
       def precompile_assets
-        insert_into_file "config/application.rb", "    config.assets.precompile += %w( lentil/iframe.js lentil/iframe.css addanimatedimages.js animatedimages/css/style.css )\n", :after => "# Inserted by lentil\n"
+        append_to_file "config/initializers/assets.rb", "Rails.application.config.assets.precompile += %w( *.js ^[^_]*.css *.css.erb lentil/iframe.js lentil/iframe.css addanimatedimages.js animatedimages/css/style.css )\n"
       end
 
       desc 'do not enforce available locales'
@@ -50,12 +72,12 @@ module Lentil
         routes = <<-ROUTES
 
   root :to => 'lentil/images#index'
-  ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config.merge(:class_name => 'Lentil::AdminUser')
+  ActiveAdmin.routes(self)
   mount Lentil::Engine => "/"
 
 ROUTES
-        insert_into_file "config/routes.rb", routes, :after => "Application.routes.draw do\n"
+        insert_into_file "config/routes.rb", routes, :after => "Rails.application.routes.draw do\n"
       end
 
       desc 'create application configuration file'
@@ -76,7 +98,14 @@ ROUTES
 
       desc 'add javascript'
       def add_javascript
-        gsub_file('app/assets/javascripts/application.js', '//= require_tree .', '//= require lentil')
+        gsub_file('app/assets/javascripts/application.js', '//= require_tree .',
+                 '//= require lentil')
+      end
+
+      desc 'disable turbolinks'
+      def disable_turbolinks
+        gsub_file "app/assets/javascripts/application.js", "//= require turbolinks", ""
+        gsub_file "Gemfile", /^.*turbolinks.*$/, ""
       end
 
       desc 'add a dummy admin user to the development database?'

@@ -11,9 +11,6 @@
 #
 
 class Lentil::Tagset < ActiveRecord::Base
-  attr_accessible :description, :title, :harvest, :tag_ids
-
-  attr_accessor :remove_tagset
 
   has_many :tagset_assignments, :dependent => :destroy
   has_many :tags, :through => :tagset_assignments

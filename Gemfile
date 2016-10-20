@@ -1,6 +1,4 @@
 source "https://rubygems.org"
-require 'yaml'
-require 'erb'
 
 # Declare your gem's dependencies in lentil.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
@@ -10,15 +8,20 @@ gemspec
 group :development do
   gem 'rb-readline'
   gem 'guard'
-  gem 'guard-test'
-  gem 'listen', '~> 3.0.6'
   gem 'rb-fsevent', :require => RUBY_PLATFORM.include?('darwin') && 'rb-fsevent'
   gem 'rb-inotify', :require => RUBY_PLATFORM.include?('linux') && 'rb-inotify'
 end
 
+group :tools do
+  gem 'guard-test'
+end
+
+gem 'minitest-rails-capybara'
+gem 'minitest-reporters'
+
 group :test do
-  gem 'mysql2', '~> 0.3.21'
-  gem 'pg', '~> 0.18.0'
+  gem 'mysql2', '~> 0.4.4'
+  gem 'pg'
 end
 
 # Declare any dependencies that are still in development here instead of in

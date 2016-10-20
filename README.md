@@ -17,16 +17,16 @@ Although we are using this gem in production, **this gem should be considered an
 
 ## Installation
 
-lentil has been tested under Ruby 1.9.3 through 2.2.0.
+lentil has been tested under Ruby 2.2.x through 2.3.x.
 
-### Create a new Rails app with Rails 3.2.x
+### Create a new Rails app with Rails 4.2.x
 
 ```sh
-gem install rails -v '~> 3.2'
-rails _3.2.22_ new your_app_name
+gem install rails -v '~> 4.2.7'
+rails _4.2.7.1_ new --skip-turbolinks your_app_name
 cd your_app_name
 ```
-> In the example above, `3.2.22` should be the version of Rails 3.x that is installed by the `gem` command.
+> In the example above, `4.2.7.1` should be the version of Rails 4.x that is installed by the `gem` command.
 
 ### Add lentil and therubyracer (or another ExecJS runtime) to your Gemfile and run `bundle update`
 
@@ -187,7 +187,6 @@ bundle install
 
 ```sh
 RAILS_ENV=test bundle exec rake app:db:migrate
-RAILS_ENV=test bundle exec rake app:db:test:prepare
 ```
 
 - Run the tests

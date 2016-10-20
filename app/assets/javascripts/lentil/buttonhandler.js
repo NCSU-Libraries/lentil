@@ -3,6 +3,7 @@ function buttonhandler() {
     $("body").on("click", ".like-btn, .flag-confirm", function(e) {
         button = $(this);
         imageId = $(".fancybox-wrap, .image-show").attr("id");
+
         if (!$(button).is(".already-clicked")) {
             url = $(button).attr("href");
             $.post(url, function() {
@@ -19,5 +20,12 @@ function buttonhandler() {
             $('.modal').modal('hide');
         }
         e.preventDefault();
+    });
+
+    // Show flag modal
+    $("body").on("click", ".flag-btn", function (e) {
+        var imageId = $(".fancybox-wrap, .image-show").attr("id");
+        var modalId = "#myModal-" + imageId;
+        $(modalId).modal('show');
     });
 }

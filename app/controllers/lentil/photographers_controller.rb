@@ -12,7 +12,7 @@ module Lentil
       if @images.empty?
         head :internal_server_error
       else
-        @photographer = @images.find(:first).user
+        @photographer = @images.first!.user
         @title = @photographer.user_name + " - Photographers"
       end
     end

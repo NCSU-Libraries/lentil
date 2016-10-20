@@ -2,6 +2,8 @@ if defined?(ActiveAdmin)
   ActiveAdmin.register Lentil::Tag do
     actions :index, :create, :new
 
+    permit_params :name
+
     config.batch_actions = false
     config.sort_order = "name_asc"
 
@@ -38,6 +40,8 @@ if defined?(ActiveAdmin)
     end
 
     controller do
+      resources_configuration[:self][:instance_name] = 'tag'
+
       def scoped_collection
         super.includes :taggings, :tagsets
       end

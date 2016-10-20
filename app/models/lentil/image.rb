@@ -33,11 +33,6 @@
 #
 
 class Lentil::Image < ActiveRecord::Base
-  attr_accessible :description, :title, :user_id, :state, :staff_like, :url, :long_url, :external_identifier,
-                  :original_datetime, :popular_score, :taggings, :tag_id, :moderator, :moderated_at, :second_moderation,
-                  :do_not_request_donation, :donor_agreement_rejected, :media_type, :video_url, :suppressed
-
-  attr_protected  :original_metadata
   stores_emoji_characters :description
 
   has_many :won_battles, :class_name => "Battle"
@@ -59,7 +54,7 @@ class Lentil::Image < ActiveRecord::Base
 
   belongs_to :moderator, :class_name => Lentil::AdminUser
 
-  default_scope where("failed_file_checks < 3")
+  default_scope { where("failed_file_checks < 3") }
 
   validates_uniqueness_of :external_identifier, :scope => :user_id
   validates :url, :format => URI::regexp(%w(http https))
@@ -192,6 +187,11 @@ class Lentil::Image < ActiveRecord::Base
   end
 
   def original_metadata=(meta)
-    write_attribute(:original_metadata, meta.to_hash)
+    write_attribute(:original_metadata, Oj.load(Emojimmy.emoji_to_token(meta.to_hash.to_json)))
   end
+
+  def original_metadata
+    Oj.load(Emojimmy.token_to_emoji(super.to_json))
+  end
+
 end

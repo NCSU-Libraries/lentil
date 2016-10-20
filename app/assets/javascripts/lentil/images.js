@@ -4,7 +4,6 @@
 //= require fancybox
 //= require lentil/addfancybox
 //= require infinitescroll/jquery.infinitescroll
-//= require bootstrap
 //= require lentil/addinfinitescroll
 //= require lentil/imageerrors
 //= require lentil/addanimatedimages
