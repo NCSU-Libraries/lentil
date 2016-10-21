@@ -99,11 +99,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    capybara-webkit (1.11.1)
-      capybara (>= 2.3.0, < 2.8.0)
-      json
     chronic (0.10.2)
     chunky_png (1.3.7)
+    cliver (0.3.2)
     coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
@@ -254,6 +252,10 @@ GEM
     oj_mimic_json (1.0.1)
     orm_adapter (0.5.0)
     pg (0.19.0)
+    poltergeist (1.11.0)
+      capybara (~> 2.1)
+      cliver (~> 0.3.1)
+      websocket-driver (>= 0.2.0)
     polyamorous (1.3.1)
       activerecord (>= 3.0)
     power_assert (0.3.1)
@@ -357,6 +359,9 @@ GEM
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
+    websocket-driver (0.6.4)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.2)
     whenever (0.9.7)
       chronic (>= 0.6.3)
     will_paginate (3.1.5)
@@ -369,7 +374,6 @@ PLATFORMS
 
 DEPENDENCIES
   capybara (~> 2.7.1)
-  capybara-webkit (~> 1.11.1)
   database_cleaner (~> 1.5.1)
   guard
   guard-test
@@ -380,6 +384,7 @@ DEPENDENCIES
   mocha (~> 1.1.0)
   mysql2 (~> 0.4.4)
   pg
+  poltergeist (~> 1.11.0)
   pry-rails (~> 0.3.2)
   rb-fsevent
   rb-inotify
