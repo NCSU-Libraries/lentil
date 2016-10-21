@@ -50,6 +50,7 @@ class EventTrackingTest < ActionDispatch::IntegrationTest
     find('.like-btn.initial-state', :visible => true).click
     assert_equal("_trackEvent,image_view,like,#{@image.id}", console_message)
     find('.like-btn.already-clicked', :visible => true).click
+    find('.like-btn.initial-state', :visible => true)
     assert_equal("_trackEvent,image_view,unlike,#{@image.id}", console_message)
   end
 
