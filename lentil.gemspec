@@ -32,7 +32,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'whenever', '>=0.8.0' # for defining cron jobs
   s.add_dependency 'bootstrap-sass', '~> 2.3.0' # sass version of twitter bootstrap
   s.add_dependency 'will_paginate', '~> 3.1.0' # adds paging feature to rails models
-  s.add_dependency 'state_machine', "~> 1.2.0" # adds state machine for moderation
+  s.add_dependency 'state_machines-activerecord', "~> 0.4.0" # adds state machine for moderation
   s.add_dependency 'ruby-oembed', "~> 0.10.1" # Retrieve OEmbed data
   s.add_dependency 'select2-rails', "~> 4.0.0" # improved form select box
   s.add_dependency 'compass-rails', "~> 3.0.2"

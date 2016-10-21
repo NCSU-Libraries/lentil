@@ -45,11 +45,6 @@ module Lentil
         insert_into_file "config/application.rb", "    I18n.enforce_available_locales = true\n", :after => "# Inserted by lentil\n"
       end
 
-      desc 'patch state machine gem'
-      def patch_state_machine
-        copy_file 'state_machine_patch.rb', 'config/initializers/state_machine_patch.rb'
-      end
-
       desc 'install migrations'
       def install_migrations
         rake "lentil:install:migrations"

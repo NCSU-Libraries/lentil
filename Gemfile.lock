@@ -23,7 +23,7 @@ PATH
       ruby-oembed (~> 0.10.1)
       select2-rails (~> 4.0.0)
       sitemap_generator (~> 5.2)
-      state_machine (~> 1.2.0)
+      state_machines-activerecord (~> 0.4.0)
       typhoeus (~> 1.1.0)
       whenever (>= 0.8.0)
       will_paginate (~> 3.1.0)
@@ -342,7 +342,13 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.12)
-    state_machine (1.2.0)
+    state_machines (0.4.0)
+    state_machines-activemodel (0.4.0)
+      activemodel (>= 4.1, < 5.1)
+      state_machines (>= 0.4.0)
+    state_machines-activerecord (0.4.0)
+      activerecord (>= 4.1, < 5.1)
+      state_machines-activemodel (>= 0.3.0)
     test-unit (3.2.1)
       power_assert
     thor (0.19.1)
@@ -397,4 +403,4 @@ DEPENDENCIES
   yard (~> 0.9.5)
 
 BUNDLED WITH
-   1.12.6
+   1.13.5
