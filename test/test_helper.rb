@@ -78,8 +78,8 @@ class ActionDispatch::IntegrationTest
   end
 
   teardown do
-    DatabaseCleaner.clean       # Truncate the database
     Capybara.reset_sessions!    # Forget the (simulated) browser state
+    DatabaseCleaner.clean       # Truncate the database
     Capybara.use_default_driver # Revert Capybara.current_driver to Capybara.default_driver
   end
 end

@@ -46,7 +46,7 @@ class EventTrackingTest < ActionDispatch::IntegrationTest
   # end
 
   test "should trigger an event for liking and unliking an image" do
-    visit lentil.image_path(@image)
+    visit(lentil.image_path(@image))
     find('.like-btn.initial-state', :visible => true).click
     assert_equal("_trackEvent,image_view,like,#{@image.id}", console_message)
     find('.like-btn.already-clicked', :visible => true).click
