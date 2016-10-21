@@ -47,14 +47,14 @@ Gem::Specification.new do |s|
   s.add_dependency 'emojimmy', '~> 0.3.0' # Alternative JSON library
 
   s.add_development_dependency "sqlite3", "~> 1.3.8"
-  s.add_development_dependency "capybara", "~> 2.7.1"
+  s.add_development_dependency "capybara", "~> 2.10.1"
   s.add_development_dependency "database_cleaner", "~> 1.5.1"
   s.add_development_dependency "launchy", "~> 2.4.0"
   s.add_development_dependency "vcr", "~> 3.0.1"
   s.add_development_dependency "webmock", "~> 2.1.0"
   s.add_development_dependency "simplecov", "~> 0.12.0"
   s.add_development_dependency "pry-rails", "~> 0.3.2"
-  s.add_development_dependency "mocha", "~> 1.1.0"
+  s.add_development_dependency "mocha", "~> 1.2.1"
   s.add_development_dependency "single_test", "~> 0.6.0"
   s.add_development_dependency "poltergeist", "~> 1.11.0"
   s.add_development_dependency "yard", "~> 0.9.5"
