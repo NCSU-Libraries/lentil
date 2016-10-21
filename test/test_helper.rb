@@ -10,7 +10,7 @@ require 'pry'
 require 'mocha/setup'
 require 'webmock/minitest'
 require 'database_cleaner'
-require 'capybara-webkit'
+require 'capybara/poltergeist'
 
 Rails.backtrace_cleaner.remove_silencers!
 ActiveRecord::Migrator.migrations_paths << File.expand_path('../../db/migrate', __FILE__)
@@ -44,12 +44,15 @@ class ActionDispatch::IntegrationTest
   self.use_transactional_fixtures = false
 
   def setup
+    Capybara.register_driver :poltergeist_with_logger do |app|
+      Capybara::Poltergeist::Driver.new(app, phantomjs_logger: StringIO.new)
+    end
+
     DatabaseCleaner.strategy = :truncation
     DatabaseCleaner.start
   end
 
   def login_admin_user
-    user = lentil_admin_users(:one)
     visit admin_root_path
     fill_in 'Email', with: 'admin@example.com'
     fill_in 'Password', with: 'password'
@@ -58,7 +61,7 @@ class ActionDispatch::IntegrationTest
   end
 
   def browser_start
-    Capybara.current_driver = :webkit #_with_long_timeout
+    Capybara.current_driver = :poltergeist_with_logger
     Capybara.default_wait_time = 30
   end
 
@@ -66,17 +69,17 @@ class ActionDispatch::IntegrationTest
     Capybara.use_default_driver
   end
 
-  def console_message
-    page.driver.console_messages.last[:message]
+  def console_messages
+    page.driver.phantomjs_logger.string.split
   end
 
-  def console_messages
-    page.driver.console_messages
+  def console_message
+    self.console_messages.last
   end
 
   teardown do
-    DatabaseCleaner.clean       # Truncate the database
     Capybara.reset_sessions!    # Forget the (simulated) browser state
+    DatabaseCleaner.clean       # Truncate the database
     Capybara.use_default_driver # Revert Capybara.current_driver to Capybara.default_driver
   end
 end

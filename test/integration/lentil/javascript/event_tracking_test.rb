@@ -13,7 +13,7 @@ class EventTrackingTest < ActionDispatch::IntegrationTest
   test "should trigger an event for clicking on an image" do
   	visit(lentil.images_path)
     find("#image_#{@image.id} a.fancybox").click
-    assert_equal("_trackEvent,image,click,image_#{@image.id}", console_messages[-2][:message])
+    assert_equal("_trackEvent,image,click,image_#{@image.id}", console_messages[-2])
     assert_equal("_trackPageview,/lentil/images/#{@image.id}", console_message)
   end
 
@@ -46,10 +46,11 @@ class EventTrackingTest < ActionDispatch::IntegrationTest
   # end
 
   test "should trigger an event for liking and unliking an image" do
-    visit lentil.image_path(@image)
+    visit(lentil.image_path(@image))
     find('.like-btn.initial-state', :visible => true).click
     assert_equal("_trackEvent,image_view,like,#{@image.id}", console_message)
     find('.like-btn.already-clicked', :visible => true).click
+    find('.like-btn.initial-state', :visible => true)
     assert_equal("_trackEvent,image_view,unlike,#{@image.id}", console_message)
   end
 
