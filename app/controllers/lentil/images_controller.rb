@@ -1,6 +1,7 @@
 module Lentil
   class ImagesController < Lentil::ApplicationController
     include ActionView::Helpers::TextHelper
+    after_filter :allow_iframe, only: [:iframe]
 
     def index
         respond_to do |format|
