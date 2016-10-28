@@ -17,7 +17,7 @@ Although we are using this gem in production, **this gem should be considered an
 
 ## Installation
 
-lentil has been tested under Ruby 2.2.x through 2.3.x.
+lentil requires Ruby 2.3.1 or greater.
 
 ### Create a new Rails app with Rails 4.2.x
 
