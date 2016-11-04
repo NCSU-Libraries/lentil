@@ -132,35 +132,39 @@ class Lentil::Image < ActiveRecord::Base
     large_url
   end
 
+  def video_url
+    https_ig_url(read_attribute(:video_url))
+  end
+
   # legacy
   def jpeg
     large_url
   end
 
-  def protocol_relative_url
+  def https_ig_url(my_url = url)
     # instagr.am returns 301 to instagram.com and invalid SSL certificate
-    url.sub(/^http:/, '').sub(/\/\/instagr\.am/, '//instagram.com')
+    my_url.sub(/^http:/, 'https:').sub(/\/\/instagr\.am/, '//instagram.com')
   end
 
-  def large_url(protocol_relative = true)
-    if protocol_relative
-      protocol_relative_url + 'media/?size=l'
+  def large_url(https_ig = true)
+    if https_ig
+      https_ig_url + 'media/?size=l'
     else
       url + 'media/?size=l'
     end
   end
 
-  def medium_url(protocol_relative = true)
-    if protocol_relative
-      protocol_relative_url + 'media/?size=m'
+  def medium_url(https_ig = true)
+    if https_ig
+      https_ig_url + 'media/?size=m'
     else
       url + 'media/?size=m'
     end
   end
 
-  def thumbnail_url(protocol_relative = true)
-    if protocol_relative
-      protocol_relative_url + 'media/?size=t'
+  def thumbnail_url(https_ig = true)
+    if https_ig
+      https_ig_url + 'media/?size=t'
     else
       url + 'media/?size=t'
     end
