@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lentil (1.0.1)
+    lentil (1.0.2)
       activeadmin (~> 1.0.0.pre4)
       bootstrap-sass (~> 2.3.0)
       compass-rails (~> 3.0.2)
@@ -80,7 +80,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.4.0)
+    addressable (2.5.0)
+      public_suffix (~> 2.0, >= 2.0.2)
     ansi (1.5.0)
     arbre (1.1.1)
       activesupport (>= 3.0.0)
@@ -265,6 +266,7 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
+    public_suffix (2.0.3)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
