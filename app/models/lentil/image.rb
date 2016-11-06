@@ -142,8 +142,12 @@ class Lentil::Image < ActiveRecord::Base
   end
 
   def https_ig_url(my_url = url)
-    # instagr.am returns 301 to instagram.com and invalid SSL certificate
-    my_url.sub(/^http:/, 'https:').sub(/\/\/instagr\.am/, '//instagram.com')
+    if my_url.respond_to?('sub')
+        # instagr.am returns 301 to instagram.com and invalid SSL certificate
+        my_url.sub(/^http:/, 'https:').sub(/\/\/instagr\.am/, '//instagram.com')
+    else
+      my_url
+    end
   end
 
   def large_url(https_ig = true)
