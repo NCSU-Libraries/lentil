@@ -17,6 +17,8 @@ Although we are using this gem in production, **this gem should be considered an
 
 ## Installation
 
+> lentil is also available through the pre-packaged [Social Media Combine](https://github.com/NCSU-Libraries/Social-Media-Combine) for easier setup alongside Twitter harvesting software.
+
 lentil requires Ruby 2.3.1 or greater.
 
 ### Create a new Rails app with Rails 4.2.x
