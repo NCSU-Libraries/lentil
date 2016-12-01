@@ -9,7 +9,7 @@ class EventTrackingBattleTest < ActionDispatch::IntegrationTest
       first_image = all('.battle-form').first()
       image_id = first_image['value']
       first_image.click
-      assert_equal("_trackEvent,battle_view,pick,#{image_id}", console_message)
+      assert_equal("event,battle_view,pick,#{image_id}", console_message)
       find('.battle-result-arrow-wrap') # this should wait for the ajax to finish
       browser_end
     end

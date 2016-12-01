@@ -13,28 +13,28 @@ class EventTrackingTest < ActionDispatch::IntegrationTest
   test "should trigger an event for clicking on an image" do
   	visit(lentil.images_path)
     find("#image_#{@image.id} a.fancybox").click
-    assert_equal("_trackEvent,image,click,image_#{@image.id}", console_messages[-2])
-    assert_equal("_trackPageview,/lentil/images/#{@image.id}", console_message)
+    assert_equal("event,image,click,image_#{@image.id}", console_messages[-2])
+    assert_equal("pageview,/lentil/images/#{@image.id}", console_message)
   end
 
   test "should trigger an event for clicking on the share button" do
     visit(lentil.image_path(@image))
     find('.share').click
-    assert_equal("_trackEvent,image_view,share,#{@image.id}", console_message)
+    assert_equal("event,image_view,share,#{@image.id}", console_message)
   end
 
   test "should trigger an event for clicking on the facebook share link" do
     visit(lentil.image_path(@image))
     find('.share').click
     find('.facebook').click
-    assert_equal("_trackEvent,image_view,facebook,#{@image.id}", console_message)
+    assert_equal("event,image_view,facebook,#{@image.id}", console_message)
   end
 
   test "should trigger an event for clicking on the twitter share link" do
     visit(lentil.image_path(@image))
     find('.share').click
     find('.twitter').click
-    assert_equal("_trackEvent,image_view,twitter,#{@image.id}", console_message)
+    assert_equal("event,image_view,twitter,#{@image.id}", console_message)
   end
 
   # FIXME: This fails due to the mailto link.
@@ -42,16 +42,16 @@ class EventTrackingTest < ActionDispatch::IntegrationTest
   #   visit(lentil.image_path(@image))
   #   find('.share').click
   #   find('.email').click
-  #   assert_equal("_trackEvent,image_view,email,#{@image.id}", console_message)
+  #   assert_equal("event,image_view,email,#{@image.id}", console_message)
   # end
 
   test "should trigger an event for liking and unliking an image" do
     visit(lentil.image_path(@image))
     find('.like-btn.initial-state', :visible => true).click
-    assert_equal("_trackEvent,image_view,like,#{@image.id}", console_message)
+    assert_equal("event,image_view,like,#{@image.id}", console_message)
     find('.like-btn.already-clicked', :visible => true).click
     find('.like-btn.initial-state', :visible => true)
-    assert_equal("_trackEvent,image_view,unlike,#{@image.id}", console_message)
+    assert_equal("event,image_view,unlike,#{@image.id}", console_message)
   end
 
   # TODO: Not currently implemented
@@ -61,13 +61,13 @@ class EventTrackingTest < ActionDispatch::IntegrationTest
   #   visit lentil.images_path
   #   visit lentil.image_path(@image)
   #   find('.like-btn.already-clicked').click
-  #   assert_equal("_trackEvent,image_view,unlike,#{@image.id}", console_message)
+  #   assert_equal("event,image_view,unlike,#{@image.id}", console_message)
   # end
 
   test "clicking the flag button" do
     visit lentil.image_path(@image)
     find('.flag-btn', :visible => true).click
-    assert_equal("_trackEvent,image_view,flag,#{@image.id}", console_message)
+    assert_equal("event,image_view,flag,#{@image.id}", console_message)
   end
 
 end

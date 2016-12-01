@@ -14,8 +14,8 @@ $(function () {
 		// should be sent to Google.
 		ga_track: function(values){
 			<% if Rails.env == 'production' %>
-                if (typeof _gaq !== "undefined") {
-                    _gaq.push(values);
+                if (typeof ga !== "undefined") {
+                    ga('send', *values);
                 }
 			<% else %>
 				console.log(values);
@@ -29,28 +29,28 @@ $(function () {
 	// click on image
     $(document.body).on('click', '.images .fancybox', function(){
 		var image_id = $(this).parent().attr('id');
-		Lentil.ga_track(['_trackEvent', 'image', 'click', image_id]);
+		Lentil.ga_track(['event', 'image', 'click', image_id]);
 	});
 
 	// share button
     $(document.body).on('click', '.share', function(){
 		var image_id = $(this).data('imageId');
-		Lentil.ga_track(['_trackEvent', 'image_view', 'share', image_id]);
+		Lentil.ga_track(['event', 'image_view', 'share', image_id]);
 	});
     // facebook
     $(document.body).on('click', '.facebook', function(){
         var image_id = $(this).data('imageId');
-        Lentil.ga_track(['_trackEvent', 'image_view', 'facebook', image_id]);
+        Lentil.ga_track(['event', 'image_view', 'facebook', image_id]);
     });
     // twitter
     $(document.body).on('click', '.twitter', function(){
         var image_id = $(this).data('imageId');
-        Lentil.ga_track(['_trackEvent', 'image_view', 'twitter', image_id]);
+        Lentil.ga_track(['event', 'image_view', 'twitter', image_id]);
     });
     // email
     $(document.body).on('click', '.email', function(){
         var image_id = $(this).data('imageId');
-        Lentil.ga_track(['_trackEvent', 'image_view', 'email', image_id]);
+        Lentil.ga_track(['event', 'image_view', 'email', image_id]);
     });
 
     // like
@@ -63,18 +63,18 @@ $(function () {
             like_state = 'like';
         }
 
-        Lentil.ga_track(['_trackEvent', 'image_view', like_state, image_id]);
+        Lentil.ga_track(['event', 'image_view', like_state, image_id]);
     });
 
     // flag
     $(document.body).on('click', '.flag-btn', function(){
         var image_id = $(this).data('imageId');
-        Lentil.ga_track(['_trackEvent', 'image_view', 'flag', image_id]);
+        Lentil.ga_track(['event', 'image_view', 'flag', image_id]);
     });
 
     // picking a battle image
     $(document.body).on('click', '.battle-form', function(){
         var image_id = $(this).attr('value');
-        Lentil.ga_track(['_trackEvent', 'battle_view', 'pick', image_id]);
+        Lentil.ga_track(['event', 'battle_view', 'pick', image_id]);
     });
 });
