@@ -35,28 +35,28 @@ $(function () {
 
 	// share button
     $(document.body).on('click', '.share', function(){
-		var image_id = $(this).data('imageId');
+		var image_id = $(this).attr('data-image-id');
 		Lentil.ga_track(['event', 'image_view', 'share', image_id]);
 	});
     // facebook
     $(document.body).on('click', '.facebook', function(){
-        var image_id = $(this).data('imageId');
+        var image_id = $(this).attr('data-image-id');
         Lentil.ga_track(['event', 'image_view', 'facebook', image_id]);
     });
     // twitter
     $(document.body).on('click', '.twitter', function(){
-        var image_id = $(this).data('imageId');
+        var image_id = $(this).attr('data-image-id');
         Lentil.ga_track(['event', 'image_view', 'twitter', image_id]);
     });
     // email
     $(document.body).on('click', '.email', function(){
-        var image_id = $(this).data('imageId');
+        var image_id = $(this).attr('data-image-id');
         Lentil.ga_track(['event', 'image_view', 'email', image_id]);
     });
 
     // like
     $(document.body).on('click', '.like-btn', function(){
-        var image_id = $(this).data('imageId');
+        var image_id = $(this).attr('data-image-id');
         var like_state;
         if ($(this).hasClass('already-clicked')) {
             like_state = 'unlike';
@@ -69,7 +69,7 @@ $(function () {
 
     // flag
     $(document.body).on('click', '.flag-btn', function(){
-        var image_id = $(this).data('imageId');
+        var image_id = $(this).attr('data-image-id');
         Lentil.ga_track(['event', 'image_view', 'flag', image_id]);
     });
 
