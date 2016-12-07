@@ -57,6 +57,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "pry-rails", "~> 0.3.2"
   s.add_development_dependency "mocha", "~> 1.2.1"
   s.add_development_dependency "single_test", "~> 0.6.0"
-  s.add_development_dependency "poltergeist", "~> 1.11.0"
+  s.add_development_dependency "poltergeist", "~> 1.12"
   s.add_development_dependency "yard", "~> 0.9.5"
 end
