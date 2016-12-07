@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lentil (1.0.3)
+    lentil (1.0.4)
       activeadmin (~> 1.0.0.pre4)
       bootstrap-sass (~> 2.3.0)
       compass-rails (~> 3.0.2)
