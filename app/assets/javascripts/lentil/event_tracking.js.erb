@@ -13,9 +13,10 @@ $(function () {
 		// In production it tracks the event to Google. It expects an array of everything that
 		// should be sent to Google.
 		ga_track: function(values){
+
 			<% if Rails.env == 'production' %>
                 if (typeof ga !== "undefined") {
-                    ga('send', *values);
+                    window.ga.apply('window', ['send'].concat(values));
                 }
 			<% else %>
 				console.log(values);
