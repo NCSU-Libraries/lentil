@@ -21,6 +21,7 @@ gem 'minitest-rails-capybara'
 group :test do
   gem 'mysql2', '~> 0.4.4'
   gem 'pg'
+  gem 'therubyracer'
 end
 
 # Declare any dependencies that are still in development here instead of in
