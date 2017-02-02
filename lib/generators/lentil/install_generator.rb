@@ -112,16 +112,16 @@ ROUTES
       def dummy_admin_user
         if yes?("Do you want to create an admin user in development now?")
           rake "lentil:dummy_admin_user"
-          say "Username: admin@example.com, Password: password", :green
+          say "Username: admin@example.com, Password: password"
         else
-          say "See the README.md for how to create an admin user.", :red
+          say "See the README.md for how to create an admin user."
         end
       end
 
       desc 'display messages about what needs to be configured'
       def configuration_messages
         file = File.read(File.join( File.expand_path('../templates', __FILE__), 'README.md'))
-        say file, :green
+        say file
       end
 
     end
