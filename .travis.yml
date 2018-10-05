@@ -18,7 +18,6 @@ before_script:
   - "RAILS_ENV=test bundle exec rake db:create db:schema:load"
 notifications:
   email:
-    - jmcasden@ncsu.edu
     - bddavids@ncsu.edu
 addons:
   postgresql: "9.4"
