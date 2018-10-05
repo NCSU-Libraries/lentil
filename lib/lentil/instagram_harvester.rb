@@ -51,7 +51,7 @@ module Lentil
     def fetch_recent_images_by_tag(tag = nil)
       configure_connection
       tag ||= Lentil::Engine::APP_CONFIG["default_image_search_tag"]
-      Instagram.tag_recent_media(tag, :count=>100)
+      Instagram.tag_recent_media(tag, :count=>10)
     end
 
 
